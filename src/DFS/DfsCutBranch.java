@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by yizhao on 12/23/14.
  */
-public class DfsCutBranch {
+public class DFSCutBranch {
     public static void main(String[] args) {
         graphExample1();
         graphExample2();
@@ -24,6 +24,7 @@ public class DfsCutBranch {
         Vertx root8 = new Vertx(8);
         Vertx root9 = new Vertx(9);
         Vertx root10 = new Vertx(10);
+
         /* Setup children*/
         root1.getChild().add(root2);
         root1.getChild().add(root3);
@@ -34,8 +35,10 @@ public class DfsCutBranch {
         root4.getChild().add(root8);
         root5.getChild().add(root9);
         root6.getChild().add(root10);
+
         /* Traversal the Grapth*/
         List<Vertx> res = graphTraversal(root1);
+
         /* Print the result*/
         for (Vertx v : res) {
             System.out.print(v.getLable() + ",");
@@ -55,6 +58,7 @@ public class DfsCutBranch {
         Vertx root8 = new Vertx(8);
         Vertx root9 = new Vertx(9);
         Vertx root10 = new Vertx(10);
+
         /* Setup children*/
         root1.getChild().add(root2);
         root1.getChild().add(root3);
@@ -65,8 +69,10 @@ public class DfsCutBranch {
         root3.getChild().add(root8);
         root3.getChild().add(root9);
         root5.getChild().add(root10);
+
         /* Traversal the Grapth*/
         List<Vertx> res = graphTraversal(root1);
+
         /* Print the result*/
         for (Vertx v : res) {
             System.out.print(v.getLable() + ",");
