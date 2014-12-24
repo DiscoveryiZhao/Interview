@@ -20,31 +20,29 @@ public class N_Queens {
     public static List<String[]> solveNQueens(int n) {
         List<String[]> res = new ArrayList<String[]>();
         int vm = n;
-        backtracking(res, new int[n], 0, vm);
+        vectorTraversal(res, new int[n], 0, vm);
         return res;
     }
 
-    public static void backtracking(List<String[]> res, int[] rowInCol, int vi, int vm) {
-        if (accept(vi, vm)) {
+    private static void vectorTraversal(List<String[]> res, int[] rowInCol, int vi, int vm) {
+        if (vi == vm) {
             output(vm, res, rowInCol);
         } else {
-            for (int i = 0; i < vm; i++) {
-                int si = i;
-                if (reject(rowInCol, si, vi) == false) {
-                    first(si, rowInCol, vi);
-                    backtracking(res, rowInCol, vi + 1, vm);
-                }
+            domainTraversal(res, rowInCol, vi, vm);
+        }
+    }
+
+    private static void domainTraversal(List<String[]> res, int[] rowInCol, int vi, int vm){
+        for (int i = 0; i < vm; i++) {
+            int si = i;
+            if (NotToCutBranch(rowInCol, si, vi) == false) {
+                rowInCol[vi] = si;
+                vectorTraversal(res, rowInCol, vi + 1, vm);
             }
         }
     }
 
-
-    public static void solutionSpaceSet() {
-
-    }
-
-    // reject(P,c): return true only if the partial candidate c is not worth completing.
-    public static boolean reject(int[] rowInCol, int si, int vi) {
+    public static boolean NotToCutBranch(int[] rowInCol, int si, int vi) {
         for (int row = 0; row < vi; row++) {
             // if(rowInCol[row] == col) <- check col
             // if(Math.abs(rowInCol[row] - col) == (depth - row)) <- check diagonal
@@ -55,21 +53,6 @@ public class N_Queens {
         return false;
     }
 
-    // accept(P,c): return true if c is a solution of P, and false otherwise.
-    public static boolean accept(int vi, int vm) {
-        return vi == vm;
-    }
-
-    // first(P,c): generate the first extension of candidate c.
-    public static void first(int si, int[] rowInCol, int vi) {
-        rowInCol[vi] = si;
-    }
-
-    public static void removingTrailingValueFromVector() {
-
-    }
-
-    // output(P,c): use the solution c of P, as appropriate to the application.
     public static void output(int vm, List<String[]> res, int[] rowInCol) {
         String[] fourRows = new String[vm];
         for (int i = 0; i < vm; i++) {

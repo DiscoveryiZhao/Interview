@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DfsCutBranch.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DfsCutBranch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DFS/DfsCutBranch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9274193" vertical-offset="1690" max-vertical-offset="2310">
-              <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1409" max-vertical-offset="2310">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="115" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2421#2428#0" expanded="true" />
@@ -45,6 +45,26 @@
                 <element signature="e#3871#3872#0" expanded="true" />
                 <element signature="e#3913#3914#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolveSudoku.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Leetcode/Backtracking/SolveSudoku.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1005">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="N_Queens.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Leetcode/Backtracking/N_Queens.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.73626375" vertical-offset="670" max-vertical-offset="1125">
+              <caret line="69" column="5" selection-start-line="19" selection-start-column="1" selection-end-line="69" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,9 +87,7 @@
         <option value="$PROJECT_DIR$/src/SolveSudoku4.java" />
         <option value="$PROJECT_DIR$/src/Leetcode/SolveSudoku4.java" />
         <option value="$PROJECT_DIR$/src/Leetcode/SolveSudoku.java" />
-        <option value="$PROJECT_DIR$/src/Leetcode/Backtracking/SolveSudoku.java" />
         <option value="$PROJECT_DIR$/src/Leetcode/Backtracking/N_Queens2.java" />
-        <option value="$PROJECT_DIR$/src/Leetcode/Backtracking/N_Queens.java" />
         <option value="$PROJECT_DIR$/src/HashArrayTable/HashMap/FindTheFrequencyOfOccurrencesOfAnyGivenWordInABook4.java" />
         <option value="$PROJECT_DIR$/src/HashArrayTable/HashMap/SubstringwithConcatenationofAllWords26.java" />
         <option value="$PROJECT_DIR$/src/CtCILibrary/HashArrayTable.java" />
@@ -100,6 +118,8 @@
         <option value="$PROJECT_DIR$/src/SelfTest/DfsCutBranch.java" />
         <option value="$PROJECT_DIR$/src/DFS/DFSCutBranch.java" />
         <option value="$PROJECT_DIR$/src/DFS/DfsCutBranch.java" />
+        <option value="$PROJECT_DIR$/src/Leetcode/Backtracking/SolveSudoku.java" />
+        <option value="$PROJECT_DIR$/src/Leetcode/Backtracking/N_Queens.java" />
       </list>
     </option>
   </component>
@@ -235,7 +255,7 @@
       <recent name="$PROJECT_DIR$/src/HashArrayTable/HashMap" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DfsCutBranch">
+  <component name="RunManager" selected="Application.N_Queens">
     <configuration default="false" name="DFS_00_Straight_Way" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ThinkingInRecurion.DFS_00_Straight_Way" />
@@ -588,8 +608,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.DfsCutBranch" />
-        <item index="1" class="java.lang.String" itemvalue="Application.N_Queens" />
+        <item index="0" class="java.lang.String" itemvalue="Application.N_Queens" />
+        <item index="1" class="java.lang.String" itemvalue="Application.DfsCutBranch" />
         <item index="2" class="java.lang.String" itemvalue="Application.Prime" />
         <item index="3" class="java.lang.String" itemvalue="Application.DFS_10_MultiWays" />
         <item index="4" class="java.lang.String" itemvalue="Application.DFS_00_Straight_Way" />
@@ -611,12 +631,12 @@
       <workItem from="1417214241167" duration="9227000" />
       <workItem from="1417456318316" duration="107000" />
       <workItem from="1418433340335" duration="2898000" />
-      <workItem from="1419355827946" duration="6044000" />
+      <workItem from="1419355827946" duration="6927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25841000" />
+    <option name="totallyTimeSpent" value="26724000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -646,7 +666,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38636363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -663,7 +683,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25686592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07954545" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31392047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -779,10 +799,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1290">
           <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding>
-            <element signature="e#2574#2575#0" expanded="false" />
-            <element signature="e#2610#2611#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -798,10 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1290">
           <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding>
-            <element signature="e#2574#2575#0" expanded="false" />
-            <element signature="e#2610#2611#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,29 +1096,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Leetcode/Backtracking/N_Queens.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1350">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Leetcode/Backtracking/SolveSudoku.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1200">
-          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-          <folding>
-            <element signature="e#2574#2575#0" expanded="false" />
-            <element signature="e#2610#2611#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1005">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DFS/DfsCutBranch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9274193" vertical-offset="1690" max-vertical-offset="2310">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1409" max-vertical-offset="2310">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="115" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2421#2428#0" expanded="true" />
@@ -1119,6 +1122,14 @@
             <element signature="e#3871#3872#0" expanded="true" />
             <element signature="e#3913#3914#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Leetcode/Backtracking/N_Queens.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73626375" vertical-offset="670" max-vertical-offset="1125">
+          <caret line="69" column="5" selection-start-line="19" selection-start-column="1" selection-end-line="69" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

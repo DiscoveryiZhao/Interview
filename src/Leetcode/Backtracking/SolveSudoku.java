@@ -15,39 +15,40 @@ public class SolveSudoku {
                 }
             }
         }
-        char[] solutionSpace = solutionSpaceSet();
+        char[] grapth = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
         int vm = emptyBlocks.size();
-        backtracking(board, emptyBlocks, solutionSpace, 0, vm);
+        vectorTraversal(board, emptyBlocks, grapth, 0, vm);
     }
 
-    public static boolean backtracking(char[][] board, ArrayList<Integer> emptyBlocks, char[] solutionSpace, int vi, int vm) {
-        if (accept(vi, vm)) {
-            return output();
+    private static boolean vectorTraversal(char[][] board, ArrayList<Integer> emptyBlocks, char[] solutionSpace, int vi, int vm) {
+        if (vi == vm) {
+            return true;
         } else {
-            int oneDimArrayCoordinate = emptyBlocks.get(vi);
-            int row = oneDimArrayCoordinate / board[0].length;
-            int col = oneDimArrayCoordinate % board[0].length;
-            for (int i = 0; i < solutionSpace.length; i++) {
-                char si = solutionSpace[i];
-                if (reject(board, si, row, col) == false) {
-                    first(board, si, row, col);
-                    if (backtracking(board, emptyBlocks, solutionSpace, vi + 1, vm)) {
-                        return true;
-                    }
-                    removingTrailingValueFromVector(board, row, col);
-                }
+            if(domainTraversal(board, emptyBlocks, solutionSpace,vi,vm)){
+                return true;
             }
             return false;
         }
     }
 
-    public static char[] solutionSpaceSet() {
-        char[] solutionSpace = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-        return solutionSpace;
+    private static boolean domainTraversal(char[][] board, ArrayList<Integer> emptyBlocks, char[] solutionSpace, int vi, int vm){
+        int oneDimArrayCoordinate = emptyBlocks.get(vi);
+        int row = oneDimArrayCoordinate / board[0].length;
+        int col = oneDimArrayCoordinate % board[0].length;
+        for (int i = 0; i < solutionSpace.length; i++) {
+            char si = solutionSpace[i];
+            if (NotToCutBranch(board, si, row, col) == false) {
+                board[row][col] = si;
+                if (vectorTraversal(board, emptyBlocks, solutionSpace, vi + 1, vm)) {
+                    return true;
+                }
+                board[row][col] = '.';
+            }
+        }
+        return false;
     }
 
-    // reject(P,c): return true only if the partial candidate c is not worth completing.
-    public static boolean reject(char[][] board, char si, int row, int col) {
+    public static boolean NotToCutBranch(char[][] board, char si, int row, int col) {
         for (int i = 0; i < 9; i++) {
             int row_2 = row / 3 * 3 + i / 3;
             int col_2 = col / 3 * 3 + i % 3;
@@ -57,24 +58,5 @@ public class SolveSudoku {
             }
         }
         return false;
-    }
-
-    // accept(P,c): return true if c is a solution of P, and false otherwise.
-    public static boolean accept(int vi, int size) {
-        return vi == size;
-    }
-
-    // first(P,c): generate the first extension of candidate c.
-    public static void first(char[][] board, char si, int row, int col) {
-        board[row][col] = si;
-    }
-
-    public static void removingTrailingValueFromVector(char[][] board, int row, int col) {
-        board[row][col] = '.';
-    }
-
-    // output(P,c): use the solution c of P, as appropriate to the application.
-    public static boolean output() {
-        return true;
     }
 }
