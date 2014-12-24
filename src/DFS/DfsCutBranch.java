@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by yizhao on 12/23/14.
  */
-public class DFSCutBranch {
+public class DfsCutBranch {
     public static void main(String[] args) {
         graphExample1();
         graphExample2();
