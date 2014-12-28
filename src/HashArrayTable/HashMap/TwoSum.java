@@ -1,6 +1,8 @@
 package HashArrayTable.HashMap;
+
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
 	public static void main(String[] args) {
@@ -13,14 +15,14 @@ public class TwoSum {
 			return null;
 		} else {
 			int[] res = new int[2];
-			HashMap<Integer, Integer> mp = new HashMap<Integer, Integer>();
+			Map<Integer, Integer> hash = new HashMap<>();
 			for (int i = 0; i < numbers.length; i++) {
-				if (mp.containsKey(target - numbers[i])) {
-					res[0] = mp.get(target - numbers[i]);
+				if (hash.containsKey(target - numbers[i])) {
+					res[0] = hash.get(target - numbers[i]);
 					res[1] = i + 1;
 					return res;
 				}
-				mp.put(numbers[i], i + 1);
+				hash.put(numbers[i], i + 1);
 			}
 			return res;
 		}

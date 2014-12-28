@@ -35,7 +35,7 @@ public class FindTheFrequencyOfOccurrencesOfAnyGivenWordInABook {
 	}
 
 	public static Hashtable<String, Integer> setupDictionary(String[] book) {
-		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
+		Hashtable<String, Integer> table = new Hashtable<>();
 		for (String word : book) {
 			word = word.toLowerCase();
 			if (word.trim() != "") {

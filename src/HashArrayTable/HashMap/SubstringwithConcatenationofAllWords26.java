@@ -2,6 +2,7 @@ package HashArrayTable.HashMap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SubstringwithConcatenationofAllWords26 {
 	public static void main(String[] args) {
@@ -18,9 +19,9 @@ public class SubstringwithConcatenationofAllWords26 {
 	public static ArrayList<Integer> findSubstring(String S, String[] Dict) {
 		int n = S.length();
 		int wordLen = Dict[0].length();
-		ArrayList<Integer> res = new ArrayList<Integer>();
+		ArrayList<Integer> res = new ArrayList<>();
 		// store the map and frequencies in a hash table
-		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		Map<String, Integer> map = new HashMap<>();
 		for (String s : Dict) {
 			if (!map.containsKey(s)) {
 				map.put(s, 1);
@@ -32,7 +33,7 @@ public class SubstringwithConcatenationofAllWords26 {
 		// find concatenations
 		for (int i = 0; i <= n - Dict.length * wordLen; i++) {
 			// check if it is a concatenation
-			HashMap<String, Integer> target = new HashMap<String, Integer>(map);
+			Map<String, Integer> target = new HashMap<>(map);
 			for (int j = i; j <= n - wordLen; j += wordLen) {
 				String sub = S.substring(j, j + wordLen);
 				if (!target.containsKey(sub)) {

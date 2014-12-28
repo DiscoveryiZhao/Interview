@@ -2,6 +2,7 @@ package HashArrayTable.HashArray_IntType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yizhao on 12/12/14.
@@ -13,8 +14,8 @@ public class Anagrams {
     }
 
     public static ArrayList<String> anagrams(String[] strs) {
-        ArrayList<String> res = new ArrayList<String>();
-        HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+        ArrayList<String> res = new ArrayList<>();
+        Map<String, ArrayList<String>> map = new HashMap<>();
         for (String s : strs) {
             // create unique label for each string
             String label = stringLabel(s);

@@ -1,6 +1,7 @@
 package HashArrayTable.HashMap;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class LongestConsecutiveSequence {
 	public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class LongestConsecutiveSequence {
 
 	// 遇到不能排序又要复杂度O(n)有序的问题，只能增加空间复杂度，用hashset或者hashtable
 	public static int longestConsecutive(int[] num) {
-		HashMap<Integer, Boolean> visited = new HashMap<Integer, Boolean>();
+		Map<Integer, Boolean> visited = new HashMap<>();
 		for (int i : num) {
 			visited.put(i, false);
 		}
