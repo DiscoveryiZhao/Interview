@@ -1,6 +1,7 @@
 package HashArrayTable.HashSet;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yizhao on 12/12/14.
@@ -15,14 +16,14 @@ public class RemoveSpecifiedCharacters {
     }
 
     public static String removeSpecifiedCharactersHashSet(String s, char[] needToRemove) {
-        HashSet<Character> set = new HashSet<Character>();
+        Set<Character> hash = new HashSet<>();
         for (char c : needToRemove) {
-            set.add(c);
+            hash.add(c);
         }
 
         StringBuilder res = new StringBuilder();
         for (char c : s.toCharArray()) {
-            if (!set.contains(c)) {
+            if (!hash.contains(c)) {
                 res.append(c);
             }
         }

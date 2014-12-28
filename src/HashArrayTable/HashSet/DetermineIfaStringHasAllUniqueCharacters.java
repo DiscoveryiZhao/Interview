@@ -1,6 +1,7 @@
 package HashArrayTable.HashSet;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yizhao on 12/12/14.
@@ -17,12 +18,12 @@ public class DetermineIfaStringHasAllUniqueCharacters {
         if (s.length() > 256) {
             return false;
         } else {
-            HashSet<Character> set = new HashSet<Character>();
+            Set<Character> hash = new HashSet<>();
             for (char c : s.toCharArray()) {
-                if (!set.contains(c)) {
-                    set.add(c);
-                }else{
+                if (hash.contains(c)) {
                     return false;
+                }else{
+                    hash.add(c);
                 }
             }
             return true;
@@ -35,10 +36,10 @@ public class DetermineIfaStringHasAllUniqueCharacters {
         } else {
             boolean[] hash = new boolean[256];
             for (char c : s.toCharArray()) {
-                if (!hash[c]) {
-                    hash[c] = true;
-                }else{
+                if (hash[c]) {
                     return false;
+                }else{
+                    hash[c] = true;
                 }
             }
             return true;

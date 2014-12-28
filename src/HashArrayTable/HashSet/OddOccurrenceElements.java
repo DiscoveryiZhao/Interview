@@ -1,6 +1,7 @@
 package HashArrayTable.HashSet;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yizhao on 12/12/14.
@@ -12,14 +13,14 @@ public class OddOccurrenceElements {
     }
 
     public static void oddTimes(int[] a) {
-        HashSet<Integer> set = new HashSet<Integer>();
+        Set<Integer> hash = new HashSet<>();
         for (int i : a) {
-            if (!set.contains(i)) {
-                set.add(i);
+            if (hash.contains(i)) {
+                hash.remove(i);
             } else {
-                set.remove(i);
+                hash.add(i);
             }
         }
-        System.out.println(set);
+        System.out.println(hash);
     }
 }

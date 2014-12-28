@@ -15,11 +15,11 @@ public class RemoveDuplicatesFromString {
     }
 
     public static String removeDuplicatesHashSet(String s) {
-        Set<Character> set = new HashSet<Character>();
+        Set<Character> hash = new HashSet<>();
         StringBuilder res = new StringBuilder();
         for (char c : s.toCharArray()) {
-            if (!set.contains(c)) {
-                set.add(c);
+            if (!hash.contains(c)) {
+                hash.add(c);
                 res.append(c);
             }
         }
