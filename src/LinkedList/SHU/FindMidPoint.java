@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SHU;
 
 import LeetcodeLibrary.ListNode;
 
