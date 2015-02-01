@@ -20,7 +20,7 @@ public class SubstringAnagram {
         for (int i = 0; i < m - n + 1; i++) {
             if (hash[a.charAt(i)] != 0) {
                 int[] hashClone = hash.clone();
-                if (isAnagram(hashClone, a.substring(i, i + n), b)) {
+                if (isAnagram(hashClone, a.substring(i, i + n))) {
                     return true;
                 }
             }
@@ -28,7 +28,7 @@ public class SubstringAnagram {
         return false;
     }
 
-    public static boolean isAnagram(int[] hash, String s, String t) {
+    public static boolean isAnagram(int[] hash, String s) {
         for (int i = 0; i < s.length(); i++) {
             if (--hash[s.charAt(i)] < 0) {
                 return false;

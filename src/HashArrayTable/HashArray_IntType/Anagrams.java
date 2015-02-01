@@ -47,7 +47,7 @@ public class Anagrams {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 26; i++) {
             if (hash[i] != 0) {
-                sb.append((char) ('a' + i));
+                sb.append((char) (i + 'a'));
                 sb.append(hash[i]);
             }
         }

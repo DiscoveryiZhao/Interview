@@ -9,10 +9,10 @@ import java.util.Set;
 public class OddOccurrenceElements {
     public static void main(String[] args) {
         int[] a = { 2, 4, 5, 8, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        oddTimes(a); // [1, 3, 6, 7, 9]
+        System.out.println(oddTimes(a)); // [1, 3, 6, 7, 9]
     }
 
-    public static void oddTimes(int[] a) {
+    public static Set<Integer> oddTimes(int[] a) {
         Set<Integer> hash = new HashSet<>();
         for (int i : a) {
             if (hash.contains(i)) {
@@ -21,6 +21,6 @@ public class OddOccurrenceElements {
                 hash.add(i);
             }
         }
-        System.out.println(hash);
+        return hash;
     }
 }
