@@ -5,10 +5,10 @@ package Bit;
  */
 public class SetBitTo1 {
     public static void main(String[] args) {
-        System.out.println(setBitTo1(16, 0)); // 1
-        System.out.println(setBitTo1(16, 1)); // 2
-        System.out.println(setBitTo1(16, 2)); // 4
-        System.out.println(setBitTo1(16, 3)); // 8
+        System.out.println(setBitTo1(16, 0)); // 17
+        System.out.println(setBitTo1(16, 1)); // 18
+        System.out.println(setBitTo1(16, 2)); // 20
+        System.out.println(setBitTo1(16, 3)); // 24
         System.out.println(setBitTo1(16, 4)); // 16
     }
 
