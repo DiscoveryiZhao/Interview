@@ -7,7 +7,6 @@ public class ReverseBits {
     public static void main(String[] args) {
         System.out.println(reverseBits(43261596));// 964176192
         System.out.println(reverseBits(1));
-        System.out.println(reverseBits(2^32 - 1));
     }
 
     // you need treat n as an unsigned value
