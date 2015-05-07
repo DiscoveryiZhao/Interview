@@ -37,27 +37,45 @@ public class StockMaximize {
                     i++;
                     String[] sharesPrice = contents.get(i).split(" ");
                     System.out.println("StockMaximize:" + Arrays.toString(sharesPrice));
-                    System.out.println(maxProfit(sharesPrice));
+                    maxProfit(sharesPrice);
 
                 }
             }
         }
     }
 
-    public static int maxProfit(String[] prices) {
-        int n = prices.length ;
-        if (n == 0) {
-            return 0;
-        } else {
-            int res = 0;
-            for (int i = 1; i < prices.length; i++) {
-                if (Integer.parseInt(prices[i - 1]) < Integer.parseInt(prices[i])) {
-                    res += Integer.parseInt(prices[i]) - Integer.parseInt(prices[i - 1]);
-                }
+    public static void maxProfit(String[] arr) {
+        // The idea behind this is iterating arr from right to left and recording the localMax.
+        // You always want to buy stocks at low prices and sell them at high, which means higher
+        // prices must come after lower prices.
+        int n = arr.length, localMax = Integer.parseInt(arr[n - 1]);
+        long sum = 0;
+        int i;
+        for (i = n - 2; i >= 0; --i) {
+            if (Integer.parseInt(arr[i]) < localMax) {
+                sum += localMax - Integer.parseInt(arr[i]);
+            } else {
+                localMax = Integer.parseInt(arr[i]);
             }
-            return res;
         }
+        System.out.println(sum);
     }
+
+
+//    public static int maxProfit(String[] prices) {
+//        int n = prices.length ;
+//        if (n == 0) {
+//            return 0;
+//        } else {
+//            int res = 0;
+//            for (int i = 1; i < prices.length; i++) {
+//                if (Integer.parseInt(prices[i - 1]) < Integer.parseInt(prices[i])) {
+//                    res += Integer.parseInt(prices[i]) - Integer.parseInt(prices[i - 1]);
+//                }
+//            }
+//            return res;
+//        }
+//    }
 
 //    public static int maxProfit(String[] prices) {
 //        int n = prices.length;
