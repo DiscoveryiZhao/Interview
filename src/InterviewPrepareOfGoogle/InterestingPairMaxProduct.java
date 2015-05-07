@@ -1,4 +1,4 @@
-package GoogleInterviewPrepare;
+package InterviewPrepareOfGoogle;
 
 /**
  * 给你一个很大的字典。一对词如果不share 任何字母，比如dog, cat不share字母，而dog, boy就share一个o，则是interesting pair.找出所以interesting pairs中长度乘积最大的pair.输出这个乘积。

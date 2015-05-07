@@ -1,4 +1,4 @@
-package GoogleInterviewPrepare;
+package InterviewPrepareOfGoogle;
 
 /**
  * Given two strings a and b, find whether any anagram of string a is b sub-string of string a. For eg: if a = "afdgzyxksldfm" and b = "xyz"  then the program should return true.

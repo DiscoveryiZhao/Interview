@@ -1,4 +1,4 @@
-package GoogleInterviewPrepare;
+package InterviewPrepareOfGoogle;
 
 /**
  * How many (m, n) pairs such that m*m+n*n<N
