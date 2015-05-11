@@ -1,4 +1,4 @@
-package LeetcodeLibrary;
+package Leetcode.Library;
 
 /**
  * Definition for singly-linked list.

@@ -1,6 +1,6 @@
 package LinkedList.SHU;
 
-import LeetcodeLibrary.ListNode;
+import Leetcode.Library.ListNode;
 
 /**
  * Created by yizhao on 1/18/15.
