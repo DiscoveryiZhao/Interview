@@ -21,26 +21,26 @@ public class IsomorphicStrings {
         if(s.length()!=t.length()) return false;
 
         int n = s.length();
-        Map<Character, Integer> sMap = new HashMap<>();
-        Map<Character, Integer> tMap = new HashMap<>();
+        Map<Character, Character> sMap = new HashMap<>();
+        Map<Character, Character> tMap = new HashMap<>();
 
         for(int i = 0; i < n; i++){
             char sc = s.charAt(i);
             char tc = t.charAt(i);
             if(sMap.containsKey(sc) == false){
-                sMap.put(sc,1);
+                sMap.put(sc,tc);
             }else{
-                sMap.put(sc,sMap.get(sc) + 1);
+                if(sMap.get(sc) != tc){
+                    return false;
+                }
             }
 
             if(tMap.containsKey(tc) == false){
-                tMap.put(tc,1);
+                tMap.put(tc,sc);
             }else{
-                tMap.put(tc,tMap.get(tc) + 1);
-            }
-
-            if(sMap.get(sc) != tMap.get(tc)){
-                return false;
+                if(tMap.get(tc) != sc){
+                    return false;
+                }
             }
         }
         return true;
