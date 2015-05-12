@@ -40,8 +40,8 @@ public class RemoveLinkedListElements {
                 pre.next = pre.next.next;
                 break;
             }
-            cur = cur.next;
             pre = pre.next;
+            cur = cur.next;
         }
 
         return dummy.next;
