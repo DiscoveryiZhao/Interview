@@ -28,6 +28,8 @@ public class RemoveLinkedListElements {
         }
     }
 
+//
+
     public static ListNode removeElements(ListNode head, int val) {
         if (head == null) return null;
         ListNode dummy = new ListNode(0);
@@ -37,13 +39,18 @@ public class RemoveLinkedListElements {
         ListNode cur = head;
         while(cur!=null){
             if(cur.val == val){
-                pre.next = pre.next.next;
-                break;
+                pre.next = cur.next;
+            }else{
+                pre = cur;
             }
-            pre = pre.next;
             cur = cur.next;
         }
-
         return dummy.next;
+    }
+
+    public ListNode removeElementsRecursion(ListNode head, int val) {
+        if (head == null) return null;
+        head.next = removeElementsRecursion(head.next, val);
+        return head.val == val ? head.next : head;
     }
 }
