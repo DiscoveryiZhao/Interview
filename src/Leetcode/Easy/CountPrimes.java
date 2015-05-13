@@ -1,8 +1,8 @@
 package Leetcode.Easy;
 
-/**
- * Created by yizhao on 5/11/15.
- */
+/*
+Count the number of prime numbers less than a non-negative number, n
+*/
 public class CountPrimes {
     public static void main(String[] args){
         System.out.println(countPrimes(2)); // 0
