@@ -15,22 +15,22 @@ public class FindMinimuminRotatedSortedArray {
         System.out.println(findMin(nums)); // 0
     }
 
-    public static int findMin(int[] num) {
+    public static int findMin(int[] A) {
         int low = 0;
-        int high = num.length - 1;
+        int high = A.length - 1;
         int mid;
         while (low + 1 < high) {
             mid = low + (high - low) / 2;
-            if (num[mid] >= num[high]) {
+            if (A[mid] >= A[high]) {
                 low = mid;
             } else {
                 high = mid;
             }
         }
-        if (num[low] < num[high]) {
-            return num[low];
+        if (A[low] < A[high]) {
+            return A[low];
         } else {
-            return num[high];
+            return A[high];
         }
     }
 }
