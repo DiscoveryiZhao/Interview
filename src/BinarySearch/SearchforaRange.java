@@ -13,12 +13,12 @@ return [3, 4].
 */
 public class SearchforaRange {
     public int[] searchRange(int[] A, int target){
-        int low, high, mid;
-        int[] bound = new int[2];
+        int[] range = new int[2];
 
-        // search for left bound
-        low = 0;
-        high = A.length - 1;
+        // search for left range
+        int low = 0;
+        int high = A.length - 1;
+        int mid;
         while(low + 1 < high){
             mid = low + (high - low)/2;
             if(A[mid] == target){
@@ -31,15 +31,15 @@ public class SearchforaRange {
         }
 
         if(A[low] == target){
-            bound[0] = low;
+            range[0] = low;
         }else if(A[high] == target){
-            bound[0] = high;
+            range[0] = high;
         }else{
-            bound[0] = bound[1] = -1;
-            return bound;
+            range[0] = range[1] = -1;
+            return range;
         }
 
-        // search for right bound
+        // search for right range
         low = 0;
         high = A.length - 1;
         while(low + 1 < high){
@@ -54,14 +54,14 @@ public class SearchforaRange {
         }
 
         if(A[high] == target){
-            bound[1] = high;
+            range[1] = high;
         }else if(A[low] == target){
-            bound[1] = low;
+            range[1] = low;
         }else{
-            bound[0] = bound[1] = -1;
-            return bound;
+            range[0] = range[1] = -1;
+            return range;
         }
 
-        return bound;
+        return range;
     }
 }
