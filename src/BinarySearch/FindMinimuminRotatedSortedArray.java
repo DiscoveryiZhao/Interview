@@ -12,22 +12,25 @@ You may assume no duplicate exists in the array.
 public class FindMinimuminRotatedSortedArray {
     public static void main(String[] args) {
         int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        System.out.println(findMin(nums)); // 0
     }
 
-    public int findMin(int[] num) {
-        int start = 0, end = num.length - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-            if (num[mid] >= num[end]) {
-                start = mid;
+    public static int findMin(int[] num) {
+        int low = 0;
+        int high = num.length - 1;
+        int mid;
+        while (low + 1 < high) {
+            mid = low + (high - low) / 2;
+            if (num[mid] >= num[high]) {
+                low = mid;
             } else {
-                end = mid;
+                high = mid;
             }
         }
-        if (num[start] < num[end]) {
-            return num[start];
+        if (num[low] < num[high]) {
+            return num[low];
         } else {
-            return num[end];
+            return num[high];
         }
     }
 }
