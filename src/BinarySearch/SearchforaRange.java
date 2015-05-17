@@ -13,7 +13,7 @@ return [3, 4].
 */
 public class SearchforaRange {
     public int[] searchRange(int[] A, int target){
-        int[] range = new int[2];
+        int[] range = {-1, - 1};
 
         // search for left range
         int low = 0;
@@ -35,7 +35,6 @@ public class SearchforaRange {
         }else if(A[high] == target){
             range[0] = high;
         }else{
-            range[0] = range[1] = -1;
             return range;
         }
 
@@ -58,7 +57,6 @@ public class SearchforaRange {
         }else if(A[low] == target){
             range[1] = low;
         }else{
-            range[0] = range[1] = -1;
             return range;
         }
 
