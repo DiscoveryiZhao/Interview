@@ -12,7 +12,15 @@ Here are few examples.
 [1,3,5,6], 0 → 0
 */
 public class SearchInsertPosition {
-    public int searchInsert(int[] A, int target){
+    public static void main(String[] args){
+        int[] test1 = {1,3,5,6};
+        System.out.println(searchInsert(test1,5)); // 2
+        System.out.println(searchInsert(test1,2)); // 1
+        System.out.println(searchInsert(test1,7)); // 4
+        System.out.println(searchInsert(test1,0)); // 0
+    }
+
+    public static int searchInsert(int[] A, int target){
         int start = 0;
         int end = A.length - 1;
         int mid;
