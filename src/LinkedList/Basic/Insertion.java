@@ -1,6 +1,6 @@
 package LinkedList.Basic;
 
-import Leetcode.Library.ListNode;
+import LibraryOfLeetcode.ListNode;
 
 /**
  * Created by yizhao on 1/18/15.

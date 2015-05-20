@@ -3,7 +3,7 @@ package HashArrayTable.HashMap;
 import java.util.Arrays;
 import java.util.Hashtable;
 
-import static CtCILibrary.AssortedMethods.getLongTextBlobAsStringList;
+import static LibraryOfCtCI.AssortedMethods.getLongTextBlobAsStringList;
 
 
 public class FindTheFrequencyOfOccurrencesOfAnyGivenWordInABook {

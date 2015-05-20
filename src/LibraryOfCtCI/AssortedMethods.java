@@ -1,4 +1,4 @@
-package CtCILibrary;
+package LibraryOfCtCI;
 
 
 import java.awt.*;

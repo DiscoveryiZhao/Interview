@@ -1,6 +1,6 @@
 package LinkedList.Advanced.RemoveNode;
 
-import Leetcode.Library.ListNode;
+import LibraryOfLeetcode.ListNode;
 
 /**
  * Created by yizhao on 5/19/15.

@@ -1,4 +1,4 @@
-package CtCILibrary;
+package LibraryOfCtCI;
 
 /**
  * Created by yizhao on 12/12/14.

@@ -1,4 +1,4 @@
-package Leetcode.Library;
+package LibraryOfLeetcode;
 
 /**
  * Definition for binary tree

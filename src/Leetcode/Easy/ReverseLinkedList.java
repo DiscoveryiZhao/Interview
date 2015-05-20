@@ -1,6 +1,6 @@
 package Leetcode.Easy;
 
-import Leetcode.Library.ListNode;
+import LibraryOfLeetcode.ListNode;
 
 /*
 Remove all elements from a linked list of integers that have value val.
