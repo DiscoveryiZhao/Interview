@@ -1,39 +1,61 @@
 package SelfTest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by yizhao on 5/2/15.
  */
 public class Test1 {
+    // [2],
+// [3,4],
+// [6,5,7],
+// [4,1,8,3]
     public static void main(String[] args) {
-        System. out.println(substringAnagram( "afdgksldfmzyx", "xyz" )); // true
-        System. out.println(substringAnagram( "afdgzyxksldfm", "xyzk" )); // true
-        System. out.println(substringAnagram( "afdgzyxksldfm", "xkyz" )); // true
-        System. out.println(substringAnagram( "afdgzyxksldfm", "xyx" )); // false
+        // input: [[2],[3,4],[6,5,7]]
+        int[][] test1 = { { 2 }, { 3, 4 }, { 6, 5, 7 }, { 4, 1, 8, 3 } }; // 11
+        int[][] test2 = { { -1 }, { 2, 3 }, { 1, -1, -3 } }; // -1
+
+        ArrayList<ArrayList<Integer>> testArrayList = new ArrayList<ArrayList<Integer>>();
+        for (int i = 0; i < test1.length; i++) {
+            ArrayList<Integer> row = new ArrayList<Integer>();
+            for (int j = 0; j < test1[i].length; j++) {
+                row.add(test1[i][j]);
+            }
+            testArrayList.add(row);
+        }
+
+        System. out.println(minimumTotal(testArrayList));
     }
 
-    public static boolean substringAnagram(String a, String b) {
-        int m = a.length(), n = b.length();
-        int[] hash = new int[256];
+    public static int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
+        if (triangle == null || triangle.size() == 0) {
+            return 0;
+        }
+
+        int n = triangle.size();
+        int[][] sum = new int[n][n];
+
         for (int i = 0; i < n; i++) {
-            hash[b.charAt(i)]++;
+            sum[n - 1][i] = triangle.get(n - 1).get(i);
         }
-        for (int i = 0; i < m - n + 1; i++) {
-            if (hash[a.charAt(i)] != 0) {
-                int[] hashClone = hash.clone();
-                if (isAnagram(hashClone, a.substring(i, i + n))) {
-                    return true ;
-                }
-            }
-        }
-        return false ;
-    }
 
-    public static boolean isAnagram(int[] hash, String s) {
-        for (int i = 0; i < s.length(); i++) {
-            if (--hash[s.charAt(i)] < 0) {
-                return false ;
-            }
+        for(int i=0; i < n; i++){
+            System.out.println(Arrays.toString(sum[i]));
         }
-        return true ;
+
+        System.out.println();
+
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                sum[i][j] = Math.min(sum[i + 1][j], sum[i + 1][j + 1]) + triangle.get(i).get(j);
+            }
+            for(int k=0; k < n; k++){
+                System.out.println(Arrays.toString(sum[k]));
+            }
+            System.out.println();
+        }
+
+        return sum[0][0];
     }
 }

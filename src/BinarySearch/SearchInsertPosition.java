@@ -23,14 +23,14 @@ public class SearchInsertPosition {
     }
 
     public static int searchInsert(int[] A, int target){
-        int low = 0;
-        int high = A.length - 1;
-        int mid;
-
         // take care case of System.out.println(searchInsert(test2,0))
         if(target < A[0]){
             return 0;
         }
+
+        int low = 0;
+        int high = A.length - 1;
+        int mid;
 
         // find the last number less than target
         while(low + 1 < high){
