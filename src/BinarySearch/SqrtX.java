@@ -31,10 +31,9 @@ public class SqrtX {
         //define a loop to continue if the precision has not yet achieved
         while (low + precision < high) {
             int mid = low + (high - low) / 2;
-            int midSqr = mid;
-            if (midSqr == x / mid) {
+            if (mid == x / mid) {
                 return mid; //we find the exact sqrt value!
-            } else if (midSqr < x / mid) {
+            } else if (mid < x / mid) {
                 low = mid; //we shift our focus to bigger half
             } else {
                 high = mid; //shift focus to smaller half
