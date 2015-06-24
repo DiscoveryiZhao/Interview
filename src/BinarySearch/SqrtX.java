@@ -5,17 +5,17 @@ package BinarySearch;
  */
 public class SqrtX {
     public static void main(String[] args) {
-        System. out.println(sqrt(1)); // 1
-        System. out.println(sqrt(3)); // 1
-        System. out.println(sqrt(4)); // 2
-        System. out.println(sqrt(5)); // 2
-        System. out.println(sqrt(9)); // 3
-        System. out.println(sqrt(16)); // 4
-        System. out.println(sqrt(2147483647)); // 46340
+        System. out.println(mySqrt(1)); // 1
+        System. out.println(mySqrt(3)); // 1
+        System. out.println(mySqrt(4)); // 2
+        System. out.println(mySqrt(5)); // 2
+        System. out.println(mySqrt(9)); // 3
+        System. out.println(mySqrt(16)); // 4
+        System. out.println(mySqrt(2147483647)); // 46340
     }
 
 
-    public static int sqrt(int x) {
+    public static int mySqrt(int x) {
         if (x < 2) {
             return x;
         } else {
@@ -29,7 +29,7 @@ public class SqrtX {
                     high = mid;
                 }
             }
-            return low;
+            return (high+low)/2;
         }
     }
 }
