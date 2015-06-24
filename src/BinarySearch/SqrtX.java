@@ -46,7 +46,7 @@ public class SqrtX {
             }
         }
 
-        //if we do not find exact sqrt value, we will return the approxiated value with the defined precision
+        //if we do not find exact sqrt value, we will return the approximated value with the defined precision
         return (high + low) / 2;
     }
 
@@ -75,7 +75,7 @@ public class SqrtX {
             }
         }
 
-        //if we do not find exact sqrt value, we will return the approxiated value with the defined precision
+        //if we do not find exact sqrt value, we will return the approximated value with the defined precision
         return (high + low) / 2;
     }
 
@@ -112,7 +112,7 @@ public class SqrtX {
 //            }
 //        }
 //
-//        //if we did not find exact sqrt value, we return the approxiated value with the defined precision
+//        //if we did not find exact sqrt value, we return the approximated value with the defined precision
 //        return (high + low) / 2;
 //    }
 
@@ -143,7 +143,7 @@ public class SqrtX {
 //            else end = mid;//shift focus to smaller half
 //        }
 //
-//        //if we did not find exact sqrt value, we return the approxiated value with the defined precision
+//        //if we did not find exact sqrt value, we return the approximated value with the defined precision
 //        return (start+end)/2;
 //    }
 }
