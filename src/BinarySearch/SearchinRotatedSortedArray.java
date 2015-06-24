@@ -26,7 +26,7 @@ public class SearchinRotatedSortedArray {
                 } else {
                     low = mid;
                 }
-            } else {
+            } else { // A[low] > A[mid]
                 //situation 2, green line
                 if (A[mid] <= target && target <= A[high]) {
                     low = mid;
@@ -45,3 +45,4 @@ public class SearchinRotatedSortedArray {
         return -1;
     }
 }
+
