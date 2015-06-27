@@ -7,6 +7,11 @@ import java.util.List;
  * Created by yizhao on 6/26/15.
  */
 public class Permutations {
+    public static void main(String[] args) {
+        int[] S = {1, 2, 3};
+        // [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
+        System.out.println(permute(S));
+    }
     public static List<List<Integer>> permute(int[] num) {
         List<List<Integer>> res = new ArrayList<>();
         helper(num, res, new ArrayList<Integer>());
