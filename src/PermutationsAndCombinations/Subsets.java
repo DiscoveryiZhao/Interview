@@ -16,13 +16,13 @@ public class Subsets {
 
     public static List<List<Integer>> subsets(int[] S) {
         List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(S);
+        Arrays.sort(S); // 去重
         helper(S, res, new ArrayList<Integer>(), 0);
         return res;
     }
 
     public static void helper(int[] S, List<List<Integer>> res, List<Integer> tmp, int depth) {
-        res.add(new ArrayList<>(tmp));
+        res.add(new ArrayList<>(tmp)); // 什么时候输出结果
         for (int i = depth; i < S.length; i++) {
             tmp.add(S[i]);
             helper(S, res, tmp, i + 1);
