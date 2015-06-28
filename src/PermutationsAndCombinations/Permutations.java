@@ -14,19 +14,19 @@ public class Permutations {
     }
     public static List<List<Integer>> permute(int[] num) {
         List<List<Integer>> res = new ArrayList<>();
-        helper(num, res, new ArrayList<Integer>());
+        vector(num, res, new ArrayList<Integer>());
         return res;
     }
 
-    public static void helper(int[] num, List<List<Integer>> res, List<Integer> tmp) {
+    public static void vector(int[] num, List<List<Integer>> res, List<Integer> tmp) {
         if (tmp.size() == num.length) {
             res.add(new ArrayList<>(tmp)); // 什么时候输出结果
             return;
         }
-        for (int i = 0; i < num.length; i++) {
-            if (tmp.contains(num[i])) continue; // 什么情况跳过
-            tmp.add(num[i]);
-            helper(num, res, tmp);
+        for (int width = 0; width < num.length; width++) {
+            if (tmp.contains(num[width])) continue; // 什么情况跳过
+            tmp.add(num[width]);
+            vector(num, res, tmp);
             tmp.remove(tmp.size() - 1);
         }
     }
