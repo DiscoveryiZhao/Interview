@@ -45,8 +45,10 @@ public class LetterCombinationsofaPhoneNumber {
             return;
         }
 
-        for (char c : map.get(digits.charAt(tmp.length()))) {
-            tmp.append(c);
+        char button = digits.charAt(tmp.length());
+        char [] buttonNumbers = map.get(button);
+        for (int width = 0; width < buttonNumbers.length; width++) {
+            tmp.append(buttonNumbers[width]);
             vector(digits, res, tmp, map);
             tmp.deleteCharAt(tmp.length() - 1);
         }
