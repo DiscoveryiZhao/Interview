@@ -23,17 +23,17 @@ public class ReverseLinkedList {
 
 
     public static ListNode reverseLinkedList(ListNode head) {
-        ListNode pre = null;
-        ListNode cur = head;
-        while (cur != null) {
-            ListNode nt = cur.next;
-            // 将cur插入到其之前
-            cur.next = pre;
+        ListNode pre = null; // pre等空
+        ListNode cur = head; // cur等头
+        while (cur != null) { // cur不等空
+            ListNode nt = cur.next; // 下等cur下
+            // 将cur插入到其之前 //
+            cur.next = pre; // cur下等pre
             // 更新指针位置
-            pre = cur;
-            cur = nt;
+            pre = cur; // pre等cur
+            cur = nt; // cur等下
         }
-        head = pre;
+        head = pre; // 头等pre
         return head;
     }
 }
