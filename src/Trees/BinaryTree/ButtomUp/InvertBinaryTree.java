@@ -6,7 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class InvertBinaryTree {
-    public static TreeNode mirror(TreeNode root){
+    public TreeNode mirror(TreeNode root){
         if(root == null){
             return null;
         }else{

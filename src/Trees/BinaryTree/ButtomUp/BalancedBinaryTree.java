@@ -6,11 +6,11 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class BalancedBinaryTree {
-    public static boolean isBalanced(TreeNode root) {
+    public boolean isBalanced(TreeNode root) {
         return helper(root) != -1;
     }
 
-    public static int helper(TreeNode root) {
+    public int helper(TreeNode root) {
         if (root == null) {
             return 0;
         } else {
