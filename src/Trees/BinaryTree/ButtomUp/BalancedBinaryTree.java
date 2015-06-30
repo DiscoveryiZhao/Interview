@@ -7,23 +7,25 @@ import LibraryOfLeetcode.TreeNode;
  */
 public class BalancedBinaryTree {
     public static boolean isBalanced(TreeNode root) {
-        return dfs(root) != -1;
+        return helper(root) != -1;
     }
 
-    public static int dfs(TreeNode root) {
+    public static int helper(TreeNode root) {
         if (root == null) {
             return 0;
         } else {
-            int left = dfs(root.left);
-            int right = dfs(root.right);
+            // Divide
+            int left = helper(root.left);
+            int right = helper(root.right);
 
+            // Conquer
             if (left == -1 || right == -1) {
                 return -1;
             }
             if (Math.abs(left - right) > 1) {
                 return -1;
             }
-            return Math.max(1 + left, 1 + right);
+            return Math.max(left, right) + 1;
         }
     }
 }

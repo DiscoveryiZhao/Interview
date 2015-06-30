@@ -61,7 +61,6 @@ public class WordBreak {
     }
 
     public static boolean wordBreak(String s, Set<String> dict) {
-        // return dfs (s, dict);
         return wordBreakDP(s, dict);
     }
 

@@ -7,10 +7,10 @@ import LibraryOfLeetcode.TreeNode;
  */
 public class SumRoottoLeafNumbers {
     public static int sumNumbers(TreeNode root) {
-        return dfs(root, 0);
+        return helper(root, 0);
     }
 
-    public static int dfs(TreeNode node, int sum) {
+    public static int helper(TreeNode node, int sum) {
         if (node == null){
             return 0;
         } else{
@@ -18,7 +18,7 @@ public class SumRoottoLeafNumbers {
             if (node.left == null && node.right == null){
                 return sum;
             }
-            return dfs(node. left, sum) + dfs(node.right, sum);
+            return helper(node.left, sum) + helper(node.right, sum);
         }
     }
 }

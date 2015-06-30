@@ -10,17 +10,17 @@ public class SymmetricTree {
         if (root == null){
             return true ;
         } else{
-            return isMirror(root. left, root. right);
+            return helper(root.left, root.right);
         }
     }
 
-    public static boolean isMirror(TreeNode p, TreeNode q) {
+    public static boolean helper(TreeNode p, TreeNode q) {
         if (p == null && q == null){
             return true ;
         } else{
             if (p == null || q == null) return false ;
             if (p.val != q.val ) return false;
-            return isMirror(p. left, q. right) && isMirror(p.right, q.left);
+            return helper(p.left, q.right) && helper(p.right, q.left);
         }
     }
 }

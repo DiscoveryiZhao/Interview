@@ -12,12 +12,12 @@ public class AmplitudeOfTree {
             return 0;
         } else {
             amp = 0;
-            dfs(root, root.val, root.val);
+            helper(root, root.val, root.val);
             return amp ;
         }
     }
 
-    public static void dfs(TreeNode root, int pathMin, int pathMax) {
+    public static void helper(TreeNode root, int pathMin, int pathMax) {
         if (root == null) {
             return;
         } else {
@@ -27,8 +27,8 @@ public class AmplitudeOfTree {
                 amp = Math.max( amp, pathMax - pathMin);
             }
 
-            dfs(root.left, pathMin, pathMax);
-            dfs(root.right, pathMin, pathMax);
+            helper(root.left, pathMin, pathMax);
+            helper(root.right, pathMin, pathMax);
         }
     }
 }

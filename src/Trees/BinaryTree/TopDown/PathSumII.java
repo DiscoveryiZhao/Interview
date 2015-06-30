@@ -10,11 +10,11 @@ import java.util.ArrayList;
 public class PathSumII {
     public static ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        dfs(root, sum, res, new ArrayList<Integer>());
+        helper(root, sum, res, new ArrayList<Integer>());
         return res;
     }
 
-    public static boolean dfs(TreeNode root, int sum, ArrayList<ArrayList<Integer>> res, ArrayList<Integer> tmp) {
+    public static boolean helper(TreeNode root, int sum, ArrayList<ArrayList<Integer>> res, ArrayList<Integer> tmp) {
         if (root == null) {
             return false ;
         } else {
@@ -26,7 +26,7 @@ public class PathSumII {
                     res.add( new ArrayList<Integer>(tmp));
                 }
             }
-            if (dfs(root. left, sum, res, tmp) || dfs(root.right, sum, res, tmp)) {
+            if (helper(root.left, sum, res, tmp) || helper(root.right, sum, res, tmp)) {
                 return true ;
             }
 

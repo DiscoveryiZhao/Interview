@@ -9,16 +9,19 @@ public class BinaryTreeMaximumPathSum {
     public static int optSol; // optimalSolution
     public static int maxPathSum(TreeNode root){
         optSol = Integer.MIN_VALUE;
-        dfs(root);
+        helper(root);
         return optSol;
     }
 
-    public static int dfs(TreeNode root){
+    public static int helper(TreeNode root){
         if(root == null){
             return 0;
         }else{
-            int leftSum = dfs(root.left);
-            int rightSum = dfs(root.right);
+            // Divide
+            int leftSum = helper(root.left);
+            int rightSum = helper(root.right);
+
+            // Conquer
             int sum = root.val;
             if(leftSum > 0) sum += leftSum; // 如果L大于0，那么对后续是有利的，我们加上L。
             if(rightSum > 0) sum += rightSum; // 如果R大于0， 那么对后续是有力的， 我们加上R。
