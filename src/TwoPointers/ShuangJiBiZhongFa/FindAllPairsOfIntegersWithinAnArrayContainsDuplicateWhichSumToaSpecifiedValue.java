@@ -1,0 +1,40 @@
+package TwoPointers.ShuangJiBiZhongFa;
+
+import java.util.Arrays;
+
+/**
+ * Created by yizhao on 7/1/15.
+ */
+public class FindAllPairsOfIntegersWithinAnArrayContainsDuplicateWhichSumToaSpecifiedValue {
+    public static void main(String[] args) {
+        int[] test1 = { -2, -1, 0, 3, 5, 6, 7, 9, 13, 14 };
+        // -2,14
+        // -1,13
+        // 3,9
+        // 5,7
+        printPairSums(test1, 12);
+    }
+
+    public static void printPairSums(int[] num, int target) {
+        int n = num.length ;
+        if (n < 2) {
+            return;
+        } else {
+            Arrays. sort(num);
+            int left = 0;
+            int right = n - 1;
+            while (left < right) {
+                int sum = num[left] + num[right];
+                if (sum == target) {
+                    System. out.println(num[left] + "," + num[right]);
+                    left++;
+                    right--;
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+    }
+}
