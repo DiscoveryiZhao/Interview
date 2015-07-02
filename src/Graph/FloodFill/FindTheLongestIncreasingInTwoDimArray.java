@@ -1,6 +1,7 @@
 package Graph.FloodFill;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -15,12 +16,12 @@ public class FindTheLongestIncreasingInTwoDimArray {
         System. out.println(solve(board3)); // [5, 6, 7, 8, 9]
     }
 
-    public static ArrayList<Integer> res;
-    public static ArrayList<Integer> solve(int[][] board) {
+    public static List<Integer> res;
+    public static List<Integer> solve(int[][] board) {
         if (board.length == 0 || board[0].length == 0) { // P(0)
-            return new ArrayList<Integer>();
+            return new ArrayList<>();
         } else {
-            res = new ArrayList<Integer>();
+            res = new ArrayList<>();
             boolean[][] visited = new boolean[board. length][board[0]. length];
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[0].length; j++) {
@@ -33,7 +34,7 @@ public class FindTheLongestIncreasingInTwoDimArray {
         }
     }
 
-    private static void dfs(int[][] board, ArrayList<Integer> tmp, boolean[][] visited, int i, int j) {
+    private static void dfs(int[][] board, List<Integer> tmp, boolean[][] visited, int i, int j) {
         tmp.add(board[i][j]); // P(n)
         visited[i][j] = true;
         if (!isValidForOne(board, visited, i, j) && tmp.size() > res.size()) {

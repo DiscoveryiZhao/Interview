@@ -53,7 +53,7 @@ public class SurroundedRegionsBFS {
         if (board[x][y] != 'O' ) {
             return;
         } else {
-            Queue<Integer> queue = new LinkedList<Integer>();
+            Queue<Integer> queue = new LinkedList<>();
             board[x][y] = '#';
             queue.offer(x * board[0]. length + y);
             while (!queue.isEmpty()) {

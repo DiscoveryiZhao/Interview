@@ -1,6 +1,7 @@
 package Graph.FloodFill;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -15,11 +16,11 @@ public class FindAllIncreasingInTwoDimArray {
         System. out.println(solve(board2));
     }
 
-    public static ArrayList<ArrayList<Integer>> solve(int[][] board) {
+    public static List<List<Integer>> solve(int[][] board) {
         if (board.length == 0 || board[0].length == 0) { // P(0)
-            return new ArrayList<ArrayList<Integer>>();
+            return new ArrayList<>();
         } else {
-            ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+            List<List<Integer>> res = new ArrayList<>();
             boolean[][] visited = new boolean[board. length][board[0]. length];
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[0].length; j++) {
@@ -32,12 +33,12 @@ public class FindAllIncreasingInTwoDimArray {
         }
     }
 
-    private static void dfs(int[][] board, ArrayList<ArrayList<Integer>> res, ArrayList<Integer> tmp, boolean [][] visited, int i, int j) {
+    private static void dfs(int[][] board, List<List<Integer>> res, List<Integer> tmp, boolean [][] visited, int i, int j) {
         tmp.add(board[i][j]); // P(n)
         visited[i][j] = true;
 
         if (!isValidForOne(board, visited, i, j)) {
-            res.add( new ArrayList<Integer>(tmp));
+            res.add( new ArrayList<>(tmp));
         }
         if (isValidUp(board, visited, i, j)) {
             dfs(board, res, tmp, visited, i - 1, j);// P(n+1)
