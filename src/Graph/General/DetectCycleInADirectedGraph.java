@@ -3,6 +3,7 @@ package Graph.General;
 import LibraryOfLeetcode.Vertex;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -53,23 +54,22 @@ public class DetectCycleInADirectedGraph {
 
     public static boolean isCyclic(Vertex node) {
         if (node == null) {
-            return false ;
-        } else {
-            return dfs(node, new HashSet<Vertex>());
+            return false;
         }
+        return dfs(node, new HashSet<Vertex>());
     }
 
-    private static boolean dfs(Vertex u, HashSet<Vertex> visited) {
-        visited.add(u);
-        for (Vertex v : u.neighbors ) {
+    private static boolean dfs(Vertex start, Set<Vertex> visited) {
+        visited.add(start);
+        for (Vertex v : start.neighbors) {
             if (!visited.contains(v)) {
                 if (dfs(v, visited)) {
-                    return true ;
+                    return true;
                 }
             } else {
-                return true ; // found a back edge
+                return true; // found a back edge
             }
         }
-        return false ;
+        return false;
     }
 }

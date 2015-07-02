@@ -4,6 +4,7 @@ package Graph.DirectedGraph;
 import LibraryOfLeetcode.Vertex;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -44,20 +45,19 @@ public class DetectCycleinaDirectedGraph {
     public static boolean isCyclic(Vertex node) {
         if (node == null) {
             return false;
-        } else {
-            return dfs(node, new HashSet<Vertex>());
         }
+        return dfs(node, new HashSet<Vertex>());
     }
 
-    private static boolean dfs(Vertex u, HashSet<Vertex> visited) {
-        visited.add(u);
-        for (Vertex v : u.neighbors) {
+    private static boolean dfs(Vertex start, Set<Vertex> visited) {
+        visited.add(start);
+        for (Vertex v : start.neighbors) {
             if (!visited.contains(v)) {
                 if (dfs(v, visited)) {
                     return true;
                 }
             } else {
-                return true;
+                return true; // found a back edge
             }
         }
         return false;

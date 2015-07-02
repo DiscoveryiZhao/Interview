@@ -49,18 +49,18 @@ public class AllPathsBetweenTwoVertexesUndirectedGraph {
         return res;
     }
 
-    private static void dfs(Vertex u, Vertex end, ArrayList<ArrayList<Vertex>> res, ArrayList<Vertex> tmp, HashSet<Vertex> visited) {
-        visited.add(u);
-        tmp.add(u);
-        if (u.equals(end)) {
+    private static void dfs(Vertex start, Vertex end, ArrayList<ArrayList<Vertex>> res, ArrayList<Vertex> tmp, HashSet<Vertex> visited) {
+        visited.add(start);
+        tmp.add(start);
+        if (start.equals(end)) {
             res.add( new ArrayList<Vertex>(tmp));
         }
-        for (Vertex v : u.neighbors ) {
+        for (Vertex v : start.neighbors ) {
             if (!visited.contains(v)) {
                 dfs(v, end, res, tmp, visited);
             }
         }
         tmp.remove(tmp.size() - 1);
-        visited.remove(u);
+        visited.remove(start);
     }
 }

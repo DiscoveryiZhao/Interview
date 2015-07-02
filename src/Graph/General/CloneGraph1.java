@@ -18,13 +18,13 @@ public class CloneGraph1 {
         }
     }
 
-    private static void dfs(UndirectedGraphNode u, UndirectedGraphNode uCopy, HashMap<UndirectedGraphNode, UndirectedGraphNode> visited) {
-        visited.put(u, uCopy);
-        for (UndirectedGraphNode v : u.neighbors ) {
+    private static void dfs(UndirectedGraphNode start, UndirectedGraphNode uCopy, HashMap<UndirectedGraphNode, UndirectedGraphNode> visited) {
+        visited.put(start, uCopy);
+        for (UndirectedGraphNode v : start.neighbors ) {
             if (!visited.containsKey(v)) {
                 dfs(v, new UndirectedGraphNode(v. label), visited);
             }
-            visited.get(u). neighbors.add(visited.get(v));
+            visited.get(start). neighbors.add(visited.get(v));
         }
     }
 }

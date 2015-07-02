@@ -1,6 +1,7 @@
 package Graph.DirectedGraph;
 
-import Graph.General.Vertex;
+
+import LibraryOfLeetcode.Vertex;
 
 import java.util.HashSet;
 
@@ -35,14 +36,14 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
     }
 
 
-    private static boolean dfs(Vertex u, Vertex end, HashSet<Vertex> visited) {
-        visited.add(u);
-        if (u.equals(end)) {
+    private static boolean dfs(Vertex start, Vertex end, HashSet<Vertex> visited) {
+        visited.add(start);
+        if (start.equals(end)) {
             return true ;
         }
 
 
-        for (Vertex v : u.neighbors ) {
+        for (Vertex v : start.neighbors ) {
             if (!visited.contains(v)) {
                 if (dfs(v, end, visited)) {
                     return true ;

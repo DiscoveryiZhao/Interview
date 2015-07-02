@@ -43,12 +43,12 @@ public class AllPathsBetweenTwoVertexesDirectedGraph {
     }
 
 
-    private static void dfs(Vertex u, Vertex end, ArrayList<ArrayList<Vertex>> res, ArrayList<Vertex> tmp) {
-        tmp.add(u);
-        if (u.equals(end)) {
+    private static void dfs(Vertex start, Vertex end, ArrayList<ArrayList<Vertex>> res, ArrayList<Vertex> tmp) {
+        tmp.add(start);
+        if (start.equals(end)) {
             res.add( new ArrayList<Vertex>(tmp));
         }
-        for (Vertex v : u.neighbors ) {
+        for (Vertex v : start.neighbors ) {
             dfs(v, end, res, tmp);
         }
         tmp.remove(tmp.size() - 1);

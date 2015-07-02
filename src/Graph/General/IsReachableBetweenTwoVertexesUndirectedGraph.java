@@ -34,13 +34,13 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
         return dfs(start, end, new HashSet<Vertex>());
     }
 
-    private static boolean dfs(Vertex u, Vertex end, HashSet<Vertex> visited) {
-        visited.add(u);
-        if (u.equals(end)) {
+    private static boolean dfs(Vertex start, Vertex end, HashSet<Vertex> visited) {
+        visited.add(start);
+        if (start.equals(end)) {
             return true ;
         }
 
-        for (Vertex v : u.neighbors ) {
+        for (Vertex v : start.neighbors ) {
             if (!visited.contains(v)) {
                 if (dfs(v, end, visited)) {
                     return true ;
