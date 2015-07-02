@@ -1,17 +1,14 @@
 package Graph.General;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by yizhao on 6/30/15.
  */
 public class WordLadder {
-    public static int ladderLength(String start, String end, HashSet<String> dict) {
-        Queue<String> q = new LinkedList<String>();// bfs q
-        HashMap<String, Integer> visited = new HashMap<String, Integer>();
+    public static int ladderLength(String start, String end, Set<String> dict) {
+        Queue<String> q = new LinkedList<>();// bfs q
+        Map<String, Integer> visited = new HashMap<>();
         visited.put(start, 1);
         q.add(start);
         while (!q.isEmpty()) {

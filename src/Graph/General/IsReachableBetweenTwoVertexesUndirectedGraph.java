@@ -3,6 +3,7 @@ package Graph.General;
 import LibraryOfLeetcode.Vertex;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -34,7 +35,7 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
         return dfs(start, end, new HashSet<Vertex>());
     }
 
-    private static boolean dfs(Vertex start, Vertex end, HashSet<Vertex> visited) {
+    private static boolean dfs(Vertex start, Vertex end, Set<Vertex> visited) {
         visited.add(start);
         if (start.equals(end)) {
             return true ;

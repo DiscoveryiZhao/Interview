@@ -3,6 +3,7 @@ package Graph.General;
 import LibraryOfLeetcode.Vertex;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -26,7 +27,7 @@ public class AllPathsBetweenTwoVertexesDirectedGraph {
         // 1->2->3->4->6->
         // 1->2->3->5->6->
         // 1->2->4->6->
-        for (ArrayList<Vertex> tmp : allPaths(one, six)) {
+        for (List<Vertex> tmp : allPaths(one, six)) {
             for (Vertex v : tmp) {
                 System. out.print(v.val + "->" );
             }
@@ -34,13 +35,13 @@ public class AllPathsBetweenTwoVertexesDirectedGraph {
         }
     }
 
-    public static ArrayList<ArrayList<Vertex>> allPaths(Vertex start, Vertex end) {
-        ArrayList<ArrayList<Vertex>> res = new ArrayList<ArrayList<Vertex>>();
+    public static List<List<Vertex>> allPaths(Vertex start, Vertex end) {
+        List<List<Vertex>> res = new ArrayList<>();
         dfs(start, end, res, new ArrayList<Vertex>());
         return res;
     }
 
-    private static void dfs(Vertex start, Vertex end, ArrayList<ArrayList<Vertex>> res, ArrayList<Vertex> tmp) {
+    private static void dfs(Vertex start, Vertex end, List<List<Vertex>> res, List<Vertex> tmp) {
         tmp.add(start);
         if (start.equals(end)) {
             res.add( new ArrayList<Vertex>(tmp));

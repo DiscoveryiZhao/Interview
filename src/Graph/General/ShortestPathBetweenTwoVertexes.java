@@ -2,10 +2,7 @@ package Graph.General;
 
 import LibraryOfLeetcode.Vertex;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -31,7 +28,7 @@ public class ShortestPathBetweenTwoVertexes {
         }
     }
     public static List<Vertex> shortestPath(Vertex start, Vertex end) {
-        HashMap<Vertex, Vertex> visited = new HashMap<Vertex, Vertex>();
+        Map<Vertex, Vertex> visited = new HashMap<>();
         Queue<Vertex> q = new LinkedList<Vertex>();
         visited.put(start, null);
         q.add(start);
@@ -50,8 +47,8 @@ public class ShortestPathBetweenTwoVertexes {
         return null ;
     }
 
-    private static List<Vertex> pathBuilder(Vertex v, HashMap<Vertex, Vertex> visited) {
-        LinkedList<Vertex> path = new LinkedList<Vertex>();
+    private static List<Vertex> pathBuilder(Vertex v, Map<Vertex, Vertex> visited) {
+        LinkedList<Vertex> path = new LinkedList<>();
         while (v != null ) {
             path.addFirst(v);
             v = visited.get(v);

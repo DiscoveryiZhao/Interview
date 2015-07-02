@@ -6,11 +6,11 @@ import java.util.*;
  * Created by yizhao on 6/30/15.
  */
 public class WordLadderII {
-    public static ArrayList<ArrayList<String>> findLadders(String start, String end, HashSet<String> dict) {
-        ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
+    public static List<List<String>> findLadders(String start, String end, Set<String> dict) {
+        List<List<String>> res = new ArrayList<>();
         Queue<String> q = new LinkedList<String>();// bfs q
-        HashMap<String, Integer> visited = new HashMap<String, Integer>();
-        HashMap<String, ArrayList<String>> adjList = new HashMap<String, ArrayList<String>>();
+        Map<String, Integer> visited = new HashMap<>();
+        Map<String, List<String>> adjList = new HashMap<>();
         adjList.put(start, new ArrayList<String>());
         visited.put(start, 1);
         q.add(start);
@@ -39,12 +39,12 @@ public class WordLadderII {
         return res;
     }
 
-    private static void dfsPathBuilder(ArrayList<ArrayList<String>> res, String u, String end, HashMap<String, ArrayList<String>> adjList, ArrayList<String> tmp) {
-        tmp.add(u);
-        if (u.equals(end)) {
+    private static void dfsPathBuilder(List<List<String>> res, String start, String end, Map<String, List<String>> adjList, List<String> tmp) {
+        tmp.add(start);
+        if (start.equals(end)) {
             res.add( new ArrayList<String>(tmp));
         }
-        for (String v : adjList.get(u)) {
+        for (String v : adjList.get(start)) {
             dfsPathBuilder(res, v, end, adjList, tmp);
         }
         tmp.remove(tmp.size() - 1);
