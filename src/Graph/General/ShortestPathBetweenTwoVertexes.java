@@ -1,5 +1,7 @@
 package Graph.General;
 
+import LibraryOfLeetcode.Vertex;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

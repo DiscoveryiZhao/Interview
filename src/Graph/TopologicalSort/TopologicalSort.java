@@ -1,6 +1,7 @@
 package Graph.TopologicalSort;
 
-import Graph.General.Vertex;
+
+import LibraryOfLeetcode.Vertex;
 
 import java.util.ArrayList;
 import java.util.HashMap;

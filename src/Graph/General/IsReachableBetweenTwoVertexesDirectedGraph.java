@@ -1,5 +1,7 @@
 package Graph.General;
 
+import LibraryOfLeetcode.Vertex;
+
 /**
  * Created by yizhao on 6/30/15.
  */

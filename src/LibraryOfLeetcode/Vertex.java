@@ -1,4 +1,4 @@
-package Graph.General;
+package LibraryOfLeetcode;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class Vertex {
     public int val ;
     public ArrayList<Vertex> neighbors;
 
-    public Vertex( int x) {
+    public Vertex(int x) {
         val = x;
         neighbors = new ArrayList<Vertex>();
     }

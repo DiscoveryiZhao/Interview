@@ -1,6 +1,7 @@
 package Graph.UndirectedGraph;
 
-import Graph.General.UndirectedGraphNode;
+
+import LibraryOfLeetcode.UndirectedGraphNode;
 
 import java.util.HashMap;
 

@@ -1,6 +1,7 @@
 package Graph.DirectedGraph;
 
-import Graph.General.Vertex;
+
+import LibraryOfLeetcode.Vertex;
 
 /**
  * Created by yizhao on 6/30/15.
