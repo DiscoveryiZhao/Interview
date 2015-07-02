@@ -3,6 +3,7 @@ package Graph.TopologicalSort;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -28,8 +29,8 @@ public class SortTicket {
     }
 
     public static List<Ticket1> sortTicket1(List<Ticket1> input) {
-        HashMap<String, Integer> indegree = new HashMap<String, Integer>();
-        HashMap<String, String> map = new HashMap<String, String>();
+        Map<String, Integer> indegree = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         for (Ticket1 t : input) {
             map.put(t. source, t. dest);
             indegree.put(t. source, 0);
@@ -46,7 +47,7 @@ public class SortTicket {
                 break;
             }
         }
-        List<Ticket1> res = new ArrayList<Ticket1>();
+        List<Ticket1> res = new ArrayList<>();
         while (start != null) {
             res.add( new Ticket1(start, map.get(start)));
             start = map.get(start);

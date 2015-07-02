@@ -1,9 +1,6 @@
 package Graph.TopologicalSort;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -37,8 +34,8 @@ public class PrintingaTreeStructureWithPairs {
 
     public static void printingaTreeStructureWithPairs(ArrayList<Pairs> set) {
         /* Computes in-degree and build adjacList*/
-        HashMap<String, Integer> indegree = new HashMap<String, Integer>();
-        HashMap<String, ArrayList<String>> adjacList = new HashMap<String, ArrayList<String>>();
+        Map<String, Integer> indegree = new HashMap<>();
+        Map<String, ArrayList<String>> adjacList = new HashMap<>();
         for (Pairs s : set) {
             adjacList.put(s.first, new ArrayList<String>());
             indegree.put(s.first, 0);
@@ -59,8 +56,8 @@ public class PrintingaTreeStructureWithPairs {
         }
 
         /* Print the tree*/
-        Queue<String> q = new LinkedList<String>(); // queue := {all vertices with in-degree = 0}
-        HashMap<String, Integer> visited = new HashMap<String, Integer>();
+        Queue<String> q = new LinkedList<>(); // queue := {all vertices with in-degree = 0}
+        Map<String, Integer> visited = new HashMap<>();
         q.add(start);
         visited.put(start, 0);
         while (!q.isEmpty()) {

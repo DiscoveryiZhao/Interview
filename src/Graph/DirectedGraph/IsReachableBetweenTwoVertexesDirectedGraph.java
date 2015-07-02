@@ -26,7 +26,6 @@ public class IsReachableBetweenTwoVertexesDirectedGraph {
         return dfs(start, end);
     }
 
-
     private static boolean dfs(Vertex start, Vertex end) {
         if (start.equals(end)) {
             return true ;
