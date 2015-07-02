@@ -32,7 +32,6 @@ public class IsReachableBetweenTwoVertexesDirectedGraph {
             return true ;
         }
 
-
         for (Vertex v : start.neighbors ) {
             if (dfs(v, end)) {
                 return true ;

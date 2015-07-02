@@ -43,7 +43,6 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
             return true ;
         }
 
-
         for (Vertex v : start.neighbors ) {
             if (!visited.contains(v)) {
                 if (dfs(v, end, visited)) {
