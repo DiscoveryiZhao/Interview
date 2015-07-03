@@ -50,16 +50,37 @@ public class DetectCycleinaDirectedGraph {
     }
 
     private static boolean dfs(Vertex start, Set<Vertex> visited) {
+        if (visited.contains(start)) {
+            return true; // found a back edge
+        }
+
         visited.add(start);
         for (Vertex v : start.neighbors) {
-            if (!visited.contains(v)) {
-                if (dfs(v, visited)) {
-                    return true;
-                }
-            } else {
-                return true; // found a back edge
+            if (dfs(v, visited)) {
+                return true;
             }
         }
         return false;
     }
+
+//    public static boolean isCyclic(Vertex node) {
+//        if (node == null) {
+//            return false;
+//        }
+//        return dfs(node, new HashSet<Vertex>());
+//    }
+//
+//    private static boolean dfs(Vertex start, Set<Vertex> visited) {
+//        visited.add(start);
+//        for (Vertex v : start.neighbors) {
+//            if (!visited.contains(v)) {
+//                if (dfs(v, visited)) {
+//                    return true;
+//                }
+//            } else {
+//                return true; // found a back edge
+//            }
+//        }
+//        return false;
+//    }
 }
