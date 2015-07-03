@@ -30,17 +30,17 @@ public class ShortestPathBetweenTwoVertexes {
 
     public static List<Vertex> shortestPath(Vertex start, Vertex end) {
         Map<Vertex, Vertex> visited = new HashMap<>();
-        Queue<Vertex> q = new LinkedList<Vertex>();
+        Queue<Vertex> q = new LinkedList<>();
         visited.put(start, null);
         q.add(start);
         while (!q.isEmpty()) {
-            Vertex u = q.poll();
-            if (u.equals(end)) {
+            Vertex start2 = q.poll();
+            if (start2.equals(end)) {
                 return pathBuilder(end, visited); // Path founded.
             }
-            for (Vertex v : u.neighbors) {
+            for (Vertex v : start2.neighbors) {
                 if (!visited.containsKey(v)) {
-                    visited.put(v, u);
+                    visited.put(v, start2);
                     q.add(v);
                 }
             }
@@ -48,11 +48,11 @@ public class ShortestPathBetweenTwoVertexes {
         return null;
     }
 
-    private static List<Vertex> pathBuilder(Vertex v, Map<Vertex, Vertex> visited) {
+    private static List<Vertex> pathBuilder(Vertex end, Map<Vertex, Vertex> visited) {
         LinkedList<Vertex> path = new LinkedList<>();
-        while (v != null) {
-            path.addFirst(v);
-            v = visited.get(v);
+        while (end != null) {
+            path.addFirst(end);
+            end = visited.get(end);
         }
         return path;
     }

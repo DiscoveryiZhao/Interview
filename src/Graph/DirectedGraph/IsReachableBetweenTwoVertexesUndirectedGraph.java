@@ -17,19 +17,19 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
         Vertex four = new Vertex(4);
         Vertex five = new Vertex(5);
         Vertex six = new Vertex(6);
-        one. neighbors.add(two);
-        two. neighbors.add(one);
-        two. neighbors.add(three);
-        three. neighbors.add(two);
-        three. neighbors.add(four);
-        four. neighbors.add(three);
-        three. neighbors.add(five);
-        five. neighbors.add(three);
-        three. neighbors.add(one);
-        one. neighbors.add(three);
-        five. neighbors.add(six);
-        six. neighbors.add(five);
-        System. out.println(isReachable(one, six)); // true
+        one.neighbors.add(two);
+        two.neighbors.add(one);
+        two.neighbors.add(three);
+        three.neighbors.add(two);
+        three.neighbors.add(four);
+        four.neighbors.add(three);
+        three.neighbors.add(five);
+        five.neighbors.add(three);
+        three.neighbors.add(one);
+        one.neighbors.add(three);
+        five.neighbors.add(six);
+        six.neighbors.add(five);
+        System.out.println(isReachable(one, six)); // true
     }
 
     public static boolean isReachable(Vertex start, Vertex end) {
@@ -39,16 +39,16 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
     private static boolean dfs(Vertex start, Vertex end, Set<Vertex> visited) {
         visited.add(start);
         if (start.equals(end)) {
-            return true ;
+            return true;
         }
 
-        for (Vertex v : start.neighbors ) {
+        for (Vertex v : start.neighbors) {
             if (!visited.contains(v)) { //Undirected Graph needs a visited hash set to prevent traversal back to the previous visited vertex
                 if (dfs(v, end, visited)) {
-                    return true ;
+                    return true;
                 }
             }
         }
-        return false ;
+        return false;
     }
 }
