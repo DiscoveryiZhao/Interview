@@ -15,21 +15,21 @@ public class WordLadderII {
         visited.put(start, 1);
         q.add(start);
         while (!q.isEmpty()) {
-            String u = q.poll();
-            for (int i = 0; i < u.length(); i++) {
-                char[] uChar = u.toCharArray();
+            String start2 = q.poll();
+            for (int i = 0; i < start2.length(); i++) {
+                char[] uChar = start2.toCharArray();
                 for (char j = 'a' ; j <= 'z'; j++) {
                     uChar[i] = j;
                     String v = new String(uChar);
                     if (dict.contains(v)) {
                         if (!visited.containsKey(v)) {
                             adjList.put(v, new ArrayList<String>());
-                            visited.put(v, visited.get(u) + 1);
+                            visited.put(v, visited.get(start2) + 1);
                             q.add(v);
                         }
 
-                        if (visited.get(u) + 1 == visited.get(v)) {
-                            adjList.get(u).add(v);
+                        if (visited.get(start2) + 1 == visited.get(v)) {
+                            adjList.get(start2).add(v);
                         }
                     }
                 }

@@ -12,18 +12,18 @@ public class WordLadder {
         visited.put(start, 1);
         q.add(start);
         while (!q.isEmpty()) {
-            String u = q.poll();
-            if (u.equals(end)) {
-                return visited.get(u);
+            String start2 = q.poll();
+            if (start2.equals(end)) {
+                return visited.get(start2);
             }
-            for (int i = 0; i < u.length(); i++) {
-                char[] uChar = u.toCharArray();
+            for (int i = 0; i < start2.length(); i++) {
+                char[] uChar = start2.toCharArray();
                 for (char j = 'a' ; j <= 'z'; j++) {
                     uChar[i] = j;
                     String v = new String(uChar);
                     if (dict.contains(v)) {
                         if (!visited.containsKey(v)) {
-                            visited.put(v, visited.get(u) + 1);
+                            visited.put(v, visited.get(start2) + 1);
                             q.add(v);
                         }
                     }
