@@ -56,10 +56,10 @@ public class AllPathsBetweenTwoVertexesUndirectedGraph {
         visited.add(start);
         tmp.add(start);
         if (start.equals(end)) {
-            res.add( new ArrayList<Vertex>(tmp));
+            res.add( new ArrayList<>(tmp));
         }
         for (Vertex v : start.neighbors ) {
-            if (!visited.contains(v)) {
+            if (!visited.contains(v)) { // Undirected Graph needs a visited hash set to prevent traversal back to the previous visited vertex
                 dfs(v, end, res, tmp, visited);
             }
         }

@@ -24,7 +24,7 @@ public class CloneGraph3 {
         while (!q.isEmpty()) {
             UndirectedGraphNode u = q.poll();
             for (UndirectedGraphNode v : u.neighbors) {
-                if (!visited.containsKey(v)) {
+                if (!visited.containsKey(v)) {  // Undirected Graph needs a visited hash set to prevent traversal back to the previous visited vertex
                     visited.put(v, new UndirectedGraphNode(v.label)); // visited.put(v, vCopy)
                     q.add(v);
                 }

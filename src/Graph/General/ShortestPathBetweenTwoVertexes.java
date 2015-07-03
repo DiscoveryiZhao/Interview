@@ -15,18 +15,19 @@ public class ShortestPathBetweenTwoVertexes {
         Vertex four = new Vertex(4);
         Vertex five = new Vertex(5);
         Vertex six = new Vertex(6);
-        one. neighbors.add(two);
-        two. neighbors.add(three);
-        two. neighbors.add(four);
-        three. neighbors.add(four);
-        three. neighbors.add(five);
-        four. neighbors.add(six);
-        five. neighbors.add(six);
+        one.neighbors.add(two);
+        two.neighbors.add(three);
+        two.neighbors.add(four);
+        three.neighbors.add(four);
+        three.neighbors.add(five);
+        four.neighbors.add(six);
+        five.neighbors.add(six);
         // 1->2->4->6
         for (Vertex v : shortestPath(one, six)) {
-            System. out.print(v.val + "->" );
+            System.out.print(v.val + "->");
         }
     }
+
     public static List<Vertex> shortestPath(Vertex start, Vertex end) {
         Map<Vertex, Vertex> visited = new HashMap<>();
         Queue<Vertex> q = new LinkedList<Vertex>();
@@ -37,19 +38,19 @@ public class ShortestPathBetweenTwoVertexes {
             if (u.equals(end)) {
                 return pathBuilder(end, visited); // Path founded.
             }
-            for (Vertex v : u.neighbors ) {
+            for (Vertex v : u.neighbors) {
                 if (!visited.containsKey(v)) {
                     visited.put(v, u);
                     q.add(v);
                 }
             }
         }
-        return null ;
+        return null;
     }
 
     private static List<Vertex> pathBuilder(Vertex v, Map<Vertex, Vertex> visited) {
         LinkedList<Vertex> path = new LinkedList<>();
-        while (v != null ) {
+        while (v != null) {
             path.addFirst(v);
             v = visited.get(v);
         }

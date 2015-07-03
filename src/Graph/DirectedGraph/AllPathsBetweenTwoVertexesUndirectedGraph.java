@@ -19,20 +19,20 @@ public class AllPathsBetweenTwoVertexesUndirectedGraph {
         Vertex four = new Vertex(4);
         Vertex five = new Vertex(5);
         Vertex six = new Vertex(6);
-        one. neighbors.add(two);
-        two. neighbors.add(one);
-        two. neighbors.add(three);
-        three. neighbors.add(two);
-        two. neighbors.add(four);
-        four. neighbors.add(two);
-        three. neighbors.add(four);
-        four. neighbors.add(three);
-        three. neighbors.add(five);
-        five. neighbors.add(three);
-        four. neighbors.add(six);
-        six. neighbors.add(four);
-        five. neighbors.add(six);
-        six. neighbors.add(five);
+        one.neighbors.add(two);
+        two.neighbors.add(one);
+        two.neighbors.add(three);
+        three.neighbors.add(two);
+        two.neighbors.add(four);
+        four.neighbors.add(two);
+        three.neighbors.add(four);
+        four.neighbors.add(three);
+        three.neighbors.add(five);
+        five.neighbors.add(three);
+        four.neighbors.add(six);
+        six.neighbors.add(four);
+        five.neighbors.add(six);
+        six.neighbors.add(five);
 
 
         // 1->2->3->4->6->
@@ -41,9 +41,9 @@ public class AllPathsBetweenTwoVertexesUndirectedGraph {
         // 1->2->4->6->
         for (List<Vertex> tmp : allPaths(one, six)) {
             for (Vertex v : tmp) {
-                System. out.print(v.val + "->" );
+                System.out.print(v.val + "->");
             }
-            System. out.println();
+            System.out.println();
         }
     }
 
@@ -57,10 +57,10 @@ public class AllPathsBetweenTwoVertexesUndirectedGraph {
         visited.add(start);
         tmp.add(start);
         if (start.equals(end)) {
-            res.add( new ArrayList<Vertex>(tmp));
+            res.add(new ArrayList<>(tmp));
         }
-        for (Vertex v : start.neighbors ) {
-            if (!visited.contains(v)) {
+        for (Vertex v : start.neighbors) {
+            if (!visited.contains(v)) { // Undirected Graph needs a visited hash set to prevent traversal back to the previous visited vertex
                 dfs(v, end, res, tmp, visited);
             }
         }

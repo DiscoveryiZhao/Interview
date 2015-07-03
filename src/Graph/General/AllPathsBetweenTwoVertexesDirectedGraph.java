@@ -44,7 +44,7 @@ public class AllPathsBetweenTwoVertexesDirectedGraph {
     private static void dfs(Vertex start, Vertex end, List<List<Vertex>> res, List<Vertex> tmp) {
         tmp.add(start);
         if (start.equals(end)) {
-            res.add( new ArrayList<Vertex>(tmp));
+            res.add( new ArrayList<>(tmp));
         }
         for (Vertex v : start.neighbors ) {
             dfs(v, end, res, tmp);

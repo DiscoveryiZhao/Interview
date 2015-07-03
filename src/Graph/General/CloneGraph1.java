@@ -21,7 +21,7 @@ public class CloneGraph1 {
     private static void dfs(UndirectedGraphNode start, UndirectedGraphNode uCopy, Map<UndirectedGraphNode, UndirectedGraphNode> visited) {
         visited.put(start, uCopy);
         for (UndirectedGraphNode v : start.neighbors) {
-            if (!visited.containsKey(v)) {
+            if (!visited.containsKey(v)) {  // Undirected Graph needs a visited hash set to prevent traversal back to the previous visited vertex
                 dfs(v, new UndirectedGraphNode(v.label), visited);
             }
             visited.get(start).neighbors.add(visited.get(v));
