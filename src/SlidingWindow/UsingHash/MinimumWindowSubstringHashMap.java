@@ -1,6 +1,7 @@
 package SlidingWindow.UsingHash;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yizhao on 7/1/15.
@@ -11,8 +12,8 @@ public class MinimumWindowSubstringHashMap {
     }
 
     public static String minWindow(String s, String t) {
-        HashMap<Character, Integer> hashT = new HashMap<Character, Integer>();
-        HashMap<Character, Integer> hasFound = new HashMap<Character, Integer>();
+        Map<Character, Integer> hashT = new HashMap<>();
+        Map<Character, Integer> hasFound = new HashMap<>();
         for (char c : t.toCharArray()) {
             if (!hashT.containsKey(c)) {
                 hashT.put(c, 1);

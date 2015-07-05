@@ -35,7 +35,7 @@ public class SlidingWindowMaximum {
             }
             leftDeque.addLast(right);
             // Pop older element outside window from deque
-            while (!leftDeque.isEmpty() && leftDeque.getFirst() <= right - w) {
+            while (leftDeque.getFirst() <= right - w) {
                 leftDeque.removeFirst();
             }
             right++;
