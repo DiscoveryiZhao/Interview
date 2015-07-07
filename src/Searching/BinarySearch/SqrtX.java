@@ -1,4 +1,4 @@
-package BinarySearch;
+package Searching.BinarySearch;
 
 /**
  * Created by yizhao on 6/21/15.

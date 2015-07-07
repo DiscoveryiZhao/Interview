@@ -1,16 +1,16 @@
-package BinarySearch;
+package Searching.BinarySearch;
 
-/**
- * Created by yizhao on 5/17/15.
- */
-public class SearchinRotatedSortedArrayII {
-    public static void main(String[] args){
-        int[] test1 = {1,1,3,1};
-        int[] test2 = {3,1,1};
-        System.out.println(search(test1, 3)); // true
-        System.out.println(search(test2, 3)); // true
-    }
-    public static boolean search(int[] A, int target) {
+/*
+Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+You may assume no duplicate exists in the array.
+*/
+public class SearchinRotatedSortedArray {
+    public int search(int[] A, int target) {
         int low = 0;
         int high = A.length - 1;
         int mid;
@@ -18,11 +18,7 @@ public class SearchinRotatedSortedArrayII {
         while (low + 1 < high) {
             mid = low + (high - low) / 2;
             if (A[mid] == target) {
-                return true;
-            } else if (A[mid] == A[low]) { // skips duplicates
-                low++;
-            } else if (A[mid] == A[high]) { // skips duplicates
-                high--;
+                return mid;
             } else if (A[low] < A[mid]) {
                 //situation 1, red line
                 if (A[low] <= target && target <= A[mid]) {
@@ -41,11 +37,12 @@ public class SearchinRotatedSortedArrayII {
         }
 
         if (A[low] == target) {
-            return true;
+            return low;
         }
         if (A[high] == target) {
-            return true;
+            return high;
         }
-        return false;
+        return -1;
     }
 }
+
