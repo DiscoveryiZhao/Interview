@@ -1,6 +1,7 @@
 package Math.Roman;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -9,7 +10,7 @@ public class RomantoInteger {
     public static int romanToInt(String s) {
         int n = s.length();
         int res = 0;
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<>();
         map.put('M', 1000);
         map.put('D', 500);
         map.put('C', 100);

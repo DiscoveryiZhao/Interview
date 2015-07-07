@@ -24,25 +24,24 @@ public class Arithmetic {
         int n = A.length;
         if (n < 2) {
             return 0;
-        } else {
-            int res = 0;
-            int i = 0;
-            while (i < n - 1) {
-                long diff = A[i + 1] - A[i];
-                int count = 1;
-                int j = i + 1;
-                while (j < n && A[j] - A[j - 1] == diff) {
-                    if (count == 2) {
-                        res++;
-                    } else if (count > 2) {
-                        res += count - 1;
-                    }
-                    count++;
-                    j++;
-                }
-                i = j - 1;
-            }
-            return res;
         }
+        int res = 0;
+        int i = 0;
+        while (i < n - 1) {
+            long diff = A[i + 1] - A[i];
+            int count = 1;
+            int j = i + 1;
+            while (j < n && A[j] - A[j - 1] == diff) {
+                if (count == 2) {
+                    res++;
+                } else if (count > 2) {
+                    res += count - 1;
+                }
+                count++;
+                j++;
+            }
+            i = j - 1;
+        }
+        return res;
     }
 }
