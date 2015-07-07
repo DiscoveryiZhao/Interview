@@ -22,7 +22,7 @@ public class PriorityQueueMinHeapSortNatureOrder {
     }
 
     public static void heapsort(int[] a) {
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int i : a) {
             minHeap.add(i);
         }

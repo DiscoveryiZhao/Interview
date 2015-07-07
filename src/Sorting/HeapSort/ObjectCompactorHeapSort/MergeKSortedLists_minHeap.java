@@ -57,7 +57,7 @@ public class MergeKSortedLists_minHeap {
             };
 
             // new PriorityQueue<ListNode>(heapSize, c)
-            PriorityQueue<ListNode> minHeap = new PriorityQueue<ListNode>(lists.size(), c);
+            PriorityQueue<ListNode> minHeap = new PriorityQueue<>(lists.size(), c);
             for (ListNode node : lists) {
                 if (node != null) {
                     minHeap.add(node);

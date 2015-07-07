@@ -45,43 +45,42 @@ public class FinalScoreQuestion {
     public static Map<Integer, Double> calculateFinalScores(List<TestResult> results) {
         if (results.size() == 0) {
             return null;
-        } else {
-            HashMap<Integer, PriorityQueue<Integer>> id_scores = new HashMap<Integer, PriorityQueue<Integer>>();
-            // reverseOrder from minHeap PriorityQueue to maxHeap PriorityQueue
-            Comparator<Integer> c = Collections.reverseOrder();
-            for (TestResult r : results) {
-                PriorityQueue<Integer> minHeap = null;
-                if (!id_scores.containsKey(r.studentId)) {
-                    // use Comparator to reverseOrder from minHeap PriorityQueue to maxHeap PriorityQueue
-                    minHeap = new PriorityQueue<Integer>(5, c);
-                } else {
-                    minHeap = id_scores.get(r.studentId);
-                }
-                minHeap.add(r.testScore);
-                id_scores.put(r.studentId, minHeap);
-            }
-
-            HashMap<Integer, Double> id_average = new HashMap<Integer, Double>();
-            for (int key : id_scores.keySet()) {
-                PriorityQueue<Integer> q = id_scores.get(key);
-                double avg = 0;
-                for (int i = 0; i < 5; i++) {
-                    avg += q.poll();
-                }
-                avg /= 5;
-                id_average.put(key, avg);
-            }
-            return id_average;
         }
+        Map<Integer, PriorityQueue<Integer>> id_scores = new HashMap<>();
+        // reverseOrder from minHeap PriorityQueue to maxHeap PriorityQueue
+        Comparator<Integer> c = Collections.reverseOrder();
+        for (TestResult r : results) {
+            PriorityQueue<Integer> minHeap = null;
+            if (!id_scores.containsKey(r.studentId)) {
+                // use Comparator to reverseOrder from minHeap PriorityQueue to maxHeap PriorityQueue
+                minHeap = new PriorityQueue<>(5, c);
+            } else {
+                minHeap = id_scores.get(r.studentId);
+            }
+            minHeap.add(r.testScore);
+            id_scores.put(r.studentId, minHeap);
+        }
+
+        Map<Integer, Double> id_average = new HashMap<>();
+        for (int key : id_scores.keySet()) {
+            PriorityQueue<Integer> q = id_scores.get(key);
+            double avg = 0;
+            for (int i = 0; i < 5; i++) {
+                avg += q.poll();
+            }
+            avg /= 5;
+            id_average.put(key, avg);
+        }
+        return id_average;
     }
 }
 
-class TestResult{
+class TestResult {
     int studentId;
     String name;
     int testScore;
 
-    public TestResult(int studentId, String name, int testScore){
+    public TestResult(int studentId, String name, int testScore) {
         this.studentId = studentId;
         this.name = name;
         this.testScore = testScore;

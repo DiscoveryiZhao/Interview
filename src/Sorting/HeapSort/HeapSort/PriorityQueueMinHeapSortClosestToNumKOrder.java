@@ -33,7 +33,7 @@ public class PriorityQueueMinHeapSortClosestToNumKOrder {
             }
         };
 
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(a.length , c);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(a.length , c);
         for (int i : a) {
             minHeap.add(i);
         }
