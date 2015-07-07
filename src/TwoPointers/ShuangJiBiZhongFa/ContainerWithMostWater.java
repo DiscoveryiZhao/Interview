@@ -5,10 +5,10 @@ package TwoPointers.ShuangJiBiZhongFa;
  */
 public class ContainerWithMostWater {
     public static void main(String[] args) {
-        int[] test1 = { 1, 2, 3, 4, 5, 6 }; // 9
-        int[] test2 = { 1, 1 }; // 1
-        System. out.println(maxArea(test1)); // 9
-        System. out.println(maxArea(test2)); // 1
+        int[] test1 = {1, 2, 3, 4, 5, 6}; // 9
+        int[] test2 = {1, 1}; // 1
+        System.out.println(maxArea(test1)); // 9
+        System.out.println(maxArea(test2)); // 1
     }
 
     public static int maxArea(int[] height) {
@@ -16,7 +16,7 @@ public class ContainerWithMostWater {
         int L = 0;
         int R = height.length - 1;
         while (L < R) {
-            maxArea = Math. max(maxArea, (R - L) * Math. min(height[L], height[R]));
+            maxArea = Math.max(maxArea, (R - L) * Math.min(height[L], height[R]));
             if (height[L] < height[R]) {
                 L++;
             } else {

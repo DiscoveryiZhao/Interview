@@ -18,21 +18,21 @@ public class RotateList {
             // find the n-to-the-end
             while (R != null) {
                 if (k + 1 == 0) {
-                    L = L. next;
+                    L = L.next;
                 } else {
                     k--;
                 }
                 // right point is at the k = 1
                 // make it a circular linked list
                 if (R.next == null) {
-                    R. next = head;
+                    R.next = head;
                     break;
                 }
-                R = R. next;
+                R = R.next;
             }
 
-            head = L. next;
-            L. next = null;
+            head = L.next;
+            L.next = null;
             return head;
         }
     }
@@ -40,9 +40,9 @@ public class RotateList {
     public static int length(ListNode head) {
         ListNode cur = head;
         int len = 0;
-        while (cur != null ) {
+        while (cur != null) {
             len++;
-            cur = cur. next;
+            cur = cur.next;
         }
         return len;
     }

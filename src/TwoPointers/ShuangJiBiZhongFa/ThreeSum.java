@@ -21,7 +21,7 @@ public class ThreeSum {
                 while (L < R) {
                     int sum = num[i] + num[L] + num[R];
                     if(sum == 0){
-                        ArrayList<Integer> tmp = new ArrayList<Integer>();
+                        List<Integer> tmp = new ArrayList<>();
                         tmp.add(num[i]);
                         tmp.add(num[L]);
                         tmp.add(num[R]);

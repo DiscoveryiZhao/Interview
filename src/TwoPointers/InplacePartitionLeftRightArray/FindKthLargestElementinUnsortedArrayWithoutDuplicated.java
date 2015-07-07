@@ -5,18 +5,20 @@ package TwoPointers.InplacePartitionLeftRightArray;
  */
 public class FindKthLargestElementinUnsortedArrayWithoutDuplicated {
     public static void main(String[] args) {
-        int[] A = { 304, 4, 6, 8, 99, 1, 2034, 3405 };
-        System. out.println(findKthLargest(A, 1)); // 1
-        System. out.println(findKthLargest(A, 2)); // 4
-        System. out.println(findKthLargest(A, 3)); // 6
-        System. out.println(findKthLargest(A, 4)); // 8
-        System. out.println(findKthLargest(A, 5)); // 99
-        System. out.println(findKthLargest(A, 6)); // 304
+        int[] A = {304, 4, 6, 8, 99, 1, 2034, 3405};
+        System.out.println(findKthLargest(A, 1)); // 1
+        System.out.println(findKthLargest(A, 2)); // 4
+        System.out.println(findKthLargest(A, 3)); // 6
+        System.out.println(findKthLargest(A, 4)); // 8
+        System.out.println(findKthLargest(A, 5)); // 99
+        System.out.println(findKthLargest(A, 6)); // 304
 
-    }public static int findKthLargest(int[] A, int k) {
+    }
+
+    public static int findKthLargest(int[] A, int k) {
         // findKthSmallest -> conquer(A, 0, A.length - 1, k - 1)
         // findKthLargest -> conquer(A, 0, A.length - 1, A.length - k)
-        return conquer(A, 0, A. length - 1, A. length - k);
+        return conquer(A, 0, A.length - 1, A.length - k);
     }
 
     public static int conquer(int A[], int k, int low, int high) {
