@@ -12,20 +12,20 @@ public class WordBreakII {
     public static void main(String[] args) {
         Set<String> test9 = new HashSet<String>();
 
-        test9.add( "cat");
-        test9.add( "cats");
-        test9.add( "and");
-        test9.add( "sand");
-        test9.add( "dog");
-        System. out.println(wordBreak( "catsanddog", test9)); // [cat sand dog, cats and dog]
+        test9.add("cat");
+        test9.add("cats");
+        test9.add("and");
+        test9.add("sand");
+        test9.add("dog");
+        System.out.println(wordBreak("catsanddog", test9)); // [cat sand dog, cats and dog]
 
-        String[] tmp = { "a", "aa" , "aaa" , "aaaa" , "aaaaa" , "aaaaaa" , "aaaaaaa" , "aaaaaaaa", "aaaaaaaaa" , "aaaaaaaaaa" };
+        String[] tmp = {"a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"};
         Set<String> test10 = new HashSet<String>();
         for (String s : tmp) {
             test10.add(s);
         }
 
-        System. out.println(wordBreak( "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab" , test10)); // true
+        System.out.println(wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", test10)); // true
     }
 
     public static List<String> wordBreak(String s, Set<String> dict) {

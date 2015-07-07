@@ -19,10 +19,10 @@ public class RecoverBinarySearchTree {
             while (!parentStack.isEmpty() || root != null) {
                 if (root != null) {
                     parentStack.push(root);
-                    root = root. left;
+                    root = root.left;
                 } else {
                     root = parentStack.pop();
-                    if (pre != null && pre.val >= root. val) {
+                    if (pre != null && pre.val >= root.val) {
                         if (first == null) {
                             // the first wrong item should be the bigger one
                             first = pre;
@@ -35,7 +35,7 @@ public class RecoverBinarySearchTree {
                         }
                     }
                     pre = root;
-                    root = root. right;
+                    root = root.right;
                 }
             }
             swap(first, second);
@@ -46,9 +46,9 @@ public class RecoverBinarySearchTree {
         if (first == null || second == null) {
             return;
         } else {
-            int tmp = first.val ;
-            first. val = second. val;
-            second. val = tmp;
+            int tmp = first.val;
+            first.val = second.val;
+            second.val = tmp;
         }
     }
 }

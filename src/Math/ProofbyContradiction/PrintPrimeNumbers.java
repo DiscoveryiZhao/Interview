@@ -13,10 +13,10 @@ public class PrintPrimeNumbers {
 
     public static void printPrimes(int n) {
         boolean[] primes = new boolean[n + 1];
-        Arrays. fill(primes, true);
+        Arrays.fill(primes, true);
         primes[0] = false; // 0 不是prime
         primes[1] = false; // 1不是prime
-        for (int i = 2; i <= Math.sqrt (n); i++) { // [1]
+        for (int i = 2; i <= Math.sqrt(n); i++) { // [1]
             // true if i is prime number, since i 能被 n 整除
             if (primes[i]) {
                 // 将prime number i的自身倍数全部都设为false， 因为他们不是prime number
@@ -32,7 +32,7 @@ public class PrintPrimeNumbers {
 
         for (int i = 2; i <= n; i++) {
             if (primes[i]) {
-                System. out.print(i + ", " );
+                System.out.print(i + ", ");
             }
         }
     }

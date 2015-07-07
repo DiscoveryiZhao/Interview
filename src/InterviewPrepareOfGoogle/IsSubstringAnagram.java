@@ -5,10 +5,10 @@ package InterviewPrepareOfGoogle;
  */
 public class IsSubstringAnagram {
     public static void main(String[] args) {
-        System. out.println(substringAnagram( "afdgksldfmzyx", "xyz" )); // true
-        System. out.println(substringAnagram( "afdgzyxksldfm", "xyzk" )); // true
-        System. out.println(substringAnagram( "afdgzyxksldfm", "xkyz" )); // true
-        System. out.println(substringAnagram( "afdgzyxksldfm", "xyx" )); // false
+        System.out.println(substringAnagram("afdgksldfmzyx", "xyz")); // true
+        System.out.println(substringAnagram("afdgzyxksldfm", "xyzk")); // true
+        System.out.println(substringAnagram("afdgzyxksldfm", "xkyz")); // true
+        System.out.println(substringAnagram("afdgzyxksldfm", "xyx")); // false
     }
 
     public static boolean substringAnagram(String a, String b) {
@@ -21,19 +21,19 @@ public class IsSubstringAnagram {
             if (hash[a.charAt(i)] != 0) {
                 int[] hashClone = hash.clone();
                 if (isAnagram(hashClone, a.substring(i, i + n))) {
-                    return true ;
+                    return true;
                 }
             }
         }
-        return false ;
+        return false;
     }
 
     public static boolean isAnagram(int[] hash, String s) {
         for (int i = 0; i < s.length(); i++) {
             if (--hash[s.charAt(i)] < 0) {
-                return false ;
+                return false;
             }
         }
-        return true ;
+        return true;
     }
 }

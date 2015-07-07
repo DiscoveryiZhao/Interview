@@ -5,7 +5,7 @@ package Math.BaseConversion;
  */
 public class DecimalToBinary {
     public static void main(String[] args) {
-        System. out.println(decimalToBinary(2503, 2)); // 100111000111
+        System.out.println(decimalToBinary(2503, 2)); // 100111000111
     }
 
     public static String decimalToBinary(int num, int base) {

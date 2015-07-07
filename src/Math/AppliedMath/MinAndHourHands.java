@@ -6,7 +6,7 @@ package Math.AppliedMath;
 public class MinAndHourHands {
     public static void main(String[] args) {
 
-        System. out.println(diffAngle(2, 20)); // 50
+        System.out.println(diffAngle(2, 20)); // 50
 
     }
 
@@ -26,7 +26,7 @@ public class MinAndHourHands {
 
         // 当时针和分针的度差大于180度时， 要取 360 - diffAngle
 
-        diffAngle = Math. min(diffAngle, 360 - diffAngle);
+        diffAngle = Math.min(diffAngle, 360 - diffAngle);
 
         return diffAngle;
 

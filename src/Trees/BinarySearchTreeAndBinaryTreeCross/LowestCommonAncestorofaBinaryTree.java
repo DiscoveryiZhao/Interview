@@ -7,7 +7,7 @@ import LibraryOfLeetcode.TreeNode;
  */
 public class LowestCommonAncestorofaBinaryTree {
     public static TreeNode lca(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p  || root == q) {
+        if (root == null || root == p || root == q) {
             return root;
         } else {
             TreeNode left = lca(root.left, p, q);

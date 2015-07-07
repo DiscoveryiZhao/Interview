@@ -9,9 +9,9 @@ import java.util.HashMap;
  */
 public class ConstructBinaryTreefromInorderandPostorderTraversal {
     public static TreeNode buildTree(int[] inorder, int[] postorder) {
-        int n = inorder.length ;
+        int n = inorder.length;
         if (n == 0) {
-            return null ;
+            return null;
         } else {
             // inorderMap inorder values to their indices
             HashMap<Integer, Integer> inorderMap = new HashMap<Integer, Integer>();
@@ -29,10 +29,10 @@ public class ConstructBinaryTreefromInorderandPostorderTraversal {
             int mid = in.get(post[cur]);
             TreeNode root = new TreeNode(post[cur]);
             // read postorder values backwards
-            root. left = conquer(in, post, low, mid - 1, cur - (high - mid + 1));
-            root. right = conquer(in, post, mid + 1, high, cur - 1);
+            root.left = conquer(in, post, low, mid - 1, cur - (high - mid + 1));
+            root.right = conquer(in, post, mid + 1, high, cur - 1);
             return root;
         }
-        return null ;
+        return null;
     }
 }

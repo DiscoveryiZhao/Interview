@@ -18,13 +18,14 @@ Related problem: Reverse Words in a String II
 */
 
 public class RotateArray {
-    public static void main(String[] args){
-        int[] nums = {1,2,3,4,5,6,7};
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
         rotate(nums, 3);
         System.out.println(Arrays.toString(nums)); // [5,6,7,1,2,3,4]
     }
+
     public static void rotate(int[] nums, int k) {
-        int n = nums.length ;
+        int n = nums.length;
         k = k % n; // handles k > n
         reverse(nums, 0, n - 1);
         reverse(nums, 0, k - 1);

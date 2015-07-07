@@ -7,7 +7,7 @@ For example, given the array [2,3,-2,4],
 the contiguous subarray [2,3] has the largest product = 6.
 */
 public class MaximumProductSubarray {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int[] nums = {2, 3, -2, 4};
         System.out.println(maxProduct(nums)); // 6
     }

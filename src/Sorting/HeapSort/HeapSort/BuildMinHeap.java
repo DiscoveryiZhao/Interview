@@ -7,17 +7,17 @@ import java.util.Arrays;
  */
 public class BuildMinHeap {
     public static void main(String[] args) {
-        int[] a = { 7, 14, 10, 12, 2, 11, 29, 3, 4 };
+        int[] a = {7, 14, 10, 12, 2, 11, 29, 3, 4};
         heapsort(a);
-        System. out.println(Arrays.toString(a)); // [2, 3, 10, 4, 14, 11, 29, 12, 7]
+        System.out.println(Arrays.toString(a)); // [2, 3, 10, 4, 14, 11, 29, 12, 7]
 
-        int[] b = { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+        int[] b = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
         heapsort(b);
-        System. out.println(Arrays.toString(b)); // [1, 2, 3, 4, 7, 9, 10, 14, 8, 16]
+        System.out.println(Arrays.toString(b)); // [1, 2, 3, 4, 7, 9, 10, 14, 8, 16]
 
-        int[] c = { 21, 66, 40, 10, 70, 81, 30, 22, 45, 95, 88, 38 };
+        int[] c = {21, 66, 40, 10, 70, 81, 30, 22, 45, 95, 88, 38};
         heapsort(c);
-        System. out.println(Arrays.toString(c)); // [10, 21, 30, 22, 70, 38, 40, 66, 45, 95, 88, 81]
+        System.out.println(Arrays.toString(c)); // [10, 21, 30, 22, 70, 38, 40, 66, 45, 95, 88, 81]
     }
 
     public static void heapsort(int[] a) {

@@ -9,11 +9,11 @@ public class ReverseLinkedListII {
     public static ListNode reverseBetween(ListNode head, int m, int n) {
         int tmpM = m;
         ListNode dummy = new ListNode(0);
-        dummy. next = head;
+        dummy.next = head;
         ListNode pre = dummy;
         ListNode cur = head;
         // after while loop pre is at m - 1, cur is at m
-        while (cur != null ) {
+        while (cur != null) {
             if (m - 1 == 0) {
                 m = tmpM;
                 break;
@@ -21,17 +21,17 @@ public class ReverseLinkedListII {
                 m--;
             }
             pre = cur;
-            cur = cur. next;
+            cur = cur.next;
         }
 
         // reverse the list
         while (cur != null && cur.next != null && m < n) {
             m++;
-            ListNode nt = cur. next. next;
-            cur. next. next = pre. next;
-            pre. next = cur. next;
-            cur. next = nt;
+            ListNode nt = cur.next.next;
+            cur.next.next = pre.next;
+            pre.next = cur.next;
+            cur.next = nt;
         }
-        return dummy.next ;
+        return dummy.next;
     }
 }

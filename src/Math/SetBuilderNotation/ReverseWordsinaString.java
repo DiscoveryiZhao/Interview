@@ -5,19 +5,19 @@ package Math.SetBuilderNotation;
  */
 public class ReverseWordsinaString {
     public static void main(String[] args) {
-        System. out.println(reverseWords( " 1")); // "1"
-        System. out.println(reverseWords( "the sky          is blue" )); // "blue is sky the"
+        System.out.println(reverseWords(" 1")); // "1"
+        System.out.println(reverseWords("the sky          is blue")); // "blue is sky the"
     }
 
     public static String reverseWords(String s) {
         int i = s.length() - 1;
         StringBuffer res = new StringBuffer();
         while (i >= 0) {
-            while (i >= 0 && s.charAt(i) == ' ' ) {
+            while (i >= 0 && s.charAt(i) == ' ') {
                 i--;
             }
             String tmp = " ";
-            while (i >= 0 && s.charAt(i) != ' ' ) {
+            while (i >= 0 && s.charAt(i) != ' ') {
                 tmp = s.charAt(i) + tmp;
                 i--;
             }

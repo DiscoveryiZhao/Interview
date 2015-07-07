@@ -12,7 +12,7 @@ public class Test1 {
 // [6,5,7],
 // [4,1,8,3]
     public static void main(String[] args) {
-        List<String> res = summaryRanges(new int[]{0,1,2,4,5,7});
+        List<String> res = summaryRanges(new int[]{0, 1, 2, 4, 5, 7});
         System.out.println(res);
     }
 
@@ -49,19 +49,19 @@ public class Test1 {
 
     public static List<String> summaryRanges(int[] nums) {
         List<String> result = new ArrayList<String>();
-        if(nums==null||nums.length==0){
+        if (nums == null || nums.length == 0) {
             return result;
         }
         int max = nums[0];
         int min = nums[0];
         int i = 1;
-        while(i < nums.length){
-            if(nums[i]==nums[i-1] + 1){
+        while (i < nums.length) {
+            if (nums[i] == nums[i - 1] + 1) {
                 max = nums[i];
-            }else{
+            } else {
                 result.add(min + "->" + max);
-                min=nums[i];
-                max=nums[i];
+                min = nums[i];
+                max = nums[i];
             }
             i++;
         }

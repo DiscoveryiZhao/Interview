@@ -7,25 +7,26 @@ import java.util.Arrays;
  */
 public class NextHigherNumberWithSameDigit {
     public static void main(String[] args) {
-        int[] test1 = { 2, 5, 4, 6, 8 };
-        int[] test2 = { 2, 1, 7, 6, 5 };
-        int[] test3 = { 5, 4, 3, 2, 1 };
+        int[] test1 = {2, 5, 4, 6, 8};
+        int[] test2 = {2, 1, 7, 6, 5};
+        int[] test3 = {5, 4, 3, 2, 1};
         nextHigherNumber(test1);
         nextHigherNumber(test2);
         nextHigherNumber(test3);
 
-        System. out.println(Arrays.toString(test1)); // [2, 5, 4, 8, 6]
-        System. out.println(Arrays.toString(test2)); // [2, 5, 1, 6, 7]
-        System. out.println(Arrays.toString(test3)); // [5, 4, 3, 2, 1]
+        System.out.println(Arrays.toString(test1)); // [2, 5, 4, 8, 6]
+        System.out.println(Arrays.toString(test2)); // [2, 5, 1, 6, 7]
+        System.out.println(Arrays.toString(test3)); // [5, 4, 3, 2, 1]
     }
+
     public static void nextHigherNumber(int[] num) {
-        int n = num.length ;
+        int n = num.length;
         // Case 1: find longest descending tail in range of num[left .. n - 1]
         int left = n - 1;
         while (left > 0 && num[left - 1] >= num[left]) {
             left--;
         }
-        if(left == 0) return;  // true if input are all descending order
+        if (left == 0) return;  // true if input are all descending order
         reverse(num, left, n - 1);
         // Case 2: find the first value greater or equal to num[left - 1] in range of num[left .. n - 1]
         int right = left;

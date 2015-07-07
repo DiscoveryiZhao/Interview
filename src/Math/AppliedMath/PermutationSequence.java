@@ -8,15 +8,15 @@ import java.util.ArrayList;
 public class PermutationSequence {
     public static void main(String[] args) {
 
-        System. out.println(getPermutation(3, 1)); // 123
+        System.out.println(getPermutation(3, 1)); // 123
 
-        System. out.println(getPermutation(3, 2)); // 132
+        System.out.println(getPermutation(3, 2)); // 132
 
-        System. out.println(getPermutation(3, 3)); // 213
+        System.out.println(getPermutation(3, 3)); // 213
 
-        System. out.println(getPermutation(3, 4)); // 231
+        System.out.println(getPermutation(3, 4)); // 231
 
-        System. out.println(getPermutation(2, 2)); // 21
+        System.out.println(getPermutation(2, 2)); // 21
 
     }
 

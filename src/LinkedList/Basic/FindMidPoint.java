@@ -16,10 +16,10 @@ public class FindMidPoint {
         System.out.println(findMidPoint(test1).val);
     }
 
-    public static ListNode findMidPoint(ListNode head){
+    public static ListNode findMidPoint(ListNode head) {
         ListNode walker = head;
         ListNode runner = head;
-        while(runner != null && runner.next != null) {
+        while (runner != null && runner.next != null) {
             walker = walker.next;
             runner = runner.next.next;
         }

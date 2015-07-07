@@ -8,15 +8,15 @@ import java.util.Arrays;
 public class NextPermutation {
     public static void main(String[] args) {
 
-        int[] test1 = { 1, 2, 3 };
+        int[] test1 = {1, 2, 3};
 
-        int[] test2 = { 3, 2, 1 };
+        int[] test2 = {3, 2, 1};
 
-        int[] test3 = { 1, 1, 5 };
+        int[] test3 = {1, 1, 5};
 
-        int[] test4 = { 1, 2 };
+        int[] test4 = {1, 2};
 
-        int[] test5 = { 5, 4, 7, 5, 3, 2 };
+        int[] test5 = {5, 4, 7, 5, 3, 2};
 
         nextPermutation(test1);
 
@@ -28,21 +28,21 @@ public class NextPermutation {
 
         nextPermutation(test5);
 
-        System. out.println(Arrays.toString(test1)); // [1, 3, 2]
+        System.out.println(Arrays.toString(test1)); // [1, 3, 2]
 
-        System. out.println(Arrays.toString(test2)); // [1, 2, 3]
+        System.out.println(Arrays.toString(test2)); // [1, 2, 3]
 
-        System. out.println(Arrays.toString(test3)); // [1, 5, 1]
+        System.out.println(Arrays.toString(test3)); // [1, 5, 1]
 
-        System. out.println(Arrays.toString(test4)); // [2, 1]
+        System.out.println(Arrays.toString(test4)); // [2, 1]
 
-        System. out.println(Arrays.toString(test5)); // [5, 5, 2, 3, 4, 7]
+        System.out.println(Arrays.toString(test5)); // [5, 5, 2, 3, 4, 7]
 
     }
 
     public static void nextPermutation(int[] num) {
 
-        int n = num.length ;
+        int n = num.length;
 
         // Case 1: find longest descending tail in range of num[left .. n - 1]
 

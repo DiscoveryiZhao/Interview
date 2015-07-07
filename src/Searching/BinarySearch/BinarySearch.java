@@ -5,14 +5,14 @@ package Searching.BinarySearch;
  */
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] test1 = { 4, 5, 6, 7, 8, 9 };
-        System. out.println(binarySearchRecursion(test1, 4)); // 0
-        System. out.println(binarySearchRecursion(test1, 5)); // 1
-        System. out.println(binarySearchRecursion(test1, 6)); // 2
-        System. out.println(binarySearchRecursion(test1, 7)); // 3
-        System. out.println(binarySearchRecursion(test1, 8)); // 4
-        System. out.println(binarySearchRecursion(test1, 9)); // 5
-        System. out.println(binarySearchRecursion(test1, 10)); // -1
+        int[] test1 = {4, 5, 6, 7, 8, 9};
+        System.out.println(binarySearchRecursion(test1, 4)); // 0
+        System.out.println(binarySearchRecursion(test1, 5)); // 1
+        System.out.println(binarySearchRecursion(test1, 6)); // 2
+        System.out.println(binarySearchRecursion(test1, 7)); // 3
+        System.out.println(binarySearchRecursion(test1, 8)); // 4
+        System.out.println(binarySearchRecursion(test1, 9)); // 5
+        System.out.println(binarySearchRecursion(test1, 10)); // -1
     }
 
     public static int binarySearch(int[] A, int target) {
@@ -54,7 +54,7 @@ public class BinarySearch {
             return -1;
         }
 
-        return conquer(A, target, 0, A. length - 1);
+        return conquer(A, target, 0, A.length - 1);
     }
 
     public static int conquer(int[] A, int target, int low, int high) {

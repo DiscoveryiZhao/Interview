@@ -7,14 +7,14 @@ import LibraryOfLeetcode.ListNode;
  */
 public class RemoveNodeFromLinkedList {
 
-    public ListNode removeNodeFromLinkedList(ListNode head, int target){
+    public ListNode removeNodeFromLinkedList(ListNode head, int target) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 
         ListNode preHead = dummy;
 
-        while(head!=null){
-            if(head.val == target){
+        while (head != null) {
+            if (head.val == target) {
                 preHead.next = preHead.next.next;
                 break;
             }

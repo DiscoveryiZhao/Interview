@@ -7,13 +7,14 @@ import LibraryOfLeetcode.TreeNode;
  */
 public class AmplitudeOfTree {
     public static int amp = 0;
+
     public static int sol(TreeNode root) {
         if (root == null) {
             return 0;
         } else {
             amp = 0;
             helper(root, root.val, root.val);
-            return amp ;
+            return amp;
         }
     }
 
@@ -21,10 +22,10 @@ public class AmplitudeOfTree {
         if (root == null) {
             return;
         } else {
-            pathMin = Math. min(pathMin, root.val);
-            pathMax = Math. max(pathMax, root.val);
+            pathMin = Math.min(pathMin, root.val);
+            pathMax = Math.max(pathMax, root.val);
             if (root.left == null && root.right == null) {
-                amp = Math.max( amp, pathMax - pathMin);
+                amp = Math.max(amp, pathMax - pathMin);
             }
 
             helper(root.left, pathMin, pathMax);

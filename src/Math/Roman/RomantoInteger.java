@@ -10,13 +10,13 @@ public class RomantoInteger {
         int n = s.length();
         int res = 0;
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        map.put( 'M', 1000);
-        map.put( 'D', 500);
-        map.put( 'C', 100);
-        map.put( 'L', 50);
-        map.put( 'X', 10);
-        map.put( 'V', 5);
-        map.put( 'I', 1);
+        map.put('M', 1000);
+        map.put('D', 500);
+        map.put('C', 100);
+        map.put('L', 50);
+        map.put('X', 10);
+        map.put('V', 5);
+        map.put('I', 1);
 
         for (int i = 0; i < n; i++) {
             int integer = map.get(s.charAt(i));

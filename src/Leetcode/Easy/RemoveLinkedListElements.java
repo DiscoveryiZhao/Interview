@@ -14,7 +14,7 @@ public class RemoveLinkedListElements {
         ListNode test1 = new ListNode(1);
         test1.next = new ListNode(2);
         ListNode res1 = removeElements(test1, 1);
-        while(res1 != null){
+        while (res1 != null) {
             System.out.print(res1.val);
             System.out.print("->");
             res1 = res1.next;
@@ -25,7 +25,7 @@ public class RemoveLinkedListElements {
         ListNode test2 = new ListNode(1);
         test2.next = new ListNode(1);
         ListNode res2 = removeElements(test2, 1);
-        while(res2 != null){
+        while (res2 != null) {
             System.out.print(res2.val);
             System.out.print("->");
             res2 = res2.next;
@@ -41,10 +41,10 @@ public class RemoveLinkedListElements {
 
         ListNode pre = dummy;
         ListNode cur = head;
-        while(cur!=null){
-            if(cur.val == val){
+        while (cur != null) {
+            if (cur.val == val) {
                 pre.next = cur.next;
-            }else{
+            } else {
                 pre = cur;
             }
             cur = cur.next;

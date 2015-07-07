@@ -15,60 +15,60 @@ return [3, 4].
 */
 public class SearchforaRange {
     public static void main(String[] args) {
-        int[] test1 = { 5, 7, 7, 8, 8, 10 };
-        int[] test2 = { 2, 2 };
-        int[] test3 = { 3, 3, 3 };
-        int[] test4 = { 1, 2, 2 };
-        int[] test5 = { 1, 2, 3, 3, 3, 3, 4, 5, 9 };
-        System. out.println(Arrays.toString(searchRange(test1, 8))); // [3, 4]
-        System. out.println(Arrays.toString( searchRange(test2, 2))); // [0, 1]
-        System. out.println(Arrays.toString( searchRange(test3, 3))); // [0, 2]
-        System. out.println(Arrays.toString( searchRange(test4, 2))); // [1, 2]
-        System. out.println(Arrays.toString( searchRange(test5, 3))); // [2, 5]
+        int[] test1 = {5, 7, 7, 8, 8, 10};
+        int[] test2 = {2, 2};
+        int[] test3 = {3, 3, 3};
+        int[] test4 = {1, 2, 2};
+        int[] test5 = {1, 2, 3, 3, 3, 3, 4, 5, 9};
+        System.out.println(Arrays.toString(searchRange(test1, 8))); // [3, 4]
+        System.out.println(Arrays.toString(searchRange(test2, 2))); // [0, 1]
+        System.out.println(Arrays.toString(searchRange(test3, 3))); // [0, 2]
+        System.out.println(Arrays.toString(searchRange(test4, 2))); // [1, 2]
+        System.out.println(Arrays.toString(searchRange(test5, 3))); // [2, 5]
     }
 
 
-    public static int[] searchRange(int[] A, int target){
-        int[] range = {-1, - 1};
+    public static int[] searchRange(int[] A, int target) {
+        int[] range = {-1, -1};
 
         // search for left range
         int low = 0;
         int high = A.length - 1;
         int mid;
-        while(low + 1 < high){
-            mid = low + (high - low)/2;
-            if(A[mid] == target){
+        while (low + 1 < high) {
+            mid = low + (high - low) / 2;
+            if (A[mid] == target) {
                 high = mid;
-            }else if(A[mid] < target){
+            } else if (A[mid] < target) {
                 low = mid;
-            }else{
+            } else {
                 high = mid;
             }
         }
 
-        if(A[low] == target){
+        if (A[low] == target) {
             range[0] = low;
-        }else if(A[high] == target){
+        } else if (A[high] == target) {
             range[0] = high;
         }
 
         // search for right range
         low = 0;
         high = A.length - 1;
-        while(low + 1 < high){
-            mid = low + (high - low)/2;
-            if(A[mid] == target){
+        while (low + 1 < high) {
+            mid = low + (high - low) / 2;
+            if (A[mid] == target) {
                 low = mid;
-            }else if(A[mid] < target){
+            } else if (A[mid] < target) {
                 low = mid;
-            }else{
+            } else {
                 high = mid;
             }
         }
 
-        if(A[high] == target){
+        if (A[high] == target) {
             range[1] = high;
-        }else if(A[low] == target){
+        } else if (A[low] == target) {
             range[1] = low;
         }
 

@@ -32,7 +32,7 @@ public class N_Queens {
         }
     }
 
-    private static void domainTraversal(List<String[]> res, int[] rowInCol, int vi, int vm){
+    private static void domainTraversal(List<String[]> res, int[] rowInCol, int vi, int vm) {
         for (int i = 0; i < vm; i++) {
             int si = i;
             if (NotToCutBranch(rowInCol, si, vi) == false) {

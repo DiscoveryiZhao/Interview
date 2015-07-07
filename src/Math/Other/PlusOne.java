@@ -7,14 +7,14 @@ import java.util.Arrays;
  */
 public class PlusOne {
     public static void main(String[] args) {
-        int[] test1 = { 9, 9, 9 };
-        int[] test2 = { 9, 9, 7 };
-        System. out.println(Arrays.toString(plusOne(test1))); // [1, 0, 0, 0]
-        System. out.println(Arrays.toString( plusOne(test2))); // [9, 9, 8]
+        int[] test1 = {9, 9, 9};
+        int[] test2 = {9, 9, 7};
+        System.out.println(Arrays.toString(plusOne(test1))); // [1, 0, 0, 0]
+        System.out.println(Arrays.toString(plusOne(test2))); // [9, 9, 8]
     }
 
     public static int[] plusOne(int[] digits) {
-        int n = digits.length ;
+        int n = digits.length;
         for (int i = n - 1; i >= 0; i--) {
             if (digits[i] < 9) {
                 digits[i]++;

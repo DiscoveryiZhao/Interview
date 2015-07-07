@@ -8,9 +8,9 @@ import java.util.Arrays;
 public class CountTheNumberOfPossibleTriangles {
     public static void main(String[] args) {
 
-        int[] a = { 4, 6, 3, 7 };
+        int[] a = {4, 6, 3, 7};
 
-        int[] b = { 10, 21, 22, 100, 101, 200, 300 };
+        int[] b = {10, 21, 22, 100, 101, 200, 300};
 
         // a:3 ,b:4 ,c:6
 
@@ -18,7 +18,7 @@ public class CountTheNumberOfPossibleTriangles {
 
         // a:4 ,b:6 ,c:7
 
-        System. out.println(findNumberOfTriangles(a)); // 3
+        System.out.println(findNumberOfTriangles(a)); // 3
 
         // a:10 ,b:21 ,c:22
 
@@ -42,7 +42,7 @@ public class CountTheNumberOfPossibleTriangles {
 
         // a:101 ,b:200 ,c:300
 
-        System. out.println(findNumberOfTriangles(b)); // 6
+        System.out.println(findNumberOfTriangles(b)); // 6
 
     }
 
@@ -50,9 +50,9 @@ public class CountTheNumberOfPossibleTriangles {
 
     public static int findNumberOfTriangles(int[] a) {
 
-        int n = a.length ;
+        int n = a.length;
 
-        Arrays. sort(a);
+        Arrays.sort(a);
 
         int count = 0;
 
@@ -64,7 +64,7 @@ public class CountTheNumberOfPossibleTriangles {
 
                 while (k < n && a[i] + a[j] > a[k]) {
 
-                    System. out.println("a:" + a[i] + "  ,b:" + a[j] + "  ,c:" + a[k]);
+                    System.out.println("a:" + a[i] + "  ,b:" + a[j] + "  ,c:" + a[k]);
 
                     k++;
 
@@ -84,9 +84,9 @@ public class CountTheNumberOfPossibleTriangles {
 
     public static int findNumberOfTriangles2(int[] a) {
 
-        int n = a.length ;
+        int n = a.length;
 
-        Arrays. sort(a);
+        Arrays.sort(a);
 
         int count = 0;
 

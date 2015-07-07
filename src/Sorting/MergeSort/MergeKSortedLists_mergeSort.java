@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class MergeKSortedLists_mergeSort {
     public static ListNode mergeKLists(ArrayList<ListNode> lists) {
         if (lists.size() == 0) {
-            return null ;
+            return null;
         } else {
             return conquer(lists, 0, lists.size() - 1);
         }
@@ -32,16 +32,16 @@ public class MergeKSortedLists_mergeSort {
 
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
-                pre. next = l1;
-                l1 = l1. next;
+                pre.next = l1;
+                l1 = l1.next;
             } else {
-                pre. next = l2;
-                l2 = l2. next;
+                pre.next = l2;
+                l2 = l2.next;
             }
-            pre = pre. next;
+            pre = pre.next;
         }
 
-        pre. next = (l1 == null ? l2 : l1);
-        return dummy.next ;
+        pre.next = (l1 == null ? l2 : l1);
+        return dummy.next;
     }
 }

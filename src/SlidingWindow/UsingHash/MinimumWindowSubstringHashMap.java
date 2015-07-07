@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class MinimumWindowSubstringHashMap {
     public static void main(String[] args) {
-        System. out.println(minWindow( "ADOBECODEBANC", "ABC" )); // BANC
+        System.out.println(minWindow("ADOBECODEBANC", "ABC")); // BANC
     }
 
     public static String minWindow(String s, String t) {

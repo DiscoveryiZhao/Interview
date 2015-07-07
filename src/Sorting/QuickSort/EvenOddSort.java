@@ -7,14 +7,14 @@ import java.util.Arrays;
  */
 public class EvenOddSort {
     public static void main(String[] args) {
-        int[] a = { 2, 1, 4, 5, 1, 2, 5, 6, 4, 3, 4, 3 };
+        int[] a = {2, 1, 4, 5, 1, 2, 5, 6, 4, 3, 4, 3};
         oddEven(a);
         // [1, 5, 1, 5, 3, 3, 2, 6, 4, 4, 4, 2]
-        System. out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(a));
     }
 
     public static void oddEven(int[] a) {
-        int n = a.length ;
+        int n = a.length;
         int L = -1;
         int R = 0;
         while (R < n) {

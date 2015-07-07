@@ -5,23 +5,23 @@ package Math.SetBuilderNotation;
  */
 public class Arithmetic {
     public static void main(String[] args) {
-        int[] a = { -1, 1, 3 };
-        int[] b = { -1, 1, 3, 3, 3 };
-        int[] c = { -1, 1, 3, 3, 3, 2, 1 };
-        int[] d = { -1, 1, 3, 3, 3, 2, 1, 0 };
-        int[] e = { -1, 1, 3, 3, 3, 2, 1, 0, 0, 0 };
-        int[] f = { -1, 1, 3, 3, 3, 2, 1, 0, 0, 0, 0 };
+        int[] a = {-1, 1, 3};
+        int[] b = {-1, 1, 3, 3, 3};
+        int[] c = {-1, 1, 3, 3, 3, 2, 1};
+        int[] d = {-1, 1, 3, 3, 3, 2, 1, 0};
+        int[] e = {-1, 1, 3, 3, 3, 2, 1, 0, 0, 0};
+        int[] f = {-1, 1, 3, 3, 3, 2, 1, 0, 0, 0, 0};
 
-        System. out.println(solution(a)); // 1
-        System. out.println(solution(b)); // 2
-        System. out.println(solution(c)); // 3
-        System. out.println(solution(d)); // 5
-        System. out.println(solution(e)); // 6
-        System. out.println(solution(f)); // 8
+        System.out.println(solution(a)); // 1
+        System.out.println(solution(b)); // 2
+        System.out.println(solution(c)); // 3
+        System.out.println(solution(d)); // 5
+        System.out.println(solution(e)); // 6
+        System.out.println(solution(f)); // 8
     }
 
-    public static int solution( int[] A) {
-        int n = A.length ;
+    public static int solution(int[] A) {
+        int n = A.length;
         if (n < 2) {
             return 0;
         } else {

@@ -16,22 +16,22 @@ public class PathSumII {
 
     public static boolean helper(TreeNode root, int sum, ArrayList<ArrayList<Integer>> res, ArrayList<Integer> tmp) {
         if (root == null) {
-            return false ;
+            return false;
         } else {
-            sum -= root. val;
-            tmp.add(root. val);
+            sum -= root.val;
+            tmp.add(root.val);
             if (sum == 0) {
                 // 题目说了为root-to-leaf path sum相加，所以leaf的定义为无子节点，所以必须加上这个条件
                 if (root.left == null && root.right == null) {
-                    res.add( new ArrayList<Integer>(tmp));
+                    res.add(new ArrayList<Integer>(tmp));
                 }
             }
             if (helper(root.left, sum, res, tmp) || helper(root.right, sum, res, tmp)) {
-                return true ;
+                return true;
             }
 
             tmp.remove(tmp.size() - 1);
-            return false ;
+            return false;
         }
     }
 }

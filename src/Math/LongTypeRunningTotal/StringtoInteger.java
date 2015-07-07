@@ -13,7 +13,7 @@ public class StringtoInteger {
             long runningTotal = 0;
             int sign = 1;
             int i = 0;
-            if (str.charAt(i) == '-' ) {
+            if (str.charAt(i) == '-') {
                 sign = -1;
                 i++;
             } else if (str.charAt(i) == '+') {
@@ -25,9 +25,9 @@ public class StringtoInteger {
                 runningTotal = runningTotal * 10 + (str.charAt(i) - '0');
                 i++;
                 if (sign > 0 && runningTotal > Integer.MAX_VALUE) return Integer.MAX_VALUE;
-                if (sign < 0 && (-1) * runningTotal < Integer.MIN_VALUE) return Integer.MIN_VALUE ;
+                if (sign < 0 && (-1) * runningTotal < Integer.MIN_VALUE) return Integer.MIN_VALUE;
             }
-            return (int ) runningTotal * sign;
+            return (int) runningTotal * sign;
         }
     }
 }

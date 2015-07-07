@@ -5,9 +5,9 @@ package Math.SetBuilderNotation;
  */
 public class StringCompression {
     public static void main(String[] args) {
-        System. out.println(stringCompression( "a")); // a1
-        System. out.println(stringCompression( "aab")); // a2b1
-        System. out.println(stringCompression( "aaabbcaa")); // a3b2c1a2
+        System.out.println(stringCompression("a")); // a1
+        System.out.println(stringCompression("aab")); // a2b1
+        System.out.println(stringCompression("aaabbcaa")); // a3b2c1a2
     }
 
     public static String stringCompression(String s) {

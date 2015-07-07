@@ -4,22 +4,22 @@ package InterviewPrepareOfGoogle;
  * 给你一个很大的字典。一对词如果不share 任何字母，比如dog, cat不share字母，而dog, boy就share一个o，则是interesting pair.找出所以interesting pairs中长度乘积最大的pair.输出这个乘积。
  */
 public class InterestingPairMaxProduct {
-    public static void main(String[] args){
-        String[] sa = { "dog", "cat" , "boy" };
-        System. out.println(getMaxProduct(sa)); // 9
+    public static void main(String[] args) {
+        String[] sa = {"dog", "cat", "boy"};
+        System.out.println(getMaxProduct(sa)); // 9
     }
 
     public static int getMaxProduct(String[] sa) {
-        int n = sa.length ;
+        int n = sa.length;
         int[] bitPattens = new int[n];
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             bitPattens[i] = getBitPatten(sa[i]);
         }
         int max = 0;
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
-                if (isInterestingPair(bitPattens[i],bitPattens[j])) {
-                    max = Math. max(max, sa[i].length() * sa[j].length());
+                if (isInterestingPair(bitPattens[i], bitPattens[j])) {
+                    max = Math.max(max, sa[i].length() * sa[j].length());
                 }
             }
         }
@@ -39,7 +39,7 @@ public class InterestingPairMaxProduct {
     public static int getBitPatten(String w) {
         int x = 0;
         for (int i = 0; i < w.length(); i++) {
-            x |= (1 << (Character. toLowerCase(w.charAt(i)) - 'a'));
+            x |= (1 << (Character.toLowerCase(w.charAt(i)) - 'a'));
         }
         return x;
     }

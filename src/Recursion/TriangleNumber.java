@@ -12,11 +12,11 @@ public class TriangleNumber {
         System.out.println(recur(4)); // 10
     }
 
-    public static int recur(int n){
-        if(n==0||n==1){
+    public static int recur(int n) {
+        if (n == 0 || n == 1) {
             return n;
-        }else{
-            return recur(n-1)+n;
+        } else {
+            return recur(n - 1) + n;
         }
     }
 }

@@ -8,16 +8,16 @@ import LibraryOfLeetcode.ListNode;
 public class RemoveNthNodeFromEndofList {
     public static void main(String[] args) {
         ListNode test1 = new ListNode(1);
-        test1. next = new ListNode(2);
-        test1. next. next = new ListNode(3);
-        test1. next. next. next = new ListNode(4);
-        test1. next. next. next. next = new ListNode(5);
+        test1.next = new ListNode(2);
+        test1.next.next = new ListNode(3);
+        test1.next.next.next = new ListNode(4);
+        test1.next.next.next.next = new ListNode(5);
 
         ListNode result1 = removeNthFromEnd(test1, 1);
         // 1->2->3->4->
         while (result1 != null) {
-            System. out.print(result1.val + "->" );
-            result1 = result1. next;
+            System.out.print(result1.val + "->");
+            result1 = result1.next;
         }
     }
 
@@ -26,17 +26,17 @@ public class RemoveNthNodeFromEndofList {
         ListNode R = head;
         while (R != null) {
             if (n + 1 == 0) {
-                L = L. next;
+                L = L.next;
             } else {
                 n--;
             }
-            R = R. next;
+            R = R.next;
         }
 
         if (n == 0) { // remove head
-            head = head. next;
+            head = head.next;
         } else { // remove n- th
-            L. next = L. next. next;
+            L.next = L.next.next;
         }
         return head;
     }

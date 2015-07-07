@@ -7,12 +7,12 @@ import java.util.*;
  */
 public class FindtheKelementsClosestToMedian {
     public static void main(String[] args) {
-        List<Integer> a = Arrays. asList(7, 14, 10, 12, 2, 11, 29, 3, 4); // odd length
-        List<Integer> b = Arrays. asList(16, 14, 10, 8, 7, 9, 3, 2, 4, 1); // even length
-        System. out.println(find_k_closest_to_median(a, 5)); // [10, 11, 12, 7, 14]
-        System. out.println(find_k_closest_to_median(b, 5)); // [7, 8, 9, 10, 4]
-        System. out.println(find_k_closest_to_median(a, 6)); // [10, 11, 12, 7, 14, 4]
-        System. out.println(find_k_closest_to_median(b, 6)); // [7, 8, 9, 10, 4, 3]
+        List<Integer> a = Arrays.asList(7, 14, 10, 12, 2, 11, 29, 3, 4); // odd length
+        List<Integer> b = Arrays.asList(16, 14, 10, 8, 7, 9, 3, 2, 4, 1); // even length
+        System.out.println(find_k_closest_to_median(a, 5)); // [10, 11, 12, 7, 14]
+        System.out.println(find_k_closest_to_median(b, 5)); // [7, 8, 9, 10, 4]
+        System.out.println(find_k_closest_to_median(a, 6)); // [10, 11, 12, 7, 14, 4]
+        System.out.println(find_k_closest_to_median(b, 6)); // [7, 8, 9, 10, 4, 3]
     }
 
     public static List<Integer> find_k_closest_to_median(List<Integer> A, int k) {
@@ -24,10 +24,10 @@ public class FindtheKelementsClosestToMedian {
                 // if((Math.abs(a - m)-Math.abs(b - m)) < 0) then a comes "before" b in the ordering,
                 // if((Math.abs(a - m)-Math.abs(b - m)) > 0) then a comes "after" b in the ordering,
                 // if((Math.abs(a - m)-Math.abs(b - m)) == 0) then a and b are considered "equal" in the ordering
-                return (int ) (Math.abs(a - m) - Math. abs(b - m));
+                return (int) (Math.abs(a - m) - Math.abs(b - m));
             }
         };
-        Collections. sort(A, c);
+        Collections.sort(A, c);
 
         return new ArrayList<Integer>(A.subList(0, k));
     }
@@ -35,7 +35,7 @@ public class FindtheKelementsClosestToMedian {
     // Promote to double to prevent precision error.
     public static double find_median(List<Integer> A) {
         int mid = A.size() >> 1;
-        Collections. sort(A);
+        Collections.sort(A);
         // System.out.println(A);
         if ((A.size() & 1) == 1) { // A has odd number elements.
             return A.get(mid);

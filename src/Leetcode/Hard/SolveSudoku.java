@@ -24,14 +24,14 @@ public class SolveSudoku {
         if (vi == vm) {
             return true;
         } else {
-            if(domainTraversal(board, emptyBlocks, solutionSpace,vi,vm)){
+            if (domainTraversal(board, emptyBlocks, solutionSpace, vi, vm)) {
                 return true;
             }
             return false;
         }
     }
 
-    private static boolean domainTraversal(char[][] board, ArrayList<Integer> emptyBlocks, char[] solutionSpace, int vi, int vm){
+    private static boolean domainTraversal(char[][] board, ArrayList<Integer> emptyBlocks, char[] solutionSpace, int vi, int vm) {
         int oneDimArrayCoordinate = emptyBlocks.get(vi);
         int row = oneDimArrayCoordinate / board[0].length;
         int col = oneDimArrayCoordinate % board[0].length;

@@ -8,19 +8,19 @@ import LibraryOfLeetcode.TreeNode;
 public class FlattenBinaryTreetoLinkedList {
     public static void flatten(TreeNode root) {
         TreeNode cur = root;
-        while (cur != null ) {
+        while (cur != null) {
             if (cur.left != null) {
-                TreeNode curLeft = cur. left;
+                TreeNode curLeft = cur.left;
                 while (curLeft.right != null && curLeft.right != cur) {
-                    curLeft = curLeft. right;
+                    curLeft = curLeft.right;
                 }
-                if(curLeft.right ==null){
-                    curLeft. right = cur. right;
+                if (curLeft.right == null) {
+                    curLeft.right = cur.right;
                 }
-                cur. right = cur. left;
-                cur. left = null;
-            } else{
-                cur = cur. right;
+                cur.right = cur.left;
+                cur.left = null;
+            } else {
+                cur = cur.right;
             }
         }
     }

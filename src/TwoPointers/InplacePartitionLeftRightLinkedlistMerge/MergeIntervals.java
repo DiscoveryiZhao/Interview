@@ -28,9 +28,9 @@ public class MergeIntervals {
         List<Interval> result0 = merge(zeroIntervals);
         // 输入-> [[2,3],[5,5],[2,2],[3,4],[3,4]], 输出->[[2,4],[5,5]]
         for (Interval i : result0) {
-            System. out.print("[" + i.start + "," + i.end + "]" + "," );
+            System.out.print("[" + i.start + "," + i.end + "]" + ",");
         }
-        System. out.println();
+        System.out.println();
 
         // //////////////////////////////////////////////////////////////////////////////////
 
@@ -48,9 +48,9 @@ public class MergeIntervals {
         List<Interval> result1 = merge(firstIntervals);
         // 输入-> [1,3],[2,6],[8,10],[15,18], 输出->[1,6],[8,10],[15,18]
         for (Interval i : result1) {
-            System. out.print("[" + i.start + "," + i.end + "]" + "," );
+            System.out.print("[" + i.start + "," + i.end + "]" + ",");
         }
-        System. out.println();
+        System.out.println();
 
         // //////////////////////////////////////////////////////////////////////////////////
 
@@ -64,9 +64,9 @@ public class MergeIntervals {
         List<Interval> result2 = merge(secondIntervals);
         // 输入-> [1,3],[2,4], 输出->[1,4]
         for (Interval i : result2) {
-            System. out.print("[" + i.start + "," + i.end + "]" + "," );
+            System.out.print("[" + i.start + "," + i.end + "]" + ",");
         }
-        System. out.println();
+        System.out.println();
 
         // //////////////////////////////////////////////////////////////////////////////////
 
@@ -80,9 +80,9 @@ public class MergeIntervals {
         List<Interval> result3 = merge(thirdIntervals);
         // 输入-> [1,2],[3,4], 输出->[1,2],[3,4]
         for (Interval i : result3) {
-            System. out.print("[" + i.start + "," + i.end + "]" + "," );
+            System.out.print("[" + i.start + "," + i.end + "]" + ",");
         }
-        System. out.println();
+        System.out.println();
 
         // //////////////////////////////////////////////////////////////////////////////////
 
@@ -96,9 +96,9 @@ public class MergeIntervals {
         List<Interval> result4 = merge(fourthIntervals);
         // 输入-> [3,4],[1,2], 输出->[1,2],[3,4]
         for (Interval i : result4) {
-            System. out.print("[" + i.start + "," + i.end + "]" + "," );
+            System.out.print("[" + i.start + "," + i.end + "]" + ",");
         }
-        System. out.println();
+        System.out.println();
 
         // //////////////////////////////////////////////////////////////////////////////////
 
@@ -112,19 +112,19 @@ public class MergeIntervals {
         List<Interval> result5 = merge(fifthIntervals);
         // 输入-> [2,4],[1,3], 输出->[1,4]
         for (Interval i : result5) {
-            System. out.print("[" + i.start + "," + i.end + "]" + "," );
+            System.out.print("[" + i.start + "," + i.end + "]" + ",");
         }
-        System. out.println();
+        System.out.println();
     }
 
     public static List<Interval> merge(List<Interval> intervals) {
         // sort the intervals based on start points
         Comparator<Interval> comparator = new Comparator<Interval>() {
             public int compare(Interval a, Interval b) {
-                return a.start - b.start ;
+                return a.start - b.start;
             }
         };
-        Collections. sort(intervals, comparator);
+        Collections.sort(intervals, comparator);
         return mergeIntervals(intervals);
     }
 
@@ -143,7 +143,7 @@ public class MergeIntervals {
                     L = R;
                 } else {
                     // merged case
-                    intervals.get(L). end = Math.max(intervals.get(L).end, intervals.get(R). end);
+                    intervals.get(L).end = Math.max(intervals.get(L).end, intervals.get(R).end);
                 }
                 R++;
             }

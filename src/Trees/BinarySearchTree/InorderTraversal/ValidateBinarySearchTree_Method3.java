@@ -10,24 +10,24 @@ import java.util.Stack;
 public class ValidateBinarySearchTree_Method3 {
     public static boolean isValidBST(TreeNode root) {
         if (root == null) {
-            return true ;
+            return true;
         } else {
             TreeNode pre = null;
             Stack<TreeNode> parentStack = new Stack<TreeNode>();
             while (!parentStack.isEmpty() || root != null) {
                 if (root != null) {
                     parentStack.push(root);
-                    root = root. left;
+                    root = root.left;
                 } else {
                     root = parentStack.pop();
-                    if (pre != null && pre.val >= root. val){
-                        return false ;
+                    if (pre != null && pre.val >= root.val) {
+                        return false;
                     }
                     pre = root;
-                    root = root. right;
+                    root = root.right;
                 }
             }
-            return true ;
+            return true;
         }
     }
 }

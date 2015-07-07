@@ -4,12 +4,13 @@ package Searching.BinarySearch;
  * Created by yizhao on 5/17/15.
  */
 public class SearchinRotatedSortedArrayII {
-    public static void main(String[] args){
-        int[] test1 = {1,1,3,1};
-        int[] test2 = {3,1,1};
+    public static void main(String[] args) {
+        int[] test1 = {1, 1, 3, 1};
+        int[] test2 = {3, 1, 1};
         System.out.println(search(test1, 3)); // true
         System.out.println(search(test2, 3)); // true
     }
+
     public static boolean search(int[] A, int target) {
         int low = 0;
         int high = A.length - 1;

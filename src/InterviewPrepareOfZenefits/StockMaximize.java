@@ -14,7 +14,7 @@ public class StockMaximize {
     public static void main(String[] args) {
         try {
             StockMaximize();
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
 

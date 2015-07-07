@@ -10,27 +10,27 @@ public class ValidateBinarySearchTree_Method1 {
     public static Integer pre;
 
     public static boolean isValidBST(TreeNode root) {
-        pre = null ;
+        pre = null;
         return dfs(root);
     }
 
     public static boolean dfs(TreeNode root) {
         if (root == null) {
-            return true ;
+            return true;
         } else {
-            if (!dfs(root. left)) {
-                return false ;
+            if (!dfs(root.left)) {
+                return false;
             }
 
-            if (pre != null && pre >= root. val) {
-                return false ;
+            if (pre != null && pre >= root.val) {
+                return false;
             }
-            pre = root.val ;
+            pre = root.val;
 
-            if (!dfs(root. right)) {
-                return false ;
+            if (!dfs(root.right)) {
+                return false;
             }
-            return true ;
+            return true;
         }
     }
 }

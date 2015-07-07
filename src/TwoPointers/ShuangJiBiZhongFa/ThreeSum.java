@@ -9,18 +9,18 @@ import java.util.List;
  */
 public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] num) {
-        int n = num.length ;
+        int n = num.length;
         if (n < 3) {
             return new ArrayList<>();
         } else {
             List<List<Integer>> res = new ArrayList<>();
-            Arrays. sort(num);
+            Arrays.sort(num);
             for (int i = 0; i < n - 2; i++) {
                 int L = i + 1;
                 int R = n - 1;
                 while (L < R) {
                     int sum = num[i] + num[L] + num[R];
-                    if(sum == 0){
+                    if (sum == 0) {
                         List<Integer> tmp = new ArrayList<>();
                         tmp.add(num[i]);
                         tmp.add(num[L]);
@@ -39,7 +39,7 @@ public class ThreeSum {
                 }
 
                 // skip duplicates
-                while (i < n-3 && num[i] == num[i + 1]) i++;
+                while (i < n - 3 && num[i] == num[i + 1]) i++;
             }
             return res;
         }

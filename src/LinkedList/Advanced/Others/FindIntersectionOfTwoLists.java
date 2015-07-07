@@ -12,26 +12,26 @@ public class FindIntersectionOfTwoLists {
 
         if (aLength > bLength) {
             for (int i = 0; i < aLength - bLength; i++) {
-                a = a. next;
+                a = a.next;
             }
         } else if (aLength < bLength) {
             for (int i = 0; i < bLength - aLength; i++) {
-                b = b. next;
+                b = b.next;
             }
         }
 
         while (a != b && a != null && b != null) {
-            a = a. next;
-            b = b. next;
+            a = a.next;
+            b = b.next;
         }
         return a;
     }
 
-    private static int getLength(ListNode cur){
+    private static int getLength(ListNode cur) {
         int length = 0;
-        while (cur != null ) {
+        while (cur != null) {
             length++;
-            cur = cur. next;
+            cur = cur.next;
         }
         return length;
     }

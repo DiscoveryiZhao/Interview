@@ -5,7 +5,7 @@ package SlidingWindow.UsingHash;
  */
 public class MinimumWindowSubstringHashArray {
     public static void main(String[] args) {
-        System. out.println(minWindow( "ADOBECODEBANC", "ABC" )); // BANC
+        System.out.println(minWindow("ADOBECODEBANC", "ABC")); // BANC
     }
 
     public static String minWindow(String s, String t) {
@@ -16,8 +16,8 @@ public class MinimumWindowSubstringHashArray {
         String window = "";
         int found = 0;
         int L = 0;
-        for (int R = 0;R < s.length(); R++) {
-            if(hashT[s.charAt(R)] == 0) continue;
+        for (int R = 0; R < s.length(); R++) {
+            if (hashT[s.charAt(R)] == 0) continue;
             hasFound[s.charAt(R)]++;
             if (hasFound[s.charAt(R)] <= hashT[s.charAt(R)]) found++;
             if (found == t.length()) {

@@ -7,25 +7,25 @@ import java.util.Arrays;
  */
 public class RightRotatingAnArrayKTimesInPlace {
     public static void main(String[] args) {
-        int[] a = { 1, 2, 3, 4, 5 };
+        int[] a = {1, 2, 3, 4, 5};
         rightRotateArray(a, 1);
-        System. out.println(Arrays.toString(a)); // [5, 1, 2, 3, 4]
+        System.out.println(Arrays.toString(a)); // [5, 1, 2, 3, 4]
 
-        int[] b = { 1, 2, 3, 4, 5 };
+        int[] b = {1, 2, 3, 4, 5};
         rightRotateArray(b, 2);
-        System. out.println(Arrays.toString(b)); // [4, 5, 1, 2, 3]
+        System.out.println(Arrays.toString(b)); // [4, 5, 1, 2, 3]
 
-        int[] c = { 1, 2, 3, 4, 5 };
+        int[] c = {1, 2, 3, 4, 5};
         rightRotateArray(c, 3);
-        System. out.println(Arrays.toString(c)); // [3, 4, 5, 1, 2]
+        System.out.println(Arrays.toString(c)); // [3, 4, 5, 1, 2]
 
-        int[] d = { 1, 2, 3, 4, 5 };
+        int[] d = {1, 2, 3, 4, 5};
         rightRotateArray(d, 8);
-        System. out.println(Arrays.toString(d)); // [3, 4, 5, 1, 2]
+        System.out.println(Arrays.toString(d)); // [3, 4, 5, 1, 2]
     }
 
     public static void rightRotateArray(int[] a, int k) {
-        int n = a.length ;
+        int n = a.length;
         k = k % n; // handles k > n
 
         reverse(a, 0, n - 1);

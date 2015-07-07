@@ -13,7 +13,7 @@ public class Swap {
         test1.next.next.next = new ListNode(4);
         test1.next.next.next.next = new ListNode(5);
 
-        swap(test1.next.next,test1.next.next.next);
+        swap(test1.next.next, test1.next.next.next);
 
         while (test1 != null) {
             System.out.print(test1.val + "->");

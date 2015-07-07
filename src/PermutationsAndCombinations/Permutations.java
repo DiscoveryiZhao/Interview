@@ -12,6 +12,7 @@ public class Permutations {
         // [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
         System.out.println(permute(S));
     }
+
     public static List<List<Integer>> permute(int[] num) {
         List<List<Integer>> res = new ArrayList<>();
         vector(num, res, new ArrayList<Integer>(), new boolean[num.length]);

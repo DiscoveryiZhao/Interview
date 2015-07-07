@@ -10,37 +10,37 @@ You are given a target value to search. If found in the array return its index, 
 You may assume no duplicate exists in the array.
 */
 public class SearchinRotatedSortedArray {
-    public int search(int[] A, int target){
+    public int search(int[] A, int target) {
         int start = 0;
         int end = A.length - 1;
         int mid;
 
-        while(start + 1 < end){
-            mid = start + (end - start)/2;
-            if(A[mid] == target){
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (A[mid] == target) {
                 return mid;
             }
-            if(A[start]<A[mid]){
+            if (A[start] < A[mid]) {
                 //situation 1, red line
-                if(A[start]<=target&&target<=A[mid]){
-                    end=mid;
-                }else{
-                    start=mid;
-                }
-            }else{
-                //situation 2, green line
-                if(A[mid]<=target&&target<=A[end]){
+                if (A[start] <= target && target <= A[mid]) {
+                    end = mid;
+                } else {
                     start = mid;
-                }else{
-                    end=mid;
+                }
+            } else {
+                //situation 2, green line
+                if (A[mid] <= target && target <= A[end]) {
+                    start = mid;
+                } else {
+                    end = mid;
                 }
             }
         }
 
-        if(A[start]==target){
+        if (A[start] == target) {
             return start;
         }
-        if(A[end]==target){
+        if (A[end] == target) {
             return end;
         }
         return -1;

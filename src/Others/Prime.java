@@ -23,7 +23,7 @@ public class Prime {
 
     public static void printPrime(int n) {
         if (n < 2) {
-             return;
+            return;
         }
         for (int i = 2; i < n + 1; i++) {
             if (i < 10) {

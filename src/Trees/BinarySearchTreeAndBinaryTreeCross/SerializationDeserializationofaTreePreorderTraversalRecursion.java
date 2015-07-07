@@ -13,18 +13,18 @@ import java.util.Scanner;
 public class SerializationDeserializationofaTreePreorderTraversalRecursion {
     public static void main(String[] args) throws Exception {
         TreeNode root = new TreeNode(1);
-        root. left = new TreeNode(2);
-        root. left. left = new TreeNode(4);
-        root. left. right = new TreeNode(5);
-        root. right = new TreeNode(3);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right = new TreeNode(3);
         // "1 2 4 # # 5 # # 3 # # "
-        serialize(root, "C:\\Users\\Yi\\Desktop\\test.txt" );
+        serialize(root, "C:\\Users\\Yi\\Desktop\\test.txt");
         TreeNode d = deserialize("C:\\Users\\Yi\\Desktop\\test.txt");
-        System. out.println(d.val ); // 1
-        System. out.println(d.left .val ); // 2
-        System. out.println(d.left .left .val ); // 4
-        System. out.println(d.left .right .val ); // 5
-        System. out.println(d.right .val ); // 3
+        System.out.println(d.val); // 1
+        System.out.println(d.left.val); // 2
+        System.out.println(d.left.left.val); // 4
+        System.out.println(d.left.right.val); // 5
+        System.out.println(d.right.val); // 3
     }
 
     public static void serialize(TreeNode root, String fileAddr) throws Exception {
@@ -37,9 +37,9 @@ public class SerializationDeserializationofaTreePreorderTraversalRecursion {
 
     public static void dfs(TreeNode root, BufferedWriter bw) throws Exception {
         if (root == null) {
-            bw.write( "# ");
+            bw.write("# ");
         } else {
-            bw.write(root. val + " ");
+            bw.write(root.val + " ");
             dfs(root.left, bw);
             dfs(root.right, bw);
         }
@@ -49,7 +49,7 @@ public class SerializationDeserializationofaTreePreorderTraversalRecursion {
         TreeNode root = null;
         Scanner sc = new Scanner(new File(fileAddr));
         if (sc.hasNext()) {
-            String[] nextVal = { sc.next() };
+            String[] nextVal = {sc.next()};
             root = constructBT(nextVal, sc);
         }
         sc.close();
@@ -57,17 +57,17 @@ public class SerializationDeserializationofaTreePreorderTraversalRecursion {
     }
 
     private static TreeNode constructBT(String[] nextVal, Scanner sc) {
-        if (nextVal[0].equals("#" )) {
-            return null ;
+        if (nextVal[0].equals("#")) {
+            return null;
         } else {
             TreeNode root = new TreeNode(Integer.valueOf(nextVal[0]));
             if (sc.hasNext()) {
                 nextVal[0] = sc.next();
-                root. left = constructBT(nextVal, sc);
+                root.left = constructBT(nextVal, sc);
             }
             if (sc.hasNext()) {
                 nextVal[0] = sc.next();
-                root. right = constructBT(nextVal, sc);
+                root.right = constructBT(nextVal, sc);
             }
             return root;
         }

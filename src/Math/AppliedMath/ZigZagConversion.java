@@ -6,7 +6,7 @@ package Math.AppliedMath;
 public class ZigZagConversion {
     public static void main(String[] args) {
 
-        System. out.println(convert( "PAYPALISHIRING", 3)); // PAHNAPLSIIGYIR
+        System.out.println(convert("PAYPALISHIRING", 3)); // PAHNAPLSIIGYIR
 
     }
 

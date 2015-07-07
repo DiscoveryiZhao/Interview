@@ -8,13 +8,14 @@ import LibraryOfLeetcode.TreeNode;
  */
 public class ConvertSortedListtoBinarySearchTree {
     public static ListNode h;
+
     public TreeNode sortedListToBST(ListNode head) {
         h = head;
         // calculate list length
         int n = 0;
         ListNode cur = head;
-        while (cur != null ) {
-            cur = cur. next;
+        while (cur != null) {
+            cur = cur.next;
             n++;
         }
         // build the BST
@@ -27,12 +28,12 @@ public class ConvertSortedListtoBinarySearchTree {
             // build up tree recursively
             TreeNode left = conquer(low, mid - 1);
             TreeNode root = new TreeNode(h.val);
-            h = h. next;
+            h = h.next;
             TreeNode right = conquer(mid + 1, high);
-            root. left = left;
-            root. right = right;
+            root.left = left;
+            root.right = right;
             return root;
         }
-        return null ;
+        return null;
     }
 }

@@ -4,9 +4,9 @@ package Math.ProofbyContradiction;
  * Created by yizhao on 6/30/15.
  */
 public class ValidPalindrome {
-    public static void main(String[] args){
-        System. out.println(isPalindrome( "A man, a plan, a canal: Panama" )); // true
-        System. out.println(isPalindrome( "race a car")); // false
+    public static void main(String[] args) {
+        System.out.println(isPalindrome("A man, a plan, a canal: Panama")); // true
+        System.out.println(isPalindrome("race a car")); // false
     }
 
     public static boolean isPalindrome(String s) {
@@ -25,12 +25,12 @@ public class ValidPalindrome {
             }
 
             if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
-                return false ;
+                return false;
             }
             left++;
             right--;
         }
-        return true ;
+        return true;
     }
 
     private static boolean isLetter(char c) {

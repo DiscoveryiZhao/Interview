@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class SetMatrixZeroes {
     public static void main(String[] args) {
-        int[][] matrix = { { 1, 1, 1, 1 }, { 1, 1, 0, 1 }, { 1, 1, 1, 1 }, { 1, 1, 1, 1 } };
+        int[][] matrix = {{1, 1, 1, 1}, {1, 1, 0, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}};
         // 输入:
         // [1, 1, 1, 1]
         // [1, 1, 0, 1]
@@ -19,16 +19,16 @@ public class SetMatrixZeroes {
         // [0, 0, 0, 0]
         // [1, 1, 0, 1]
         // [1, 1, 0, 1]
-        for (int [] m : matrix) {
-            System. out.println(Arrays.toString(m));
+        for (int[] m : matrix) {
+            System.out.println(Arrays.toString(m));
         }
-        System. out.println();
+        System.out.println();
     }
 
     public static void setZeroes(int[][] matrix) {
         if (matrix.length == 0) return;
         if (matrix[0].length == 0) return;
-        int m = matrix.length , n = matrix[0].length;
+        int m = matrix.length, n = matrix[0].length;
 
         boolean hasZeroFirstRow = false, hasZeroFirstColumn = false;
 
@@ -61,7 +61,7 @@ public class SetMatrixZeroes {
         // set zeroes except the first row and column
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
-                if (matrix[i][0] == 0 || matrix[0][j] == 0){
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
                     matrix[i][j] = 0;
                 }
             }

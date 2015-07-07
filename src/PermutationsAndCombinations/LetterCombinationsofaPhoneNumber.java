@@ -46,7 +46,7 @@ public class LetterCombinationsofaPhoneNumber {
         }
 
         char button = digits.charAt(tmp.length());
-        char [] buttonNumbers = map.get(button);
+        char[] buttonNumbers = map.get(button);
         for (int width = 0; width < buttonNumbers.length; width++) {
             tmp.append(buttonNumbers[width]);
             vector(digits, res, tmp, map);

@@ -22,7 +22,7 @@ public class FindTheKclosestPointsToTheOriginIn2Dplane_Onlogn {
                 // Point p1's y-axis distance to original is p1.y - 0
                 // Point p1's distance to original is Math.sqrt(p1.x * p1.x + p1.y * p1.y)
                 // Therefore, point p1's distance to original - point p2's distance to original
-                return (int ) ((p1.x * p1.x + p1.y * p1.y ) - (p2.x * p2.x + p2.y * p2.y ));
+                return (int) ((p1.x * p1.x + p1.y * p1.y) - (p2.x * p2.x + p2.y * p2.y));
             }
         };
 

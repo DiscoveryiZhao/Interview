@@ -16,12 +16,12 @@ public class Insertion {
         //System.out.println(findMidPoint(test1).val);
     }
 
-    public static void insertion_a(){
+    public static void insertion_a() {
 
     }
 
 
-    public static void insertion_b(){
+    public static void insertion_b() {
 
     }
 }

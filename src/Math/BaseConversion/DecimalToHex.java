@@ -5,7 +5,7 @@ package Math.BaseConversion;
  */
 public class DecimalToHex {
     public static void main(String[] args) {
-        System. out.println(decimalToHex(2503, 16)); // 9C7
+        System.out.println(decimalToHex(2503, 16)); // 9C7
     }
 
     public static String decimalToHex(int num, int base) {

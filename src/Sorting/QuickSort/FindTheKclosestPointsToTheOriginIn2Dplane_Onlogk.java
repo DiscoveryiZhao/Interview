@@ -48,11 +48,11 @@ public class FindTheKclosestPointsToTheOriginIn2Dplane_Onlogk {
         // Therefore, point p1's distance to original - point p2's distance to original
         int parentMax = i; // parent node index
         // a[parentMax] - a[l] < 0 then then a[l] comes "before" a[parentMax] in the ordering,
-        if (l < heapSize && (a[parentMax].x * a[parentMax]. x + a[parentMax]. y * a[parentMax].y) - (a[l].x * a[l].x + a[l].y * a[l].y ) < 0) {
+        if (l < heapSize && (a[parentMax].x * a[parentMax].x + a[parentMax].y * a[parentMax].y) - (a[l].x * a[l].x + a[l].y * a[l].y) < 0) {
             parentMax = l; // a[l] is larger than a[parentMax]
         }
         // a[parentMax] - a[l] < 0 then then a[l] comes "before" a[parentMax] in the ordering,
-        if (r < heapSize && (a[parentMax].x * a[parentMax]. x + a[parentMax]. y * a[parentMax].y) - (a[r].x * a[r].x + a[r].y * a[r].y ) < 0) {
+        if (r < heapSize && (a[parentMax].x * a[parentMax].x + a[parentMax].y * a[parentMax].y) - (a[r].x * a[r].x + a[r].y * a[r].y) < 0) {
             parentMax = r; // a[r] is larger than a[parentMax]
         }
 

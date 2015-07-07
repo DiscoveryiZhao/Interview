@@ -5,15 +5,15 @@ package InterviewPrepareOfGoogle;
  */
 public class LongestDictionaryWord {
     public static void main(String[] args) {
-        String[] dict1 = { "abc", "kdiaubyect" , "kdiaubyexyasdet" };
-        System. out.println(longestDictionaryWord(dict1, "abc")); // kdiaubyect
+        String[] dict1 = {"abc", "kdiaubyect", "kdiaubyexyasdet"};
+        System.out.println(longestDictionaryWord(dict1, "abc")); // kdiaubyect
 
-        String[] dict2 = { "abc", "kdiaubyect" , "kdiaubyexcyasdet" };
-        System. out.println(longestDictionaryWord(dict2, "abc")); // kdiaubyexcyasdet
+        String[] dict2 = {"abc", "kdiaubyect", "kdiaubyexcyasdet"};
+        System.out.println(longestDictionaryWord(dict2, "abc")); // kdiaubyexcyasdet
     }
 
     public static String longestDictionaryWord(String[] dict, String target) {
-        int n = dict.length ;
+        int n = dict.length;
         int[] hash = new int[256];
         for (char c : target.toCharArray()) {
             hash[c]++;
@@ -38,9 +38,9 @@ public class LongestDictionaryWord {
                 count++;
             }
             if (count == target.length()) {
-                return true ;
+                return true;
             }
         }
-        return false ;
+        return false;
     }
 }

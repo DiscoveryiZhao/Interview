@@ -7,8 +7,8 @@ import LibraryOfCtCI.TreeNode;
  */
 public class NextNode {
     public static void main(String[] args) {
-        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        TreeNode root = TreeNode. createMinimalBST(array);
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        TreeNode root = TreeNode.createMinimalBST(array);
         // 1->2
         // 2->3
         // 3->4
@@ -22,26 +22,26 @@ public class NextNode {
             TreeNode node = root.find(array[i]);
             TreeNode next = nextNode(node);
             if (next != null) {
-                System. out.println(node.data + "->" + next.data );
+                System.out.println(node.data + "->" + next.data);
             } else {
-                System. out.println(node.data + "->" + null);
+                System.out.println(node.data + "->" + null);
             }
         }
     }
 
     public static TreeNode nextNode(TreeNode node) {
         if (node == null) {
-            return null ;
+            return null;
         } else {
             // Found right children -> return left most node of right subtree
             if (node.right != null) {
-                return leftMostChild(node. right);
+                return leftMostChild(node.right);
             } else {
-                TreeNode nodeParent = node. parent;
+                TreeNode nodeParent = node.parent;
                 // Go up until we’re on left instead of right
                 while (nodeParent != null && nodeParent.right == node) {
                     node = nodeParent;
-                    nodeParent = nodeParent. parent;
+                    nodeParent = nodeParent.parent;
                 }
                 return nodeParent;
             }
@@ -50,7 +50,7 @@ public class NextNode {
 
     public static TreeNode leftMostChild(TreeNode node) {
         while (node.left != null) {
-            node = node. left;
+            node = node.left;
         }
         return node;
     }

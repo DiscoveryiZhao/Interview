@@ -7,13 +7,13 @@ import java.util.Arrays;
  */
 public class RemoveElement {
     public static void main(String[] args) {
-        int[] test1 = { 1, 2, 3, 4, 5 };
-        System. out.println(removeElement(test1, 1)); // 4
-        System. out.println(Arrays.toString(test1)); // [2, 3, 4, 5, 5]
+        int[] test1 = {1, 2, 3, 4, 5};
+        System.out.println(removeElement(test1, 1)); // 4
+        System.out.println(Arrays.toString(test1)); // [2, 3, 4, 5, 5]
     }
 
     public static int removeElement(int[] A, int elem) {
-        int n = A.length ;
+        int n = A.length;
         if (n < 1) {
             return n;
         } else {

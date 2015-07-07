@@ -9,12 +9,12 @@ import java.util.LinkedList;
  */
 public class SlidingWindowMaximum {
     public static void main(String args[]) {
-        int a[] = { 1, 3, -1, -3, 5, 3, 6, 7 };
-        System. out.println(Arrays.toString(maxSlidingWindow(a, 3))); // [3, 3, 5, 5, 6, 7]
+        int a[] = {1, 3, -1, -3, 5, 3, 6, 7};
+        System.out.println(Arrays.toString(maxSlidingWindow(a, 3))); // [3, 3, 5, 5, 6, 7]
     }
 
     public static int[] maxSlidingWindow(int[] A, int w) {
-        int n = A.length ;
+        int n = A.length;
         Deque<Integer> leftDeque = new LinkedList<Integer>(); // deque stores index
         int[] res = new int[n - w + 1];
         int right = 0;

@@ -13,12 +13,13 @@ public class LongestSubstringWithoutRepeatingCharactersReturnSubstring {
         while (R < n) {
             // a[L..R-1] satisfy !hash[s.charAt(right)]
             while (R < n && !hash[s.charAt(R)]) hash[s.charAt(R++)] = true;
-            if(res.length() == 0 ||R - L > res.length() ){
+            if (res.length() == 0 || R - L > res.length()) {
                 res = s.substring(L, R);
             }
             // find K
             while (R < n && s.charAt(L) != s.charAt(R)) hash[s.charAt(L++)] = false;
-            L++; R++;
+            L++;
+            R++;
         }
         return res;
     }

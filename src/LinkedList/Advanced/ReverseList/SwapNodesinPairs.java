@@ -8,17 +8,17 @@ import LibraryOfLeetcode.ListNode;
 public class SwapNodesinPairs {
     public static ListNode swapPairs(ListNode head) {
         ListNode dummy = new ListNode(0);
-        dummy. next = head;
+        dummy.next = head;
         ListNode pre = dummy;
         ListNode cur = head;
         while (cur != null && cur.next != null) {
-            ListNode nt = cur. next. next;
-            cur. next. next = pre. next;
-            pre. next = cur. next;
-            cur. next = nt;
+            ListNode nt = cur.next.next;
+            cur.next.next = pre.next;
+            pre.next = cur.next;
+            cur.next = nt;
             pre = cur;
             cur = nt;
         }
-        return dummy.next ;
+        return dummy.next;
     }
 }

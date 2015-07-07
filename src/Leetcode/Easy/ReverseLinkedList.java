@@ -13,7 +13,7 @@ Return: 1 --> 2 --> 3 --> 4 --> 5
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         ListNode newHead = null;
-        while(head != null){
+        while (head != null) {
             ListNode nt = head.next;
             head.next = newHead;
             newHead = head;
