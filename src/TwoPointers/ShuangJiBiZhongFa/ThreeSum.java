@@ -2,38 +2,39 @@ package TwoPointers.ShuangJiBiZhongFa;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by yizhao on 7/1/15.
  */
 public class ThreeSum {
-    public static ArrayList<ArrayList<Integer>> threeSum(int[] num) {
+    public static List<List<Integer>> threeSum(int[] num) {
         int n = num.length ;
         if (n < 3) {
-            return new ArrayList<ArrayList<Integer>>();
+            return new ArrayList<>();
         } else {
-            ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+            List<List<Integer>> res = new ArrayList<>();
             Arrays. sort(num);
             for (int i = 0; i < n - 2; i++) {
-                int left = i + 1;
-                int right = n - 1;
-                while (left < right) {
-                    int sum = num[i] + num[left] + num[right];
+                int L = i + 1;
+                int R = n - 1;
+                while (L < R) {
+                    int sum = num[i] + num[L] + num[R];
                     if(sum == 0){
                         ArrayList<Integer> tmp = new ArrayList<Integer>();
                         tmp.add(num[i]);
-                        tmp.add(num[left]);
-                        tmp.add(num[right]);
+                        tmp.add(num[L]);
+                        tmp.add(num[R]);
                         res.add(tmp);
                         // skip duplicates
-                        while (left < right && num[left] == num[left + 1]) left++;
-                        while (left < right && num[right - 1] == num[right]) right--;
-                        left++;
-                        right--;
+                        while (L < R && num[L] == num[L + 1]) L++;
+                        while (L < R && num[R - 1] == num[R]) R--;
+                        L++;
+                        R--;
                     } else if (sum < 0) {
-                        left++;
+                        L++;
                     } else { // sum > 0
-                        right--;
+                        R--;
                     }
                 }
 

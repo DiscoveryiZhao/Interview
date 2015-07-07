@@ -22,21 +22,21 @@ public class RemoveNthNodeFromEndofList {
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode right = head;
-        ListNode left = head;
-        while (right != null) {
+        ListNode L = head;
+        ListNode R = head;
+        while (R != null) {
             if (n + 1 == 0) {
-                left = left. next;
+                L = L. next;
             } else {
                 n--;
             }
-            right = right. next;
+            R = R. next;
         }
 
         if (n == 0) { // remove head
             head = head. next;
         } else { // remove n- th
-            left. next = left. next. next;
+            L. next = L. next. next;
         }
         return head;
     }

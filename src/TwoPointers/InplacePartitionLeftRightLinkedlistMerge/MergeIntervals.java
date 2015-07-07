@@ -6,6 +6,7 @@ import LibraryOfLeetcode.Interval;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by yizhao on 7/1/15.
@@ -24,7 +25,7 @@ public class MergeIntervals {
         zeroIntervals.add(zeroIntervals3);
         zeroIntervals.add(zeroIntervals4);
         zeroIntervals.add(zeroIntervals5);
-        ArrayList<Interval> result0 = merge(zeroIntervals);
+        List<Interval> result0 = merge(zeroIntervals);
         // 输入-> [[2,3],[5,5],[2,2],[3,4],[3,4]], 输出->[[2,4],[5,5]]
         for (Interval i : result0) {
             System. out.print("[" + i.start + "," + i.end + "]" + "," );
@@ -44,7 +45,7 @@ public class MergeIntervals {
         firstIntervals.add(firstIntervals3);
         firstIntervals.add(firstIntervals4);
 
-        ArrayList<Interval> result1 = merge(firstIntervals);
+        List<Interval> result1 = merge(firstIntervals);
         // 输入-> [1,3],[2,6],[8,10],[15,18], 输出->[1,6],[8,10],[15,18]
         for (Interval i : result1) {
             System. out.print("[" + i.start + "," + i.end + "]" + "," );
@@ -60,7 +61,7 @@ public class MergeIntervals {
         secondIntervals.add(secondIntervals1);
         secondIntervals.add(secondIntervals2);
 
-        ArrayList<Interval> result2 = merge(secondIntervals);
+        List<Interval> result2 = merge(secondIntervals);
         // 输入-> [1,3],[2,4], 输出->[1,4]
         for (Interval i : result2) {
             System. out.print("[" + i.start + "," + i.end + "]" + "," );
@@ -76,7 +77,7 @@ public class MergeIntervals {
         thirdIntervals.add(thirdIntervals1);
         thirdIntervals.add(thirdIntervals2);
 
-        ArrayList<Interval> result3 = merge(thirdIntervals);
+        List<Interval> result3 = merge(thirdIntervals);
         // 输入-> [1,2],[3,4], 输出->[1,2],[3,4]
         for (Interval i : result3) {
             System. out.print("[" + i.start + "," + i.end + "]" + "," );
@@ -92,7 +93,7 @@ public class MergeIntervals {
         fourthIntervals.add(fourthIntervals1);
         fourthIntervals.add(fourthIntervals2);
 
-        ArrayList<Interval> result4 = merge(fourthIntervals);
+        List<Interval> result4 = merge(fourthIntervals);
         // 输入-> [3,4],[1,2], 输出->[1,2],[3,4]
         for (Interval i : result4) {
             System. out.print("[" + i.start + "," + i.end + "]" + "," );
@@ -108,7 +109,7 @@ public class MergeIntervals {
         fifthIntervals.add(fifthIntervals1);
         fifthIntervals.add(fifthIntervals2);
 
-        ArrayList<Interval> result5 = merge(fifthIntervals);
+        List<Interval> result5 = merge(fifthIntervals);
         // 输入-> [2,4],[1,3], 输出->[1,4]
         for (Interval i : result5) {
             System. out.print("[" + i.start + "," + i.end + "]" + "," );
@@ -116,7 +117,7 @@ public class MergeIntervals {
         System. out.println();
     }
 
-    public static ArrayList<Interval> merge(ArrayList<Interval> intervals) {
+    public static List<Interval> merge(List<Interval> intervals) {
         // sort the intervals based on start points
         Comparator<Interval> comparator = new Comparator<Interval>() {
             public int compare(Interval a, Interval b) {
@@ -127,27 +128,27 @@ public class MergeIntervals {
         return mergeIntervals(intervals);
     }
 
-    private static ArrayList<Interval> mergeIntervals(ArrayList<Interval> intervals) {
+    private static List<Interval> mergeIntervals(List<Interval> intervals) {
         int n = intervals.size();
         if (n == 0) {
             return intervals;
         } else {
-            ArrayList<Interval> res = new ArrayList<Interval>();
-            int left = 0;
-            int right = 1;
-            while (right < n) {
+            List<Interval> res = new ArrayList<>();
+            int L = 0;
+            int R = 1;
+            while (R < n) {
                 // intervals[left] 为真集合， 而不是intervals[0..left], intervals.get(left).end < intervals.get(right).start
-                if (intervals.get(left).end < intervals.get(right).start) {
-                    res.add(intervals.get(left));
-                    left = right;
+                if (intervals.get(L).end < intervals.get(R).start) {
+                    res.add(intervals.get(L));
+                    L = R;
                 } else {
                     // merged case
-                    intervals.get(left). end = Math.max(intervals.get(left).end, intervals.get(right). end);
+                    intervals.get(L). end = Math.max(intervals.get(L).end, intervals.get(R). end);
                 }
-                right++;
+                R++;
             }
 
-            res.add(intervals.get(left));
+            res.add(intervals.get(L));
             return res;
         }
     }

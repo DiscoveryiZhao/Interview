@@ -17,17 +17,17 @@ public class RemoveElement {
         if (n < 1) {
             return n;
         } else {
-            int left = -1;
-            int right = 0;
-            while (right < n) {
+            int L = -1;
+            int R = 0;
+            while (R < n) {
                 // a[0..left] != element
-                if (A[right] != elem) { // find one, skip
-                    left++;
-                    A[left] = A[right];
+                if (A[R] != elem) { // find one, skip
+                    L++;
+                    A[L] = A[R];
                 }
-                right++;
+                R++;
             }
-            return left + 1;
+            return L + 1;
         }
     }
 }

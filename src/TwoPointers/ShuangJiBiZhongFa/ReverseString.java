@@ -14,9 +14,9 @@ public class ReverseString {public static String reverse(String s) {
     }
 }
 
-    public static void reverse(char[] a, int left, int right) {
-        while (left < right) {
-            swap(a, left++, right--);
+    public static void reverse(char[] a, int L, int R) {
+        while (L < R) {
+            swap(a, L++, R--);
         }
     }
 

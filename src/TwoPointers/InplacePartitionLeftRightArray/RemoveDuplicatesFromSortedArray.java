@@ -17,17 +17,17 @@ public class RemoveDuplicatesFromSortedArray {
         if (n < 2){
             return n;
         } else{
-            int left = 0;
-            int right = 1;
-            while (right < n) {
+            int L = 0;
+            int R = 1;
+            while (R < n) {
                 // a[0..left] without deplicates
-                if (A[left] != A[right]) {
-                    left++;
-                    A[left] = A[right];
+                if (A[L] != A[R]) {
+                    L++;
+                    A[L] = A[R];
                 }
-                right++;
+                R++;
             }
-            return left + 1;
+            return L + 1;
         }
     }
 }

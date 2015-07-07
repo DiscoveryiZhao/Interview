@@ -29,22 +29,22 @@ public class FindKthToLastElementOfLinkedList {
         if (k == 0) {
             return null ;
         } else {
-            ListNode right = head;
-            ListNode left = head;
-            while (right != null) {
+            ListNode L = head;
+            ListNode R = head;
+            while (R != null) {
                 if (k == 0) {
-                    left = left. next;
+                    L = L. next;
                 } else {
                     k--;
                 }
-                right = right. next;
+                R = R. next;
             }
             // Handles k> list.length
             // when k > list.length, k would great then 0 after while loop
             if (k > 0) {
                 return null ;
             }
-            return left;
+            return L;
         }
     }
 }

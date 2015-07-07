@@ -21,18 +21,18 @@ public class FindAllPairsOfIntegersWithinAnArrayContainsDuplicateWhichSumToaSpec
             return;
         } else {
             Arrays. sort(num);
-            int left = 0;
-            int right = n - 1;
-            while (left < right) {
-                int sum = num[left] + num[right];
+            int L = 0;
+            int R = n - 1;
+            while (L < R) {
+                int sum = num[L] + num[R];
                 if (sum == target) {
-                    System. out.println(num[left] + "," + num[right]);
-                    left++;
-                    right--;
+                    System. out.println(num[L] + "," + num[R]);
+                    L++;
+                    R--;
                 } else if (sum < target) {
-                    left++;
+                    L++;
                 } else {
-                    right--;
+                    R--;
                 }
             }
         }

@@ -2,41 +2,42 @@ package TwoPointers.ShuangJiBiZhongFa;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by yizhao on 7/1/15.
  */
 public class FourSum {
-    public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
+    public List<List<Integer>> fourSum(int[] num, int target) {
         int n = num.length ;
         if (n < 4) {
-            return new ArrayList<ArrayList<Integer>>();
+            return new ArrayList<>();
         } else {
-            ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+            List<List<Integer>> res = new ArrayList<>();
             Arrays. sort(num);
             for (int i = 0; i < n - 3; i++) {
                 for (int j = i + 1; j < n - 2; j++) {
                     // use two pointers to find the rest of two elements
-                    int left = j + 1;
-                    int right = n - 1;
-                    while (left < right) {
-                        int sum = num[i] + num[j] + num[left] + num[right];
+                    int L = j + 1;
+                    int R = n - 1;
+                    while (L < R) {
+                        int sum = num[i] + num[j] + num[L] + num[R];
                         if(sum == target){
                             ArrayList<Integer> tmp = new ArrayList<Integer>();
                             tmp.add(num[i]);
                             tmp.add(num[j]);
-                            tmp.add(num[left]);
-                            tmp.add(num[right]);
+                            tmp.add(num[L]);
+                            tmp.add(num[R]);
                             res.add(tmp);
                             // skip duplicates
-                            while (left < right && num[left] == num[left + 1]) left++;
-                            while (left < right && num[right - 1] == num[right]) right--;
-                            left++;
-                            right--;
+                            while (L < R && num[L] == num[L + 1]) L++;
+                            while (L < R && num[R - 1] == num[R]) R--;
+                            L++;
+                            R--;
                         } else if (sum < target) {
-                            left++;
+                            L++;
                         } else {
-                            right--;
+                            R--;
                         }
                     }
                     // skip duplicates

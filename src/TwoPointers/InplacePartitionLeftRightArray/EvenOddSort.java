@@ -15,15 +15,15 @@ public class EvenOddSort {
 
     public static void oddEven(int[] a) {
         int n = a.length ;
-        int left = -1;
-        int right = 0;
-        while (right < n) {
+        int L = -1;
+        int R = 0;
+        while (R < n) {
             // a[0..left] 都为odd number
-            if ((a[right] & 1) == 1) {
-                left++;
-                swap(a, left, right);
+            if ((a[R] & 1) == 1) {
+                L++;
+                swap(a, L, R);
             }
-            right++;
+            R++;
         }
     }
 

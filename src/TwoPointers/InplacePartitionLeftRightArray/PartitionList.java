@@ -11,21 +11,21 @@ public class PartitionList {
         dummy. next = new ListNode(0);
         dummy. next. next = head;
 
-        ListNode left = dummy; // left = low - 1
-        ListNode right = dummy. next; // right = low
-        while (right.next != null) {
-            if (right.next .val < x) { // 题目要求<所以和原来partition的<=有所不同
+        ListNode L = dummy; // left = low - 1
+        ListNode R = dummy. next; // right = low
+        while (R.next != null) {
+            if (R.next .val < x) { // 题目要求<所以和原来partition的<=有所不同
                       /* left++ */
-                left = left. next;
+                L = L. next;
                       /* Swap(left.next,right.next) */
-                ListNode temp = right. next;
-                right. next = temp. next;
-                temp. next = left. next;
-                left. next = temp;
+                ListNode temp = R. next;
+                R. next = temp. next;
+                temp. next = L. next;
+                L. next = temp;
 
-                right = left;
+                R = L;
             }
-            right = right. next;
+            R = R. next;
         }
         return dummy.next .next ;
     }

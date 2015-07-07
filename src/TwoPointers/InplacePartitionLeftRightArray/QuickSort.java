@@ -21,18 +21,18 @@ public class QuickSort {
     // partition的重点思想概念为，在每此partition过后，a[pivot]左边的数必须小于a[pivot],右边的数必须都大于a[pivot]。
     public static int partition(int[] a, int low, int high) {
         int pivot = a[high]; // Pick pivot point
-        int left = low - 1;
-        int right = low;
-        while (right < high) {
+        int L = low - 1;
+        int R = low;
+        while (R < high) {
             // a[0..left] <= pivot
-            if (a[right] <= pivot) {
-                left++;
-                swap(a, left, right);
+            if (a[R] <= pivot) {
+                L++;
+                swap(a, L, R);
             }
-            right++;
+            R++;
         }
-        swap(a, left + 1, high);
-        return left + 1;
+        swap(a, L + 1, high);
+        return L + 1;
     }
 
     public static void swap(int[] a, int i, int j) {

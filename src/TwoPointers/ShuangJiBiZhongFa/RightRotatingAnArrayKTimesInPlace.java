@@ -33,9 +33,9 @@ public class RightRotatingAnArrayKTimesInPlace {
         reverse(a, k, n - 1);
     }
 
-    public static void reverse(int[] a, int left, int right) {
-        while (left < right) {
-            swap(a, left++, right--);
+    public static void reverse(int[] a, int L, int R) {
+        while (L < R) {
+            swap(a, L++, R--);
         }
     }
 

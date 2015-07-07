@@ -13,26 +13,26 @@ public class RotateList {
             int len = length(head);
             k = k % len;
 
-            ListNode left = head;
-            ListNode right = head;
+            ListNode L = head;
+            ListNode R = head;
             // find the n-to-the-end
-            while (right != null) {
+            while (R != null) {
                 if (k + 1 == 0) {
-                    left = left. next;
+                    L = L. next;
                 } else {
                     k--;
                 }
                 // right point is at the k = 1
                 // make it a circular linked list
-                if (right.next == null) {
-                    right. next = head;
+                if (R.next == null) {
+                    R. next = head;
                     break;
                 }
-                right = right. next;
+                R = R. next;
             }
 
-            head = left. next;
-            left. next = null;
+            head = L. next;
+            L. next = null;
             return head;
         }
     }
