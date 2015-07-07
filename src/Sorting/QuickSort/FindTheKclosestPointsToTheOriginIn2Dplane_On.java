@@ -42,18 +42,18 @@ public class FindTheKclosestPointsToTheOriginIn2Dplane_On {
     public static int partition(Point[] p, int low, int high) {
         swap(p, low + (int) Math.random () * (high - low + 1), high);
         double pivot = Math.sqrt(p[high]. x * p[high]. x + p[high]. y * p[high]. y);
-        int left = low - 1;
-        int right = low;
-        while (right < high) {
+        int L = low - 1;
+        int R = low;
+        while (R < high) {
             // p[0..left] <= pivot
-            if (Math.sqrt(p[right]. x * p[right]. x + p[right]. y * p[right]. y) <= pivot) {
-                left++;
-                swap(p, left, right);
+            if (Math.sqrt(p[R]. x * p[R]. x + p[R]. y * p[R]. y) <= pivot) {
+                L++;
+                swap(p, L, R);
             }
-            right++;
+            R++;
         }
-        swap(p, left + 1, high);
-        return left + 1;
+        swap(p, L + 1, high);
+        return L + 1;
     }
 
     public static void swap(Point[] p, int i, int j) {

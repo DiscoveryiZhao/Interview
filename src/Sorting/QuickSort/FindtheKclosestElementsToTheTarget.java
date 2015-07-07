@@ -35,18 +35,18 @@ public class FindtheKclosestElementsToTheTarget {
     public static int partition(int[] a, int low, int high, int target) {
         swap(a, low + (int) Math.random () * (high - low + 1), high);
         int pivot = a[high];
-        int left = low - 1;
-        int right = low;
-        while (right < high) {
+        int L = low - 1;
+        int R = low;
+        while (R < high) {
             // a[0..left] <= pivot
-            if (Math.abs(a[right] - target) < Math. abs(pivot - target)) {
-                left++;
-                swap(a, left, right);
+            if (Math.abs(a[R] - target) < Math. abs(pivot - target)) {
+                L++;
+                swap(a, L, R);
             }
-            right++;
+            R++;
         }
-        swap(a, left + 1, high);
-        return left + 1;
+        swap(a, L + 1, high);
+        return L + 1;
     }
 
     public static void swap(int[] a, int i, int j) {

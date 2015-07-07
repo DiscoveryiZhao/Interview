@@ -9,12 +9,13 @@ public class MergeSort {
     }
 
     public static void conquer(int[] A, int low, int high) {
-        if (low != high) {
-            int mid = low + (high - low) / 2;
-            conquer(A, low, mid);
-            conquer(A, mid + 1, high);
-            combine(A, low, mid, high);
+        if (low == high) {
+            return;
         }
+        int mid = low + (high - low) / 2;
+        conquer(A, low, mid);
+        conquer(A, mid + 1, high);
+        combine(A, low, mid, high);
     }
 
     public static void combine(int[] A, int low, int mid, int high) {

@@ -16,18 +16,17 @@ public class RemoveDuplicatesfromSortedArrayII {
         int n = A.length;
         if (n < 3) {
             return n;
-        } else {
-            int L = 1;
-            int R = 2;
-            while (R < n) {
-                // a[0..left] without more than twice of deplicates
-                if (!(A[L - 1] == A[R] && A[L] == A[R])) {
-                    L++;
-                    A[L] = A[R];
-                }
-                R++;
-            }
-            return L + 1;
         }
+        int L = 1;
+        int R = 2;
+        while (R < n) {
+            // a[0..left] without more than twice of deplicates
+            if (!(A[L - 1] == A[R] && A[L] == A[R])) {
+                L++;
+                A[L] = A[R];
+            }
+            R++;
+        }
+        return L + 1;
     }
 }

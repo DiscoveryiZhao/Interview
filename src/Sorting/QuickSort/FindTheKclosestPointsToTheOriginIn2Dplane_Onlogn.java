@@ -26,7 +26,7 @@ public class FindTheKclosestPointsToTheOriginIn2Dplane_Onlogn {
             }
         };
 
-        PriorityQueue<Point> minHeap = new PriorityQueue<Point>(k, c);
+        PriorityQueue<Point> minHeap = new PriorityQueue<>(k, c);
         for (Point p : a) {
             minHeap.add(p);
         }
