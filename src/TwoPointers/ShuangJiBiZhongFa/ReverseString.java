@@ -8,11 +8,10 @@ public class ReverseString {
         int n = s.length();
         if (n <= 1) {
             return s;
-        } else {
-            char[] c = s.toCharArray();
-            reverse(c, 0, n - 1);
-            return new String(c);
         }
+        char[] c = s.toCharArray();
+        reverse(c, 0, n - 1);
+        return new String(c);
     }
 
     public static void reverse(char[] a, int L, int R) {

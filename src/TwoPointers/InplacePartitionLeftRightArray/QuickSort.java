@@ -11,11 +11,10 @@ public class QuickSort {
     public static void conquer(int[] a, int low, int high) {
         if (low >= high) {
             return;
-        } else {
-            int q = partition(a, low, high);
-            conquer(a, low, q - 1);
-            conquer(a, q + 1, high);
         }
+        int q = partition(a, low, high);
+        conquer(a, low, q - 1);
+        conquer(a, q + 1, high);
     }
 
     // partition的重点思想概念为，在每此partition过后，a[pivot]左边的数必须小于a[pivot],右边的数必须都大于a[pivot]。

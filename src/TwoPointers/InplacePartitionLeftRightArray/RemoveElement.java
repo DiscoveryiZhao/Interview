@@ -16,18 +16,17 @@ public class RemoveElement {
         int n = A.length;
         if (n < 1) {
             return n;
-        } else {
-            int L = -1;
-            int R = 0;
-            while (R < n) {
-                // a[0..left] != element
-                if (A[R] != elem) { // find one, skip
-                    L++;
-                    A[L] = A[R];
-                }
-                R++;
-            }
-            return L + 1;
         }
+        int L = -1;
+        int R = 0;
+        while (R < n) {
+            // a[0..left] != element
+            if (A[R] != elem) { // find one, skip
+                L++;
+                A[L] = A[R];
+            }
+            R++;
+        }
+        return L + 1;
     }
 }

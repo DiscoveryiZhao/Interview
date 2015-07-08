@@ -19,7 +19,7 @@ public class MergeIntervals {
         Interval zeroIntervals3 = new Interval(2, 2);
         Interval zeroIntervals4 = new Interval(3, 4);
         Interval zeroIntervals5 = new Interval(3, 4);
-        ArrayList<Interval> zeroIntervals = new ArrayList<Interval>();
+        List<Interval> zeroIntervals = new ArrayList<>();
         zeroIntervals.add(zeroIntervals1);
         zeroIntervals.add(zeroIntervals2);
         zeroIntervals.add(zeroIntervals3);
@@ -132,24 +132,23 @@ public class MergeIntervals {
         int n = intervals.size();
         if (n == 0) {
             return intervals;
-        } else {
-            List<Interval> res = new ArrayList<>();
-            int L = 0;
-            int R = 1;
-            while (R < n) {
-                // intervals[left] 为真集合， 而不是intervals[0..left], intervals.get(left).end < intervals.get(right).start
-                if (intervals.get(L).end < intervals.get(R).start) {
-                    res.add(intervals.get(L));
-                    L = R;
-                } else {
-                    // merged case
-                    intervals.get(L).end = Math.max(intervals.get(L).end, intervals.get(R).end);
-                }
-                R++;
-            }
-
-            res.add(intervals.get(L));
-            return res;
         }
+        List<Interval> res = new ArrayList<>();
+        int L = 0;
+        int R = 1;
+        while (R < n) {
+            // intervals[left] 为真集合， 而不是intervals[0..left], intervals.get(left).end < intervals.get(right).start
+            if (intervals.get(L).end < intervals.get(R).start) {
+                res.add(intervals.get(L));
+                L = R;
+            } else {
+                // merged case
+                intervals.get(L).end = Math.max(intervals.get(L).end, intervals.get(R).end);
+            }
+            R++;
+        }
+
+        res.add(intervals.get(L));
+        return res;
     }
 }
