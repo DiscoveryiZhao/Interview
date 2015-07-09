@@ -52,8 +52,9 @@ public class FindTheKclosestPointsToTheOriginIn2Dplane_On {
             }
             R++;
         }
-        swap(p, L + 1, high);
-        return L + 1;
+        L++;
+        swap(p, L, high);
+        return L;
     }
 
     public static void swap(Point[] p, int i, int j) {
