@@ -2,28 +2,25 @@ package Sorting.MergeSort;
 
 import LibraryOfLeetcode.ListNode;
 
-import java.util.ArrayList;
-
 /**
  * Created by yizhao on 7/7/15.
  */
 public class MergeKSortedLists_mergeSort {
-    public static ListNode mergeKLists(ArrayList<ListNode> lists) {
-        if (lists.size() == 0) {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
             return null;
-        } else {
-            return conquer(lists, 0, lists.size() - 1);
         }
+        return conquer(lists, 0, lists.length - 1);
     }
 
-    private static ListNode conquer(ArrayList<ListNode> lists, int low, int high) {
-        if (low != high) {
-            int mid = low + (high - low) / 2;
-            ListNode left = conquer(lists, low, mid);
-            ListNode right = conquer(lists, mid + 1, high);
-            return combine(left, right);
+    private static ListNode conquer(ListNode[] lists, int low, int high) {
+        if (low == high) {
+            return lists[low];
         }
-        return lists.get(low);
+        int mid = low + (high - low) / 2;
+        ListNode left = conquer(lists, low, mid);
+        ListNode right = conquer(lists, mid + 1, high);
+        return combine(left, right);
     }
 
     public static ListNode combine(ListNode l1, ListNode l2) {

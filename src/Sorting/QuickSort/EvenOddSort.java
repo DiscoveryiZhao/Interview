@@ -19,7 +19,7 @@ public class EvenOddSort {
         int R = 0;
         while (R < n) {
             // a[0..left] 都为odd number
-            if ((a[R] & 1) == 1) {
+            if ((a[R] % 2) == 1) {
                 L++;
                 swap(a, L, R);
             }

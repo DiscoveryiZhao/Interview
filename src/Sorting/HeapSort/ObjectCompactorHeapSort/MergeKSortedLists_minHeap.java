@@ -2,7 +2,6 @@ package Sorting.HeapSort.ObjectCompactorHeapSort;
 
 import LibraryOfLeetcode.ListNode;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -32,10 +31,7 @@ public class MergeKSortedLists_minHeap {
         test3.next.next.next = new ListNode(6);
         test3.next.next.next.next = new ListNode(8);
 
-        ArrayList<ListNode> testTotal1 = new ArrayList<ListNode>();
-        testTotal1.add(test1);
-        testTotal1.add(test3);
-        testTotal1.add(test2);
+        ListNode[] testTotal1 = {test1,test3,test2};
 
         // output: 0->1->2->2->3->3->4->4->5->6->6->7->8->8->9->
         ListNode result = mergeKLists(testTotal1);
@@ -46,40 +42,39 @@ public class MergeKSortedLists_minHeap {
         System.out.println();
     }
 
-    public static ListNode mergeKLists(ArrayList<ListNode> lists) {
-        if (lists.size() == 0) {
+    public static ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
             return null;
-        } else {
-            Comparator<ListNode> c = new Comparator<ListNode>() {
-                public int compare(ListNode a, ListNode b) {
-                    return a.val - b.val;
-                }
-            };
-
-            // new PriorityQueue<ListNode>(heapSize, c)
-            PriorityQueue<ListNode> minHeap = new PriorityQueue<>(lists.size(), c);
-            for (ListNode node : lists) {
-                if (node != null) {
-                    minHeap.add(node);
-                }
-            }
-
-            ListNode head = minHeap.poll();
-            ListNode cur = null;
-            while (!minHeap.isEmpty()) {
-                if (cur == null) {
-                    cur = head;
-                } else {
-                    cur.next = minHeap.poll();
-                    cur = cur.next;
-                }
-
-                // next node of the cur list is not null, then we add to minHeap
-                if (cur != null && cur.next != null) {
-                    minHeap.add(cur.next);
-                }
-            }
-            return head;
         }
+        Comparator<ListNode> c = new Comparator<ListNode>() {
+            public int compare(ListNode a, ListNode b) {
+                return a.val - b.val;
+            }
+        };
+
+        // new PriorityQueue<ListNode>(heapSize, c)
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>(lists.length, c);
+        for (ListNode node : lists) {
+            if (node != null) {
+                minHeap.add(node);
+            }
+        }
+
+        ListNode head = minHeap.poll();
+        ListNode cur = null;
+        while (!minHeap.isEmpty()) {
+            if (cur == null) {
+                cur = head;
+            } else {
+                cur.next = minHeap.poll();
+                cur = cur.next;
+            }
+
+            // next node of the cur list is not null, then we add to minHeap
+            if (cur != null && cur.next != null) {
+                minHeap.add(cur.next);
+            }
+        }
+        return head;
     }
 }
