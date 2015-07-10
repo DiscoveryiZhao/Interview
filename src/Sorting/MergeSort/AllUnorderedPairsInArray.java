@@ -34,27 +34,27 @@ public class AllUnorderedPairsInArray {
 
     public static void combine(int[] A, int low, int mid, int high, List<String> res) {
         int m = mid - low + 1, n = high - mid;
-        int[] left = new int[m];
-        int[] right = new int[n];
+        int[] L = new int[m];
+        int[] R = new int[n];
 
         for (int i = 0; i < m; i++)
-            left[i] = A[low + i];
+            L[i] = A[low + i];
         for (int i = 0; i < n; i++)
-            right[i] = A[mid + 1 + i];
+            R[i] = A[mid + 1 + i];
 
         int tail = high;
         m--;
         n--;
         while (m >= 0 && n >= 0) {
-            if (left[m] <= right[n]) {
-                A[tail--] = right[n--];
+            if (L[m] <= R[n]) {
+                A[tail--] = R[n--];
             } else {
-                res.add("(" + left[m] + "," + right[n] + ")"); // add unordered pair to list
-                A[tail--] = left[m--];
+                res.add("(" + L[m] + "," + R[n] + ")"); // add unordered pair to list
+                A[tail--] = L[m--];
             }
         }
 
         while (n >= 0)
-            A[tail--] = right[n--];
+            A[tail--] = R[n--];
     }
 }

@@ -14,7 +14,7 @@ public class MergeSortedArray {
         System.out.println(Arrays.toString(A));
     }
 
-    public static void merge(int A[], int m, int B[], int n) {
+    public static void merge(int[] A, int m, int[] B, int n) {
         int tail = m + n - 1;
         m--;
         n--;
