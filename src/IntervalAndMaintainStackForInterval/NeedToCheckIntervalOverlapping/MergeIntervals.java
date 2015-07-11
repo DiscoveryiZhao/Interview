@@ -133,21 +133,21 @@ public class MergeIntervals {
             return intervals;
         }
         List<Interval> res = new ArrayList<>();
-        int left = 0;
-        int right = 1;
-        while (right < n) {
+        int L = 0;
+        int R = 1;
+        while (R < n) {
             // intervals[left] 为真集合， 而不是intervals[0..left], intervals.get(left).end < intervals.get(right).start
-            if (intervals.get(left).end < intervals.get(right).start) {
-                res.add(intervals.get(left));
-                left = right;
+            if (intervals.get(L).end < intervals.get(R).start) {
+                res.add(intervals.get(L));
+                L = R;
             } else {
                 // merged case
-                intervals.get(left).end = Math.max(intervals.get(left).end, intervals.get(right).end);
+                intervals.get(L).end = Math.max(intervals.get(L).end, intervals.get(R).end);
             }
-            right++;
+            R++;
         }
 
-        res.add(intervals.get(left));
+        res.add(intervals.get(L));
         return res;
     }
 }

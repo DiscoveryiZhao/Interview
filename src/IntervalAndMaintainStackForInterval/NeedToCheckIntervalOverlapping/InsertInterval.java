@@ -20,9 +20,9 @@ public class InsertInterval {
         List<Interval> res = insert(intervals, newInterval);
         // 输入->[[3,5],[6,9]]和[2,4], 输出->[2,5],[6,9]
         for (Interval i : res) {
-            System. out.print("[" + i.start + "," + i.end + "]," );
+            System.out.print("[" + i.start + "," + i.end + "],");
         }
-        System. out.println();
+        System.out.println();
 
         ///////////////////////////////////////////////////////////////////////////
         Interval first2 = new Interval(5, 6);
@@ -36,9 +36,9 @@ public class InsertInterval {
 
         // 输入->[[5,6],[7,9]]和[2,4], 输出->[2,4],[5,6],[7,9]
         for (Interval i : res2) {
-            System. out.print("[" + i.start + "," + i.end + "]," );
+            System.out.print("[" + i.start + "," + i.end + "],");
         }
-        System. out.println();
+        System.out.println();
     }
 
     public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
@@ -47,10 +47,10 @@ public class InsertInterval {
             if (newInterval.end < oldInterval.start) { // no overlapped case 1
                 res.add(newInterval);
                 newInterval = oldInterval;
-            } else if (oldInterval.end < newInterval. start) { // no overlapped case 2
+            } else if (oldInterval.end < newInterval.start) { // no overlapped case 2
                 res.add(oldInterval);
             } else { // overlapping case for else if (oldInterval.start <= newInterval.end || oldInterval.end >= newInterval.start)
-                newInterval = new Interval(Math.min(oldInterval. start, newInterval.start), Math.max(oldInterval. end, newInterval. end));
+                newInterval = new Interval(Math.min(oldInterval.start, newInterval.start), Math.max(oldInterval.end, newInterval.end));
             }
         }
         res.add(newInterval);
