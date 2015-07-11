@@ -17,32 +17,30 @@ public class DetermineIfaStringHasAllUniqueCharacters {
     public static boolean isUniqueCharsHashSet(String s) {
         if (s.length() > 256) {
             return false;
-        } else {
-            Set<Character> hash = new HashSet<>();
-            for (char c : s.toCharArray()) {
-                if (hash.contains(c)) {
-                    return false;
-                }else{
-                    hash.add(c);
-                }
-            }
-            return true;
         }
+        Set<Character> hash = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            if (hash.contains(c)) {
+                return false;
+            } else {
+                hash.add(c);
+            }
+        }
+        return true;
     }
 
     public static boolean isUniqueCharsBooleanHash(String s) {
         if (s.length() > 256) {
             return false;
-        } else {
-            boolean[] hash = new boolean[256];
-            for (char c : s.toCharArray()) {
-                if (hash[c]) {
-                    return false;
-                }else{
-                    hash[c] = true;
-                }
-            }
-            return true;
         }
+        boolean[] hash = new boolean[256];
+        for (char c : s.toCharArray()) {
+            if (hash[c]) {
+                return false;
+            } else {
+                hash[c] = true;
+            }
+        }
+        return true;
     }
 }

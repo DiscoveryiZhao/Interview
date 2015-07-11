@@ -2,6 +2,7 @@ package HashArrayTable.HashArray_IntType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -9,12 +10,12 @@ import java.util.Map;
  */
 public class Anagrams {
     public static void main(String[] args) {
-        String[] s = { "tea", "and", "ace", "ad", "eat", "dan" };
+        String[] s = {"tea", "and", "ace", "ad", "eat", "dan"};
         System.out.println(anagrams(s)); // [tea, eat, and, dan]
     }
 
-    public static ArrayList<String> anagrams(String[] strs) {
-        ArrayList<String> res = new ArrayList<>();
+    public static List<String> anagrams(String[] strs) {
+        List<String> res = new ArrayList<>();
         Map<String, ArrayList<String>> map = new HashMap<>();
         for (String s : strs) {
             // create unique label for each string
