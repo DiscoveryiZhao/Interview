@@ -11,19 +11,18 @@ public class JumpGameII {
         int n = A.length;
         if (n == 0) {
             return 0;
-        } else {
-            int maxCanReach = 0;
-            int prevReached = 0;
-            int jumpCount = 0;
-            for (int i = 0; i < n; i++) {
-                if (maxCanReach < i) return 0;
-                if (prevReached < i) {
-                    jumpCount++;
-                    prevReached = maxCanReach;
-                }
-                maxCanReach = Math.max(maxCanReach, i + A[i]);
-            }
-            return jumpCount;
         }
+        int maxCanReach = 0;
+        int prevReached = 0;
+        int jumpCount = 0;
+        for (int i = 0; i < n; i++) {
+            if (maxCanReach < i) return 0;
+            if (prevReached < i) {
+                jumpCount++;
+                prevReached = maxCanReach;
+            }
+            maxCanReach = Math.max(maxCanReach, i + A[i]);
+        }
+        return jumpCount;
     }
 }
