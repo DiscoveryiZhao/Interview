@@ -11,24 +11,24 @@ public class ValidPalindrome {
 
     public static boolean isPalindrome(String s) {
         int n = s.length();
-        int left = 0;
-        int right = n - 1;
-        while (left < right) {
-            if (!isLetter(s.charAt(left))) {
-                left++;
+        int L = 0;
+        int R = n - 1;
+        while (L < R) {
+            if (!isLetter(s.charAt(L))) {
+                L++;
                 continue;
             }
 
-            if (!isLetter(s.charAt(right))) {
-                right--;
+            if (!isLetter(s.charAt(R))) {
+                R--;
                 continue;
             }
 
-            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
+            if (Character.toLowerCase(s.charAt(L)) != Character.toLowerCase(s.charAt(R))) {
                 return false;
             }
-            left++;
-            right--;
+            L++;
+            R--;
         }
         return true;
     }
