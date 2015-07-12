@@ -11,12 +11,12 @@ public class RotateImage {
     public static void rotateClockwise90(int[][] matrix) {
         int n = matrix.length;
         for (int L = 0, R = n - 1; L <= R; L++, R--) {
-            for (int top = L, bottom = R; top < R; top++, bottom--) {
-                int tmp = matrix[L][top];
-                matrix[L][top] = matrix[bottom][L];
-                matrix[bottom][L] = matrix[R][bottom];
-                matrix[R][bottom] = matrix[top][R];
-                matrix[top][R] = tmp;
+            for (int T = L, B = R; T < R; T++, B--) {
+                int tmp = matrix[L][T];
+                matrix[L][T] = matrix[B][L];
+                matrix[B][L] = matrix[R][B];
+                matrix[R][B] = matrix[T][R];
+                matrix[T][R] = tmp;
             }
         }
     }
