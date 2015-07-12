@@ -8,15 +8,15 @@ public class SpiralMatrixII {
         int num = 1;
         int[][] matrix = new int[n][n];
 
-        for (int left = 0, right = n - 1, top = 0, bottom = n - 1; left <= right && top <= bottom; left++, right--, top++, bottom--) {
+        for (int L = 0, R = n - 1, T = 0, B = n - 1; L <= R && T <= B; L++, R--, T++, B--) {
             // left to right
-            for (int i = left; i <= right; i++) matrix[left][i] = num++;
+            for (int i = L; i <= R; i++) matrix[L][i] = num++;
             // top to bottom
-            for (int i = top + 1; i <= bottom; i++) matrix[i][right] = num++;
+            for (int i = T + 1; i <= B; i++) matrix[i][R] = num++;
             // right to left
-            for (int i = right - 1; i >= left; i--) matrix[bottom][i] = num++;
+            for (int i = R - 1; i >= L; i--) matrix[B][i] = num++;
             // bottom to top
-            for (int i = bottom - 1; i >= top + 1; i--) matrix[i][top] = num++;
+            for (int i = B - 1; i >= T + 1; i--) matrix[i][T] = num++;
         }
         return matrix;
     }

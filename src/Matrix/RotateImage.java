@@ -10,13 +10,13 @@ public class RotateImage {
     // from [10, 9, 8, 7] to [7, 6, 5, 4]
     public static void rotateClockwise90(int[][] matrix) {
         int n = matrix.length;
-        for (int left = 0, right = n - 1; left <= right; left++, right--) {
-            for (int top = left, bottom = right; top < right; top++, bottom--) {
-                int tmp = matrix[left][top];
-                matrix[left][top] = matrix[bottom][left];
-                matrix[bottom][left] = matrix[right][bottom];
-                matrix[right][bottom] = matrix[top][right];
-                matrix[top][right] = tmp;
+        for (int L = 0, R = n - 1; L <= R; L++, R--) {
+            for (int top = L, bottom = R; top < R; top++, bottom--) {
+                int tmp = matrix[L][top];
+                matrix[L][top] = matrix[bottom][L];
+                matrix[bottom][L] = matrix[R][bottom];
+                matrix[R][bottom] = matrix[top][R];
+                matrix[top][R] = tmp;
             }
         }
     }
@@ -27,13 +27,13 @@ public class RotateImage {
     // from [10, 9, 8, 7] to [1, 12, 11, 10]
     public static void rotateCounterClockwise90(int[][] matrix) {
         int n = matrix.length;
-        for (int left = 0, right = n - 1; left <= right; left++, right--) {
-            for (int top = left, bottom = right; top < right; top++, bottom--) {
-                int tmp = matrix[left][top];
-                matrix[left][top] = matrix[top][right];
-                matrix[top][right] = matrix[right][bottom];
-                matrix[right][bottom] = matrix[bottom][left];
-                matrix[bottom][left] = tmp;
+        for (int L = 0, R = n - 1; L <= R; L++, R--) {
+            for (int top = L, bottom = R; top < R; top++, bottom--) {
+                int tmp = matrix[L][top];
+                matrix[L][top] = matrix[top][R];
+                matrix[top][R] = matrix[R][bottom];
+                matrix[R][bottom] = matrix[bottom][L];
+                matrix[bottom][L] = tmp;
             }
         }
     }
