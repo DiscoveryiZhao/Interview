@@ -8,6 +8,7 @@ import java.util.Stack;
  * Created by yizhao on 7/14/15.
  */
 public class ValidateBinarySearchTreeInorderStackTraversal {
+
     public static boolean isValidBST(TreeNode root) {
         if (root == null) {
             return true;

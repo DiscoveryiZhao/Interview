@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class SameTree {
+
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;

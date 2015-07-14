@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class AmplitudeOfTree {
+
     public static int amp = 0;
 
     public static int sol(TreeNode root) {

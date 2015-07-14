@@ -7,6 +7,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class ConvertSortedListtoBinarySearchTree {
+
     public static ListNode h;
 
     public TreeNode sortedListToBST(ListNode head) {
@@ -28,12 +29,12 @@ public class ConvertSortedListtoBinarySearchTree {
         }
         int mid = low + (high - low) / 2;
         // build up tree recursively
-        TreeNode left = conquer(low, mid - 1);
+        TreeNode L = conquer(low, mid - 1);
         TreeNode root = new TreeNode(h.val);
         h = h.next;
-        TreeNode right = conquer(mid + 1, high);
-        root.left = left;
-        root.right = right;
+        TreeNode R = conquer(mid + 1, high);
+        root.left = L;
+        root.right = R;
         return root;
     }
 }

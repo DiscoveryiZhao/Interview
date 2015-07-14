@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class FlattenBinaryTreetoLinkedList {
+
     public static void flatten(TreeNode root) {
         TreeNode cur = root;
         while (cur != null) {

@@ -16,16 +16,16 @@ public class BalancedBinaryTree {
             return 0;
         }
         // Divide
-        int left = helper(root.left);
-        int right = helper(root.right);
+        int L = helper(root.left);
+        int R = helper(root.right);
 
         // Conquer
-        if (left == -1 || right == -1) {
+        if (L == -1 || R == -1) {
             return -1;
         }
-        if (Math.abs(left - right) > 1) {
+        if (Math.abs(L - R) > 1) {
             return -1;
         }
-        return Math.max(left, right) + 1;
+        return Math.max(L, R) + 1;
     }
 }

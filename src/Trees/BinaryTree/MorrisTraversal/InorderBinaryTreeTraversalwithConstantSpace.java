@@ -3,18 +3,20 @@ package Trees.BinaryTree.MorrisTraversal;
 import LibraryOfLeetcode.TreeNode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yizhao on 6/29/15.
  */
 public class InorderBinaryTreeTraversalwithConstantSpace {
-    public static ArrayList<Integer> morrisInorderTraversal(TreeNode root) {
-        ArrayList<Integer> values = new ArrayList<Integer>();
+
+    public static List<Integer> morrisInorderTraversal(TreeNode root) {
+        List<Integer> values = new ArrayList<>();
         inorderMorris(root, values);
         return values;
     }
 
-    public static void inorderMorris(TreeNode root, ArrayList<Integer> values) {
+    public static void inorderMorris(TreeNode root, List<Integer> values) {
         TreeNode cur = root;
         while (cur != null) {
             if (cur.left != null) {

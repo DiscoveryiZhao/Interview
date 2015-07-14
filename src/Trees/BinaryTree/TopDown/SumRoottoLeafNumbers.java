@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class SumRoottoLeafNumbers {
+
     public static int sumNumbers(TreeNode root) {
         return helper(root, 0);
     }

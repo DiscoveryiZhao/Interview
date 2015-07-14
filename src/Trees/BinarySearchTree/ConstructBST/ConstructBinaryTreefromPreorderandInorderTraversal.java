@@ -3,26 +3,27 @@ package Trees.BinarySearchTree.ConstructBST;
 import LibraryOfLeetcode.TreeNode;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yizhao on 6/29/15.
  */
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
+
     public static TreeNode buildTree(int[] preorder, int[] inorder) {
         int n = inorder.length;
         if (n == 0) {
             return null;
-        } else {
-            HashMap<Integer, Integer> inorderMap = new HashMap<Integer, Integer>();
-            // inorderMap node value to its index in inorder results
-            for (int i = 0; i < n; i++) {
-                inorderMap.put(inorder[i], i);
-            }
-            return conquer(preorder, inorderMap, 0, n - 1, 0);
         }
+        Map<Integer, Integer> inorderMap = new HashMap<>();
+        // inorderMap node value to its index in inorder results
+        for (int i = 0; i < n; i++) {
+            inorderMap.put(inorder[i], i);
+        }
+        return conquer(preorder, inorderMap, 0, n - 1, 0);
     }
 
-    private static TreeNode conquer(int[] pre, HashMap<Integer, Integer> in, int low, int high, int cur) {
+    private static TreeNode conquer(int[] pre, Map<Integer, Integer> in, int low, int high, int cur) {
         if (low > high) {
             return null;
         }

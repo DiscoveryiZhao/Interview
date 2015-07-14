@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class PathSum {
+
     public static boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) {
             return false;

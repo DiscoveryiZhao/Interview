@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class SymmetricTree {
+
     public static boolean isSymmetric(TreeNode root) {
         if (root == null) {
             return true;

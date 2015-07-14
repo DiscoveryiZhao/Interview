@@ -10,6 +10,7 @@ import java.util.Stack;
  * Created by yizhao on 6/29/15.
  */
 public class BinaryTreeInorderTraversal {
+
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) {

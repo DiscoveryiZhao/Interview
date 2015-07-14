@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 6/29/15.
  */
 public class ConvertSortedArraytoBinarySearchTree {
+
     public static TreeNode sortedArrayToBST(int[] num) {
         return conquer(num, 0, num.length - 1);
     }
