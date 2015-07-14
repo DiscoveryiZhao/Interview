@@ -32,13 +32,12 @@ public class FindKthLargestInBST {
     public static void dfs(TreeNode root, int k) {
         if (root == null) {
             return;
-        } else {
-            dfs(root.right, k);
-            if (count == k) {
-                System.out.println(root.val);
-            }
-            count++;
-            dfs(root.left, k);
         }
+        dfs(root.right, k);
+        if (count == k) {
+            System.out.println(root.val);
+        }
+        count++;
+        dfs(root.left, k);
     }
 }

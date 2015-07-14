@@ -26,55 +26,52 @@ public class Basic {
     public static boolean contains(TreeNode root, int target) {
         if (root == null) {
             return false;
+        }
+        if (root.val == target) {
+            return true;
+        } else if (root.val < target) {
+            return contains(root.right, target);
         } else {
-            if (root.val == target) {
-                return true;
-            } else if (root.val < target) {
-                return contains(root.right, target);
-            } else {
-                return contains(root.left, target);
-            }
+            return contains(root.left, target);
         }
     }
 
     public static TreeNode insert(TreeNode root, int val) {
         if (root == null) {
             return new TreeNode(val);
-        } else {
-            if (root.val == val) {
-                return root;
-            } else if (root.val < val) {
-                root.right = insert(root.right, val);
-            } else { // if (root.val > val)
-                root.left = insert(root.left, val);
-            }
-            return root;
         }
+        if (root.val == val) {
+            return root;
+        } else if (root.val < val) {
+            root.right = insert(root.right, val);
+        } else { // if (root.val > val)
+            root.left = insert(root.left, val);
+        }
+        return root;
     }
 
     public static TreeNode delete(TreeNode root, int val) {
         if (root == null) {
             return null;
-        } else {
-            if (root.val == val) {
-                if (root.left == null && root.right == null) {
-                    return null;
-                } else if (root.left == null && root.right != null) {
-                    return root.right;
-                } else if (root.left != null && root.right == null) {
-                    return root.left;
-                } else {
-                    // both children; replace w/ min from R
-                    root.val = getMin(root.right);
-                    root.right = delete(root.right, root.val);
-                }
-            } else if (root.val < val) {
-                root.right = delete(root.right, val);
-            } else { // if (root.val > val)
-                root.left = delete(root.left, val);
-            }
-            return root;
         }
+        if (root.val == val) {
+            if (root.left == null && root.right == null) {
+                return null;
+            } else if (root.left == null && root.right != null) {
+                return root.right;
+            } else if (root.left != null && root.right == null) {
+                return root.left;
+            } else {
+                // both children; replace w/ min from R
+                root.val = getMin(root.right);
+                root.right = delete(root.right, root.val);
+            }
+        } else if (root.val < val) {
+            root.right = delete(root.right, val);
+        } else { // if (root.val > val)
+            root.left = delete(root.left, val);
+        }
+        return root;
     }
 
     public static int getMin(TreeNode node) {

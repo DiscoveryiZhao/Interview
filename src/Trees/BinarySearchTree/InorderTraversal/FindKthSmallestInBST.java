@@ -35,13 +35,12 @@ public class FindKthSmallestInBST {
     public static void dfs(TreeNode root, int k) {
         if (root == null) {
             return;
-        } else {
-            dfs(root.left, k);
-            if (count == k) {
-                System.out.println(root.val);
-            }
-            count++;
-            dfs(root.right, k);
         }
+        dfs(root.left, k);
+        if (count == k) {
+            System.out.println(root.val);
+        }
+        count++;
+        dfs(root.right, k);
     }
 }

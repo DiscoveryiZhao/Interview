@@ -23,17 +23,17 @@ public class ConvertSortedListtoBinarySearchTree {
     }
 
     private TreeNode conquer(int low, int high) {
-        if (low <= high) {
-            int mid = low + (high - low) / 2;
-            // build up tree recursively
-            TreeNode left = conquer(low, mid - 1);
-            TreeNode root = new TreeNode(h.val);
-            h = h.next;
-            TreeNode right = conquer(mid + 1, high);
-            root.left = left;
-            root.right = right;
-            return root;
+        if (low > high) {
+            return null;
         }
-        return null;
+        int mid = low + (high - low) / 2;
+        // build up tree recursively
+        TreeNode left = conquer(low, mid - 1);
+        TreeNode root = new TreeNode(h.val);
+        h = h.next;
+        TreeNode right = conquer(mid + 1, high);
+        root.left = left;
+        root.right = right;
+        return root;
     }
 }

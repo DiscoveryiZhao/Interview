@@ -11,13 +11,13 @@ public class ConvertSortedArraytoBinarySearchTree {
     }
 
     private static TreeNode conquer(int[] data, int low, int high) {
-        if (low <= high) {
-            int mid = low + (high - low) / 2;
-            TreeNode root = new TreeNode(data[mid]);
-            root.left = conquer(data, low, mid - 1);
-            root.right = conquer(data, mid + 1, high);
-            return root;
+        if (low > high) {
+            return null;
         }
-        return null;
+        int mid = low + (high - low) / 2;
+        TreeNode root = new TreeNode(data[mid]);
+        root.left = conquer(data, low, mid - 1);
+        root.right = conquer(data, mid + 1, high);
+        return root;
     }
 }

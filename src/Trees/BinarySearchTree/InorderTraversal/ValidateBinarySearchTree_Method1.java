@@ -17,20 +17,19 @@ public class ValidateBinarySearchTree_Method1 {
     public static boolean dfs(TreeNode root) {
         if (root == null) {
             return true;
-        } else {
-            if (!dfs(root.left)) {
-                return false;
-            }
-
-            if (pre != null && pre >= root.val) {
-                return false;
-            }
-            pre = root.val;
-
-            if (!dfs(root.right)) {
-                return false;
-            }
-            return true;
         }
+        if (!dfs(root.left)) {
+            return false;
+        }
+
+        if (pre != null && pre >= root.val) {
+            return false;
+        }
+        pre = root.val;
+
+        if (!dfs(root.right)) {
+            return false;
+        }
+        return true;
     }
 }

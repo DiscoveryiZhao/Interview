@@ -23,17 +23,17 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
     }
 
     private static TreeNode conquer(int[] pre, HashMap<Integer, Integer> in, int low, int high, int cur) {
-        if (low <= high) {
-            int mid = in.get(pre[cur]);
-            TreeNode root = new TreeNode(pre[cur]);
-            if (mid > low) {
-                root.left = conquer(pre, in, low, mid - 1, cur + 1);
-            }
-            if (mid < high) {
-                root.right = conquer(pre, in, mid + 1, high, cur + (mid - low + 1));
-            }
-            return root;
+        if (low > high) {
+            return null;
         }
-        return null;
+        int mid = in.get(pre[cur]);
+        TreeNode root = new TreeNode(pre[cur]);
+        if (mid > low) {
+            root.left = conquer(pre, in, low, mid - 1, cur + 1);
+        }
+        if (mid < high) {
+            root.right = conquer(pre, in, mid + 1, high, cur + (mid - low + 1));
+        }
+        return root;
     }
 }
