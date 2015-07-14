@@ -10,24 +10,23 @@ import java.util.Stack;
 public class ValidateBinarySearchTreeInorderStackTraversal {
     public static boolean isValidBST(TreeNode root) {
         if (root == null) {
-            return true ;
-        } else {
-            TreeNode pre = null;
-            Stack<TreeNode> parentStack = new Stack<TreeNode>();
-            while (parentStack.size() != 0 || root != null) {
-                if (root != null) {
-                    parentStack.push(root);
-                    root = root. left;
-                } else {
-                    root = parentStack.pop();
-                    if (pre != null && pre.val >= root. val){
-                        return false ;
-                    }
-                    pre = root;
-                    root = root. right;
-                }
-            }
-            return true ;
+            return true;
         }
+        TreeNode pre = null;
+        Stack<TreeNode> parentStack = new Stack<TreeNode>();
+        while (parentStack.size() != 0 || root != null) {
+            if (root != null) {
+                parentStack.push(root);
+                root = root.left;
+            } else {
+                root = parentStack.pop();
+                if (pre != null && pre.val >= root.val) {
+                    return false;
+                }
+                pre = root;
+                root = root.right;
+            }
+        }
+        return true;
     }
 }
