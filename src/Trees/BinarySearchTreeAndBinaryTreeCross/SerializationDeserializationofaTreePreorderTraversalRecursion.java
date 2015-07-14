@@ -59,17 +59,16 @@ public class SerializationDeserializationofaTreePreorderTraversalRecursion {
     private static TreeNode constructBT(String[] nextVal, Scanner sc) {
         if (nextVal[0].equals("#")) {
             return null;
-        } else {
-            TreeNode root = new TreeNode(Integer.valueOf(nextVal[0]));
-            if (sc.hasNext()) {
-                nextVal[0] = sc.next();
-                root.left = constructBT(nextVal, sc);
-            }
-            if (sc.hasNext()) {
-                nextVal[0] = sc.next();
-                root.right = constructBT(nextVal, sc);
-            }
-            return root;
         }
+        TreeNode root = new TreeNode(Integer.valueOf(nextVal[0]));
+        if (sc.hasNext()) {
+            nextVal[0] = sc.next();
+            root.left = constructBT(nextVal, sc);
+        }
+        if (sc.hasNext()) {
+            nextVal[0] = sc.next();
+            root.right = constructBT(nextVal, sc);
+        }
+        return root;
     }
 }

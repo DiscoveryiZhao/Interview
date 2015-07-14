@@ -13,7 +13,7 @@ public class ValidateBinarySearchTreeInorderStackTraversal {
             return true;
         }
         TreeNode pre = null;
-        Stack<TreeNode> parentStack = new Stack<TreeNode>();
+        Stack<TreeNode> parentStack = new Stack<>();
         while (parentStack.size() != 0 || root != null) {
             if (root != null) {
                 parentStack.push(root);

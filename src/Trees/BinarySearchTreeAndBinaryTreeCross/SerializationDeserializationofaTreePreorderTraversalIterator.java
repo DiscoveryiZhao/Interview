@@ -33,25 +33,23 @@ public class SerializationDeserializationofaTreePreorderTraversalIterator {
     public static void serialize(TreeNode root, String fileAddr) throws IOException {
         if (root == null) {
             return;
-        } else {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileAddr)));
-            Stack<TreeNode> parentStack = new Stack<TreeNode>();
-            while (parentStack.size() != 0 || root != null) {
-                if (root != null) {
-                    bw.write(root.val + " ");
-                    parentStack.push(root);
-                    root = root.left;
-                } else {
-                    bw.write("# ");
-                    root = parentStack.pop();
-                    root = root.right;
-                }
-            }
-            bw.write("# "); // don't forget write the last #
-            bw.flush();
-            bw.close();
-
         }
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileAddr)));
+        Stack<TreeNode> parentStack = new Stack<>();
+        while (parentStack.size() != 0 || root != null) {
+            if (root != null) {
+                bw.write(root.val + " ");
+                parentStack.push(root);
+                root = root.left;
+            } else {
+                bw.write("# ");
+                root = parentStack.pop();
+                root = root.right;
+            }
+        }
+        bw.write("# "); // don't forget write the last #
+        bw.flush();
+        bw.close();
     }
 
     public static TreeNode deserialize(String fileAddr) throws IOException {

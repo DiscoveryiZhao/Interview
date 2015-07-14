@@ -40,11 +40,10 @@ public class SerializationDeserializationofaBinarySearchTreePreorderTraversalAnd
     public static void dfs(TreeNode root, BufferedWriter bw) throws Exception {
         if (root == null) {
             return;
-        } else {
-            bw.write(root.val + " ");
-            dfs(root.left, bw);
-            dfs(root.right, bw);
         }
+        bw.write(root.val + " ");
+        dfs(root.left, bw);
+        dfs(root.right, bw);
     }
 
     public static TreeNode deserialize(String fileAddr) throws Exception {
@@ -61,14 +60,13 @@ public class SerializationDeserializationofaBinarySearchTreePreorderTraversalAnd
         // topdown boundary from validate of BST problem
         if (nextVal[0] < low || nextVal[0] > high) {
             return null;
-        } else {
-            TreeNode root = new TreeNode(nextVal[0]);
-            if (sc.hasNext()) {
-                nextVal[0] = Integer.valueOf(sc.next());
-                root.left = constructBST(nextVal, low, root.val - 1, sc);
-                root.right = constructBST(nextVal, root.val + 1, high, sc);
-            }
-            return root;
         }
+        TreeNode root = new TreeNode(nextVal[0]);
+        if (sc.hasNext()) {
+            nextVal[0] = Integer.valueOf(sc.next());
+            root.left = constructBST(nextVal, low, root.val - 1, sc);
+            root.right = constructBST(nextVal, root.val + 1, high, sc);
+        }
+        return root;
     }
 }

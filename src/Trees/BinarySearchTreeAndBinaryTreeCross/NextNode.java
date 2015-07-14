@@ -32,20 +32,18 @@ public class NextNode {
     public static TreeNode nextNode(TreeNode node) {
         if (node == null) {
             return null;
-        } else {
-            // Found right children -> return left most node of right subtree
-            if (node.right != null) {
-                return leftMostChild(node.right);
-            } else {
-                TreeNode nodeParent = node.parent;
-                // Go up until we’re on left instead of right
-                while (nodeParent != null && nodeParent.right == node) {
-                    node = nodeParent;
-                    nodeParent = nodeParent.parent;
-                }
-                return nodeParent;
-            }
         }
+        // Found right children -> return left most node of right subtree
+        if (node.right != null) {
+            return leftMostChild(node.right);
+        }
+        TreeNode nodeParent = node.parent;
+        // Go up until we’re on left instead of right
+        while (nodeParent != null && nodeParent.right == node) {
+            node = nodeParent;
+            nodeParent = nodeParent.parent;
+        }
+        return nodeParent;
     }
 
     public static TreeNode leftMostChild(TreeNode node) {
