@@ -6,6 +6,7 @@ import LibraryOfLeetcode.TreeNode;
  * Created by yizhao on 7/14/15.
  */
 public class ValidateBinarySearchTreeRecursionInorder {
+
     public static Integer pre;
 
     public static boolean isValidBST(TreeNode root) {

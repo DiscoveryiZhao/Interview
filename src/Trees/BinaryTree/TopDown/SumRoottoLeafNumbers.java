@@ -13,12 +13,11 @@ public class SumRoottoLeafNumbers {
     public static int helper(TreeNode node, int sum) {
         if (node == null) {
             return 0;
-        } else {
-            sum = sum * 10 + node.val;
-            if (node.left == null && node.right == null) {
-                return sum;
-            }
-            return helper(node.left, sum) + helper(node.right, sum);
         }
+        sum = sum * 10 + node.val;
+        if (node.left == null && node.right == null) {
+            return sum;
+        }
+        return helper(node.left, sum) + helper(node.right, sum);
     }
 }
