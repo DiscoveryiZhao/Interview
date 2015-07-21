@@ -16,10 +16,10 @@ public class ImplementstrStr {
         System.out.println(strStr("abaabd", "abaabcabdabba")); // null
     }
 
-    public static String strStr(String haystack, String needle) {
+    public static int strStr(String haystack, String needle) {
         int m = haystack.length(), n = needle.length();
         if (n == 0) {
-            return haystack;
+            return 0;
         }
         for (int i = 0; i < m - n + 1; i++) {
             int j = i;
@@ -28,9 +28,9 @@ public class ImplementstrStr {
             }
 
             if (j == i + n) {
-                return haystack.substring(i);
+                return i;
             }
         }
-        return null;
+        return -1;
     }
 }
