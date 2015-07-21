@@ -5,15 +5,15 @@ package Math.SetBuilderNotation;
  */
 public class ImplementstrStr {
     public static void main(String[] args) {
-        System.out.println(strStr("", "")); // ""
-        System.out.println(strStr("", "a")); // null
-        System.out.println(strStr("a", "")); // a
-        System.out.println(strStr("aaa", "a")); // aaa
-        System.out.println(strStr("aaa", "aa")); // aaa
-        System.out.println(strStr("aaa", "aaaa")); // null
-        System.out.println(strStr("mississippi", "a")); // null
-        System.out.println(strStr("mississippi", "issi")); // ississippi
-        System.out.println(strStr("abaabd", "abaabcabdabba")); // null
+        System.out.println(strStr("", "")); // "", 0
+        System.out.println(strStr("", "a")); // null, -1
+        System.out.println(strStr("a", "")); // a, 0
+        System.out.println(strStr("aaa", "a")); // aaa, 0
+        System.out.println(strStr("aaa", "aa")); // aaa, 0
+        System.out.println(strStr("aaa", "aaaa")); // null, -1
+        System.out.println(strStr("mississippi", "a")); // null, -1
+        System.out.println(strStr("mississippi", "issi")); // ississippi, 1
+        System.out.println(strStr("abaabd", "abaabcabdabba")); // null, -1
     }
 
     public static int strStr(String haystack, String needle) {
