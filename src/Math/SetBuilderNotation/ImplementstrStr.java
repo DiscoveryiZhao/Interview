@@ -33,4 +33,22 @@ public class ImplementstrStr {
         }
         return -1;
     }
+
+    public static String strStrOld(String haystack, String needle) {
+        int m = haystack.length(), n = needle.length();
+        if (n == 0) {
+            return haystack;
+        }
+        for (int i = 0; i < m - n + 1; i++) {
+            int j = i;
+            while (j < i + n && haystack.charAt(j) == needle.charAt(j - i)) {
+                j++;
+            }
+
+            if (j == i + n) {
+                return haystack.substring(i);
+            }
+        }
+        return null;
+    }
 }
