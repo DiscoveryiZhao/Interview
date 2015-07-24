@@ -4,6 +4,7 @@ package Math.SetBuilderNotation;
  * Created by yizhao on 6/30/15.
  */
 public class ImplementstrStr {
+
     public static void main(String[] args) {
         System.out.println(strStr("", "")); // "", 0
         System.out.println(strStr("", "a")); // null, -1
