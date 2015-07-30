@@ -48,7 +48,7 @@ public class ThreatStream2 {
         if (s == null || dict == null) {
             return result.toString();
         }
-        if(dict.size() == 0){
+        if (dict.size() == 0) {
             return s;
         }
         int n = s.length();
@@ -59,10 +59,6 @@ public class ThreatStream2 {
             while (r < n && s.charAt(r) != '<' && r < n + 1 && s.charAt(r + 1) != '%') {
                 r++;
             }
-//            if (r == n) {
-//                result.append(s.substring(l, r + 1));
-//                return result.toString();
-//            }
 
             r += 2;
             result.append(s.substring(l, r - 2));
@@ -71,21 +67,23 @@ public class ThreatStream2 {
                 r++;
             }
 
-            // System.out.println("s.substring(l, r):" + s.substring(l, r) + "  ,l:" + l + "  ,r:" + r);
             /*
             * true then would handles the edge case for <%%>
             * */
             if (l == r) {
-                result.append(s.substring(r-2, r+2));
-            }else{
-                if(dict.containsKey(s.substring(l, r))) {
-                    result.append(dict.get(s.substring(l, r)));
-                }else{
+                result.append(s.substring(r - 2, r + 2));
+            } else {
+                /*
+                * true then the dictionary does not contains the variable
+                * */
+                if (dict.containsKey(s.substring(l, r)) == false) {
                     r += 2;
                     result.append(s.substring(l - 2, l));
                     result.append(s.substring(l, r));
                     l = r;
                     continue;
+                } else {
+                    result.append(dict.get(s.substring(l, r)));
                 }
             }
             r += 2;
