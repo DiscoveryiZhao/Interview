@@ -75,8 +75,13 @@ public class ThreatStream2 {
             /*
             * define a loop to continue if <% has not yet found
             * */
-            while (r < n && s.charAt(r) != '<' && r < n + 1 && s.charAt(r + 1) != '%') {
+            while (r < n && s.charAt(r) != '<' && r + 1 < n && s.charAt(r + 1) != '%') {
                 r++;
+            }
+
+            if(r + 1 == n){
+                result.append(s.substring(l, r + 1));
+                return result.toString();
             }
 
             result.append(s.substring(l, r));
@@ -86,7 +91,7 @@ public class ThreatStream2 {
             /*
             * define a loop to continue if %> has not yet found
             * */
-            while (r < n && s.charAt(r) != '%' && r < n + 1 && s.charAt(r + 1) != '>') {
+            while (r < n && s.charAt(r) != '%' && r + 1 < n && s.charAt(r + 1) != '>') {
                 r++;
             }
 
