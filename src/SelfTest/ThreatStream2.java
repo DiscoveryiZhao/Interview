@@ -31,7 +31,7 @@ public class ThreatStream2 {
 
     public static String resolve(String s, HashMap<String, String> dict) {
         StringBuilder result = new StringBuilder();
-        if(s == null || dict == null){
+        if (s == null || dict == null) {
             return result.toString();
         }
         int n = s.length();
