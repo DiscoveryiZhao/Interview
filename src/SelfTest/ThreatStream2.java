@@ -52,6 +52,10 @@ public class ThreatStream2 {
             return s;
         }
         int n = s.length();
+
+        /*
+        * two pointers algorithm approach, so the variable would between the interval [l..r]
+        * */
         int l = 0;
         int r = 0;
 
