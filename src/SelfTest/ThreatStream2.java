@@ -15,11 +15,11 @@ public class ThreatStream2 {
         System.out.println(resolve(s1, dict1)); // "aaaaa<%x%>bbbbb<%y%>ccccc<%z%>"
 
 
-        String s2 = "aaaaa<%%>bbbbb<%b%>ccccc<%c%>";
-        HashMap<String, String> dict2 = new HashMap<>();
-        dict2.put("b", "y");
-        dict2.put("c", "z");
-        System.out.println(resolve(s2, dict2)); // "aaaaa<%%>bbbbb<%y%>ccccc<%z%>"
+//        String s2 = "aaaaa<%%>bbbbb<%b%>ccccc<%c%>";
+//        HashMap<String, String> dict2 = new HashMap<>();
+//        dict2.put("b", "y");
+//        dict2.put("c", "z");
+//        System.out.println(resolve(s2, dict2)); // "aaaaa<%%>bbbbb<%y%>ccccc<%z%>"
 
 
         String s3 = "<%a%>";
@@ -53,6 +53,8 @@ public class ThreatStream2 {
             while (r < n && s.charAt(r) != '%' && r < n + 1 && s.charAt(r + 1) != '>') {
                 r++;
             }
+
+            System.out.println("s.substring(l + 1, r):" + s.substring(l + 1, r) + "  ,l:" + l + "  ,r:" + r);
             result.append(dict.get(s.substring(l + 1, r)));
             r += 2;
             result.append(s.substring(r - 2, r));
