@@ -42,10 +42,10 @@ public class ThreatStream2 {
             while (r < n && s.charAt(r) != '<' && r < n + 1 && s.charAt(r + 1) != '%') {
                 r++;
             }
-            if (r == n) {
-                result.append(s.substring(l, r + 1));
-                return result.toString();
-            }
+//            if (r == n) {
+//                result.append(s.substring(l, r + 1));
+//                return result.toString();
+//            }
 
             r += 2;
             result.append(s.substring(l, r));
@@ -54,8 +54,13 @@ public class ThreatStream2 {
                 r++;
             }
 
-//            System.out.println("s.substring(l + 1, r):" + s.substring(l + 1, r) + "  ,l:" + l + "  ,r:" + r);
-            result.append(dict.get(s.substring(l, r)));
+            // System.out.println("s.substring(l, r):" + s.substring(l, r) + "  ,l:" + l + "  ,r:" + r);
+            /*
+            * true then would handles the edge case for <%%>
+            * */
+            if (l != r) {
+                result.append(dict.get(s.substring(l, r)));
+            }
             r += 2;
             result.append(s.substring(r - 2, r));
             l = r;
