@@ -66,60 +66,60 @@ public class ThreatStream2 {
         int n = s.length();
 
         /*
-        * two pointers algorithm approach, so the variable would between the interval [l..r-1]
+        * two pointers algorithm approach, so the variable would between the interval [left..right-1]
         * */
-        int l = 0;
-        int r = 0;
+        int left = 0;
+        int right = 0;
 
-        while (r < n) {
+        while (right < n) {
             /*
             * define a loop to continue if <% has not yet found
             * */
-            while (r < n && s.charAt(r) != '<' && r + 1 < n && s.charAt(r + 1) != '%') {
-                r++;
+            while (right < n && s.charAt(right) != '<' && right + 1 < n && s.charAt(right + 1) != '%') {
+                right++;
             }
 
-            if(r + 1 == n){
-                result.append(s.substring(l, r + 1));
+            if(right + 1 == n){
+                result.append(s.substring(left, right + 1));
                 return result.toString();
             }
 
-            result.append(s.substring(l, r));
-            r += 2;
-            l = r;
+            result.append(s.substring(left, right));
+            right += 2;
+            left = right;
 
             /*
             * define a loop to continue if %> has not yet found
             * */
-            while (r < n && s.charAt(r) != '%' && r + 1 < n && s.charAt(r + 1) != '>') {
-                r++;
+            while (right < n && s.charAt(right) != '%' && right + 1 < n && s.charAt(right + 1) != '>') {
+                right++;
             }
 
             /*
             * handles the edge case
             * if true then would handles the edge case for <%%> in test case 2
             * */
-            if (l == r) {
-                result.append(s.substring(r - 2, r + 2));
+            if (left == right) {
+                result.append(s.substring(right - 2, right + 2));
             } else {
                 /*
                 * handles the edge case
                 * if true then the dictionary does not contains the variable, for example in test case 7
                 * */
-                if (dict.containsKey(s.substring(l, r)) == false) {
-                    r += 2;
-                    result.append(s.substring(l - 2, l));
-                    result.append(s.substring(l, r));
-                    l = r;
+                if (dict.containsKey(s.substring(left, right)) == false) {
+                    right += 2;
+                    result.append(s.substring(left - 2, left));
+                    result.append(s.substring(left, right));
+                    left = right;
                     continue;
                 } else {
-                    result.append(dict.get(s.substring(l, r)));
+                    result.append(dict.get(s.substring(left, right)));
                 }
             }
-            r += 2;
-            l = r;
+            right += 2;
+            left = right;
         }
-        result.append(s.substring(l, r));
+        result.append(s.substring(left, right));
         return result.toString();
     }
 }
