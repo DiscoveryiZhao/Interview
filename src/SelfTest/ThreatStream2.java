@@ -7,35 +7,42 @@ import java.util.HashMap;
  */
 public class ThreatStream2 {
     public static void main(String[] args) {
+        /* test case 1 */
         HashMap<String, String> dict1 = new HashMap<>();
         dict1.put("a", "x");
         System.out.println(resolve("<%a%>", dict1)); // x
 
+        /* test case 2 */
         HashMap<String, String> dict2 = new HashMap<>();
         dict2.put("a", "x");
         System.out.println(resolve("<%%>", dict2)); // <%%>
 
+        /* test case 3 */
         HashMap<String, String> dict3 = new HashMap<>();
         dict3.put("b", "y");
         dict3.put("c", "z");
         System.out.println(resolve("aaaaa<%%>bbbbb<%b%>ccccc<%c%>", dict3)); // aaaaa<%%>bbbbbycccccz
 
+        /* test case 4 */
         HashMap<String, String> dict4 = new HashMap<>();
         dict4.put("a", "x");
         dict4.put("b", "y");
         dict4.put("c", "z");
         System.out.println(resolve("aaaaa<%a%>bbbbb<%b%>ccccc<%c%>", dict4)); // aaaaaxbbbbbycccccz
 
+        /* test case 5 */
         HashMap<String, String> dict5 = new HashMap<>();
         dict5.put("aa", "x");
         dict5.put("b", "y");
         dict5.put("c", "z");
         System.out.println(resolve("aaaaa<%aa%>bbbbb<%b%>ccccc<%c%>", dict5)); // aaaaaxbbbbbycccccz
 
+        /* test case 6 */
         HashMap<String, String> dict6 = new HashMap<>();
         dict6.put("a", "x");
         System.out.println(resolve("aaaaa<%a%>bbbbb<%a%>ccccc<%a%>", dict6)); // aaaaaxbbbbbxcccccx
 
+        /* test case 7 */
         HashMap<String, String> dict7 = new HashMap<>();
         dict7.put("a", "x");
         dict7.put("b", "y");
@@ -80,14 +87,14 @@ public class ThreatStream2 {
 
             /*
             * handles the edge case
-            * if true then would handles the edge case for <%%>
+            * if true then would handles the edge case for <%%> in test case 2
             * */
             if (l == r) {
                 result.append(s.substring(r - 2, r + 2));
             } else {
                 /*
                 * handles the edge case
-                * if true then the dictionary does not contains the variable
+                * if true then the dictionary does not contains the variable, for example in test case 7
                 * */
                 if (dict.containsKey(s.substring(l, r)) == false) {
                     r += 2;
