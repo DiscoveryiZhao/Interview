@@ -26,13 +26,12 @@ public class ThreatStream2 {
         System.out.println(resolve(s1, dict1)); // "aaaaa<%x%>bbbbb<%y%>ccccc<%z%>"
 
 
-        String s4 = "aaaaa<%abbbbb<%b%>ccccc<%c%>";
+        String s4 =  "aaaaa<%d%>bbbbb<%b%>ccccc<%c%>";
         HashMap<String, String> dict4 = new HashMap<>();
         dict4.put("a", "x");
         dict4.put("b", "y");
         dict4.put("c", "z");
-        System.out.println(resolve(s4, dict4)); // "aaaaa<%abbbbb<%b%>ccccc<%z%>"
-
+        System.out.println(resolve(s4, dict4)); // aaaaa<%d%>bbbbb<%y%>ccccc<%z%>
     }
 
     public static String resolve(String s, HashMap<String, String> dict) {
@@ -68,7 +67,10 @@ public class ThreatStream2 {
                 if(dict.containsKey(s.substring(l, r))) {
                     result.append(dict.get(s.substring(l, r)));
                 }else{
-
+                    r += 2;
+                    result.append(s.substring(l, r));
+                    l = r;
+                    continue;
                 }
             }
             r += 2;
