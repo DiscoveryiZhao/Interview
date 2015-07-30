@@ -49,13 +49,13 @@ public class ThreatStream2 {
 
             r += 2;
             result.append(s.substring(l, r));
-            l = r - 1;
+            l = r;
             while (r < n && s.charAt(r) != '%' && r < n + 1 && s.charAt(r + 1) != '>') {
                 r++;
             }
 
 //            System.out.println("s.substring(l + 1, r):" + s.substring(l + 1, r) + "  ,l:" + l + "  ,r:" + r);
-            result.append(dict.get(s.substring(l + 1, r)));
+            result.append(dict.get(s.substring(l, r)));
             r += 2;
             result.append(s.substring(r - 2, r));
             l = r;
