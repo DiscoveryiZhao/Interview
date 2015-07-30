@@ -34,9 +34,13 @@ public class ThreatStream2 {
 
         HashMap<String, String> dict6 = new HashMap<>();
         dict6.put("a", "x");
-        dict6.put("b", "y");
-        dict6.put("c", "z");
-        System.out.println(resolve("aaaaa<%dd%>bbbbb<%b%>ccccc<%c%>", dict6)); // aaaaa<%dd%>bbbbbycccccz
+        System.out.println(resolve("aaaaa<%a%>bbbbb<%a%>ccccc<%a%>", dict6)); // aaaaaxbbbbbxcccccx
+
+        HashMap<String, String> dict7 = new HashMap<>();
+        dict7.put("a", "x");
+        dict7.put("b", "y");
+        dict7.put("c", "z");
+        System.out.println(resolve("aaaaa<%dd%>bbbbb<%b%>ccccc<%c%>", dict7)); // aaaaa<%dd%>bbbbbycccccz
     }
 
     public static String resolve(String s, HashMap<String, String> dict) {
@@ -71,7 +75,9 @@ public class ThreatStream2 {
             /*
             * true then would handles the edge case for <%%>
             * */
-            if (l != r) {
+            if (l == r) {
+                result.append(s.substring(r-2, r+2));
+            }else{
                 if(dict.containsKey(s.substring(l, r))) {
                     result.append(dict.get(s.substring(l, r)));
                 }else{
