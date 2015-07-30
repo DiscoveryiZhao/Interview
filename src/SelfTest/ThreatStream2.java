@@ -65,7 +65,11 @@ public class ThreatStream2 {
             * true then would handles the edge case for <%%>
             * */
             if (l != r) {
-                result.append(dict.get(s.substring(l, r)));
+                if(dict.containsKey(s.substring(l, r))) {
+                    result.append(dict.get(s.substring(l, r)));
+                }else{
+
+                }
             }
             r += 2;
             result.append(s.substring(r - 2, r));
