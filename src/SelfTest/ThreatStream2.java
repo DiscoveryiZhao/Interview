@@ -18,7 +18,7 @@ public class ThreatStream2 {
         HashMap<String, String> dict3 = new HashMap<>();
         dict3.put("b", "y");
         dict3.put("c", "z");
-        System.out.println(resolve("aaaaa<%%>bbbbb<%b%>ccccc<%c%>", dict3)); // aaaaabbbbbycccccz
+        System.out.println(resolve("aaaaa<%%>bbbbb<%b%>ccccc<%c%>", dict3)); // aaaaa<%%>bbbbbycccccz
 
         HashMap<String, String> dict4 = new HashMap<>();
         dict4.put("a", "x");
@@ -67,8 +67,8 @@ public class ThreatStream2 {
                 r++;
             }
 
+            result.append(s.substring(l, r));
             r += 2;
-            result.append(s.substring(l, r - 2));
             l = r;
 
             /*
