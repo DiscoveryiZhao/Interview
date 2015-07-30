@@ -7,6 +7,17 @@ import java.util.HashMap;
  */
 public class ThreatStream2 {
     public static void main(String[] args) {
+        String s3 = "<%a%>";
+        HashMap<String, String> dict3 = new HashMap<>();
+        dict3.put("a", "x");
+        System.out.println(resolve(s3, dict3)); // "<%x%>"
+
+        String s2 = "aaaaa<%%>bbbbb<%b%>ccccc<%c%>";
+        HashMap<String, String> dict2 = new HashMap<>();
+        dict2.put("b", "y");
+        dict2.put("c", "z");
+        System.out.println(resolve(s2, dict2)); // "aaaaa<%%>bbbbb<%y%>ccccc<%z%>"
+
         String s1 = "aaaaa<%a%>bbbbb<%b%>ccccc<%c%>";
         HashMap<String, String> dict1 = new HashMap<>();
         dict1.put("a", "x");
@@ -15,17 +26,12 @@ public class ThreatStream2 {
         System.out.println(resolve(s1, dict1)); // "aaaaa<%x%>bbbbb<%y%>ccccc<%z%>"
 
 
-        String s2 = "aaaaa<%%>bbbbb<%b%>ccccc<%c%>";
-        HashMap<String, String> dict2 = new HashMap<>();
-        dict2.put("b", "y");
-        dict2.put("c", "z");
-        System.out.println(resolve(s2, dict2)); // "aaaaa<%%>bbbbb<%y%>ccccc<%z%>"
-
-
-        String s3 = "<%a%>";
-        HashMap<String, String> dict3 = new HashMap<>();
-        dict3.put("a", "x");
-        System.out.println(resolve(s3, dict3)); // "<%x%>"
+        String s4 = "aaaaa<%abbbbb<%b%>ccccc<%c%>";
+        HashMap<String, String> dict4 = new HashMap<>();
+        dict4.put("a", "x");
+        dict4.put("b", "y");
+        dict4.put("c", "z");
+        System.out.println(resolve(s4, dict4)); // "aaaaa<%abbbbb<%b%>ccccc<%z%>"
 
     }
 
