@@ -19,35 +19,40 @@ public class ThreatStream2 {
 
         /* test case 3 */
         HashMap<String, String> dict3 = new HashMap<>();
-        dict3.put("b", "y");
-        dict3.put("c", "z");
-        System.out.println(resolve("aaaaa<%%>bbbbb<%b%>ccccc<%c%>", dict3)); // aaaaa<%%>bbbbbycccccz
+        dict3.put("a", "x");
+        System.out.println(resolve("x<%a%>x", dict3)); // xxx
 
         /* test case 4 */
         HashMap<String, String> dict4 = new HashMap<>();
-        dict4.put("a", "x");
         dict4.put("b", "y");
         dict4.put("c", "z");
-        System.out.println(resolve("aaaaa<%a%>bbbbb<%b%>ccccc<%c%>", dict4)); // aaaaaxbbbbbycccccz
+        System.out.println(resolve("aaaaa<%%>bbbbb<%b%>ccccc<%c%>", dict4)); // aaaaa<%%>bbbbbycccccz
 
         /* test case 5 */
         HashMap<String, String> dict5 = new HashMap<>();
-        dict5.put("aa", "x");
+        dict5.put("a", "x");
         dict5.put("b", "y");
         dict5.put("c", "z");
-        System.out.println(resolve("aaaaa<%aa%>bbbbb<%b%>ccccc<%c%>", dict5)); // aaaaaxbbbbbycccccz
+        System.out.println(resolve("aaaaa<%a%>bbbbb<%b%>ccccc<%c%>", dict5)); // aaaaaxbbbbbycccccz
 
         /* test case 6 */
         HashMap<String, String> dict6 = new HashMap<>();
-        dict6.put("a", "x");
-        System.out.println(resolve("aaaaa<%a%>bbbbb<%a%>ccccc<%a%>", dict6)); // aaaaaxbbbbbxcccccx
+        dict6.put("aa", "x");
+        dict6.put("b", "y");
+        dict6.put("c", "z");
+        System.out.println(resolve("aaaaa<%aa%>bbbbb<%b%>ccccc<%c%>", dict6)); // aaaaaxbbbbbycccccz
 
         /* test case 7 */
         HashMap<String, String> dict7 = new HashMap<>();
         dict7.put("a", "x");
-        dict7.put("b", "y");
-        dict7.put("c", "z");
-        System.out.println(resolve("aaaaa<%dd%>bbbbb<%b%>ccccc<%c%>", dict7)); // aaaaa<%dd%>bbbbbycccccz
+        System.out.println(resolve("aaaaa<%a%>bbbbb<%a%>ccccc<%a%>", dict7)); // aaaaaxbbbbbxcccccx
+
+        /* test case 8 */
+        HashMap<String, String> dict8 = new HashMap<>();
+        dict8.put("a", "x");
+        dict8.put("b", "y");
+        dict8.put("c", "z");
+        System.out.println(resolve("aaaaa<%dd%>bbbbb<%b%>ccccc<%c%>", dict8)); // aaaaa<%dd%>bbbbbycccccz
     }
 
     public static String resolve(String s, HashMap<String, String> dict) {
