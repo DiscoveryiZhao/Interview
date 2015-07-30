@@ -56,6 +56,9 @@ public class ThreatStream2 {
         int r = 0;
 
         while (r < n) {
+            /*
+            * define a loop to contine if <% has not yet found
+            * */
             while (r < n && s.charAt(r) != '<' && r < n + 1 && s.charAt(r + 1) != '%') {
                 r++;
             }
@@ -63,18 +66,24 @@ public class ThreatStream2 {
             r += 2;
             result.append(s.substring(l, r - 2));
             l = r;
+
+            /*
+            * define a loop to contine if %> has not yet found
+            * */
             while (r < n && s.charAt(r) != '%' && r < n + 1 && s.charAt(r + 1) != '>') {
                 r++;
             }
 
             /*
-            * true then would handles the edge case for <%%>
+            * handles the edge case
+            * if true then would handles the edge case for <%%>
             * */
             if (l == r) {
                 result.append(s.substring(r - 2, r + 2));
             } else {
                 /*
-                * true then the dictionary does not contains the variable
+                * handles the edge case
+                * if true then the dictionary does not contains the variable
                 * */
                 if (dict.containsKey(s.substring(l, r)) == false) {
                     r += 2;
