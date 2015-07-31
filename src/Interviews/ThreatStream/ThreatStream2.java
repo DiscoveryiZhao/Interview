@@ -60,9 +60,10 @@ public class ThreatStream2 {
         if (s == null || dict == null) {
             return result.toString();
         }
-        if (dict.size() == 0) {
+        if (dict.size() == 0 || s.contains("<%") == false) {
             return s;
         }
+
         int n = s.length();
 
         /*
