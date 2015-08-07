@@ -16,8 +16,8 @@ public class BalancedBinaryTree {
             return 0;
         }
         // Divide
-        int L = maxDepth(root.left); // the depth of left subtree
-        int R = maxDepth(root.right); // the depth of right subtree
+        int L = maxDepth(root.left); // the maximum depth of left subtree
+        int R = maxDepth(root.right); // the maximum depth of right subtree
 
         // Conquer
         if (L == -1 || R == -1) {
