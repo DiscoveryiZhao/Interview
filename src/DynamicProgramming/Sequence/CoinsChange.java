@@ -21,10 +21,13 @@ public class CoinsChange {
     }
 
     public static int coinsChange(int[] coins, int sum) {
+        // state:
         int[] dp = new int[sum + 1];
-        for (int i = 1; i <= sum; i++) {
-            // worst case for result of sum[0..i-1] is changed infinity coins,
+        // intialize: worst case for result of sum[0..i-1] is changed infinity coins,
+        for(int i = 1; i < dp.length; i++){
             dp[i] = Integer. MAX_VALUE;
+        }
+        for (int i = 1; i <= sum; i++) {
             for (int j = 0; j < coins.length; j++) {
                 if (coins[j] <= i) { // 硬币面值必须小于等于纸币面值，才可以换。
                     dp[i] = Math. min(dp[i], dp[i - coins[j]] + 1);

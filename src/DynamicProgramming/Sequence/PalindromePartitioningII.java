@@ -14,11 +14,16 @@ public class PalindromePartitioningII {
     public static int minCut(String s) {
         boolean[][] palinTable = isPalindrome(s);
         int n = s.length();
+
+        // state: f[i]”前i”个字符组成的子字符串需要最少几次cut(最少能被分割为多少个字符串-1)
         int[] dp = new int[n + 1];
-        for (int i = 1; i <= n; i++) {
-            // worst case for result of s[0..i-1] is no palindrome in previous string except char itself,
-            // so the worst case is cutting by each char
+
+        // intialize: worst case for result of s[0..i-1] is no palindrome in previous string except char itself, so the worst case is cutting by each char
+        for(int i = 1; i < dp.length; i++){
             dp[i] = i;
+        }
+
+        for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
                 if (palinTable[j][i - 1]) {
                     dp[i] = Math. min(dp[i], dp[j] + 1);

@@ -66,8 +66,10 @@ public class WordBreak {
 
     public static boolean wordBreakDP(String s, Set<String> dict) {
         int n = s.length();
-        boolean[] dp = new boolean[n + 1];
-        dp[0] = true; // case for s = ""
+        // state: f[i]表示“前i”个字符能否被完美切分
+        boolean[] dp = new boolean[n + 1]; //
+        // intialize: case for s = ""
+        dp[0] = true;
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
                 dp[i] = dict.contains(s.substring(j, i)) && dp[j] ? true : dp[i];
