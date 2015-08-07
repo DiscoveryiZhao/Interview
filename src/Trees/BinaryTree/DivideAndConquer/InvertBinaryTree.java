@@ -12,8 +12,8 @@ public class InvertBinaryTree {
             return null;
         }
         // Divide
-        TreeNode L = invertTree(root.left); // 求左子树镜像
-        TreeNode R = invertTree(root.right); // 求右子树镜像
+        TreeNode L = invertTree(root.left); // left subtree
+        TreeNode R = invertTree(root.right); // right subtree
 
         // Conquer
         root.left = R;
