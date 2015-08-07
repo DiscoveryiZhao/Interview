@@ -1,4 +1,4 @@
-package Trees.BinaryTree.DivideAndConquer;
+package Trees.BinaryTree.Recursion_DivideAndConquer;
 
 import LibraryOfLeetcode.TreeNode;
 
