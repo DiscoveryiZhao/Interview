@@ -16,7 +16,7 @@ public class BalancedBinaryTree {
             return 0;
         }
         // Divide
-        int L = helper(root.left);
+        int L = helper(root.left); // differ of left subtree
         int R = helper(root.right);
 
         // Conquer
