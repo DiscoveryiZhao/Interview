@@ -12,9 +12,11 @@ public class MaximumDepthofBinaryTree {
             return 0;
         }
 
-        int l = maxDepth(root.left);
-        int r = maxDepth(root.right);
+        // Divide
+        int l = maxDepth(root.left); // the depth of left subtree
+        int r = maxDepth(root.right); // the depth of right subtree
 
+        // Conquer
         return Math.max(l, r) + 1;
     }
 }
