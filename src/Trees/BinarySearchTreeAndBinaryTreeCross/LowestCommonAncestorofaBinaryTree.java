@@ -7,19 +7,24 @@ import LibraryOfLeetcode.TreeNode;
  */
 public class LowestCommonAncestorofaBinaryTree {
 
-    public static TreeNode lca(TreeNode root, TreeNode p, TreeNode q) {
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
         }
         // Divide
-        TreeNode L = lca(root.left, p, q);
-        TreeNode R = lca(root.right, p, q);
+        TreeNode l = lowestCommonAncestor(root.left, p, q); // Lowest Common Ancestor of left subtree
+        TreeNode r = lowestCommonAncestor(root.right, p, q); // Lowest Common Ancestor of right subtree
 
         // Conquer
-        if (L != null && R != null) {
+        if (l != null && r != null) {
             return root;
         }
-
-        return (L == null) ? R : L;
+        if (l != null) {
+            return l;
+        }
+        if (r != null) {
+            return r;
+        }
+        return null;
     }
 }
