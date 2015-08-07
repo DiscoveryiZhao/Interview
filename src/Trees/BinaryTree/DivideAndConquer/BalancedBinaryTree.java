@@ -8,16 +8,16 @@ import LibraryOfLeetcode.TreeNode;
 public class BalancedBinaryTree {
 
     public boolean isBalanced(TreeNode root) {
-        return helper(root) != -1;
+        return maxDepth(root) != -1;
     }
 
-    public int helper(TreeNode root) {
+    public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
         // Divide
-        int L = helper(root.left);
-        int R = helper(root.right);
+        int L = maxDepth(root.left); // the depth of left subtree
+        int R = maxDepth(root.right); // the depth of right subtree
 
         // Conquer
         if (L == -1 || R == -1) {
