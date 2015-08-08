@@ -36,6 +36,7 @@ public class PalindromePartitioningII {
         return dp[n];
     }
 
+    // 区间型动态规划
     public static boolean[][] isPalindrome(String s) {
         boolean[][] dp = new boolean[s.length()][s.length()];
 
