@@ -1,4 +1,4 @@
-package DynamicProgramming.BinomialCoefficient;
+package DynamicProgramming.MatrixDP.BinomialCoefficient;
 
 import java.util.ArrayList;
 

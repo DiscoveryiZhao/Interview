@@ -1,4 +1,4 @@
-package DynamicProgramming.Sequence;
+package DynamicProgramming.SequenceDP;
 
 /**
  * Created by yizhao on 5/18/15.
@@ -23,7 +23,7 @@ public class CoinsChange {
     public static int coinsChange(int[] coins, int sum) {
         // state:
         int[] dp = new int[sum + 1];
-        // intialize for worst case: : worst case for result of sum[0..i-1] is changed infinity coins,
+        // intialize for worst case: worst case for result of sum[0..i-1] is changed infinity coins,
         for(int i = 1; i < dp.length; i++){
             dp[i] = Integer. MAX_VALUE;
         }

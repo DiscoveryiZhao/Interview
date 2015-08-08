@@ -1,4 +1,4 @@
-package DynamicProgramming.Sequence;
+package DynamicProgramming.SequenceDP;
 
 /**
  * Created by yizhao on 5/18/15.

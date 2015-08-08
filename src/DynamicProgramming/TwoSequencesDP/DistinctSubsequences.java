@@ -1,4 +1,4 @@
-package DynamicProgramming.TwoSequences;
+package DynamicProgramming.TwoSequencesDP;
 
 /**
  * Created by yizhao on 5/18/15.

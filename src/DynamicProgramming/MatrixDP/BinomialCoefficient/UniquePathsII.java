@@ -1,4 +1,4 @@
-package DynamicProgramming.BinomialCoefficient;
+package DynamicProgramming.MatrixDP.BinomialCoefficient;
 
 /**
  * Created by yizhao on 5/18/15.

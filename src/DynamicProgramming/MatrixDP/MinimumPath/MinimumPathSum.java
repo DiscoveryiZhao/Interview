@@ -1,4 +1,4 @@
-package DynamicProgramming.MinimumPath;
+package DynamicProgramming.MatrixDP.MinimumPath;
 
 /**
  * Created by yizhao on 5/18/15.
