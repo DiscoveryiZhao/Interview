@@ -66,13 +66,18 @@ public class WordBreak {
 
     public static boolean wordBreakDP(String s, Set<String> dict) {
         int n = s.length();
-        // state: f[i]表示“前i”个字符能否被完美切分
+        // state: f[i]表示“前i”个字符能否被dict完美切分
         boolean[] dp = new boolean[n + 1]; //
         // intialize for worst case: case for s = ""
         dp[0] = true;
+        // function: f[i] = true, j < i && f[j] = true && j..i-1是一个dict里的单词
+        // f[j]代表reuse旧的，看下0..j-1是一个dict里的单词
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                dp[i] = dict.contains(s.substring(j, i)) && dp[j] ? true : dp[i];
+                if(dp[j] && dict.contains(s.substring(j, i))){
+                    dp[i] = true;
+                }
+                //dp[i] = dp[j] && dict.contains(s.substring(j, i)) ? true : dp[i];
             }
         }
         return dp[n];

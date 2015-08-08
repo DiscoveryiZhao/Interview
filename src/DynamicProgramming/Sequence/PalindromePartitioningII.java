@@ -25,11 +25,12 @@ public class PalindromePartitioningII {
             dp[i] = i - 1;
         }
 
-        // function: f[i] = min(dp[i], dp[j] + 1), j < i && j..i-1这是一段回文串
+        // function: f[i] = min(dp[j] + 1, dp[i]), j < i && j..i-1这是一段回文串
+        // f[j]代表reuse旧的，看下0..j-1的子字符串需要最少几次cut
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
                 if (palinTable[j][i - 1]) {
-                    dp[i] = Math.min(dp[i], dp[j] + 1);
+                    dp[i] = Math.min(dp[j] + 1, dp[i]);
                 }
             }
         }
