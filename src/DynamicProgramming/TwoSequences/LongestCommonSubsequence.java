@@ -5,7 +5,9 @@ package DynamicProgramming.TwoSequences;
  */
 public class LongestCommonSubsequence {
     public static void main(String[] args) {
-        System.out.println(LCS("ABCBDAB", "BDCABA")); // 4
+        System.out.println(LCS("ABCD", "EDCA")); // 1, the LCS is "A" (or "D", "C"), return 1.
+        System.out.println(LCS("ABCD", "EACB")); // 2, the LCS is "AC", return 2.
+        System.out.println(LCS("ABCBDAB", "BDCABA")); // 4, the LCS is "BDAB" , return 4.
     }
 
     public static int LCS(String S, String T) {
