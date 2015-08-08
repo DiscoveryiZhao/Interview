@@ -23,6 +23,7 @@ public class KnapsackProblem {
 
     // Returns the maximum value that can be put in a knapsack of capacity
     public static int knapSack(int nItems, int capacity, int weight[], int value[]) {
+        // state:
         int[][] dp = new int[nItems + 1][capacity + 1];
         // Build table dp [][] in bottom up manner
         for (int i = 1; i < nItems + 1; i++) {

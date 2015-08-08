@@ -21,7 +21,11 @@ public class LongestIncreasingSubsequence {
         if (n == 0) {
             return 0;
         }
+
+        // state:
         int[] dp = new int[n];
+
+        // intialize for worst case:
         for (int i = 0; i < dp.length; i++) {
             // worst case for result of a[0..i-1] is no increasing subsequence in previous sequence,
             // so only count current num itself

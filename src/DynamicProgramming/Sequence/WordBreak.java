@@ -68,7 +68,7 @@ public class WordBreak {
         int n = s.length();
         // state: f[i]表示“前i”个字符能否被完美切分
         boolean[] dp = new boolean[n + 1]; //
-        // intialize: case for s = ""
+        // intialize for worst case: case for s = ""
         dp[0] = true;
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {

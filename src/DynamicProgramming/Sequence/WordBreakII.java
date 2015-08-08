@@ -2,6 +2,7 @@ package DynamicProgramming.Sequence;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -27,12 +28,12 @@ public class WordBreakII {
         System. out.println(wordBreak( "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab" , test10)); // true
     }
 
-    public static ArrayList<String> wordBreak(String s, Set<String> dict) {
+    public static List<String> wordBreak(String s, Set<String> dict) {
         int n = s.length();
-        ArrayList<String> res = new ArrayList<String>();
+        List<String> res = new ArrayList<>();
         // state: f[i]表示“前i”个字符能否被完美切分
         boolean[] dp = new boolean[n + 1]; //
-        // intialize: case for s = ""
+        // intialize for worst case: case for s = ""
         dp[0] = true;
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
@@ -47,7 +48,7 @@ public class WordBreakII {
         return res;
     }
 
-    private static void dfs(String s, Set<String> dict, ArrayList<String> res, String tmp) {
+    private static void dfs(String s, Set<String> dict, List<String> res, String tmp) {
         int n = s.length();
         if (n == 0) {
             // tmp.length() - 1 use to remove the last " " in tmp String.

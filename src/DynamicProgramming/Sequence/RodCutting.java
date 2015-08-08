@@ -16,6 +16,7 @@ public class RodCutting {
     }
 
     public static int rodCutting(int[] price, int RodLength) {
+        // state:
         int dp[] = new int[RodLength + 1];
         for (int i = 1; i <= RodLength; i++) {
             for (int j = 0; j < price.length; j++) {
