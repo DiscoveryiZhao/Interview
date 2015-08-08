@@ -37,6 +37,8 @@ public class InterleavingString {
         }
 
         // function: f[i][j] = f[i-1][j]&&(s1[i-1]==s3[i+j-1]) || f[i][j-1]&&(s2[j-1]==s3[i+j-1])
+        // f[i-1][j]代表s1的前i-1的字符和s2的前j的字符
+        // f[i][j-1]代表s1的前i的字符和s2的前j-1的字符
         for (int i = 1; i < n1 + 1; i++) {
             for (int j = 1; j < n2 + 1; j++) {
                 if ((s1.charAt(i - 1) == s3.charAt(i - 1 + j) && dp[i - 1][j]) || (s2.charAt(j - 1) == s3.charAt(i - 1 + j) && dp[i][j - 1])) {
