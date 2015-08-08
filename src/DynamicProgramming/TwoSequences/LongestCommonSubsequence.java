@@ -14,8 +14,8 @@ public class LongestCommonSubsequence {
         int m = S.length(), n = T.length();
         // state:f[i][j]表示前i个字符配上前j个字符的LCS的长度
         int[][] dp = new int[m + 1][n + 1];
-        // function: f[i][j] = f[i-1][j-1] + 1 // a[i] == b[j]
-        //                   = MAX(f[i-1][j],f[i][j-1]) // a[i]!=b[j]
+        // function: f[i][j] = f[i-1][j-1] + 1 when a[i] == b[j]
+        //                   = MAX(f[i-1][j],f[i][j-1]) when a[i]!=b[j]
         // 这里的f[i-1][j]代表i不在LCS中
         // 这里的f[i][j-1]代表j不在LCS中
         for (int i = 1; i < m + 1; i++) {

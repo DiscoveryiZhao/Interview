@@ -35,9 +35,14 @@ public class WordBreakII {
         boolean[] dp = new boolean[n + 1]; //
         // intialize for worst case: case for s = ""
         dp[0] = true;
+        // function: f[i] = true when j < i && f[j] = true && j..i-1是一个dict里的单词
+        // f[j]代表reuse旧的，看下0..j-1是一个dict里的单词
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                dp[i] = dict.contains(s.substring(j, i)) && dp[j] ? true : dp[i];
+                if (dp[j] && dict.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                }
+                //dp[i] = dp[j] && dict.contains(s.substring(j, i)) ? true : dp[i];
             }
         }
         // This problem can not be solve because dp[n] is false

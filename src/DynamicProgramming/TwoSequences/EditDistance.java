@@ -19,14 +19,19 @@ public class EditDistance {
         // state: f[i][i] 表示word1的前i个字符，需要多少次编辑，能够变成word2的前j个字符
         int dp[][] = new int[m + 1][n + 1];
         // intialize for worst case:
+        // S[i]的前i个字符，需要多少次编辑，能够变成null，所以就是需要删掉i个字符就能null，故dp[i][0] = i
         for (int i = 0; i < m + 1; i++) {
             dp[i][0] = i;
         }
+        // intialize for worst case:
+        // T[i]的前i个字符，需要多少次编辑，能够变成null，所以就是需要删掉i个字符就能null，故dp[0][i] = i
         for (int i = 0; i < n + 1; i++) {
             dp[0][i] = i;
         }
 
         // function:
+        // f[i][j] = MIN(f[i-1][j-1], f[i-1][j]+1,f[i][j-1]+1) when a[i] == b
+        //         = MIN(f[i-1][j-1], f[i-1][j],f[i][j-1])+1 when a[i] != b
         for (int i = 1; i < m + 1; i++) {
             for (int j = 1; j < n + 1; j++) {
                 if (S.charAt(i - 1) == T.charAt(j - 1)) {
