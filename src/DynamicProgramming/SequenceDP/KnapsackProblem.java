@@ -24,17 +24,17 @@ public class KnapsackProblem {
     // Returns the maximum value that can be put in a knapsack of capacity
     public static int knapSack(int nItems, int capacity, int weight[], int value[]) {
         // state:
-        int[][] dp = new int[nItems + 1][capacity + 1];
+        int[][] f = new int[nItems + 1][capacity + 1];
         // Build table dp [][] in bottom up manner
         for (int i = 1; i < nItems + 1; i++) {
             for (int j = 1; j < capacity + 1; j++) {
                 if (weight[i - 1] <= j) {
-                    dp[i][j] = Math. max(dp[i - 1][j], dp[i - 1][j - weight[i - 1]] + value[i - 1]);
+                    f[i][j] = Math. max(f[i - 1][j], f[i - 1][j - weight[i - 1]] + value[i - 1]);
                 } else {
-                    dp[i][j] = dp[i - 1][j];
+                    f[i][j] = f[i - 1][j];
                 }
             }
         }
-        return dp[nItems][capacity];
+        return f[nItems][capacity];
     }
 }

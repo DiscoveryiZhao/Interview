@@ -17,14 +17,14 @@ public class RodCutting {
 
     public static int rodCutting(int[] price, int RodLength) {
         // state:
-        int dp[] = new int[RodLength + 1];
+        int f[] = new int[RodLength + 1];
         for (int i = 1; i <= RodLength; i++) {
             for (int j = 0; j < price.length; j++) {
                 if (j < i) {
-                    dp[i] = Math. max(dp[i], dp[j] + price[i - 1 - j]);
+                    f[i] = Math. max(f[i], f[j] + price[i - 1 - j]);
                 }
             }
         }
-        return dp[RodLength];
+        return f[RodLength];
     }
 }

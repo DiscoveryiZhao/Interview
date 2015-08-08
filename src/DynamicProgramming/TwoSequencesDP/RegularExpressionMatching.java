@@ -16,27 +16,27 @@ public class RegularExpressionMatching {
     public static boolean isMatch(String s, String p) {
         int m = s.length(), n = p.length();
         // state:
-        boolean[][] dp = new boolean[m + 1][n + 1];
+        boolean[][] f = new boolean[m + 1][n + 1];
         // intialize for worst case:
-        dp[0][0] = true; // Handles when both s == "" && p == ""
+        f[0][0] = true; // Handles when both s == "" && p == ""
         // function:
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
                 if (i == 0 && j > 1) { // Handles when S = ""
-                    dp[0][j] = p.charAt(j - 1) == '*' && dp[0][j - 2] ? true : dp[0][j];
+                    f[0][j] = p.charAt(j - 1) == '*' && f[0][j - 2] ? true : f[0][j];
                 } else if (i > 0 && j > 0) {
                     if (match(s.charAt(i - 1), p.charAt(j - 1))) {
-                        dp[i][j] = dp[i - 1][j - 1];
+                        f[i][j] = f[i - 1][j - 1];
                     } else {
                         // treat '*' as 0
-                        dp[i][j] = p.charAt(j - 1) == '*' && dp[i][j - 2] ? true : dp[i][j];
+                        f[i][j] = p.charAt(j - 1) == '*' && f[i][j - 2] ? true : f[i][j];
                         // treat '*' as 2, if we can treat * as 1 && match(s.charAt(i - 1), p.charAt(j - 2))
-                        dp[i][j] = p.charAt(j - 1) == '*' && match(s.charAt(i - 1), p.charAt(j - 2)) && dp[i - 1][j] ? true : dp[i][j];
+                        f[i][j] = p.charAt(j - 1) == '*' && match(s.charAt(i - 1), p.charAt(j - 2)) && f[i - 1][j] ? true : f[i][j];
                     }
                 }
             }
         }
-        return dp[m][n];
+        return f[m][n];
     }
 
     public static boolean match(char a, char b) {

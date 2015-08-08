@@ -8,24 +8,23 @@ public class LongestPalindromicSubstring {
         int n = s.length();
         if (n == 0) {
             return s;
-        } else {
-            String opt = s.substring(0, 1);
-            String sub = s.substring(0, 1);
-            for (int i = 1; i < n; i++) {
-                // odd length
-                sub = getLongestPalindrome(s, i, i);
-                if (sub.length() > opt.length()) {
-                    opt = sub;
-                }
-
-                // even length
-                sub = getLongestPalindrome(s, i - 1, i);
-                if (sub.length() > opt.length()) {
-                    opt = sub;
-                }
-            }
-            return opt;
         }
+        String opt = s.substring(0, 1);
+        String sub = s.substring(0, 1);
+        for (int i = 1; i < n; i++) {
+            // odd length
+            sub = getLongestPalindrome(s, i, i);
+            if (sub.length() > opt.length()) {
+                opt = sub;
+            }
+
+            // even length
+            sub = getLongestPalindrome(s, i - 1, i);
+            if (sub.length() > opt.length()) {
+                opt = sub;
+            }
+        }
+        return opt;
     }
 
     public static String getLongestPalindrome(String s, int left, int right) {
