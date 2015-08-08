@@ -1,4 +1,4 @@
-package Trees.BinaryTree.Recursion_Traversal;
+package Trees.BinaryTree.Recursion_DivideAndConquer;
 
 import LibraryOfLeetcode.TreeNode;
 
@@ -20,6 +20,8 @@ public class PathSumII {
         if (root == null) {
             return false;
         }
+
+        // Conquer
         sum -= root.val;
         tmp.add(root.val);
         if (sum == 0) {
@@ -28,6 +30,8 @@ public class PathSumII {
                 res.add(new ArrayList<>(tmp));
             }
         }
+
+        // Divide
         if (helper(root.left, sum, res, tmp) || helper(root.right, sum, res, tmp)) {
             return true;
         }

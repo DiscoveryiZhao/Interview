@@ -1,4 +1,4 @@
-package Trees.BinaryTree.Recursion_Traversal;
+package Trees.BinaryTree.Recursion_DivideAndConquer;
 
 import LibraryOfLeetcode.TreeNode;
 
@@ -8,9 +8,12 @@ import LibraryOfLeetcode.TreeNode;
 public class PathSum {
 
     public static boolean hasPathSum(TreeNode root, int sum) {
+
         if (root == null) {
             return false;
         }
+
+        // Conquer
         sum -= root.val;
         if (sum == 0) {
             // 题目说了为root-to-leaf path sum相加，所以leaf的定义为无子节点，所以必须加上这个条件
@@ -18,6 +21,8 @@ public class PathSum {
                 return true;
             }
         }
+
+        // Divide
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
     }
 }
