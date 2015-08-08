@@ -23,8 +23,10 @@ public class DistinctSubsequences {
         }
 
         // function:
-        // f[i][j] = f[i-1][j] + f[i-1][j-1] when S[i-1] == T[j-1]
-        //         = f[i-1][j]               when S[i-1] != T[j-1]
+        // f[i][j] = f[i-1][j] + f[i-1][j-1] when S[i-1] == T[j-1]，S[i-1]和T[j-1]配对
+        //         = f[i-1][j]               when S[i-1] != T[j-1]，S[i-1]和T[j-1]不配对
+        // 这里f[i-1][j]代表我要S[i-1]中的某个字符和T[j]配对
+        // 这里f[i-1][j-1]代表我要S[i-1]和T[j-1]配对
         for (int i = 1; i < m + 1; i++) {
             for (int j = 1; j < n + 1; j++) {
                 if (S.charAt(i - 1) == T.charAt(j - 1)) {
