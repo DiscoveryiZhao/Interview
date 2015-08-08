@@ -25,6 +25,7 @@ public class PalindromePartitioningII {
             dp[i] = i - 1;
         }
 
+        // function: f[i] = min(dp[i], dp[j] + 1), j < i && j..i-1这是一段回文串
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
                 if (palinTable[j][i - 1]) {
