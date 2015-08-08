@@ -25,14 +25,14 @@ public class InterleavingString {
 
         // intialize for worst case: Handles when s2 = ""
         for (int i = 1; i <= s1.length(); i++) {
-            if (s3.charAt(i - 1) == s1.charAt(i - 1) && dp[i - 1][0]) {
+            if (dp[i - 1][0] && s3.charAt(i - 1) == s1.charAt(i - 1)) {
                 dp[i][0] = true;
             }
         }
 
         // intialize for worst case: Handles when s1 = ""
         for (int j = 1; j <= s2.length(); j++) {
-            if (s3.charAt(j - 1) == s2.charAt(j - 1) && dp[0][j - 1]) {
+            if (dp[0][j - 1] && s3.charAt(j - 1) == s2.charAt(j - 1)) {
                 dp[0][j] = true;
             }
         }
@@ -42,7 +42,7 @@ public class InterleavingString {
         // f[i][j-1]代表s1的前i的字符和s2的前j-1的字符
         for (int i = 1; i < n1 + 1; i++) {
             for (int j = 1; j < n2 + 1; j++) {
-                if ((s1.charAt(i - 1) == s3.charAt(i - 1 + j) && dp[i - 1][j]) || (s2.charAt(j - 1) == s3.charAt(i - 1 + j) && dp[i][j - 1])) {
+                if ((dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(i - 1 + j)) || (dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(i - 1 + j))) {
                     dp[i][j] = true;
                 }
 //                dp[i][j] = s1.charAt(i - 1) == s3.charAt(i - 1 + j) && dp[i - 1][j] ? true : dp[i][j];
