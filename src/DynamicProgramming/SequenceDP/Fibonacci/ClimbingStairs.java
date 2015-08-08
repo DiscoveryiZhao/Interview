@@ -1,4 +1,4 @@
-package DynamicProgramming.Fibonacci;
+package DynamicProgramming.SequenceDP.Fibonacci;
 
 /**
  * Created by yizhao on 5/18/15.
@@ -24,13 +24,19 @@ public class ClimbingStairs {
         if (n == 0) return 0;
         if (n == 1) return 1;
         if (n == 2) return 2;
-        int[] F = new int[n];
-        F[0] = 1;
-        F[1] = 2;
+
+        // state: f[i]表示前i个位置，跳到第i个位置的方案总数
+        int[] f = new int[n];
+
+        // intialize: f[0] = 1
+        f[0] = 1;
+        f[1] = 2;
+
+        // function: f[i] = f[i-1] + f[i-2]
         for (int i = 2; i < n; i++) {
-            F[i] = F[i - 1] + F[i - 2];
+            f[i] = f[i - 1] + f[i - 2];
         }
-        return F[n - 1];
+        return f[n - 1];
 
     }
     public static int climbStairsDP2(int n) {

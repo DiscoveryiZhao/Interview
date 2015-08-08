@@ -1,4 +1,4 @@
-package DynamicProgramming.Fibonacci;
+package DynamicProgramming.SequenceDP.Fibonacci;
 
 /**
  * Created by yizhao on 5/18/15.
@@ -22,13 +22,13 @@ public class FibonacciNumber {
     public static int fibonacciNumberDP1(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
-        int[] F = new int[n];
-        F[0] = 1;
-        F[1] = 1;
+        int[] f = new int[n];
+        f[0] = 1;
+        f[1] = 1;
         for (int i = 2; i < n; i++) {
-            F[i] = F[i - 1] + F[i - 2];
+            f[i] = f[i - 1] + f[i - 2];
         }
-        return F[n - 1];
+        return f[n - 1];
     }
 
     public static int fibonacciNumberDP2(int n) {

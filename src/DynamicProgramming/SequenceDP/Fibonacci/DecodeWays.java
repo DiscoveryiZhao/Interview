@@ -1,4 +1,4 @@
-package DynamicProgramming.Fibonacci;
+package DynamicProgramming.SequenceDP.Fibonacci;
 
 /**
  * Created by yizhao on 5/18/15.
@@ -21,26 +21,26 @@ public class DecodeWays {
             // F(n) = F(n-2) if s[n-1] is NOT a valid encoding digit and s[n-2]s[n-1] is a valid encoding number.
             // F(n) = F(n-1) + F(n-2) if s[n-1] is a valid encoding digit and s[n-2]s[n-1] is also a valid encoding number.
             // F(n) = 0 if s[n-1] is NOT a valid encoding digit and s[n-2]s[n-1] is NOT a valid encoding number.
-            int[] F = new int[n + 1];
-            F[0] = 1;
+            int[] f = new int[n + 1];
+            f[0] = 1;
             if (s.charAt(0) != '0' ) {
-                F[1] = 1;
+                f[1] = 1;
             }
 
             for (int i = 2; i < n + 1; i++) {
                 boolean one = s.charAt(i - 1) != '0' ;
                 boolean two = s.charAt(i - 2) != '0' && (s.charAt(i - 2) == '1' || (s.charAt(i - 2) == '2' && s.charAt(i - 1) <= '6'));
                 if (!one && !two) { // 00
-                    F[i] = 0;
+                    f[i] = 0;
                 } else if (!one && two) { // 01
-                    F[i] = F[i - 2];
+                    f[i] = f[i - 2];
                 } else if (one && !two) { // 10
-                    F[i] = F[i - 1];
+                    f[i] = f[i - 1];
                 } else if (one && two) { // 11
-                    F[i] = F[i - 1] + F[i - 2];
+                    f[i] = f[i - 1] + f[i - 2];
                 }
             }
-            return F[n];
+            return f[n];
         }
     }
 }

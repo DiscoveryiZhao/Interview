@@ -1,4 +1,4 @@
-package DynamicProgramming.SequenceDP;
+package DynamicProgramming.SequenceDP.Others;
 
 import java.util.ArrayList;
 import java.util.HashSet;
