@@ -16,8 +16,11 @@ public class EditDistance {
 
     public static int minDistance(String S, String T) {
         int m = S.length(), n = T.length();
+        // state:
         int dp[][] = new int[m + 1][n + 1];
+        // intialize for worst case:
         dp[0][0] = 0; // Handles when both S == "" && T == ""
+        // function:
         for (int i = 0; i < m + 1; i++) {
             for (int j = 0; j < n + 1; j++) {
                 if (i == 0 && j > 0) { // Handles when S = ""

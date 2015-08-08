@@ -15,8 +15,11 @@ public class RegularExpressionMatching {
 
     public static boolean isMatch(String s, String p) {
         int m = s.length(), n = p.length();
+        // state:
         boolean[][] dp = new boolean[m + 1][n + 1];
+        // intialize for worst case:
         dp[0][0] = true; // Handles when both s == "" && p == ""
+        // function:
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
                 if (i == 0 && j > 1) { // Handles when S = ""
