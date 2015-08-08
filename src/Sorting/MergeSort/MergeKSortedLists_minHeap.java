@@ -1,6 +1,6 @@
 package Sorting.MergeSort;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -1,6 +1,6 @@
 package Trees.BinarySearchTreeAndBinaryTreeCross;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,6 +1,6 @@
 package Trees.BinaryTree.MorrisTraversal;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

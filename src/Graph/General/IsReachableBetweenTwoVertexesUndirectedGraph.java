@@ -1,6 +1,6 @@
 package Graph.General;
 
-import LibraryOfLeetcode.Vertex;
+import Library.Leetcode.Vertex;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package Trees.BinaryTree.Recursion_DivideAndConquer;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 /**
  * Created by yizhao on 8/7/15.

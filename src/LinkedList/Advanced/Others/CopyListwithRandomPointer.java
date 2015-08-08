@@ -1,6 +1,6 @@
 package LinkedList.Advanced.Others;
 
-import LibraryOfLeetcode.RandomListNode;
+import Library.Leetcode.RandomListNode;
 
 /**
  * Created by yizhao on 7/7/15.

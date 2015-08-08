@@ -1,6 +1,6 @@
 package Leetcode.Easy;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 /*
 Write a program to find the node at which the intersection of two singly linked lists begins.

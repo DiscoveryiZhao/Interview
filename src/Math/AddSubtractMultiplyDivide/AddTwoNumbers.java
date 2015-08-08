@@ -1,6 +1,6 @@
 package Math.AddSubtractMultiplyDivide;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 /**
  * Created by yizhao on 6/30/15.

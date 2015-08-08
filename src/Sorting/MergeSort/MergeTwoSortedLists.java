@@ -1,6 +1,6 @@
 package Sorting.MergeSort;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 /**
  * Created by yizhao on 7/7/15.

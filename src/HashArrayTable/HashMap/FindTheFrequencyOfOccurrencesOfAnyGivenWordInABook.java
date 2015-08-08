@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import static LibraryOfCtCI.AssortedMethods.getLongTextBlobAsStringList;
+import static Library.CtCI.AssortedMethods.getLongTextBlobAsStringList;
 
 
 public class FindTheFrequencyOfOccurrencesOfAnyGivenWordInABook {

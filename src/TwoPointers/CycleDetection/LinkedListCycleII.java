@@ -1,6 +1,6 @@
 package TwoPointers.CycleDetection;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 /**
  * Created by yizhao on 7/1/15.

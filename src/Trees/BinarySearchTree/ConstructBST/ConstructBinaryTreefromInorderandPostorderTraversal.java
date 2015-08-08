@@ -1,6 +1,6 @@
 package Trees.BinarySearchTree.ConstructBST;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package LinkedList.Advanced.Others;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 /**
  * Created by yizhao on 7/7/15.

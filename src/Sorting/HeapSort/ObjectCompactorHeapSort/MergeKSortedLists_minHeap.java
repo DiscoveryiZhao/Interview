@@ -1,6 +1,6 @@
 package Sorting.HeapSort.ObjectCompactorHeapSort;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

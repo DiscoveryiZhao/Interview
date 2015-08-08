@@ -1,6 +1,6 @@
 package Trees.BinaryTree.MorrisTraversal;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 /**
  * Created by yizhao on 6/29/15.

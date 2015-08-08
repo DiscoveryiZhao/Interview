@@ -1,7 +1,7 @@
 package TwoPointers.InplacePartitionLeftRightLinkedlistMerge;
 
 
-import LibraryOfLeetcode.Interval;
+import Library.Leetcode.Interval;
 
 import java.util.ArrayList;
 import java.util.Collections;

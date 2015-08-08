@@ -1,6 +1,6 @@
 package Trees.BinarySearchTree.InorderTraversal;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 import java.util.Stack;
 

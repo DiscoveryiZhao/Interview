@@ -1,6 +1,6 @@
 package Trees.BinarySearchTreeAndBinaryTreeCross;
 
-import LibraryOfCtCI.TreeNode;
+import Library.CtCI.TreeNode;
 
 /**
  * Created by yizhao on 6/29/15.

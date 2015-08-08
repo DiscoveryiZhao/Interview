@@ -1,6 +1,6 @@
 package LinkedList.Advanced.ReverseList;
 
-import LibraryOfLeetcode.ListNode;
+import Library.Leetcode.ListNode;
 
 /**
  * Created by yizhao on 5/19/15.

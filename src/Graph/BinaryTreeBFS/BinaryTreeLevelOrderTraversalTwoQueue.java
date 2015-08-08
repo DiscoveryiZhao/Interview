@@ -1,6 +1,6 @@
 package Graph.BinaryTreeBFS;
 
-import LibraryOfLeetcode.TreeNode;
+import Library.Leetcode.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

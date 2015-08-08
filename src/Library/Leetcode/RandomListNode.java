@@ -1,4 +1,4 @@
-package LibraryOfLeetcode;
+package Library.Leetcode;
 
 /**
  * Created by yizhao on 7/7/15.

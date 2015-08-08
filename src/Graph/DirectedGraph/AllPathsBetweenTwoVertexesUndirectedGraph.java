@@ -1,7 +1,7 @@
 package Graph.DirectedGraph;
 
 
-import LibraryOfLeetcode.Vertex;
+import Library.Leetcode.Vertex;
 
 import java.util.ArrayList;
 import java.util.HashSet;
