@@ -35,6 +35,9 @@ public class FindTheLongestIncreasingInTwoDimArray {
     }
 
     private static void dfs(int[][] board, List<Integer> tmp, boolean[][] visited, int i, int j) {
+        if(visited[i][j]){
+            return;
+        }
         tmp.add(board[i][j]); // P(n)
         visited[i][j] = true;
         if (!isValidForOne(board, visited, i, j) && tmp.size() > res.size()) {
@@ -66,18 +69,18 @@ public class FindTheLongestIncreasingInTwoDimArray {
     }
 
     public static boolean isValidUp(int[][] board, boolean[][] visited, int i, int j) {
-        return (i - 1 >= 0 && board[i][j] + 1 == board[i - 1][j]) && !visited[i - 1][j];
+        return (i - 1 >= 0 && board[i][j] + 1 == board[i - 1][j]);
     }
 
     public static boolean isValidDown(int[][] board, boolean[][] visited, int i, int j) {
-        return (i + 1 < board.length && board[i][j] + 1 == board[i + 1][j]) && !visited[i + 1][j];
+        return (i + 1 < board.length && board[i][j] + 1 == board[i + 1][j]);
     }
 
     public static boolean isValidLeft(int[][] board, boolean[][] visited, int i, int j) {
-        return (j - 1 >= 0 && board[i][j] + 1 == board[i][j - 1]) && !visited[i][j - 1];
+        return (j - 1 >= 0 && board[i][j] + 1 == board[i][j - 1]);
     }
 
     public static boolean isValidRight(int[][] board, boolean[][] visited, int i, int j) {
-        return (j + 1 < board[0].length && board[i][j] + 1 == board[i][j + 1]) && !visited[i][j + 1];
+        return (j + 1 < board[0].length && board[i][j] + 1 == board[i][j + 1]);
     }
 }
