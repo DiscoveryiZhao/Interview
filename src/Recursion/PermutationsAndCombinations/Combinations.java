@@ -22,7 +22,7 @@ public class Combinations {
 
     public static void vector(int n, int k, List<List<Integer>> res, List<Integer> tmp, int depth) {
         if (tmp.size() == k) {
-            res.add(new ArrayList<Integer>(tmp)); // 什么时候输出结果
+            res.add(new ArrayList<>(tmp)); // 什么时候输出结果
             return;
         }
         for (int width = depth; width < n; width++) {
