@@ -1,4 +1,4 @@
-package PermutationsAndCombinations;
+package Recursion.PermutationsAndCombinations;
 
 import java.util.ArrayList;
 import java.util.HashSet;

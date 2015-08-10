@@ -1,10 +1,10 @@
-package RecursionBacktrackingAndExhaustive.Exhaustive;
+package Recursion.Exhaustive;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by yizhao on 7/11/15.
+ * Created by yizhao on 8/9/15.
  */
 public class GenerateParentheses {
     public static void main(String[] args) {

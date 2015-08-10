@@ -1,4 +1,4 @@
-package Graph.FloodFill;
+package Recursion.DFS;
 
 /**
  * Created by yizhao on 8/9/15.
@@ -22,6 +22,7 @@ public class NumberOfIslands {
         return count;
     }
 
+    // 这里的boolean返回值代表从grid[i][j]一直走到边界，是否是一座island
     public boolean dfs(char[][] grid, int i, int j, int m, int n){
         if(i < 0 || i >= m || j < 0 || j >=n){
             return false;
