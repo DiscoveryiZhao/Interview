@@ -1,4 +1,4 @@
-package Recursion.PermutationsAndCombinations;
+package Recursion.DFS.PermutationsAndCombinations;
 
 import java.util.ArrayList;
 import java.util.HashMap;
