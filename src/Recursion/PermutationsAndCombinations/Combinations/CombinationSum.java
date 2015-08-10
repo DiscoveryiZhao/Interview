@@ -1,4 +1,4 @@
-package Recursion.PermutationsAndCombinations;
+package Recursion.PermutationsAndCombinations.Combinations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,14 +7,13 @@ import java.util.List;
 /**
  * Created by yizhao on 6/26/15.
  */
-public class CombinationSumII {
+public class CombinationSum {
     public static void main(String[] args) {
         int[] num = {2, 3, 6, 7};
-        System.out.println(combinationSum2(num, 7)); // [[7]]
-
+        System.out.println(combinationSum(num, 7)); // [[2, 2, 3], [7]]
     }
 
-    public static List<List<Integer>> combinationSum2(int[] num, int sum) {
+    public static List<List<Integer>> combinationSum(int[] num, int sum) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(num);// 去重
         vector(num, sum, res, new ArrayList<Integer>(), 0);
@@ -29,10 +28,9 @@ public class CombinationSumII {
             return;
         }
         for (int width = depth; width < num.length; width++) {
-            if (width != depth && num[width] == num[width - 1]) continue; // 什么情况跳过
             tmp.add(num[width]);
-            // 这里pass入i+1而不是i进recursion，不同于Combination Sum那题，是因为一个数只能用一次
-            vector(num, sum - num[width], res, tmp, width + 1);
+            // 这里pass入i而不是i+1进recursion，不同于Combinations那题，是因为题目支持一个数可以用很多次
+            vector(num, sum - num[width], res, tmp, width);
             tmp.remove(tmp.size() - 1);
         }
     }

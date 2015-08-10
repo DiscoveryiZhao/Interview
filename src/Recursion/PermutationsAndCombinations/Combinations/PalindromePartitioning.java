@@ -1,4 +1,4 @@
-package Recursion.PermutationsAndCombinations;
+package Recursion.PermutationsAndCombinations.Combinations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,9 @@ public class PalindromePartitioning {
             return;
         }
         for (int i = 1; i <= n; i++) {
-            String sofar = s.substring(0, i);
-            if (isPalindrome(sofar)) {
-                tmp.add(sofar);
+            String prefix  = s.substring(0, i);
+            if (isPalindrome(prefix)) {
+                tmp.add(prefix);
                 helper(s.substring(i), res, tmp);
                 tmp.remove(tmp.size() - 1);
             }
@@ -38,8 +38,9 @@ public class PalindromePartitioning {
         int i = 0;
         int j = s.length() - 1;
         while (i < j) {
-            if (s.charAt(i++) != s.charAt(j--))
+            if (s.charAt(i++) != s.charAt(j--)) {
                 return false;
+            }
         }
         return true;
     }
