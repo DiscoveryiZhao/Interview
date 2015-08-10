@@ -21,7 +21,7 @@ public class PalindromePartitioning {
     public static void helper(String s, List<List<String>> res, List<String> tmp) {
         int n = s.length();
         if (n == 0) {
-            res.add(new ArrayList<String>(tmp));
+            res.add(new ArrayList<>(tmp));
             return;
         }
         for (int i = 1; i <= n; i++) {
