@@ -1,4 +1,4 @@
-package InterviewPrepareOfGoogle;
+package Interviews.Google;
 
 /**
  * Determine minimum sequence of adjacent values in the input parameter array that is greater than input parameter sum. Eg Array 2,1,1,4,3,6. and Sum is 8 Answer is 2, because 3,6 is minimum sequence greater than 8.

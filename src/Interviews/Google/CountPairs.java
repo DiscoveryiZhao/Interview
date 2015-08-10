@@ -1,4 +1,4 @@
-package InterviewPrepareOfGoogle;
+package Interviews.Google;
 
 /**
  * How many (m, n) pairs such that m*m+n*n<N

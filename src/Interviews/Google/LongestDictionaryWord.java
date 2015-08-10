@@ -1,4 +1,4 @@
-package InterviewPrepareOfGoogle;
+package Interviews.Google;
 
 /**
  * 假设有一个 dictionary 和一个String，找到从String中能组成的存在于dictionary 中的 最长的 word。

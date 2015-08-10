@@ -1,4 +1,4 @@
-package InterviewPrepareOfZenefits;
+package Interviews.Zenefits;
 
 import java.io.File;
 import java.io.IOException;

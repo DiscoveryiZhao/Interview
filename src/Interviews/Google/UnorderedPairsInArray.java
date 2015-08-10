@@ -1,4 +1,4 @@
-package InterviewPrepareOfGoogle;
+package Interviews.Google;
 
 import java.util.ArrayList;
 
