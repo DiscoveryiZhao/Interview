@@ -53,9 +53,9 @@ public class WordBreakII {
         return res;
     }
 
-    private static void helper(String s, Set<String> dict, List<String> res, List<String> tmp, int pos) {
+    private static void helper(String s, Set<String> dict, List<String> res, List<String> tmp, int depth) {
         int n = s.length();
-        if (pos == s.length()) {
+        if (depth == s.length()) {
             // tmp.length() - 1 use to remove the last " " in tmp String.
             StringBuilder sb = new StringBuilder();
             for (String letter : tmp) {
@@ -65,8 +65,8 @@ public class WordBreakII {
             res.add(sb.toString());
             return;
         }
-        for (int i = pos; i < n; i++) {
-            String soFar = s.substring(pos, i + 1);
+        for (int i = depth; i < n; i++) {
+            String soFar = s.substring(depth, i + 1);
             if (!dict.contains(soFar)) {
                 continue;
             }

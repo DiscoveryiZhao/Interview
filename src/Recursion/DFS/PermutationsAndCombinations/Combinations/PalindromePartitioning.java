@@ -18,14 +18,14 @@ public class PalindromePartitioning {
         return res;
     }
 
-    public static void helper(String s, List<List<String>> res, List<String> tmp, int pos) {
+    public static void helper(String s, List<List<String>> res, List<String> tmp, int depth) {
         int n = s.length();
-        if (pos == n) {
+        if (depth == n) {
             res.add(new ArrayList<>(tmp));
             return;
         }
-        for (int i = pos; i < n; i++) {
-            String prefix = s.substring(pos, i + 1);
+        for (int i = depth; i < n; i++) {
+            String prefix = s.substring(depth, i + 1);
             if (!isPalindrome(prefix)) {
                 continue;
             }
