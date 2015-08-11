@@ -1,4 +1,4 @@
-package Recursion.DFS;
+package Recursion.DFS.Others;
 
 import java.util.LinkedList;
 import java.util.Queue;

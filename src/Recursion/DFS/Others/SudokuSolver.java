@@ -1,4 +1,4 @@
-package Recursion.DFS;
+package Recursion.DFS.Others;
 
 import java.util.ArrayList;
 import java.util.List;

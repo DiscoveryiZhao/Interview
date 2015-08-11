@@ -1,4 +1,4 @@
-package Recursion.DFS;
+package Recursion.DFS.Others;
 
 /**
  * Created by yizhao on 6/30/15.
