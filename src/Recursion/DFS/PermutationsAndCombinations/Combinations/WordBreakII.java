@@ -31,15 +31,22 @@ public class WordBreakII {
     public static List<String> wordBreak(String s, Set<String> dict) {
         int n = s.length();
         List<String> res = new ArrayList<>();
-        boolean[] dp = new boolean[n + 1];
-        dp[0] = true; // case for s = ""
+        // state: f[i]表示“前i”个字符能否被dict完美切分
+        boolean[] f = new boolean[n + 1]; //
+        // intialize for worst case: case for s = ""
+        f[0] = true;
+        // function: f[i] = true when j < i && f[j] = true && j..i-1是一个dict里的单词
+        // f[j]代表reuse旧的，看下0..j-1是一个dict里的单词
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
-                dp[i] = dp[j] && dict.contains(s.substring(j, i)) ? true : dp[i];
+                if (f[j] && dict.contains(s.substring(j, i))) {
+                    f[i] = true;
+                }
+                //dp[i] = dp[j] && dict.contains(s.substring(j, i)) ? true : dp[i];
             }
         }
-        // This problem can not be solve because dp[n] is false
-        if (dp[n] == false) {
+        // This problem can not be solve because f[n] is false
+        if (f[n] == false) {
             return res;
         }
         helper(s, dict, res, new ArrayList<String>(), 0);

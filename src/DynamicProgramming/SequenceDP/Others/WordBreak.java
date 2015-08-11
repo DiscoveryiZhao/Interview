@@ -8,26 +8,26 @@ import java.util.Set;
  */
 public class WordBreak {
     public static void main(String[] args) {
-        Set<String> test1 = new HashSet<String>();
+        Set<String> test1 = new HashSet<>();
         test1.add("leet");
         test1.add("code");
         System.out.println(wordBreak("leetcode", test1)); // true
 
-        Set<String> test2 = new HashSet<String>();
+        Set<String> test2 = new HashSet<>();
         test2.add("a");
         System.out.println(wordBreak("a", test2)); // true
 
-        Set<String> test3 = new HashSet<String>();
+        Set<String> test3 = new HashSet<>();
         test3.add("aaaa");
         test3.add("aa");
         System.out.println(wordBreak("aaaaaaa", test3)); // false
 
-        Set<String> test4 = new HashSet<String>();
+        Set<String> test4 = new HashSet<>();
         test4.add("a");
         test4.add("b");
         System.out.println(wordBreak("ab", test4)); // true
 
-        Set<String> test5 = new HashSet<String>();
+        Set<String> test5 = new HashSet<>();
         test5.add("pear");
         test5.add("apple");
         test5.add("peach");
@@ -40,12 +40,12 @@ public class WordBreak {
             test6.add(s);
         System.out.println(wordBreak("bccdbacdbdacddabbaaaadababadad", test6)); // true
 
-        Set<String> test7 = new HashSet<String>();
+        Set<String> test7 = new HashSet<>();
         test7.add("a");
         test7.add("b");
         System.out.println(wordBreak("aabaaa", test7));// true
 
-        Set<String> test8 = new HashSet<String>();
+        Set<String> test8 = new HashSet<>();
         test8.add("a");
         test8.add("c");
         System.out.println(wordBreak("aaabaac", test8)); // false
