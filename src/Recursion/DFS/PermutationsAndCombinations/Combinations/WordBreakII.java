@@ -54,6 +54,7 @@ public class WordBreakII {
             for (String letter : tmp) {
                 sb.append(letter);
             }
+            sb.deleteCharAt(sb.length()-1);
             res.add(sb.toString());
             return;
         }
@@ -62,7 +63,7 @@ public class WordBreakII {
             if (!dict.contains(soFar)) {
                 continue;
             }
-            tmp.add(soFar);
+            tmp.add(soFar + " ");
             helper(s, dict, res, tmp, i + 1);
             tmp.remove(tmp.size() - 1);
         }
