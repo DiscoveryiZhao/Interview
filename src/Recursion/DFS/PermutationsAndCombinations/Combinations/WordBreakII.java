@@ -51,20 +51,20 @@ public class WordBreakII {
         if (pos == s.length()) {
             // tmp.length() - 1 use to remove the last " " in tmp String.
             StringBuilder sb = new StringBuilder();
-            for(String letter : tmp){
+            for (String letter : tmp) {
                 sb.append(letter);
             }
             res.add(sb.toString());
-        } else {
-            for (int i = pos; i < n; i++) {
-                String soFar = s.substring(pos, i + 1);
-                if (!dict.contains(soFar)) {
-                    continue;
-                }
-                tmp.add(soFar);
-                helper(s, dict, res, tmp, i + 1);
-                tmp.remove(tmp.size() - 1);
+            return;
+        }
+        for (int i = pos; i < n; i++) {
+            String soFar = s.substring(pos, i + 1);
+            if (!dict.contains(soFar)) {
+                continue;
             }
+            tmp.add(soFar);
+            helper(s, dict, res, tmp, i + 1);
+            tmp.remove(tmp.size() - 1);
         }
     }
 
