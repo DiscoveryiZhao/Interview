@@ -23,8 +23,9 @@ public class RestoreIPAddresses {
 
     public static void helper(String s, List<String> res, List<String> tmp, int fieldCount) {
         if (tmp.size() == 4) {
-            if(fieldCount != s.length())
+            if(fieldCount != s.length()) {
                 return;
+            }
 
             StringBuffer sb = new StringBuffer();
             for(String num: tmp){

@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class WordBreakII {
     public static void main(String[] args) {
-        Set<String> test9 = new HashSet<String>();
+        Set<String> test9 = new HashSet<>();
 
         test9.add("cat");
         test9.add("cats");
@@ -42,21 +42,28 @@ public class WordBreakII {
         if (dp[n] == false) {
             return res;
         }
-        helper(s, dict, res, "");
+        helper(s, dict, res, new ArrayList<String>(), 0);
         return res;
     }
 
-    private static void helper(String s, Set<String> dict, List<String> res, String tmp) {
+    private static void helper(String s, Set<String> dict, List<String> res, List<String> tmp, int pos) {
         int n = s.length();
-        if (n == 0) {
+        if (pos == s.length()) {
             // tmp.length() - 1 use to remove the last " " in tmp String.
-            res.add(tmp.substring(0, tmp.length() - 1));
+            StringBuilder sb = new StringBuilder();
+            for(String letter : tmp){
+                sb.append(letter);
+            }
+            res.add(sb.toString());
         } else {
-            for (int i = 1; i <= n; i++) {
-                String soFar = s.substring(0, i);
-                if (dict.contains(soFar)) {
-                    helper(s.substring(i), dict, res, tmp + soFar + " ");
+            for (int i = pos; i < n; i++) {
+                String soFar = s.substring(pos, i + 1);
+                if (!dict.contains(soFar)) {
+                    continue;
                 }
+                tmp.add(soFar);
+                helper(s, dict, res, tmp, i + 1);
+                tmp.remove(tmp.size() - 1);
             }
         }
     }
