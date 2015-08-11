@@ -14,23 +14,24 @@ public class PalindromePartitioning {
 
     public static List<List<String>> partition(String s) {
         List<List<String>> res = new ArrayList<>();
-        helper(s, res, new ArrayList<String>());
+        helper(s, res, new ArrayList<String>(), 0);
         return res;
     }
 
-    public static void helper(String s, List<List<String>> res, List<String> tmp) {
+    public static void helper(String s, List<List<String>> res, List<String> tmp, int pos) {
         int n = s.length();
-        if (n == 0) {
+        if (pos == n) {
             res.add(new ArrayList<>(tmp));
             return;
         }
-        for (int i = 1; i <= n; i++) {
-            String prefix  = s.substring(0, i);
-            if (isPalindrome(prefix)) {
-                tmp.add(prefix);
-                helper(s.substring(i), res, tmp);
-                tmp.remove(tmp.size() - 1);
+        for (int i = pos; i < n; i++) {
+            String prefix = s.substring(pos, i + 1);
+            if (!isPalindrome(prefix)) {
+                continue;
             }
+            tmp.add(prefix);
+            helper(s, res, tmp, i + 1);
+            tmp.remove(tmp.size() - 1);
         }
     }
 
@@ -44,5 +45,38 @@ public class PalindromePartitioning {
         }
         return true;
     }
+
+//    public static List<List<String>> partition(String s) {
+//        List<List<String>> res = new ArrayList<>();
+//        helper(s, res, new ArrayList<String>());
+//        return res;
+//    }
+//
+//    public static void helper(String s, List<List<String>> res, List<String> tmp) {
+//        int n = s.length();
+//        if (n == 0) {
+//            res.add(new ArrayList<>(tmp));
+//            return;
+//        }
+//        for (int i = 1; i <= n; i++) {
+//            String prefix  = s.substring(0, i);
+//            if (isPalindrome(prefix)) {
+//                tmp.add(prefix);
+//                helper(s.substring(i), res, tmp);
+//                tmp.remove(tmp.size() - 1);
+//            }
+//        }
+//    }
+//
+//    public static boolean isPalindrome(String s) {
+//        int i = 0;
+//        int j = s.length() - 1;
+//        while (i < j) {
+//            if (s.charAt(i++) != s.charAt(j--)) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
 }
