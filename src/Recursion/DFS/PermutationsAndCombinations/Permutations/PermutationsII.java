@@ -21,7 +21,9 @@ public class PermutationsII {
             return;
         }
         for (int width = 0; width < num.length; width++) {
-            if (visit[width] == true || (width != 0 && num[width] == num[width - 1] && visit[width - 1] == false)) continue;  // 什么情况跳过
+            if (visit[width] == true || (width != 0 && num[width] == num[width - 1] && visit[width - 1] == false)) {
+                continue;  // 什么情况跳过
+            }
             visit[width] = true;
             tmp.add(num[width]);
             vector(num, res, tmp, visit);
