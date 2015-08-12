@@ -10,6 +10,9 @@ public class PalindromePartitioning {
     public static void main(String[] args) {
         // [[a, a, b, s, d, s, a], [a, a, b, sds, a], [aa, b, s, d, s, a], [ aa, b, sds, a]]
         System.out.println(partition("aabsdsa"));
+
+        // [[a, b, c]]
+        System.out.println(partition("abc"));
     }
 
     public static List<List<String>> partition(String s) {
