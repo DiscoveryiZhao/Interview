@@ -33,7 +33,6 @@ public class WordSearch {
             if (depth == word.length()) {
                 return true;
             }
-            // P(n)
             char c = word.charAt(depth);
             visited[i][j] = true;
 
