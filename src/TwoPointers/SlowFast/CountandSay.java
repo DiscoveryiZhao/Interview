@@ -20,14 +20,15 @@ public class CountandSay {
             StringBuffer tmp = new StringBuffer();
             int l = 0;
             while (l < res.length()) {
+                char c = res.charAt(l);
                 int count = 1;
                 int r = l + 1;
                 // counts duplicates
-                while (r < res.length() && res.charAt(r - 1) == res.charAt(r)) {
+                while (r < res.length() && c == res.charAt(r)) {
                     count++;
                     r++;
                 }
-                tmp.append(count).append(res.charAt(l));
+                tmp.append(count).append(c);
                 l = r;
             }
             res = tmp;
