@@ -4,7 +4,7 @@ package Math.LongTypeRunningTotal;
  * Created by yizhao on 6/30/15.
  */
 public class StringtoInteger {
-    public int atoi(String str) {
+    public int myAtoi(String str) {
         str = str.trim();
         int n = str.length();
         if (n == 0) {
@@ -13,10 +13,11 @@ public class StringtoInteger {
         long runningTotal = 0;
         int sign = 1;
         int i = 0;
-        if (str.charAt(i) == '-') {
+        if (str.charAt(0) == '-') {
             sign = -1;
             i++;
-        } else if (str.charAt(i) == '+') {
+        }
+        if (str.charAt(0) == '+') {
             i++;
         }
 
@@ -27,6 +28,6 @@ public class StringtoInteger {
             if (sign > 0 && runningTotal > Integer.MAX_VALUE) return Integer.MAX_VALUE;
             if (sign < 0 && (-1) * runningTotal < Integer.MIN_VALUE) return Integer.MIN_VALUE;
         }
-        return (int) runningTotal * sign;
+        return sign * ((int) runningTotal);
     }
 }
