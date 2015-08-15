@@ -33,7 +33,7 @@ public class FindKthSmallestInBST {
     * We can inorder traverse the tree and get the kth smallest element. Time is O(n).
     * */
     public static int kthSmallest(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<>();
 
         TreeNode p = root;
         int result = 0;
@@ -45,8 +45,9 @@ public class FindKthSmallestInBST {
             }else{
                 TreeNode t = stack.pop();
                 k--;
-                if(k==0)
+                if(k==0) {
                     result = t.val;
+                }
                 p = t.right;
             }
         }
