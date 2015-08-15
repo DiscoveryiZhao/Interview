@@ -2,10 +2,14 @@ package Trees.BinarySearchTree.InorderTraversal;
 
 import Library.Leetcode.TreeNode;
 
+import java.util.Stack;
+
 /**
  * Created by yizhao on 6/29/15.
  */
 public class FindKthSmallestInBST {
+    private TreeNode root;
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(2);
@@ -17,30 +21,36 @@ public class FindKthSmallestInBST {
         root.right.right = new TreeNode(8);
         root.right.right.right = new TreeNode(9);
 
-        findKthSmallest(root, 1); // 1
-        findKthSmallest(root, 2); // 2
-        findKthSmallest(root, 3); // 3
-        findKthSmallest(root, 4); // 4
-        findKthSmallest(root, 5); // 5
-        findKthSmallest(root, 6); // 6
+        System.out.println(kthSmallest(root, 1)); // 1
+        System.out.println(kthSmallest(root, 2)); // 2
+        System.out.println(kthSmallest(root, 3)); // 3
+        System.out.println(kthSmallest(root, 4)); // 4
+        System.out.println(kthSmallest(root, 5)); // 5
+        System.out.println(kthSmallest(root, 6)); // 6
     }
 
-    public static int count;
+    /*
+    * We can inorder traverse the tree and get the kth smallest element. Time is O(n).
+    * */
+    public static int kthSmallest(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
 
-    public static void findKthSmallest(TreeNode root, int k) {
-        count = 1;
-        dfs(root, k);
-    }
+        TreeNode p = root;
+        int result = 0;
 
-    public static void dfs(TreeNode root, int k) {
-        if (root == null) {
-            return;
+        while(!stack.isEmpty() || p!=null){
+            if(p!=null){
+                stack.push(p);
+                p = p.left;
+            }else{
+                TreeNode t = stack.pop();
+                k--;
+                if(k==0)
+                    result = t.val;
+                p = t.right;
+            }
         }
-        dfs(root.left, k);
-        if (count == k) {
-            System.out.println(root.val);
-        }
-        count++;
-        dfs(root.right, k);
+
+        return result;
     }
 }

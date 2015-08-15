@@ -26,8 +26,6 @@ public class ValidAnagram {
                 return false;
             }
         }
-
         return true;
-
     }
 }
