@@ -1,4 +1,4 @@
-package Math.SetBuilderNotation;
+package TwoPointers.SlowFast;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -18,17 +18,17 @@ public class CountandSay {
         StringBuffer res = new StringBuffer("1");
         while (n > 1) {
             StringBuffer tmp = new StringBuffer();
-            int i = 0;
-            while (i < res.length()) {
+            int l = 0;
+            while (l < res.length()) {
                 int count = 1;
-                int j = i + 1;
+                int r = l + 1;
                 // counts duplicates
-                while (j < res.length() && res.charAt(j - 1) == res.charAt(j)) {
+                while (r < res.length() && res.charAt(r - 1) == res.charAt(r)) {
                     count++;
-                    j++;
+                    r++;
                 }
-                tmp.append(count).append(res.charAt(i));
-                i = j;
+                tmp.append(count).append(res.charAt(l));
+                l = r;
             }
             res = tmp;
             n--;
