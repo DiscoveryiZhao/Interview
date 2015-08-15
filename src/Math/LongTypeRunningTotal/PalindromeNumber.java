@@ -12,11 +12,12 @@ public class PalindromeNumber {
         if (x < 0) {
             return false;
         }
+
+        long oldX = x;
         long runningTotal = 0;
-        long old = x;
-        while (old != 0) {
-            runningTotal = runningTotal * 10 + old % 10;
-            old /= 10;
+        while (oldX != 0) {
+            runningTotal = runningTotal * 10 + oldX % 10;
+            oldX /= 10;
         }
         return runningTotal == x;
     }
