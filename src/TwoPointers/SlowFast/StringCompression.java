@@ -1,4 +1,4 @@
-package Math.SetBuilderNotation;
+package TwoPointers.SlowFast;
 
 /**
  * Created by yizhao on 6/30/15.
@@ -13,17 +13,18 @@ public class StringCompression {
     public static String stringCompression(String s) {
         int n = s.length();
         String res = "";
-        int i = 0;
-        while (i < n) {
-            res += s.charAt(i);
+        int l = 0;
+        while (l < n) {
+            char c = s.charAt(l);
+            res += c;
             int count = 1;
-            int j = i + 1;
-            while (j < n && s.charAt(j - 1) == s.charAt(j)) {
+            int r = l + 1;
+            while (r < n && c == s.charAt(r)) {
                 count++;
-                j++;
+                r++;
             }
             res += count;
-            i = j;
+            l = r;
         }
         return res;
     }
