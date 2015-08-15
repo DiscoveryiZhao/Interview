@@ -11,14 +11,13 @@ public class PalindromeNumber {
     public static boolean isPalindrome(int x) {
         if (x < 0) {
             return false;
-        } else {
-            long runningTotal = 0;
-            long old = x;
-            while (old != 0) {
-                runningTotal = runningTotal * 10 + old % 10;
-                old /= 10;
-            }
-            return runningTotal == x;
         }
+        long runningTotal = 0;
+        long old = x;
+        while (old != 0) {
+            runningTotal = runningTotal * 10 + old % 10;
+            old /= 10;
+        }
+        return runningTotal == x;
     }
 }
