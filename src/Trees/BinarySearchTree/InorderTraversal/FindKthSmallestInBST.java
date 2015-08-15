@@ -8,7 +8,6 @@ import java.util.Stack;
  * Created by yizhao on 6/29/15.
  */
 public class FindKthSmallestInBST {
-    private TreeNode root;
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);
