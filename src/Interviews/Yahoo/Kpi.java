@@ -6,6 +6,8 @@ package Interviews.Yahoo;
 import java.util.HashMap;
 
 /*
+ *
+ * 问题：
  * We have one thread what regularly updates the data hash
  * and we have multiple worker threads reading the data and updating the
  * impressionCounter. Make this class Thread safe.
@@ -31,7 +33,8 @@ class Kpi {
 
     /*
     *
-        问题出在2个不同的thread同时叫了incImp()
+        问题出在：
+        2个不同的thread同时叫了incImp()
         one thread -> incImp(), impressionCounter++
         another thread -> incImp(), impressionCounter++
         impressionCounter == 2
