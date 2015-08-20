@@ -21,7 +21,7 @@ public class FindKthLargestElementinUnsortedArrayWithoutDuplicated {
         return conquer(A, 0, A.length - 1, A.length - k);
     }
 
-    public static int conquer(int A[], int k, int low, int high) {
+    public static int conquer(int[] A, int k, int low, int high) {
         while (low <= high) {
             int q = partition(A, low, high);
             if (q == k - 1) {
