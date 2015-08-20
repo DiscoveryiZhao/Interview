@@ -25,7 +25,7 @@ public class FindKthLargestElementinUnsortedArrayWithoutDuplicated {
         while (low <= high) {
             int q = partition(A, low, high);
             if (q == k) {
-                return A[q];
+                return A[k];
             } else if (q < k) {
                 low = q + 1;
             } else { // q > k

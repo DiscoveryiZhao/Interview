@@ -13,8 +13,8 @@ public class QuickSort {
             return;
         }
         int q = partition(a, low, high);
-        conquer(a, low, q - 1);
-        conquer(a, q + 1, high);
+        conquer(a, low, q - 1); // a[low .. q-1]
+        conquer(a, q + 1, high); // a[q+1 .. high]
     }
 
     // partition的重点思想概念为，在每此partition过后，a[pivot]左边的数必须小于a[pivot],右边的数必须都大于a[pivot]。
