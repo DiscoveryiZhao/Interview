@@ -1,22 +1,25 @@
 package HashArrayTable.HashArray_IntType;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by yizhao on 12/12/14.
  */
-public class Anagrams {
+public class GroupAnagrams {
     public static void main(String[] args) {
         String[] s = {"tea", "and", "ace", "ad", "eat", "dan"};
-        System.out.println(anagrams(s)); // [tea, eat, and, dan]
+//        [
+//          ["ate", "eat","tea"],
+//          ["nat","tan"],
+//          ["bat"]
+//        ]
+        System.out.println(groupAnagrams(s));
     }
 
-    public static List<String> anagrams(String[] strs) {
-        List<String> res = new ArrayList<>();
-        Map<String, ArrayList<String>> map = new HashMap<>();
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        Arrays.sort(strs); // For the return value, each inner list's elements must follow the lexicographic order.
+        List<List<String>> res = new ArrayList<>();
+        Map<String, List<String>> map = new HashMap<>();
         for (String s : strs) {
             // create unique label for each string
             String label = stringLabel(s);
@@ -27,11 +30,8 @@ public class Anagrams {
             map.get(label).add(s);
         }
 
-        for (ArrayList<String> anagram : map.values()) {
-            // 长度大于1，说明这个String有anagram
-            if (anagram.size() > 1) {
-                res.addAll(anagram);
-            }
+        for (List<String> anagram : map.values()) {
+            res.add(anagram);
         }
         return res;
     }
@@ -56,8 +56,8 @@ public class Anagrams {
     }
 
     //public static String sortChars(String s) {
-    //	char[] c = s.toCharArray();
-    //	Arrays.sort(c);
-    //	return new String(c);
+    // char[] c = s.toCharArray();
+    // Arrays.sort(c);
+    // return new String(c);
     //}
 }
