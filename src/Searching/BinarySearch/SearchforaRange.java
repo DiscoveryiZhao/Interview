@@ -50,6 +50,9 @@ public class SearchforaRange {
             range[0] = low;
         } else if (A[high] == target) {
             range[0] = high;
+        }else {
+            range[0] = range[1] = -1;
+            return range;
         }
 
         // search for right range
@@ -70,6 +73,9 @@ public class SearchforaRange {
             range[1] = high;
         } else if (A[low] == target) {
             range[1] = low;
+        }else {
+            range[0] = range[1] = -1;
+            return range;
         }
 
         return range;
