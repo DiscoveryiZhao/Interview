@@ -26,29 +26,29 @@ public class LongestConsecutiveSequence {
 			visited.put(i, false);
 		}
 
-		int max = 0;
+		int maxCount = 0;
 		for (int i : num) {
 			// visited.get(i) == false is true if didn't visited before
 			if (visited.get(i) == false) {
 				visited.put(i, true);
-				int count = 1;
+				int tmpCount = 1;
 				int inc = i + 1;
 				int dec = i - 1;
 
 				while (visited.containsKey(inc)) {
 					visited.put(inc, true);
 					inc++;
-					count++;
+					tmpCount++;
 				}
 
 				while (visited.containsKey(dec)) {
 					visited.put(dec, true);
 					dec--;
-					count++;
+					tmpCount++;
 				}
-				max = Math.max(max, count);
+				maxCount = Math.max(maxCount, tmpCount);
 			}
 		}
-		return max;
+		return maxCount;
 	}
 }
