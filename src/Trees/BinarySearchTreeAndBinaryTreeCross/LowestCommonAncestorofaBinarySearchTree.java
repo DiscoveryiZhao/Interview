@@ -7,8 +7,12 @@ import Library.Leetcode.TreeNode;
  */
 public class LowestCommonAncestorofaBinarySearchTree {
     public static TreeNode lca(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || root == q) {
-            return root;
+        if (root == null) {
+            return null;
+        }
+
+        if(root == p || root == q){
+            return root; //如果当前节点为p,q之中的一个，那么返回当前找到的节点中的一个
         }
 
         if (root.val < p.val && root.val < q.val) {
