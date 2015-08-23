@@ -34,7 +34,8 @@ public class MajorityElement {
     }
 
     public static int majorityNumber2(int[] nums) {
-        int count = 0, candidate = -1;
+        int count = 0;
+        int candidate = -1;
         for (int i = 0; i < nums.length; i++) {
             if (count == 0) {
                 candidate = nums[i];

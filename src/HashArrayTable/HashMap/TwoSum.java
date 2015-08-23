@@ -15,14 +15,14 @@ public class TwoSum {
             return null;
         }
         int[] res = new int[2];
-        Map<Integer, Integer> hash = new HashMap<>();
+        Map<Integer, Integer> hash = new HashMap<>(); // <number, index>
         for (int i = 0; i < numbers.length; i++) {
             if (hash.containsKey(target - numbers[i])) {
-                res[0] = hash.get(target - numbers[i]);
+                res[0] = hash.get(target - numbers[i]) + 1;
                 res[1] = i + 1;
                 return res;
             }
-            hash.put(numbers[i], i + 1);
+            hash.put(numbers[i], i);
         }
         return res;
     }
