@@ -1,7 +1,5 @@
 package IntervalAndMaintainStackForInterval.MaintainStackForSingleInterval;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -29,13 +27,9 @@ public class ValidParentheses {
     public static boolean isValid(String s) {
         int n = s.length();
         // odd length is not possible as valid parentheses
-        if ((n & 1) == 1) {
+        if ((n % 2) == 1) {
             return false;
         }
-        Map<Character, Character> map = new HashMap<>();
-        map.put(')', '(');
-        map.put(']', '[');
-        map.put('}', '{');
 
         Stack<Character> leftStack = new Stack<>();
         int right = 0;
@@ -48,9 +42,17 @@ public class ValidParentheses {
                 if (leftStack.isEmpty()) {
                     return false;
                 } else {
-                    if (leftStack.pop() != map.get(c)) {
+                    char popChar = leftStack.pop();
+                    if(popChar == '(' && c != ')' ){
                         return false;
                     }
+                    if(popChar == '[' && c != ']' ){
+                        return false;
+                    }
+                    if(popChar == '{' && c != '}' ){
+                        return false;
+                    }
+
                 }
             }
             right++;
