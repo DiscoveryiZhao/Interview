@@ -17,13 +17,13 @@ public class LowestCommonAncestorofaBinaryTree {
 
         // Conquer
         if (l != null && r != null) {
-            return root;
+            return root; // 如果当前节点左右节点都各找到一个，那么返回当前节点
         }
         if (l != null) {
-            return l;
+            return l; //只在左节点或者右节点找到一个，说明还有一个节点是在当前节点的下面
         }
         if (r != null) {
-            return r;
+            return r; //只在左节点或者右节点找到一个，说明还有一个节点是在当前节点的下面
         }
         return null;
     }

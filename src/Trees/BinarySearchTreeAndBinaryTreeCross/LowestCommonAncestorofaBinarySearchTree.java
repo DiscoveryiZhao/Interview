@@ -15,7 +15,7 @@ public class LowestCommonAncestorofaBinarySearchTree {
             return lca(root.right, p, q);
         } else if (root.val > p.val && root.val > q.val) {
             return lca(root.left, p, q);
-        } else {
+        } else { // (root.val < p.val && root.val > q.val) || (root.val > p.val && root.val < q.val)
             return root;
         }
     }
