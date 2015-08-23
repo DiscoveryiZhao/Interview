@@ -21,14 +21,16 @@ public class LowestCommonAncestorofaBinaryTree {
 
         // Conquer
         if (l != null && r != null) {
-            return root; // 如果当前节点左右节点都各找到一个，那么返回当前节点
+            return root; // 以当前节点为根, 在其左和右子树都找到，那么返回当前节点。
         }
         if (l != null) {
-            return l; //只在左节点或者右节点找到一个，说明还有一个节点是在当前节点的下面
+            return l; //以当前节点为根, 在其左子树找到，那么返回其左子树，继续在其左子树递归查找。
         }
         if (r != null) {
-            return r; //只在左节点或者右节点找到一个，说明还有一个节点是在当前节点的下面
+            return r; //以当前节点为根, 在其右子树找到，那么返回其右子树，继续在其右子树递归查找。
         }
+
+        // 以当前节点为根的子树根本就不存在p和q
         return null;
     }
 }
