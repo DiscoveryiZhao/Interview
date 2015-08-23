@@ -1,4 +1,7 @@
-package Leetcode.Easy;
+package Math.Other;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /*
 Write an algorithm to determine if a number is "happy".
@@ -36,31 +39,53 @@ public class HappyNumber {
         System.out.println(isHappy(18)); // false
         System.out.println(isHappy(19)); // true
         System.out.println(isHappy(20)); // false
-
     }
 
-    // 还有用O(1)空间的，就像链表找有没有圈一样，用快慢指针的思路。
     public static boolean isHappy(int n) {
-        int x = n;
-        int y = n;
-        while (x > 1) {
-            x = cal(x);
-            if (x == 1) return true;
-            y = cal(cal(y));
-            if (y == 1) return true;
-
-            if (x == y) return false;
+        Set<Integer> hash = new HashSet<>();
+        while (n != 1) {
+            if (hash.contains(n)) {
+                return false;
+            }
+            hash.add(n);
+            n = getNextHappy(n);
         }
         return true;
     }
 
-    public static int cal(int n) {
-        int x = n;
-        int s = 0;
-        while (x > 0) {
-            s = s + (x % 10) * (x % 10);
-            x = x / 10;
+    private static int getNextHappy(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n % 10) * (n % 10); // % 10 -> get the last digit of n
+            n /= 10;
         }
-        return s;
+        return sum;
     }
+
+
+
+//    // 还有用O(1)空间的，就像链表找有没有圈一样，用快慢指针的思路。
+//    public static boolean isHappy(int n) {
+//        int x = n;
+//        int y = n;
+//        while (x > 1) {
+//            x = cal(x);
+//            if (x == 1) return true;
+//            y = cal(cal(y));
+//            if (y == 1) return true;
+//
+//            if (x == y) return false;
+//        }
+//        return true;
+//    }
+//
+//    public static int cal(int n) {
+//        int x = n;
+//        int s = 0;
+//        while (x > 0) {
+//            s = s + (x % 10) * (x % 10);
+//            x = x / 10;
+//        }
+//        return s;
+//    }
 }
