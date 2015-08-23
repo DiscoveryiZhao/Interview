@@ -1,4 +1,4 @@
-package Leetcode.Easy;
+package TwoPointers.FrontEndPointsApproachToMiddle;
 
 import java.util.Arrays;
 

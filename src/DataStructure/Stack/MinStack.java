@@ -1,4 +1,5 @@
-package Leetcode.Easy;
+package DataStructure.Stack;
+
 
 import java.util.Stack;
 

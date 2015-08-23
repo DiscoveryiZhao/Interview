@@ -1,4 +1,4 @@
-package Math.ProofbyContradiction;
+package TwoPointers.FrontEndPointsApproachToMiddle;
 
 /**
  * Created by yizhao on 6/30/15.

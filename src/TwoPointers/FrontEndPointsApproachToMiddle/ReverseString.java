@@ -1,4 +1,4 @@
-package TwoPointers.ShuangJiBiZhongFa;
+package TwoPointers.FrontEndPointsApproachToMiddle;
 
 /**
  * Created by yizhao on 7/1/15.

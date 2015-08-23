@@ -1,4 +1,4 @@
-package Leetcode.Easy;
+package LinkedList.Basic;
 
 import Library.Leetcode.ListNode;
 

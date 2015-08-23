@@ -1,4 +1,4 @@
-package Leetcode.Easy;
+package Math.AppliedMath;
 
 /*
 Count the number of prime numbers less than a non-negative number, n

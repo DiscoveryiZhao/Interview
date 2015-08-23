@@ -1,4 +1,4 @@
-package TwoPointers.ShuangJiBiZhongFa;
+package TwoPointers.FrontEndPointsApproachToMiddle;
 
 import java.util.Arrays;
 
