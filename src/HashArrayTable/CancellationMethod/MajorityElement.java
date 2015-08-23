@@ -1,4 +1,4 @@
-package HashArrayTable.HashMap;
+package HashArrayTable.CancellationMethod;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,25 @@ public class MajorityElement {
         System.out.println(majorityNumber2(num3)); // 3
     }
 
-    public static int majorityElement(int[] num) {
+
+    public static int majorityNumber1(int[] nums) {
+        int count = 0;
+        int candidate = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0) {
+                candidate = nums[i];
+                count = 1;
+            } else if (candidate == nums[i]) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        return candidate;
+    }
+
+
+    public static int majorityNumber2(int[] num) {
         int n = num.length;
         Map<Integer, Integer> hash = new HashMap<>();
         for (int i : num) {
@@ -33,19 +51,4 @@ public class MajorityElement {
         return num[0];
     }
 
-    public static int majorityNumber2(int[] nums) {
-        int count = 0;
-        int candidate = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (count == 0) {
-                candidate = nums[i];
-                count = 1;
-            } else if (candidate == nums[i]) {
-                count++;
-            } else {
-                count--;
-            }
-        }
-        return candidate;
-    }
 }

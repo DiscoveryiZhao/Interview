@@ -1,4 +1,4 @@
-package HashArrayTable.HashSet;
+package HashArrayTable.CancellationMethod;
 
 import java.util.HashSet;
 import java.util.Set;
