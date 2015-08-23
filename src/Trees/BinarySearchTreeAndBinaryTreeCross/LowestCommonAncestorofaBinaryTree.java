@@ -8,8 +8,12 @@ import Library.Leetcode.TreeNode;
 public class LowestCommonAncestorofaBinaryTree {
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || root == q) {
-            return root;
+        if (root == null) {
+            return null; //如果当前节点为NULL说明走到了叶节点都没有找到两个节点中的其中一个
+        }
+
+        if(root == p || root == q){
+            return root; //如果当前节点为p,q之中的一个，那么返回当前找到的节点中的一个
         }
         // Divide
         TreeNode l = lowestCommonAncestor(root.left, p, q); // Lowest Common Ancestor of left subtree
