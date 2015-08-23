@@ -52,7 +52,6 @@ public class ValidParentheses {
                     if(popChar == '{' && c != '}' ){
                         return false;
                     }
-
                 }
             }
             right++;
