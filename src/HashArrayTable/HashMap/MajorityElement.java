@@ -10,11 +10,11 @@ import java.util.Map;
 public class MajorityElement {
     public static void main(String[] args) {
         int[] num1 = {1};
-        System.out.println(majorityElement(num1)); // 1
+        System.out.println(majorityNumber2(num1)); // 1
         int[] num2 = {1, 2, 3, 2, 2};
-        System.out.println(majorityElement(num2)); // 2
+        System.out.println(majorityNumber2(num2)); // 2
         int[] num3 = {3, 1, 2, 3, 2, 3, 3};
-        System.out.println(majorityElement(num3)); // 3
+        System.out.println(majorityNumber2(num3)); // 3
     }
 
     public static int majorityElement(int[] num) {
@@ -31,5 +31,20 @@ public class MajorityElement {
             }
         }
         return num[0];
+    }
+
+    public static int majorityNumber2(int[] nums) {
+        int count = 0, candidate = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0) {
+                candidate = nums[i];
+                count = 1;
+            } else if (candidate == nums[i]) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        return candidate;
     }
 }
