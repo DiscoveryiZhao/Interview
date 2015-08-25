@@ -9,10 +9,10 @@ import java.util.List;
 public class PalindromePartitioning {
     public static void main(String[] args) {
         // [[a, a, b, s, d, s, a], [a, a, b, sds, a], [aa, b, s, d, s, a], [ aa, b, sds, a]]
-        System.out.println(partition("aabsdsa"));
+        //System.out.println(partition("aabsdsa"));
 
         // [[a, b, c]]
-        System.out.println(partition("abc"));
+        System.out.println(partition("1234"));
     }
 
     public static List<List<String>> partition(String s) {
@@ -28,6 +28,16 @@ public class PalindromePartitioning {
             return;
         }
         for (int i = depth; i < n; i++) {
+//            prefix:1
+//            prefix:2
+//            prefix:3
+//            prefix:4
+//            prefix:34
+//            prefix:23
+//            prefix:234
+//            prefix:12
+//            prefix:123
+//            prefix:1234
             String prefix = s.substring(depth, i + 1);
             if (!isPalindrome(prefix)) {
                 continue;
