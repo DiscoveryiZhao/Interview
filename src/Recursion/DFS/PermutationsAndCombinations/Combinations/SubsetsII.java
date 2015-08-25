@@ -24,10 +24,10 @@ public class SubsetsII {
 
     public static void dfs(int[] S, List<List<Integer>> res, List<Integer> tmp, int depth) {
         res.add(new ArrayList<>(tmp)); // 什么时候输出结果
-        for (int width = depth; width < S.length; width++) {
-            if (width != depth && S[width] == S[width - 1]) continue; // 什么情况跳过
-            tmp.add(S[width]);
-            dfs(S, res, tmp, width + 1);
+        for (int i = depth; i < S.length; i++) {
+            if (i != depth && S[i] == S[i - 1]) continue; // 什么情况跳过
+            tmp.add(S[i]);
+            dfs(S, res, tmp, i + 1);
             tmp.remove(tmp.size() - 1);
         }
     }
