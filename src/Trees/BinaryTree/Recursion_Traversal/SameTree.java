@@ -1,4 +1,4 @@
-package Trees.BinaryTree.Recursion_DivideAndConquer;
+package Trees.BinaryTree.Recursion_Traversal;
 
 import Library.Leetcode.TreeNode;
 
@@ -12,14 +12,13 @@ public class SameTree {
             return true;
         }
 
-        // Conquer
         // same tree need two conditions.
         // first same structure
         // second same values
         if (p == null || q == null) return false;
         if (p.val != q.val) return false;
 
-        // Divide
+        // from root to deepest left and right leaf traversal
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 }

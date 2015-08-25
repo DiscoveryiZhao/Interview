@@ -16,18 +16,18 @@ public class Combinations {
 
     public static List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
-        vector(n, k, res, new ArrayList<Integer>(), 0);
+        dfs(n, k, res, new ArrayList<Integer>(), 0);
         return res;
     }
 
-    public static void vector(int n, int k, List<List<Integer>> res, List<Integer> tmp, int depth) {
+    public static void dfs(int n, int k, List<List<Integer>> res, List<Integer> tmp, int depth) {
         if (tmp.size() == k) {
             res.add(new ArrayList<>(tmp)); // 什么时候输出结果
             return;
         }
-        for (int width = depth; width < n; width++) {
-            tmp.add(width + 1);
-            vector(n, k, res, tmp, width + 1);
+        for (int i = depth; i < n; i++) {
+            tmp.add(i + 1);
+            dfs(n, k, res, tmp, i + 1);
             tmp.remove(tmp.size() - 1);
         }
     }

@@ -1,4 +1,4 @@
-package Trees.BinaryTree.Recursion_DivideAndConquer;
+package Trees.BinaryTree.Recursion_Traversal;
 
 import Library.Leetcode.TreeNode;
 
@@ -16,13 +16,12 @@ public class SumRoottoLeafNumbers {
             return 0;
         }
 
-        // Conquer
         sum = sum * 10 + node.val;
         if (node.left == null && node.right == null) {
             return sum;
         }
 
-        // Divide
+        // from root to deepest left and right leaf traversal
         return helper(node.left, sum) + helper(node.right, sum);
     }
 }
