@@ -23,9 +23,9 @@ public class Subsets {
 
     public static void dfs(int[] S, List<List<Integer>> res, List<Integer> tmp, int depth) {
         res.add(new ArrayList<>(tmp)); // 什么时候输出结果
-        for (int width = depth; width < S.length; width++) {
-            tmp.add(S[width]);
-            dfs(S, res, tmp, width + 1);
+        for (int i = depth; i < S.length; i++) {
+            tmp.add(S[i]);
+            dfs(S, res, tmp, i + 1);
             tmp.remove(tmp.size() - 1);
         }
     }
