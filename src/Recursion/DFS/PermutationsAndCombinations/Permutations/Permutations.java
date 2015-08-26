@@ -15,11 +15,11 @@ public class Permutations {
 
     public static List<List<Integer>> permute(int[] num) {
         List<List<Integer>> res = new ArrayList<>();
-        vector(num, res, new ArrayList<Integer>(), new boolean[num.length]);
+        dfs(num, res, new ArrayList<Integer>(), new boolean[num.length]);
         return res;
     }
 
-    public static void vector(int[] num, List<List<Integer>> res, List<Integer> tmp, boolean[] visit) {
+    public static void dfs(int[] num, List<List<Integer>> res, List<Integer> tmp, boolean[] visit) {
         if (tmp.size() == num.length) {
             res.add(new ArrayList<>(tmp)); // 什么时候输出结果
             return;
@@ -30,7 +30,7 @@ public class Permutations {
             }
             visit[width] = true;
             tmp.add(num[width]);
-            vector(num, res, tmp, visit);
+            dfs(num, res, tmp, visit);
             tmp.remove(tmp.size() - 1);
             visit[width] = false;
         }
