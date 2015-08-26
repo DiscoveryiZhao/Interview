@@ -24,15 +24,15 @@ public class Permutations {
             res.add(new ArrayList<>(tmp)); // 什么时候输出结果
             return;
         }
-        for (int width = 0; width < num.length; width++) {
-            if (visit[width] == true) {
+        for (int i = 0; i < num.length; i++) {
+            if (visit[i] == true) {
                 continue; // 什么情况跳过
             }
-            visit[width] = true;
-            tmp.add(num[width]);
+            visit[i] = true;
+            tmp.add(num[i]);
             dfs(num, res, tmp, visit);
             tmp.remove(tmp.size() - 1);
-            visit[width] = false;
+            visit[i] = false;
         }
     }
 }
