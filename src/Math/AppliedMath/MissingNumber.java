@@ -16,8 +16,8 @@ public class MissingNumber {
         int n = nums.length;
         int expectedSum = (1 + n) * n / 2; // 等差数列求和公式: 和=(首项+末项)×项数÷2
         int tmpSum = 0;
-        for(int i = 0; i < n; i++){
-            tmpSum+=nums[i];
+        for (int i = 0; i < n; i++) {
+            tmpSum += nums[i];
         }
         return expectedSum - tmpSum;
     }
