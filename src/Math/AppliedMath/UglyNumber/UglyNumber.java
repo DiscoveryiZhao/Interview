@@ -1,4 +1,4 @@
-package Math.AppliedMath;
+package Math.AppliedMath.UglyNumber;
 
 /**
  * Created by YZ on 8/27/15.

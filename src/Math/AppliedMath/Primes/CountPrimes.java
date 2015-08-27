@@ -1,4 +1,4 @@
-package Math.AppliedMath;
+package Math.AppliedMath.Primes;
 
 /*
 Count the number of prime numbers less than a non-negative number, n

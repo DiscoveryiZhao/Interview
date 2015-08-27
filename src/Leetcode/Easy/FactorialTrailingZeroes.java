@@ -33,14 +33,13 @@ public class FactorialTrailingZeroes {
     public static int trailingZeroes(int num) {
         if (num < 0) {
             return 0;
-        } else {
-            int count = 0;
-            while (num >= 5) {
-                count += num / 5;
-                num /= 5;
-            }
-            return count;
         }
+        int count = 0;
+        while (num >= 5) {
+            count += num / 5;
+            num /= 5;
+        }
+        return count;
     }
 
     public static int factorial(int n) {
