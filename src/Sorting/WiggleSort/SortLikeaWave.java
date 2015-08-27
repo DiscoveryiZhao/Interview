@@ -1,4 +1,4 @@
-package Sorting.WaveSort;
+package Sorting.WiggleSort;
 
 import java.util.Arrays;
 
