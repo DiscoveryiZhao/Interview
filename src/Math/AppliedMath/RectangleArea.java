@@ -1,8 +1,37 @@
 package Math.AppliedMath;
 
-/**
- * Created by YZ on 8/27/15.
- */
+/**********************************************************************************
+ *
+ * Find the total area covered by two rectilinear rectangles in a 2D plane.
+ * Each rectangle is defined by its bottom left corner and top right corner as shown in the figure.
+ *
+ *                      Y
+ *                      ^
+ *                      |
+ *                      |
+ *                      |
+ *                      |
+ *                      |     (C,D):(3,4)
+ *            +------------------+
+ *            |         |        |
+ *            |         |        |
+ *            |         |        |               (G,H):(9,2)
+ *            |         +----------------------------+
+ *            |         |        |                   |
+ *            |         |        |                   |
+ *            |         |        |                   |
+ *            +---------|--------+-------------------|---------> X
+ *      (A,B):(-3,0)    |                            |
+ *                      +----------------------------+
+ *                  (E,F):(0,-1)
+ *
+ *
+ *
+ * Assume that the total area is never beyond the maximum possible value of int.
+ *
+ * Credits:Special thanks to @mithmatt for adding this problem, creating the above image and all test cases.
+ *
+ **********************************************************************************/
 public class RectangleArea {
 
     /*
@@ -14,10 +43,7 @@ public class RectangleArea {
         If they have overlap, the total area should minus the overlap area.
     */
     public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
-        if (C < E || G < A) {
-            return (G - E) * (H - F) + (C - A) * (D - B);
-        }
-        if (D < F || H < B) {
+        if (C < E || G < A || D < F || H < B) {
             return (G - E) * (H - F) + (C - A) * (D - B);
         }
 
