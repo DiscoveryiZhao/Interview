@@ -23,7 +23,6 @@ public class CircularArray<E> implements Iterable<E> {
 
     public void rotate(int shiftRight) {
         pos = (pos + shiftRight) % circularBuffer.length;
-        ;
     }
 
     public Iterator<E> iterator() {
