@@ -25,14 +25,14 @@ public class BestTimetoBuyandSellStock {
         if (n == 0) {
             return 0;
         }
-        int opt = 0;
-        int sub = 0;
         int subMinVal = prices[0];
+        int local = 0;
+        int global = 0;
         for (int i = 1; i < n; i++) {
             subMinVal = Math.min(subMinVal, prices[i]);
-            sub = prices[i] - subMinVal;
-            opt = Math.max(opt, sub);
+            local = prices[i] - subMinVal;
+            global = Math.max(global, local);
         }
-        return opt;
+        return global;
     }
 }

@@ -30,12 +30,12 @@ public class MaximumSubarray {
         if (n == 0) {
             return 0;
         }
-        int opt = A[0];
-        int sub = A[0];
+        int local = A[0];
+        int global = A[0];
         for (int i = 1; i < n; i++) {
-            sub = Math.max(sub + A[i], A[i]);
-            opt = Math.max(opt, sub);
+            local = Math.max(local + A[i], A[i]);
+            global = Math.max(global, local);
         }
-        return opt;
+        return global;
     }
 }
