@@ -9,36 +9,39 @@ package BruteForce;
         Given "abcd", return "dcbabcd".
 */
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ShortestPalindrome {
     public static void main(String[] args) {
-        System.out.println(shortestPalindrome("aacecaaa")); // aaacecaaa
-//        System.out.println(shortestPalindrome("abcd")); // dcbabcd
-//        System.out.println(shortestPalindrome("abb"));
+//        System.out.println(shortestPalindrome("aacecaaa")); // aaacecaaa [front:a  ,mid:aacecaa  ,end:a]
+//        System.out.println(shortestPalindrome("abcd")); // dcbabcd [front:dcb  ,mid:a  ,end:bcd]
+        System.out.println(shortestPalindrome("abb")); // bbabb front:bb  ,mid:a  ,end:bb
 //        System.out.println(shortestPalindrome(""));
 //        System.out.println(shortestPalindrome(""));
 //        System.out.println(shortestPalindrome(""));
+        Map<Integer, Integer> hash = new HashMap<Integer, Integer>();
     }
 
     public static String shortestPalindrome(String s) {
         int n = s.length();
         int i = 0;
         int j = n - 1;
-        while (j >= 0) { //找到第一个使他不回文的位置
+        while (j >= 0) { //find the first index, which do not make string palindrome 找到第一个使他不回文的位置
             if (s.charAt(i) == s.charAt(j)) {
                 i++;
             }
             j--;
         }
 
-        if (i == n) {  //本身是回文
+        if (i == n) {  //itself is a palindrome 本身是回文
             return s;
         }
 
-        String front = s.substring(i); // 后缀不能够匹配的字符串
-        System.out.println("front:" + front + "  ,i:" + i);
-        String end = reverseString(front); // 前面补充prefix让他和suffix回文匹配
+        String end = s.substring(i); // 后缀不能够匹配的字符串
+        String front = reverseString(end); // 前面补充prefix让他和suffix回文匹配
         String mid = shortestPalindrome(s.substring(0, i)); //递归调用找 [0,i]要最少可以补充多少个字符让他回文
-        return end + mid + front;
+        return front + mid + end;
     }
 
     private static String reverseString(String s) {
@@ -54,4 +57,6 @@ public class ShortestPalindrome {
         }
         return new String(c);
     }
+
+
 }
