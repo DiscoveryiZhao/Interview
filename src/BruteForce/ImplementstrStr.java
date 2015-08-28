@@ -1,4 +1,4 @@
-package Math.SetBuilderNotation;
+package BruteForce;
 
 /**
  * Created by yizhao on 6/30/15.
