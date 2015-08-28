@@ -9,22 +9,22 @@ public class LongestPalindromicSubstring {
         if (n == 0) {
             return s;
         }
-        String opt = s.substring(0, 1);
-        String sub = s.substring(0, 1);
+        String local = s.substring(0, 1);
+        String global = s.substring(0, 1);
         for (int i = 1; i < n; i++) {
             // odd length
-            sub = getLongestPalindrome(s, i, i);
-            if (sub.length() > opt.length()) {
-                opt = sub;
+            local = getLongestPalindrome(s, i, i);
+            if (local.length() > global.length()) {
+                global = local;
             }
 
             // even length
-            sub = getLongestPalindrome(s, i - 1, i);
-            if (sub.length() > opt.length()) {
-                opt = sub;
+            local = getLongestPalindrome(s, i - 1, i);
+            if (local.length() > global.length()) {
+                global = local;
             }
         }
-        return opt;
+        return global;
     }
 
     public static String getLongestPalindrome(String s, int left, int right) {
