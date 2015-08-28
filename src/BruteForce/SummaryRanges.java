@@ -13,7 +13,7 @@ public class SummaryRanges {
     public static void main(String[] args) {
         int[] a = {0, 1, 2, 4, 5, 7};
 
-        System.out.println(summaryRanges(a));
+        System.out.println(summaryRanges(a)); // [0->2, 4->5, 7]
     }
 
 
