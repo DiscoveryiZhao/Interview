@@ -12,11 +12,11 @@ package BruteForce;
 public class ShortestPalindrome {
     public static void main(String[] args) {
         System.out.println(shortestPalindrome("aacecaaa")); // aaacecaaa
-        System.out.println(shortestPalindrome("abcd")); // dcbabcd
-        System.out.println(shortestPalindrome("abb"));
-        System.out.println(shortestPalindrome(""));
-        System.out.println(shortestPalindrome(""));
-        System.out.println(shortestPalindrome(""));
+//        System.out.println(shortestPalindrome("abcd")); // dcbabcd
+//        System.out.println(shortestPalindrome("abb"));
+//        System.out.println(shortestPalindrome(""));
+//        System.out.println(shortestPalindrome(""));
+//        System.out.println(shortestPalindrome(""));
     }
 
     public static String shortestPalindrome(String s) {
@@ -25,7 +25,7 @@ public class ShortestPalindrome {
         int j = n - 1;
         while (j >= 0) { //找到第一个使他不回文的位置
             if (s.charAt(i) == s.charAt(j)) {
-                i += 1;
+                i++;
             }
             j--;
         }
@@ -35,6 +35,7 @@ public class ShortestPalindrome {
         }
 
         String front = s.substring(i); // 后缀不能够匹配的字符串
+        System.out.println("front:" + front + "  ,i:" + i);
         String end = reverseString(front); // 前面补充prefix让他和suffix回文匹配
         String mid = shortestPalindrome(s.substring(0, i)); //递归调用找 [0,i]要最少可以补充多少个字符让他回文
         return end + mid + front;
