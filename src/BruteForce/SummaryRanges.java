@@ -10,7 +10,14 @@ Given a sorted integer array without duplicates, return the summary of its range
 For example, given [0,1,2,4,5,7], return ["0->2","4->5","7"].
 */
 public class SummaryRanges {
-    public List<String> summaryRanges(int[] nums) {
+    public static void main(String[] args) {
+        int[] a = {0, 1, 2, 4, 5, 7};
+
+        System.out.println(summaryRanges(a));
+    }
+
+
+    public static List<String> summaryRanges(int[] nums) {
         List<String> res = new ArrayList<>();
         if (nums == null || nums.length == 0) {
             return res;
