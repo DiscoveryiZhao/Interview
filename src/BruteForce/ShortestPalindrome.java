@@ -36,7 +36,7 @@ public class ShortestPalindrome {
 
         String front = s.substring(i); // 后缀不能够匹配的字符串
         String end = reverseString(front); // 前面补充prefix让他和suffix回文匹配
-        String mid = shortestPalindrome(s.substring(0, i)); //递归调用找 [0,j]要最少可以补充多少个字符让他回文
+        String mid = shortestPalindrome(s.substring(0, i)); //递归调用找 [0,i]要最少可以补充多少个字符让他回文
         String result = end + mid + front;
         return result;
     }
