@@ -1,4 +1,4 @@
-package Others;
+package Math.AppliedMath.Primes;
 
 /**
  * Created by yizhao on 11/24/14.
