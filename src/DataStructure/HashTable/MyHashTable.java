@@ -14,10 +14,6 @@ public class MyHashTable<K, V> {
         table = new LinkedList[5];
     }
 
-    public int hashCodeOfKey(K key) {
-        return Math.abs(key.hashCode()) % table.length;
-    }
-
     public void put(K key, V val) {
         int i = hashCodeOfKey(key);
         if (table[i] == null) {
@@ -51,6 +47,10 @@ public class MyHashTable<K, V> {
             }
         }
         return null;
+    }
+
+    public int hashCodeOfKey(K key) {
+        return Math.abs(key.hashCode()) % table.length;
     }
 
     // Node inner class implementing the Node with K type key and V type val.
