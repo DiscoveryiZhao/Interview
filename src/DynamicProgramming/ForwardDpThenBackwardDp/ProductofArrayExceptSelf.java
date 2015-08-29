@@ -1,4 +1,4 @@
-package BruteForce;
+package DynamicProgramming.ForwardDpThenBackwardDp;
 
 import java.util.Arrays;
 
@@ -19,25 +19,25 @@ public class ProductofArrayExceptSelf {
         int n = nums.length;
         int[] result = new int[n];
 
-        int[] t1 = new int[n];
-        int[] t2 = new int[n];
+        int[] dpForward = new int[n];
+        int[] dpBackward = new int[n];
 
-        t1[0] = 1;
-        t2[n - 1] = 1;
+        dpForward[0] = 1;
+        dpBackward[n - 1] = 1;
 
         //scan from left to right, [1, 1, 2, 6, 24]
         for (int i = 0; i < n - 1; i++) {
-            t1[i + 1] = nums[i] * t1[i];
+            dpForward[i + 1] = nums[i] * dpForward[i];
         }
 
         //scan from right to left, [120, 60, 20, 5, 1]
         for (int i = n - 1; i > 0; i--) {
-            t2[i - 1] = t2[i] * nums[i];
+            dpBackward[i - 1] = dpBackward[i] * nums[i];
         }
 
         //multiply
         for (int i = 0; i < n; i++) {
-            result[i] = t1[i] * t2[i];
+            result[i] = dpForward[i] * dpBackward[i];
         }
 
         return result;
