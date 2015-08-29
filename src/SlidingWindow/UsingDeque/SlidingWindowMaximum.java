@@ -27,10 +27,34 @@ import java.util.*;
 public class SlidingWindowMaximum {
     public static void main(String args[]) {
         int a[] = {1, 3, -1, -3, 5, 3, 6, 7};
-        System.out.println(Arrays.toString(maxSlidingWindow(a, 3))); // [3, 3, 5, 5, 6, 7]
+        int b[] = {1,2,7,7,2};
+        System.out.println(maxSlidingWindow_lintcode(a, 3)); // [3, 3, 5, 5, 6, 7]
+        System.out.println(maxSlidingWindow_lintcode(b, 1)); // [1,2,7,7,2]
     }
 
-    public static int[] maxSlidingWindow(int[] nums, int k) {
+    public static ArrayList<Integer> maxSlidingWindow_lintcode(int[] nums, int k) {
+        int n = nums.length;
+        ArrayList<Integer> res = new ArrayList<>();
+        if (k == 0) {
+            return res;
+        }
+        Deque<Integer> deque = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            while ((!deque.isEmpty() && nums[i] > deque.peekLast())) {
+                deque.pollLast();
+            }
+            deque.addLast(nums[i]);
+            if (i > k && deque.peekFirst() == nums[i - k]) {
+                deque.pollFirst();
+            }
+            if (i >= k - 1) {
+                res.add(deque.peekFirst());
+            }
+        }
+        return res;
+    }
+
+    public static int[] maxSlidingWindow_leetcode(int[] nums, int k) {
         int n = nums.length;
         int[] res = new int[n - k + 1];
         if (k == 0) {
@@ -52,7 +76,6 @@ public class SlidingWindowMaximum {
             if (i > k - 1) {
                 res[i - k] = deque.peekFirst();
             }
-            System.out.println("i:" + i + "  ,deque:" + deque);
         }
         return res;
     }

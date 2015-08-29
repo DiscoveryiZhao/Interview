@@ -32,40 +32,39 @@ public class DifferentWaystoAddParentheses {
     }
 
     public static List<Integer> diffWaysToCompute(String input) {
-        List<Integer> result = new ArrayList<>();
+        List<Integer> resFinal = new ArrayList<>();
         if (input == null || input.length() == 0) {
-            return result;
+            return resFinal;
         }
 
         int n = input.length();
         for (int i = 0; i < n; i++) {
-            if (input.charAt(i) == '+' || input.charAt(i) == '-' || input.charAt(i) == '*') {
-                String l = input.substring(0, i);
-                String r = input.substring(i + 1);
-                List<Integer> resL = diffWaysToCompute(l);
-                List<Integer> resR = diffWaysToCompute(r);
-                for (Integer n1 : resL) {
-                    for (Integer n2 : resR) {
+            char operator = input.charAt(i);
+            if (operator == '+' || operator == '-' || operator == '*') {
+                List<Integer> resL = diffWaysToCompute(input.substring(0, i));
+                List<Integer> resR = diffWaysToCompute(input.substring(i + 1));
+                for (Integer a : resL) {
+                    for (Integer b : resR) {
                         int c = 0;
-                        switch (input.charAt(i)) {
+                        switch (operator) {
                             case '+':
-                                c = n1 + n2;
+                                c = a + b;
                                 break;
                             case '-':
-                                c = n1 - n2;
+                                c = a - b;
                                 break;
                             case '*':
-                                c = n1 * n2;
+                                c = a * b;
                                 break;
                         }
-                        result.add(c);
+                        resFinal.add(c);
                     }
                 }
             }
         }
-        if (result.size() == 0) {
-            result.add(Integer.valueOf(input));
+        if (resFinal.size() == 0) {
+            resFinal.add(Integer.valueOf(input));
         }
-        return result;
+        return resFinal;
     }
 }
