@@ -23,25 +23,25 @@ public class SummaryRanges {
             return res;
         }
         int n = nums.length;
-        int start = 0;
-        int end = 0;
+        int l = 0;
+        int r = 0;
 
-        while (end < n) {
+        while (r < n) {
             StringBuilder sb = new StringBuilder();
-            while (end < n - 1 && nums[end] == nums[end + 1] - 1) {
-                end++;
+            while (r < n - 1 && nums[r] == nums[r + 1] - 1) {
+                r++;
             }
-            if (start == end) {
-                sb.append(nums[start]);
+            if (l == r) {
+                sb.append(nums[l]);
                 res.add(sb.toString());
             } else {
-                sb.append(nums[start]);
+                sb.append(nums[l]);
                 sb.append("->");
-                sb.append(nums[end]);
+                sb.append(nums[r]);
                 res.add(sb.toString());
             }
-            end++;
-            start = end;
+            r++;
+            l = r;
         }
 
         return res;
