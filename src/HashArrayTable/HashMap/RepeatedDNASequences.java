@@ -26,6 +26,7 @@ public class RepeatedDNASequences {
 
     /*
     * reference: http://blog.csdn.net/youmengjiuzhuiba/article/details/45768605
+    * 遍历字符串，用hashmap存储字串，判断即可
     * */
     public static List<String> findRepeatedDnaSequences(String s) {
         List<String> rs = new LinkedList<>();
