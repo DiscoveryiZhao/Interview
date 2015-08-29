@@ -17,14 +17,14 @@ public class BinaryTreePreorderTraversal {
             return res;
         }
 
-        Stack<TreeNode> parentStack = new Stack<>();
-        while (!parentStack.isEmpty() || root != null) {
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
             if (root != null) {
                 res.add(root.val);
-                parentStack.push(root);
+                stack.push(root);
                 root = root.left;
             } else {
-                root = parentStack.pop();
+                root = stack.pop();
                 root = root.right;
             }
         }

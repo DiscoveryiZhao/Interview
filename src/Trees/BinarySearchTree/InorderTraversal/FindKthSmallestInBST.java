@@ -39,13 +39,13 @@ public class FindKthSmallestInBST {
                 stack.push(root);
                 root = root.left;
             }else{
-                TreeNode t = stack.pop();
+                root = stack.pop();
                 k--;
                 if(k==0) {
-                    result = t.val;
+                    result = root.val;
                     break;
                 }
-                root = t.right;
+                root = root.right;
             }
         }
         return result;

@@ -17,15 +17,15 @@ public class BinaryTreePostorderTraversal {
             return res;
         }
         TreeNode lastVisited = null;
-        Stack<TreeNode> parentStack = new Stack<>();
-        while (!parentStack.isEmpty() || root != null) {
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
             if (root != null) {
-                parentStack.push(root);
+                stack.push(root);
                 root = root.left;
             } else {
-                TreeNode tmp = parentStack.peek();
+                TreeNode tmp = stack.peek();
                 if (tmp.right == null || tmp.right == lastVisited) {
-                    parentStack.pop();
+                    stack.pop();
                     res.add(tmp.val);
                     lastVisited = tmp;
                 } else {
