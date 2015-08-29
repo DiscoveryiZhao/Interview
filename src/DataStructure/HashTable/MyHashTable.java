@@ -1,12 +1,13 @@
 package DataStructure.HashTable;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by YZ on 8/27/15.
  */
 public class MyHashTable<K, V> {
-    LinkedList<Node>[] table;
+    List<Node>[] table;
 
     @SuppressWarnings("unchecked")
     public MyHashTable() {
@@ -24,7 +25,7 @@ public class MyHashTable<K, V> {
             table[i] = new LinkedList<>();
             table[i].add(new Node(key, val));
         } else {
-            LinkedList<Node> list = table[i];
+            List<Node> list = table[i];
             for (Node n : list) {
                 if (n.key.equals(key)) {
                     // found duplicated key, replace its val then return
@@ -42,15 +43,14 @@ public class MyHashTable<K, V> {
         int i = hashCodeOfKey(key);
         if (table[i] == null) {
             return null;
-        } else {
-            LinkedList<Node> list = table[i];
-            for (Node n : list) {
-                if (n.key.equals(key)) {
-                    return n.val;
-                }
-            }
-            return null;
         }
+        List<Node> list = table[i];
+        for (Node n : list) {
+            if (n.key.equals(key)) {
+                return n.val;
+            }
+        }
+        return null;
     }
 
     // Node inner class implementing the Node with K type key and V type val.
