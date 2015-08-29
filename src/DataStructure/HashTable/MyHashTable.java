@@ -15,7 +15,7 @@ public class MyHashTable<K, V> {
     }
 
     public void put(K key, V val) {
-        int i = hashCodeOfKey(key);
+        int i = hashCode(key);
         if (table[i] == null) {
             // creates a new LinkedList in the bucket
             table[i] = new LinkedList<>();
@@ -36,7 +36,7 @@ public class MyHashTable<K, V> {
     }
 
     public V get(K key) {
-        int i = hashCodeOfKey(key);
+        int i = hashCode(key);
         if (table[i] == null) {
             return null;
         }
@@ -49,7 +49,7 @@ public class MyHashTable<K, V> {
         return null;
     }
 
-    public int hashCodeOfKey(K key) {
+    public int hashCode(K key) {
         return Math.abs(key.hashCode()) % table.length;
     }
 

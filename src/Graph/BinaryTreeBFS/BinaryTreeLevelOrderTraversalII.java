@@ -21,11 +21,11 @@ public class BinaryTreeLevelOrderTraversalII {
             TreeNode u = queue.poll();
             if (u != null) {
                 level.add(u.val);
-                            /*
-                            * 波前u向其所有有连同的node扩散
-                            * u是v的predecessor前驱 or parent
-                            * v是u的 descendent后记
-                            * */
+                /*
+                * 波前u向其所有有连同的node扩散
+                * u是v的predecessor前驱 or parent
+                * v是u的 descendent后记
+                * */
                 if (u.left != null) {
                     queue.add(u.left);
                 }

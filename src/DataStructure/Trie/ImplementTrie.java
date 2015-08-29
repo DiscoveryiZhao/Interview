@@ -9,7 +9,7 @@ import java.util.Map;
 
 class TrieNode {
     char c;
-    HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+    Map<Character, TrieNode> children = new HashMap<>();
     boolean isLeaf;
 
     public TrieNode() {
