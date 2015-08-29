@@ -12,11 +12,11 @@ public class PathSumII {
 
     public static List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res = new ArrayList<>();
-        helper(root, sum, res, new ArrayList<Integer>());
+        traversal(root, sum, res, new ArrayList<Integer>());
         return res;
     }
 
-    public static boolean helper(TreeNode root, int sum, List<List<Integer>> res, List<Integer> tmp) {
+    public static boolean traversal(TreeNode root, int sum, List<List<Integer>> res, List<Integer> tmp) {
         if (root == null) {
             return false;
         }
@@ -31,7 +31,7 @@ public class PathSumII {
         }
 
         // from root to deepest left and right leaf traversal
-        if (helper(root.left, sum, res, tmp) || helper(root.right, sum, res, tmp)) {
+        if (traversal(root.left, sum, res, tmp) || traversal(root.right, sum, res, tmp)) {
             return true;
         }
 

@@ -11,10 +11,10 @@ public class SymmetricTree {
         if (root == null) {
             return true;
         }
-        return helper(root.left, root.right);
+        return traversal(root.left, root.right);
     }
 
-    public static boolean helper(TreeNode p, TreeNode q) {
+    public static boolean traversal(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
         }
@@ -23,6 +23,6 @@ public class SymmetricTree {
         if (p.val != q.val) return false;
 
         // from root to deepest left and right leaf traversal
-        return helper(p.left, q.right) && helper(p.right, q.left);
+        return traversal(p.left, q.right) && traversal(p.right, q.left);
     }
 }

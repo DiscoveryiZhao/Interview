@@ -17,11 +17,11 @@ public class PalindromePartitioning {
 
     public static List<List<String>> partition(String s) {
         List<List<String>> res = new ArrayList<>();
-        helper(s, res, new ArrayList<String>(), 0);
+        traversal(s, res, new ArrayList<String>(), 0);
         return res;
     }
 
-    public static void helper(String s, List<List<String>> res, List<String> tmp, int depth) {
+    public static void traversal(String s, List<List<String>> res, List<String> tmp, int depth) {
         int n = s.length();
         if (depth == n) {
             res.add(new ArrayList<>(tmp));
@@ -43,7 +43,7 @@ public class PalindromePartitioning {
                 continue;
             }
             tmp.add(prefix);
-            helper(s, res, tmp, i + 1);
+            traversal(s, res, tmp, i + 1);
             tmp.remove(tmp.size() - 1);
         }
     }
@@ -61,11 +61,11 @@ public class PalindromePartitioning {
 
 //    public static List<List<String>> partition(String s) {
 //        List<List<String>> res = new ArrayList<>();
-//        helper(s, res, new ArrayList<String>());
+//        traversal(s, res, new ArrayList<String>());
 //        return res;
 //    }
 //
-//    public static void helper(String s, List<List<String>> res, List<String> tmp) {
+//    public static void traversal(String s, List<List<String>> res, List<String> tmp) {
 //        int n = s.length();
 //        if (n == 0) {
 //            res.add(new ArrayList<>(tmp));
@@ -75,7 +75,7 @@ public class PalindromePartitioning {
 //            String prefix  = s.substring(0, i);
 //            if (isPalindrome(prefix)) {
 //                tmp.add(prefix);
-//                helper(s.substring(i), res, tmp);
+//                traversal(s.substring(i), res, tmp);
 //                tmp.remove(tmp.size() - 1);
 //            }
 //        }
