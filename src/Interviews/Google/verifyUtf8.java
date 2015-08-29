@@ -8,7 +8,8 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 
 /**
- * reference: http://stackoverflow.com/questions/14236923/how-to-validate-if-a-utf-8-string-contains-mal-encoded-characters
+ * reference_1: http://stackoverflow.com/questions/14236923/how-to-validate-if-a-utf-8-string-contains-mal-encoded-characters
+ * reference_2: http://www.mitbbs.com/article_t/JobHunting/32711055.html
  */
 public class VerifyUtf8 {
     public static void main(String args[]) {
