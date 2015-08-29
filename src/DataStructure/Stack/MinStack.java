@@ -13,9 +13,9 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 */
 public class MinStack {
     // stack: store the stack numbers
-    private Stack<Integer> stack = new Stack<Integer>();
+    private Stack<Integer> stack = new Stack<>();
     // minStack: store the current min values
-    private Stack<Integer> minStack = new Stack<Integer>();
+    private Stack<Integer> minStack = new Stack<>();
 
     public void push(int x) {
         // store current min value into minStack
