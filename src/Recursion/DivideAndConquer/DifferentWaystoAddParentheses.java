@@ -26,7 +26,12 @@ Input: "2*3-4*5"
 Output: [-34, -14, -10, -10, 10]
 */
 public class DifferentWaystoAddParentheses {
-    public List<Integer> diffWaysToCompute(String input) {
+    public static void main(String[] args){
+        System.out.println(diffWaysToCompute("2-1-1"));
+        System.out.println(diffWaysToCompute("2*3-4*5"));
+    }
+
+    public static List<Integer> diffWaysToCompute(String input) {
         List<Integer> result = new ArrayList<>();
         if (input == null || input.length() == 0) {
             return result;
@@ -35,12 +40,12 @@ public class DifferentWaystoAddParentheses {
         int n = input.length();
         for (int i = 0; i < n; i++) {
             if (input.charAt(i) == '+' || input.charAt(i) == '-' || input.charAt(i) == '*') {
-                String part1 = input.substring(0, i);
-                String part2 = input.substring(i + 1);
-                List<Integer> result1 = diffWaysToCompute(part1);
-                List<Integer> result2 = diffWaysToCompute(part2);
-                for (Integer n1 : result1) {
-                    for (Integer n2 : result2) {
+                String l = input.substring(0, i);
+                String r = input.substring(i + 1);
+                List<Integer> resL = diffWaysToCompute(l);
+                List<Integer> resR = diffWaysToCompute(r);
+                for (Integer n1 : resL) {
+                    for (Integer n2 : resR) {
                         int c = 0;
                         switch (input.charAt(i)) {
                             case '+':
