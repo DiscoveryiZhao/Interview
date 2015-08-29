@@ -1,9 +1,6 @@
 package HashArrayTable.HashMap;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 
@@ -19,7 +16,7 @@ Return:
 ["AAAAACCCCC", "CCCCCAAAAA"].
 */
 public class RepeatedDNASequences {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")); // [AAAAACCCCC, CCCCCAAAAA]
     }
 
@@ -29,7 +26,7 @@ public class RepeatedDNASequences {
     * 遍历字符串，用hashmap存储字串，判断即可
     * */
     public static List<String> findRepeatedDnaSequences(String s) {
-        List<String> rs = new LinkedList<>();
+        List<String> res = new LinkedList<>();
         Map<String, Integer> map = new HashMap<>();
 
         for (int i = 0; i <= s.length() - 10; i++) {
@@ -41,11 +38,17 @@ public class RepeatedDNASequences {
             }
         }
 
-        for (Map.Entry<String, Integer> en : map.entrySet()) {
-            if (en.getValue() > 1) {
-                rs.add(en.getKey());
+        for (String ss : map.keySet()) {
+            if (map.get(ss) > 1) {
+                res.add(ss);
             }
         }
-        return rs;
+//
+//        for (Map.Entry<String, Integer> en : map.entrySet()) {
+//            if (en.getValue() > 1) {
+//                rs.add(en.getKey());
+//            }
+//        }
+        return res;
     }
 }

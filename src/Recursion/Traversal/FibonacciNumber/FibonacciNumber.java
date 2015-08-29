@@ -13,23 +13,26 @@ public class FibonacciNumber {
         System.out.println(fibonacciNumberRecursion(5)); // 5
     }
 
-
     /*
-                     5
-                    /  \
-                   4    3
-                 / \    / \
-                3  2   2   1
-               / \ /\  /\
-              2  1 1 0 1 0
-             / \
-            1  0
+                 5
+                /  \
+               4    3
+             / \    / \
+            3  2   2   1
+           / \ /\  /\
+          2  1 1 0 1 0
+         / \
+        1  0
 
-     */
+ */
     public static int fibonacciNumberRecursion(int n) {
+        return traversal(n);
+    }
+
+    private static int traversal(int n){
         if (n == 0) return 0;
         if (n == 1) return 1;
-        return fibonacciNumberRecursion(n - 1) + fibonacciNumberRecursion(n - 2);
+        return traversal(n - 1) + traversal(n - 2);
     }
 
     public static int fibonacciNumberDP1(int n) {
