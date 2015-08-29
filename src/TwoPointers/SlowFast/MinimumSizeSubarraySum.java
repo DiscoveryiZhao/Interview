@@ -1,4 +1,4 @@
-package BruteForce;
+package TwoPointers.SlowFast;
 
 /*      Given an array of n positive integers and a positive integer s, find the minimal length of a subarray of which the sum ≥ s. If there isn't one, return 0 instead.
 
@@ -18,7 +18,7 @@ public class MinimumSizeSubarraySum {
     public int minSubArrayLen(int s, int[] nums) {
         int n = nums.length;
         int sum = 0;
-        int result = Integer.MAX_VALUE;
+        int res = Integer.MAX_VALUE;
 
         int l = 0;
         int r = 0;
@@ -28,16 +28,16 @@ public class MinimumSizeSubarraySum {
                 r++;
             }
             if (sum >= s) {
-                result = Math.min(result, r - l);
+                res = Math.min(res, r - l);
             }
             sum -= nums[l];
             l++;
         }
 
-        if (result == Integer.MAX_VALUE) {
-            result = 0;
+        if (res == Integer.MAX_VALUE) {
+            res = 0;
         }
-        return result;
+        return res;
     }
 //    public int minSubArrayLen(int s, int[] nums) {
 //        // write your code here

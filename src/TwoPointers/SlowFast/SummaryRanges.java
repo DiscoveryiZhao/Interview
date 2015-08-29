@@ -1,4 +1,4 @@
-package BruteForce;
+package TwoPointers.SlowFast;
 
 import java.util.ArrayList;
 import java.util.List;
