@@ -1,4 +1,4 @@
-package Recursion.Traversal.FibonacciNumber;
+package Recursion.Traversal;
 
 /**
  * Created by yizhao on 5/18/15.
