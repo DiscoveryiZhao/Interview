@@ -17,7 +17,7 @@ public class RepeatedDNASequences {
         List<String> rs = new LinkedList<>();
         Map<String, Integer> map = new HashMap<>();
 
-        for (int i = 0; i <= s.length() - 10; ++i) {
+        for (int i = 0; i <= s.length() - 10; i++) {
             String substr = s.substring(i, i + 10);
             if (map.containsKey(substr)) {
                 map.put(substr, map.get(substr) + 1);
