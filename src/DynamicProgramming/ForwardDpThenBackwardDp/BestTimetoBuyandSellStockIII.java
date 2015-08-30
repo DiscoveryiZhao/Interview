@@ -20,15 +20,15 @@ public class BestTimetoBuyandSellStockIII {
         if (n == 0) {
             return 0;
         }
-        int[] dpForwardMaxProfit = new int[n];
-        int[] dpBackwardMaxProfit = new int[n];
+        int[] dpF = new int[n];
+        int[] dpB = new int[n];
 
         int localMaxProfit = 0;
         int localMinValue = prices[0];
         for (int i = 1; i < n; i++) {
             localMinValue = Math.min(localMinValue, prices[i]);
             localMaxProfit = prices[i] - localMinValue;
-            dpForwardMaxProfit[i] = Math.max(dpForwardMaxProfit[i - 1], localMaxProfit);
+            dpF[i] = Math.max(dpF[i - 1], localMaxProfit);
         }
 
         localMaxProfit = 0;
@@ -36,12 +36,12 @@ public class BestTimetoBuyandSellStockIII {
         for (int i = n - 2; i >= 0; i--) {
             localMaxValue = Math.max(localMaxValue, prices[i]);
             localMaxProfit = localMaxValue - prices[i];
-            dpBackwardMaxProfit[i] = Math.max(dpBackwardMaxProfit[i + 1], localMaxProfit);
+            dpB[i] = Math.max(dpB[i + 1], localMaxProfit);
         }
 
         int globalMaxProfit = 0;
         for (int i = 0; i < n; i++) {
-            globalMaxProfit = Math.max(globalMaxProfit, dpForwardMaxProfit[i] + dpBackwardMaxProfit[i]);
+            globalMaxProfit = Math.max(globalMaxProfit, dpF[i] + dpB[i]);
         }
         return globalMaxProfit;
     }

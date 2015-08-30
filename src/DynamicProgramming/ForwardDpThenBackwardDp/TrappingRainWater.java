@@ -14,22 +14,22 @@ public class TrappingRainWater {
         if (n == 0) {
             return 0;
         }
-        int[] dpForwardMax = new int[n];
-        int[] dpBackwardMax = new int[n];
+        int[] dpF = new int[n];
+        int[] dpB = new int[n];
 
-        dpForwardMax[0] = A[0];
+        dpF[0] = A[0];
         for (int i = 1; i < n; i++) {
-            dpForwardMax[i] = Math.max(dpForwardMax[i - 1], A[i]);
+            dpF[i] = Math.max(dpF[i - 1], A[i]);
         }
 
-        dpBackwardMax[n - 1] = A[n - 1];
+        dpB[n - 1] = A[n - 1];
         for (int i = n - 2; i >= 0; i--) {
-            dpBackwardMax[i] = Math.max(dpBackwardMax[i + 1], A[i]);
+            dpB[i] = Math.max(dpB[i + 1], A[i]);
         }
 
         int globalRes = 0;
         for (int i = 0; i < n; i++) {
-            globalRes += Math.min(dpForwardMax[i], dpBackwardMax[i]) - A[i];
+            globalRes += Math.min(dpF[i], dpB[i]) - A[i];
         }
         return globalRes;
     }

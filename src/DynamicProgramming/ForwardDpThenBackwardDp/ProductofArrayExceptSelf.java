@@ -19,25 +19,25 @@ public class ProductofArrayExceptSelf {
         int n = nums.length;
         int[] result = new int[n];
 
-        int[] dpForward = new int[n];
-        int[] dpBackward = new int[n];
+        int[] dpF = new int[n];
+        int[] dpB = new int[n];
 
-        dpForward[0] = 1;
-        dpBackward[n - 1] = 1;
+        dpF[0] = 1;
+        dpB[n - 1] = 1;
 
         //scan from left to right, [1, 1, 2, 6, 24]
         for (int i = 0; i < n - 1; i++) {
-            dpForward[i + 1] = nums[i] * dpForward[i];
+            dpF[i + 1] = nums[i] * dpF[i];
         }
 
         //scan from right to left, [120, 60, 20, 5, 1]
         for (int i = n - 1; i > 0; i--) {
-            dpBackward[i - 1] = dpBackward[i] * nums[i];
+            dpB[i - 1] = dpB[i] * nums[i];
         }
 
         //multiply
         for (int i = 0; i < n; i++) {
-            result[i] = dpForward[i] * dpBackward[i];
+            result[i] = dpF[i] * dpB[i];
         }
 
         return result;
