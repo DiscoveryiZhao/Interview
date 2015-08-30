@@ -24,7 +24,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
             while (!curLevel.isEmpty()) {
                 TreeNode u = curLevel.pop();
                 tmp.add(u.val);
-                if ((level & 1) != 1) { // even level
+                if ((level % 2) != 1) { // even level
                     if (u.left != null) nextLevel.push(u.left);
                     if (u.right != null) nextLevel.push(u.right);
                 } else { // odd level
