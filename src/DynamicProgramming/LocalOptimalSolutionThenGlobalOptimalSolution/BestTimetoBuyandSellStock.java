@@ -21,10 +21,10 @@ public class BestTimetoBuyandSellStock {
     // computes global maximum profit dynamically by subtracting
     // current value with local minimum value
     public static int maxProfit(int[] prices) {
-        int n = prices.length;
-        if (n == 0) {
+        if (prices == null || prices.length == 0) {
             return 0;
         }
+        int n = prices.length;
         int subMinVal = prices[0];
         int local = 0;
         int global = 0;
