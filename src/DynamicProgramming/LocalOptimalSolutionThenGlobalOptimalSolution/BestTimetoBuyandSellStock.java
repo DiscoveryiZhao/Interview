@@ -28,8 +28,8 @@ public class BestTimetoBuyandSellStock {
         int min = prices[0];
         int profit = 0;
         for (int i = 1; i < n; i++) {
-            min = Math.min(min, prices[i]);
-            profit = Math.max(profit, prices[i] - min);
+            min = Math.min(min, prices[i]); // 在index 0和index 1谁小取谁
+            profit = Math.max(profit, prices[i] - min); // 难后再将index 1 - index 0 求最大profit
         }
         return profit;
     }

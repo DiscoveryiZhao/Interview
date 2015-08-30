@@ -33,7 +33,7 @@ public class MaximumSubarray {
         int local = A[0];
         int global = A[0];
         for (int i = 1; i < n; i++) {
-            local = Math.max(local + A[i], A[i]);
+            local = Math.max(local + A[i], A[i]); // index 0 + index 1 和 index 1 谁大取谁
             global = Math.max(global, local);
         }
         return global;
