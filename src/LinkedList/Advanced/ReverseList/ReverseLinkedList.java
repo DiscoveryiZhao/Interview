@@ -10,10 +10,10 @@ public class ReverseLinkedList {
         ListNode pre = null;
         ListNode cur = head;
         while (cur != null) {
-            ListNode nt = cur.next;
+            ListNode tmp = cur.next;
             cur.next = pre;
             pre = cur;
-            cur = nt;
+            cur = tmp;
         }
         head = pre;
         return head;
