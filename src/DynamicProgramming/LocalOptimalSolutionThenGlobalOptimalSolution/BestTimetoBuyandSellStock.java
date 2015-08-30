@@ -23,8 +23,8 @@ public class BestTimetoBuyandSellStock {
         int min = Integer.MAX_VALUE;  //just remember the smallest price
         int profit = 0;
         for (int i : prices) {
-            min = i < min ? i : min;
-            profit = (i - min) > profit ? i - min : profit;
+            min = Math.min(min, i);
+            profit = Math.max(profit, i - min);
         }
 
         return profit;
