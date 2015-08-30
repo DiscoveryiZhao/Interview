@@ -35,15 +35,15 @@ public class IsReachableBetweenTwoVertexesUndirectedGraph {
         return dfs(start, end, new HashSet<Vertex>());
     }
 
-    private static boolean dfs(Vertex start, Vertex end, Set<Vertex> visited) {
+    private static boolean dfs(Vertex start, Vertex target, Set<Vertex> visited) {
         visited.add(start);
-        if (start.equals(end)) {
+        if (start.equals(target)) {
             return true ;
         }
 
         for (Vertex v : start.neighbors ) {
             if (!visited.contains(v)) { // Undirected Graph needs a visited hash set to prevent traversal back to the previous visited vertex
-                if (dfs(v, end, visited)) {
+                if (dfs(v, target, visited)) {
                     return true ;
                 }
             }

@@ -25,13 +25,13 @@ public class IsReachableBetweenTwoVertexesDirectedGraph {
         return dfs(start, end);
     }
 
-    private static boolean dfs(Vertex start, Vertex end) {
-        if (start.equals(end)) {
+    private static boolean dfs(Vertex start, Vertex target) {
+        if (start.equals(target)) {
             return true ;
         }
 
         for (Vertex v : start.neighbors ) {
-            if (dfs(v, end)) {
+            if (dfs(v, target)) {
                 return true ;
             }
         }
