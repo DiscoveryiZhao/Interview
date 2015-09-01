@@ -19,7 +19,7 @@ public class Pow {
         int absN = Math.abs(n);
         double res = pow(x, absN / 2);
         res *= res;
-        res *= (absN & 1) == 1 ? x : 1;
+        res *= (absN % 2) == 1 ? x : 1;
         return (n > 0) ? res : 1.0 / res;
     }
 }
