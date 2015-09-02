@@ -33,13 +33,12 @@ public class LetterCombinationsofaPhoneNumber {
         map.put('8', new char[]{'t', 'u', 'v'});
         map.put('9', new char[]{'w', 'x', 'y', 'z'});
 
-        dfs(digits, res, new StringBuilder(), map);
+        dfs(digits, map, res, new StringBuilder());
 
         return res;
     }
 
-    private static void dfs(String digits,
-                            List<String> res, StringBuilder tmp, Map<Character, char[]> map) {
+    private static void dfs(String digits, Map<Character, char[]> map, List<String> res, StringBuilder tmp) {
         if (tmp.length() == digits.length()) {
             res.add(tmp.toString());
             return;
@@ -49,7 +48,7 @@ public class LetterCombinationsofaPhoneNumber {
         char[] buttonNumbers = map.get(button);
         for (int i = 0; i < buttonNumbers.length; i++) {
             tmp.append(buttonNumbers[i]);
-            dfs(digits, res, tmp, map);
+            dfs(digits, map, res, tmp);
             tmp.deleteCharAt(tmp.length() - 1);
         }
     }
