@@ -15,7 +15,7 @@ public class InterestingPairMaxProduct {
         int maxProductLength = 0;
 
         for(int i = 0; i < dict.length; i++){
-            for(int j = i; j < dict.length; j++){
+            for(int j = i + 1; j < dict.length; j++){
                 if(noCommon(dict[i],dict[j])){
                     int tmpProductLength = dict[i].length()*dict[j].length();
                     if(tmpProductLength >= maxProductLength){
