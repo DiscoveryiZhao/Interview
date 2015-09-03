@@ -26,8 +26,8 @@ import java.util.*;
 */
 public class SlidingWindowMaximum {
     public static void main(String args[]) {
-        int a[] = {1, 3, -1, -3, 5, 3, 6, 7};
-        int b[] = {1,2,7,7,2};
+        int a[] = {5, 4, 3, 2, 1};
+        int b[] = {1, 2, 3, 4, 5};
         System.out.println(maxSlidingWindow_lintcode(a, 3)); // [3, 3, 5, 5, 6, 7]
         System.out.println(maxSlidingWindow_lintcode(b, 1)); // [1,2,7,7,2]
     }
@@ -40,6 +40,7 @@ public class SlidingWindowMaximum {
         }
         Deque<Integer> deque = new LinkedList<>();
         for (int i = 0; i < n; i++) {
+            //System.out.println("deque:" + deque);
             while ((!deque.isEmpty() && nums[i] > deque.peekLast())) {
                 deque.pollLast();
             }
@@ -47,9 +48,15 @@ public class SlidingWindowMaximum {
             if (i > k && deque.peekFirst() == nums[i - k]) {
                 deque.pollFirst();
             }
-            if (i >= k - 1) {
+
+            /*
+            * 想如果k=1，而i=0时，我们必须要有一个结果加入到res。
+            * 所以判断条件就是i+1>=k,则0+1>=1.
+            * */
+            if (i + 1 >= k) {
                 res.add(deque.peekFirst());
             }
+            System.out.println("Deque:" + deque);
         }
         return res;
     }
@@ -76,6 +83,7 @@ public class SlidingWindowMaximum {
             if (i > k - 1) {
                 res[i - k] = deque.peekFirst();
             }
+
         }
         return res;
     }
