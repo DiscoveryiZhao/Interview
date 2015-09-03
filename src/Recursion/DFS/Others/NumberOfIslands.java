@@ -14,7 +14,7 @@ public class NumberOfIslands {
         count = 0;
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
-                if(dfs(grid, i, j, m, n)){
+                if(dfs(grid, i, j)){
                     count++;
                 }
             }
@@ -23,16 +23,16 @@ public class NumberOfIslands {
     }
 
     // 这里的boolean返回值代表从grid[i][j]一直走到边界，是否是一座island
-    public boolean dfs(char[][] grid, int i, int j, int m, int n){
-        if(i < 0 || i >= m || j < 0 || j >=n){
+    public boolean dfs(char[][] grid, int i, int j){
+        if(i < 0 || i >= grid.length || j < 0 || j >=grid[0].length){
             return false;
         }
         if(grid[i][j] == '1'){
-            grid[i][j] = '0';
-            dfs(grid, i + 1, j, m, n);
-            dfs(grid, i - 1, j, m, n);
-            dfs(grid, i, j + 1, m, n);
-            dfs(grid, i, j - 1, m, n);
+            grid[i][j] = '0'; // 当探测出陆地的时候，将陆地变为海洋，这样下一次就不会重复经过这块陆地了。
+            dfs(grid, i + 1, j);
+            dfs(grid, i - 1, j);
+            dfs(grid, i, j + 1);
+            dfs(grid, i, j - 1);
             return true;
         }
         return false;
