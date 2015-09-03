@@ -27,7 +27,7 @@ import java.util.*;
 public class SlidingWindowMaximum {
     public static void main(String args[]) {
         int a[] = {5, 4, 3, 2, 1};
-        int b[] = {1, 2, 3, 4, 5};
+        int b[] = {1,3,2};
         System.out.println(maxSlidingWindow_lintcode(a, 3)); // [3, 3, 5, 5, 6, 7]
         System.out.println(maxSlidingWindow_lintcode(b, 1)); // [1,2,7,7,2]
     }
@@ -45,7 +45,12 @@ public class SlidingWindowMaximum {
                 deque.pollLast();
             }
             deque.addLast(nums[i]);
+            /*
+            * 想如果k=1，而i=0时，我们不可能从deque中poll任何值，所以必须为i>k。
+            *
+            * */
             if (i > k && deque.peekFirst() == nums[i - k]) {
+                System.out.println("haha" + "  ,i:" + i + "  ,deque.peekFirst():" + deque.peekFirst());
                 deque.pollFirst();
             }
 
