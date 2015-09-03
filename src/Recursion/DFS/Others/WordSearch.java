@@ -33,9 +33,7 @@ public class WordSearch {
             if (depth == word.length()) {
                 return true;
             }
-            char c = word.charAt(depth);
             visited[i][j] = true;
-
             if (dfs(board, word, visited, i - 1, j, depth + 1) || dfs(board, word, visited, i + 1, j, depth + 1) || dfs(board, word, visited, i, j - 1, depth + 1) || dfs(board, word, visited, i, j + 1, depth + 1)) { // P(n+1)
                 return true;
             }
