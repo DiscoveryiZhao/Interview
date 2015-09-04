@@ -6,7 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by YZ on 9/4/15.
+ * 题目：
+ * input为： List<String> list, int minDistance
+ * [A, B, B], 2 -> [B, A, B]
+ *     ^  ^         ^     ^
+ *     1  2         0     2   (2 - 0 >= 2)
+ * [A, B, B], 1 -> (any permutation, including the input)
+ * [A, B, B], 3 -> (no solution; throw exception, return error code)
+ *
+ * 如果两个相同element的index间距 < minDistance，则要求输出任意的permutation使得这2个element的index间距不会小于minDistance。
+ * it's ok if 两个相同element的index间距 >= minDistance
  */
 public class MinDistanceSort {
     public static void main(String[] args){
@@ -29,9 +38,19 @@ public class MinDistanceSort {
         input2.add("A");
 
 
-        System.out.println(verifySeparation(input1, 2));
-        System.out.println(verifySeparation(input2, 2));
+        System.out.println(sol(input1, 2));
+        System.out.println(sol(input2, 2));
 
+    }
+
+    public static List<String> sol(List<String> input, int minDistance){
+        for (int i = 0; i < input.size(); i++) {
+            int separateDistance = verifySeparation(input, minDistance);
+            if (separateDistance > 0) {
+                swap(input, i,separateDistance );
+            }
+        }
+        return input;
     }
 
 
@@ -39,7 +58,25 @@ public class MinDistanceSort {
     *
     * Black-box testing
     * */
-    public static boolean verifySeparation(List<String> input, int minDistance) {
+    public static int verifySeparation(List<String> input, int minDistance) {
+        // String: element from the input
+        // Integer: index at which that element last appeared
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < input.size(); i++) {
+            String s = input.get(i);
+            if (map.containsKey(s) == false) {
+                map.put(s, i);
+            } else {
+                int curDistance = i - map.get(s);
+                map.put(s, i);
+                if (curDistance < minDistance) {
+                    return curDistance;
+                }
+            }
+        }
+        return 0;
+    }
+/*    public static boolean verifySeparation(List<String> input, int minDistance) {
     // String: element from the input
     // Integer: index at which that element last appeared
         Map<String, Integer> map = new HashMap<>();
@@ -56,5 +93,11 @@ public class MinDistanceSort {
             }
         }
         return true;
+    }*/
+
+    private static void swap(List<String> input, int i, int j){
+        String tmp = input.get(i);
+        input.set(i,input.get(j));
+        input.set(j, tmp);
     }
 }
