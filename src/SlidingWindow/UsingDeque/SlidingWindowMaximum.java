@@ -28,8 +28,8 @@ public class SlidingWindowMaximum {
     public static void main(String args[]) {
         int a[] = {5, 4, 3, 2, 1};
         int b[] = {1,3,2};
-        System.out.println(maxSlidingWindow_lintcode(a, 3)); // [3, 3, 5, 5, 6, 7]
-        System.out.println(maxSlidingWindow_lintcode(b, 1)); // [1,2,7,7,2]
+        System.out.println(maxSlidingWindow_lintcode(a, 3)); // [5, 5, 5]
+        System.out.println(maxSlidingWindow_lintcode(b, 1)); // [1, 3, 2]
     }
 
     public static ArrayList<Integer> maxSlidingWindow_lintcode(int[] nums, int k) {
@@ -40,28 +40,23 @@ public class SlidingWindowMaximum {
         }
         Deque<Integer> deque = new LinkedList<>();
         for (int i = 0; i < n; i++) {
-            //System.out.println("deque:" + deque);
+
+            // while ((!deque.isEmpty() && nums[0] > deque.peekLast()))
             while ((!deque.isEmpty() && nums[i] > deque.peekLast())) {
                 deque.pollLast();
             }
             deque.addLast(nums[i]);
-            /*
-            * 想如果k=1，而i=0时，我们不可能从deque中poll任何值，所以必须为i>k。
-            *
-            * */
-            if (i > k && deque.peekFirst() == nums[i - k]) {
-                System.out.println("haha" + "  ,i:" + i + "  ,deque.peekFirst():" + deque.peekFirst());
+
+            //if (k > 0 && deque.peekFirst() == nums[k])
+            if (i - k > 0 && deque.peekFirst() == nums[i - k]) {
                 deque.pollFirst();
             }
 
-            /*
-            * 想如果k=1，而i=0时，我们必须要有一个结果加入到res。
-            * 所以判断条件就是i+1>=k,则0+1>=1.
-            * */
-            if (i + 1 >= k) {
+            // if (k <= 1)
+            if (k <= i + 1) {
                 res.add(deque.peekFirst());
             }
-            System.out.println("Deque:" + deque);
+
         }
         return res;
     }
