@@ -9,11 +9,11 @@ import java.util.Map;
  * 题目：
  * 如果两个相同element的index间距 < minDistance，则要求输出任意的permutation使得这2个element的index间距不会小于minDistance。
  * it's ok if 两个相同element的index间距 >= minDistance
- *
+ * <p/>
  * input为： List<String> list, int minDistance
  * [A, B, B], 2 -> [B, A, B]
- *     ^  ^         ^     ^
- *     1  2         0     2   (2 - 0 >= 2)
+ * ^  ^         ^     ^
+ * 1  2         0     2   (2 - 0 >= 2)
  * [A, B, B], 1 -> (any permutation, including the input)
  * [A, B, B], 3 -> (no solution; throw exception, return error code)
  */
@@ -49,32 +49,30 @@ public class MinDistanceSort {
             System.out.println(sol(input3, 1)); // [A, B, B]
             System.out.println(sol(input3, 2)); // [B, A, B]
             System.out.println(sol(input3, 3)); // exception
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }
 
     public static List<String> sol(List<String> input, int minDistance) throws Exception {
-        if(input == null || input.size() == 0 || input.size() < minDistance){
+        if (input == null || input.size() == 0 || input.size() < minDistance) {
             return input;
         }
 
-        if(input.size() == minDistance){
+        if (input.size() == minDistance) {
             throw new Exception();
         }
 
         for (int i = 0; i < input.size(); i++) {
             int separateDistance = verifySeparation(input, minDistance);
             if (separateDistance > 0) {
-                swap(input, i,separateDistance );
+                swap(input, i, separateDistance);
             }
         }
         return input;
     }
 
-
     /*
-    *
     * Black-box testing
     * */
     public static int verifySeparation(List<String> input, int minDistance) {
@@ -95,7 +93,15 @@ public class MinDistanceSort {
         }
         return 0;
     }
-/*    public static boolean verifySeparation(List<String> input, int minDistance) {
+
+    private static void swap(List<String> input, int i, int j) {
+        String tmp = input.get(i);
+        input.set(i, input.get(j));
+        input.set(j, tmp);
+    }
+
+/*
+    public static boolean verifySeparation(List<String> input, int minDistance) {
     // String: element from the input
     // Integer: index at which that element last appeared
         Map<String, Integer> map = new HashMap<>();
@@ -112,11 +118,8 @@ public class MinDistanceSort {
             }
         }
         return true;
-    }*/
-
-    private static void swap(List<String> input, int i, int j){
-        String tmp = input.get(i);
-        input.set(i,input.get(j));
-        input.set(j, tmp);
     }
+*/
+
+
 }
