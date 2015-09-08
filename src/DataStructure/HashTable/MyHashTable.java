@@ -54,7 +54,7 @@ public class MyHashTable<K, V> {
     }
 
     // Entry inner class implementing the Entry with K type key and V type val.
-    private class Entry<K, V> {
+    private class Entry {
         private K key;
         private V val;
 
