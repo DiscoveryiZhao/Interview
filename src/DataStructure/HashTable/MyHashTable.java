@@ -7,7 +7,7 @@ import java.util.List;
  * Created by YZ on 8/27/15.
  */
 public class MyHashTable<K, V> {
-    List<Node>[] table;
+    List<Entry>[] table;
 
     @SuppressWarnings("unchecked")
     public MyHashTable() {
@@ -19,10 +19,10 @@ public class MyHashTable<K, V> {
         if (table[i] == null) {
             // creates a new LinkedList in the bucket
             table[i] = new LinkedList<>();
-            table[i].add(new Node(key, val));
+            table[i].add(new Entry(key, val));
         } else {
-            List<Node> list = table[i];
-            for (Node n : list) {
+            List<Entry> list = table[i];
+            for (Entry n : list) {
                 if (n.key.equals(key)) {
                     // found duplicated key, replace its val then return
                     n.val = val;
@@ -31,7 +31,7 @@ public class MyHashTable<K, V> {
             }
 
             // key doesn't exist in the list, creates a new node and add in the end of list
-            list.add(new Node(key, val));
+            list.add(new Entry(key, val));
         }
     }
 
@@ -40,8 +40,8 @@ public class MyHashTable<K, V> {
         if (table[i] == null) {
             return null;
         }
-        List<Node> list = table[i];
-        for (Node n : list) {
+        List<Entry> list = table[i];
+        for (Entry n : list) {
             if (n.key.equals(key)) {
                 return n.val;
             }
@@ -53,13 +53,13 @@ public class MyHashTable<K, V> {
         return Math.abs(key.hashCode()) % table.length;
     }
 
-    // Node inner class implementing the Node with K type key and V type val.
-    private class Node {
+    // Entry inner class implementing the Entry with K type key and V type val.
+    private class Entry<K, V> {
         private K key;
         private V val;
 
-        // Initialize a new Node object of the given key and val.
-        private Node(K key, V val) {
+        // Initialize a new Entry object of the given key and val.
+        private Entry(K key, V val) {
             this.key = key;
             this.val = val;
         }
