@@ -16,7 +16,7 @@ For example:
 */
 public class ExcelSheetColumnTitle {
     public static void main(String[] args) {
-        System.out.println(convertToTitle(27));
+        System.out.println(convertToTitle(27)); // AA
     }
 
     public static String convertToTitle(int n) {
@@ -26,9 +26,9 @@ public class ExcelSheetColumnTitle {
         int base = 26;
         StringBuilder sb = new StringBuilder();
         while (n != 0) {
-            n--;
-            sb.append((char) (n % base + 'A'));
-            n /= base;
+            n--; // 27 - 1 = 26
+            sb.append((char) (n % base + 'A')); // A
+            n /= base; // 26/26 = 1
         }
 
         sb.reverse();
